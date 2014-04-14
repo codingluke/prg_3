@@ -1,0 +1,180 @@
+\hypertarget{classVerkaufPacket}{\section{Verkauf\-Packet Class Reference}
+\label{classVerkaufPacket}\index{Verkauf\-Packet@{Verkauf\-Packet}}
+}
+Inheritance diagram for Verkauf\-Packet\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVerkaufPacket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVerkaufPacket_a3386da111f7c9f1dfcc30911b0d7a33b}{Verkauf\-Packet} (\hyperlink{classMedium}{Medium} medium, int anzahl)
+\item 
+int \hyperlink{classVerkaufPacket_a6abe59e3f891d2b62b52ee61a4264325}{gib\-Anzahl} ()
+\item 
+void \hyperlink{classVerkaufPacket_a61f352d1a9bfd77eaf51176af334af7a}{setze\-Anzahl} (int anzahl)
+\item 
+\hyperlink{classMedium}{Medium} \hyperlink{classVerkaufPacket_a22d6fae8a2cbd3dbb7b258bf24d9e99d}{gib\-Medium} ()
+\item 
+void \hyperlink{classVerkaufPacket_a2ccb495d227ec9da75b80e53bcf0cc72}{setze\-Medium} (\hyperlink{classMedium}{Medium} medium)
+\item 
+float \hyperlink{classVerkaufPacket_a27dc0ed95b66b8fb573f9f1ebddc564e}{gib\-Preis} ()
+\item 
+float \hyperlink{classVerkaufPacket_a2f1e53843d2552c1d0a8dc4558758c87}{gib\-Gesamt\-Preis} ()
+\item 
+boolean \hyperlink{classVerkaufPacket_adbe07c2a07ed9a1ed511b34da6279601}{equals} (Object obj)
+\item 
+int \hyperlink{classVerkaufPacket_a2a0a506d856443a33ed3b2b5d25ba2bb}{compare\-To} (\hyperlink{classVerkaufPacket}{Verkauf\-Packet} gast)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classBuch}{Buch} ist eine Unterklasse von \hyperlink{classMedium}{Medium}. Es ergänzt \hyperlink{classMedium}{Medium} mit den für ein \hyperlink{classBuch}{Buch} benötigten Felder und Eigenschaften.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVerkaufPacket_a3386da111f7c9f1dfcc30911b0d7a33b}{\index{Verkauf\-Packet@{Verkauf\-Packet}!Verkauf\-Packet@{Verkauf\-Packet}}
+\index{Verkauf\-Packet@{Verkauf\-Packet}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{Verkauf\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}Verkauf\-Packet.\-Verkauf\-Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium}}]{medium, }
+\item[{int}]{anzahl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a3386da111f7c9f1dfcc30911b0d7a33b}
+Der Konstruktor benoetigt alle Felder des Buches als Parameter
+
+
+\begin{DoxyParams}{Parameters}
+{\em titel} & String Titel des Buches. \\
+\hline
+{\em preis} & Float Preis des Buches. \\
+\hline
+{\em author} & String Author des Buches. \\
+\hline
+{\em hardcover} & boolean ob hardcover oder nicht. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVerkaufPacket_a2a0a506d856443a33ed3b2b5d25ba2bb}{\index{Verkauf\-Packet@{Verkauf\-Packet}!compare\-To@{compare\-To}}
+\index{compare\-To@{compare\-To}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{compare\-To}]{\setlength{\rightskip}{0pt plus 5cm}int Verkauf\-Packet.\-compare\-To (
+\begin{DoxyParamCaption}
+\item[{{\bf Verkauf\-Packet}}]{gast}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a2a0a506d856443a33ed3b2b5d25ba2bb}
+Ueberschreibt die Methode compare\-To des interface Comparable. Definiert die Sortierreihenfolge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gast} & Das Gastobjekt mit welchem verglichen wird.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Int 0 = gleich, 1 = groesser, -\/1 = kleiner 
+\end{DoxyReturn}
+\hypertarget{classVerkaufPacket_adbe07c2a07ed9a1ed511b34da6279601}{\index{Verkauf\-Packet@{Verkauf\-Packet}!equals@{equals}}
+\index{equals@{equals}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}boolean Verkauf\-Packet.\-equals (
+\begin{DoxyParamCaption}
+\item[{Object}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_adbe07c2a07ed9a1ed511b34da6279601}
+Definiert die Gleichheit eines \hyperlink{classVerkaufPacket}{Verkauf\-Packet}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & Objekt mit welchem verglichen wird.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean ob gleich oder nicht. 
+\end{DoxyReturn}
+\hypertarget{classVerkaufPacket_a6abe59e3f891d2b62b52ee61a4264325}{\index{Verkauf\-Packet@{Verkauf\-Packet}!gib\-Anzahl@{gib\-Anzahl}}
+\index{gib\-Anzahl@{gib\-Anzahl}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{gib\-Anzahl}]{\setlength{\rightskip}{0pt plus 5cm}int Verkauf\-Packet.\-gib\-Anzahl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a6abe59e3f891d2b62b52ee61a4264325}
+Gibt Anzahl zurueck. Wie oft wurde das \hyperlink{classMedium}{Medium} verkauft.
+
+\begin{DoxyReturn}{Returns}
+anzahl wie oft das \hyperlink{classMedium}{Medium} verkauft wurde. 
+\end{DoxyReturn}
+\hypertarget{classVerkaufPacket_a2f1e53843d2552c1d0a8dc4558758c87}{\index{Verkauf\-Packet@{Verkauf\-Packet}!gib\-Gesamt\-Preis@{gib\-Gesamt\-Preis}}
+\index{gib\-Gesamt\-Preis@{gib\-Gesamt\-Preis}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{gib\-Gesamt\-Preis}]{\setlength{\rightskip}{0pt plus 5cm}float Verkauf\-Packet.\-gib\-Gesamt\-Preis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a2f1e53843d2552c1d0a8dc4558758c87}
+Gibt der gesamte Verkaufspreis zurueck.
+
+\begin{DoxyReturn}{Returns}
+der gesamte Preis. Anzahl $\ast$ Preis. 
+\end{DoxyReturn}
+\hypertarget{classVerkaufPacket_a22d6fae8a2cbd3dbb7b258bf24d9e99d}{\index{Verkauf\-Packet@{Verkauf\-Packet}!gib\-Medium@{gib\-Medium}}
+\index{gib\-Medium@{gib\-Medium}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{gib\-Medium}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Medium} Verkauf\-Packet.\-gib\-Medium (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a22d6fae8a2cbd3dbb7b258bf24d9e99d}
+Gibt verkauftes \hyperlink{classMedium}{Medium} zurueck.
+
+\begin{DoxyReturn}{Returns}
+das verkaufte \hyperlink{classMedium}{Medium}. 
+\end{DoxyReturn}
+\hypertarget{classVerkaufPacket_a27dc0ed95b66b8fb573f9f1ebddc564e}{\index{Verkauf\-Packet@{Verkauf\-Packet}!gib\-Preis@{gib\-Preis}}
+\index{gib\-Preis@{gib\-Preis}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{gib\-Preis}]{\setlength{\rightskip}{0pt plus 5cm}float Verkauf\-Packet.\-gib\-Preis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a27dc0ed95b66b8fb573f9f1ebddc564e}
+Gibt verkaufspreis pro \hyperlink{classMedium}{Medium} zurueck.
+
+\begin{DoxyReturn}{Returns}
+Einzelpreis des Mediums. 
+\end{DoxyReturn}
+\hypertarget{classVerkaufPacket_a61f352d1a9bfd77eaf51176af334af7a}{\index{Verkauf\-Packet@{Verkauf\-Packet}!setze\-Anzahl@{setze\-Anzahl}}
+\index{setze\-Anzahl@{setze\-Anzahl}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{setze\-Anzahl}]{\setlength{\rightskip}{0pt plus 5cm}void Verkauf\-Packet.\-setze\-Anzahl (
+\begin{DoxyParamCaption}
+\item[{int}]{anzahl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a61f352d1a9bfd77eaf51176af334af7a}
+Setzt neue Anzahl an Medien.
+
+
+\begin{DoxyParams}{Parameters}
+{\em anzahl} & neue Anzahl Medien im Packet. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVerkaufPacket_a2ccb495d227ec9da75b80e53bcf0cc72}{\index{Verkauf\-Packet@{Verkauf\-Packet}!setze\-Medium@{setze\-Medium}}
+\index{setze\-Medium@{setze\-Medium}!VerkaufPacket@{Verkauf\-Packet}}
+\subsubsection[{setze\-Medium}]{\setlength{\rightskip}{0pt plus 5cm}void Verkauf\-Packet.\-setze\-Medium (
+\begin{DoxyParamCaption}
+\item[{{\bf Medium}}]{medium}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVerkaufPacket_a2ccb495d227ec9da75b80e53bcf0cc72}
+Setzt neues \hyperlink{classMedium}{Medium} welches Verkauft wurde.
+
+
+\begin{DoxyParams}{Parameters}
+{\em anzahl} & neue Anzahl Medien im Packet. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Verkauf\-Packet.\-java\end{DoxyCompactItemize}

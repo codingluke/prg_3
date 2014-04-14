@@ -1,0 +1,125 @@
+\hypertarget{classMedium}{\section{Medium Class Reference}
+\label{classMedium}\index{Medium@{Medium}}
+}
+Inheritance diagram for Medium\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classMedium}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMedium_a00549864dd88fc9c317504b7bd335701}{Medium} (String titel, float preis)
+\item 
+\hyperlink{classMedium_ac3b157358e6566a99d1de47c08836071}{Medium} (Random random)
+\item 
+String \hyperlink{classMedium_a07c01338a5027ca7b7034f0fd23fd196}{gib\-Titel} ()
+\item 
+void \hyperlink{classMedium_abc928f7f28de4a257a8be9e97d5e46d8}{setze\-Titel} (String titel)
+\item 
+float \hyperlink{classMedium_ac1434c472daefaf2af3775f957831919}{gib\-Preis} ()
+\item 
+void \hyperlink{classMedium_a7742ceb4b7ff5e850cb3f13afee4689f}{setze\-Preis} (float preis)
+\item 
+boolean \hyperlink{classMedium_a01d9c9999e0357603f822834978c2c5a}{equals} (Object obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Basisklasse für Mediumobjekte. Darin werden die von allen untertypen verwendeten Attributte definiert. Auch die Serialisierungsmethode wird hier definiert.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMedium_a00549864dd88fc9c317504b7bd335701}{\index{Medium@{Medium}!Medium@{Medium}}
+\index{Medium@{Medium}!Medium@{Medium}}
+\subsubsection[{Medium}]{\setlength{\rightskip}{0pt plus 5cm}Medium.\-Medium (
+\begin{DoxyParamCaption}
+\item[{String}]{titel, }
+\item[{float}]{preis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMedium_a00549864dd88fc9c317504b7bd335701}
+Der Konstruktor benoetigt alle Felder des Mediums als Parameter
+
+
+\begin{DoxyParams}{Parameters}
+{\em titel} & Titel des Mediums. \\
+\hline
+{\em preis} & Preis des Mediums. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMedium_ac3b157358e6566a99d1de47c08836071}{\index{Medium@{Medium}!Medium@{Medium}}
+\index{Medium@{Medium}!Medium@{Medium}}
+\subsubsection[{Medium}]{\setlength{\rightskip}{0pt plus 5cm}Medium.\-Medium (
+\begin{DoxyParamCaption}
+\item[{Random}]{random}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMedium_ac3b157358e6566a99d1de47c08836071}
+Der Konstruktor benoetigt ein Random Objekt, dann werden die Felder automatisch gefüllt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em random} & Objekt zur zufaelligen Wertegerierung. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMedium_a01d9c9999e0357603f822834978c2c5a}{\index{Medium@{Medium}!equals@{equals}}
+\index{equals@{equals}!Medium@{Medium}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}boolean Medium.\-equals (
+\begin{DoxyParamCaption}
+\item[{Object}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMedium_a01d9c9999e0357603f822834978c2c5a}
+Ueberschreibt die equals funktion so, dass ein \hyperlink{classMedium}{Medium} gleich ist, wenn der Titel, der Preis und die Klasse identisch sind. \hypertarget{classMedium_ac1434c472daefaf2af3775f957831919}{\index{Medium@{Medium}!gib\-Preis@{gib\-Preis}}
+\index{gib\-Preis@{gib\-Preis}!Medium@{Medium}}
+\subsubsection[{gib\-Preis}]{\setlength{\rightskip}{0pt plus 5cm}float Medium.\-gib\-Preis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMedium_ac1434c472daefaf2af3775f957831919}
+Gibt den Preis zurueck. \hypertarget{classMedium_a07c01338a5027ca7b7034f0fd23fd196}{\index{Medium@{Medium}!gib\-Titel@{gib\-Titel}}
+\index{gib\-Titel@{gib\-Titel}!Medium@{Medium}}
+\subsubsection[{gib\-Titel}]{\setlength{\rightskip}{0pt plus 5cm}String Medium.\-gib\-Titel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMedium_a07c01338a5027ca7b7034f0fd23fd196}
+Gibt den Titel zurueck. \hypertarget{classMedium_a7742ceb4b7ff5e850cb3f13afee4689f}{\index{Medium@{Medium}!setze\-Preis@{setze\-Preis}}
+\index{setze\-Preis@{setze\-Preis}!Medium@{Medium}}
+\subsubsection[{setze\-Preis}]{\setlength{\rightskip}{0pt plus 5cm}void Medium.\-setze\-Preis (
+\begin{DoxyParamCaption}
+\item[{float}]{preis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMedium_a7742ceb4b7ff5e850cb3f13afee4689f}
+Setzt den Preis neu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em preis} & neuer Preis. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMedium_abc928f7f28de4a257a8be9e97d5e46d8}{\index{Medium@{Medium}!setze\-Titel@{setze\-Titel}}
+\index{setze\-Titel@{setze\-Titel}!Medium@{Medium}}
+\subsubsection[{setze\-Titel}]{\setlength{\rightskip}{0pt plus 5cm}void Medium.\-setze\-Titel (
+\begin{DoxyParamCaption}
+\item[{String}]{titel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMedium_abc928f7f28de4a257a8be9e97d5e46d8}
+Setzt den Ttitel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em titel} & neuer Titel. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Medium.\-java\end{DoxyCompactItemize}

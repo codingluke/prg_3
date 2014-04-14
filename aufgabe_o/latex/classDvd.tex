@@ -1,0 +1,131 @@
+\hypertarget{classDvd}{\section{Dvd Class Reference}
+\label{classDvd}\index{Dvd@{Dvd}}
+}
+Inheritance diagram for Dvd\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDvd}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDvd_a2d6d1fe33da6d6039f8cf8baee463291}{Dvd} (String titel, float preis, String regisseur, int freigabealter)
+\item 
+\hyperlink{classDvd_adb3ad96714865b09806c44e1538e5bf3}{Dvd} (Random random)
+\item 
+String \hyperlink{classDvd_a02b2a8ad9958fa39915f348811c84297}{gib\-Regisseur} ()
+\item 
+void \hyperlink{classDvd_a408943b8938726987c765ac9f472372c}{setze\-Regisseur} (String regisseur)
+\item 
+int \hyperlink{classDvd_a5a7c06f2d979fa7c092936ca429fa361}{gibfreigabealter} ()
+\item 
+void \hyperlink{classDvd_ac452a14d1d14f1b28d3b19f7b6532270}{setze\-Freigabealter} (int freigabealter)
+\item 
+String \hyperlink{classDvd_a646f663f014244c28ced8a20c6b0c49c}{to\-String} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classDvd}{Dvd} ist eine Unterklasse von \hyperlink{classMedium}{Medium}. Es ergänzt \hyperlink{classMedium}{Medium} mit den für eine C\-D benötigten Felder und Eigenschaften.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDvd_a2d6d1fe33da6d6039f8cf8baee463291}{\index{Dvd@{Dvd}!Dvd@{Dvd}}
+\index{Dvd@{Dvd}!Dvd@{Dvd}}
+\subsubsection[{Dvd}]{\setlength{\rightskip}{0pt plus 5cm}Dvd.\-Dvd (
+\begin{DoxyParamCaption}
+\item[{String}]{titel, }
+\item[{float}]{preis, }
+\item[{String}]{regisseur, }
+\item[{int}]{freigabealter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDvd_a2d6d1fe33da6d6039f8cf8baee463291}
+Der Konstruktor benoetigt alle Felder des Buches als Parameter
+
+
+\begin{DoxyParams}{Parameters}
+{\em preis} & float Preis der D\-V\-D. \\
+\hline
+{\em regisseur} & String Regisseur des Films. \\
+\hline
+{\em freigabealter} & int Freigabealter für den Film. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDvd_adb3ad96714865b09806c44e1538e5bf3}{\index{Dvd@{Dvd}!Dvd@{Dvd}}
+\index{Dvd@{Dvd}!Dvd@{Dvd}}
+\subsubsection[{Dvd}]{\setlength{\rightskip}{0pt plus 5cm}Dvd.\-Dvd (
+\begin{DoxyParamCaption}
+\item[{Random}]{random}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDvd_adb3ad96714865b09806c44e1538e5bf3}
+Der Konstruktor benoetigt ein Random Objekt, dann werden die Felder automatisch gefüllt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em random} & Objekt zur zufaelligen Wertegerierung. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDvd_a5a7c06f2d979fa7c092936ca429fa361}{\index{Dvd@{Dvd}!gibfreigabealter@{gibfreigabealter}}
+\index{gibfreigabealter@{gibfreigabealter}!Dvd@{Dvd}}
+\subsubsection[{gibfreigabealter}]{\setlength{\rightskip}{0pt plus 5cm}int Dvd.\-gibfreigabealter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDvd_a5a7c06f2d979fa7c092936ca429fa361}
+Gibt Freigabealter zurueck. \hypertarget{classDvd_a02b2a8ad9958fa39915f348811c84297}{\index{Dvd@{Dvd}!gib\-Regisseur@{gib\-Regisseur}}
+\index{gib\-Regisseur@{gib\-Regisseur}!Dvd@{Dvd}}
+\subsubsection[{gib\-Regisseur}]{\setlength{\rightskip}{0pt plus 5cm}String Dvd.\-gib\-Regisseur (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDvd_a02b2a8ad9958fa39915f348811c84297}
+Gibt Regisseur der \hyperlink{classCd}{Cd} zurueck. \hypertarget{classDvd_ac452a14d1d14f1b28d3b19f7b6532270}{\index{Dvd@{Dvd}!setze\-Freigabealter@{setze\-Freigabealter}}
+\index{setze\-Freigabealter@{setze\-Freigabealter}!Dvd@{Dvd}}
+\subsubsection[{setze\-Freigabealter}]{\setlength{\rightskip}{0pt plus 5cm}void Dvd.\-setze\-Freigabealter (
+\begin{DoxyParamCaption}
+\item[{int}]{freigabealter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDvd_ac452a14d1d14f1b28d3b19f7b6532270}
+Setzt neues Freigabealter der \hyperlink{classDvd}{Dvd}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em freigabealter} & neues Freigabealter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDvd_a408943b8938726987c765ac9f472372c}{\index{Dvd@{Dvd}!setze\-Regisseur@{setze\-Regisseur}}
+\index{setze\-Regisseur@{setze\-Regisseur}!Dvd@{Dvd}}
+\subsubsection[{setze\-Regisseur}]{\setlength{\rightskip}{0pt plus 5cm}void Dvd.\-setze\-Regisseur (
+\begin{DoxyParamCaption}
+\item[{String}]{regisseur}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDvd_a408943b8938726987c765ac9f472372c}
+Setzt neuen Regisseur der \hyperlink{classDvd}{Dvd}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em regisseur} & neuer Regisseur. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classDvd_a646f663f014244c28ced8a20c6b0c49c}{\index{Dvd@{Dvd}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!Dvd@{Dvd}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String Dvd.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classDvd_a646f663f014244c28ced8a20c6b0c49c}
+Definiert wie die \hyperlink{classCd}{Cd} als String repraesentiert werden soll.
+
+Format\-: D\-V\-D 'Titel' von 'Regisseur' (frei ab freigabealter). 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Dvd.\-java\end{DoxyCompactItemize}
