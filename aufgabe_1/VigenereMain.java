@@ -1,44 +1,17 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.security.AccessControlException;
 import java.io.FileNotFoundException;
+import java.nio.file.FileAlreadyExistsException;
 
 /**
  * Description.
- * TODO : Check if destfile already exists.
- * TODO : Let user chose if overwrite or not.
- * TODO : Key to the same length than text algorithm.
- * TODO : COMMENTING!
  *
  * @author Lukas Hodel
  */
 public class VigenereMain
 {
-  private static String option;
-
-  private static String key;
-
-  private static String sourcefile;
-
-  private static String destfile;
-
-  private static final String SPECIALCHARS = "@#$%-+*?!:/";
-
   /**
-   * Regex pattern for validating keyword strength.
-   * Keyword must include at least:
-   * - one small letter
-   * - one big letter
-   * - one digit
-   * - one Specialchra defined in SPECIALCHARS
-   * - between 10 and 20 chars long.
-   */
-  private static final String KEY_PATTERN =
-    "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[" + SPECIALCHARS + "]).{10,20})";
-
-  /**
-   * The manual text, shown to the user when he executes
-   * the program with wrong arguments.
+   * The manual text, shown to the user when he executes the program with
+   * wrong arguments.
    */
   private static final String MANUAL = "Benutzung: java VinegereMain "
       + "<option> <schluesselwort> <quelldatei> <zieldatei>\n"
@@ -51,8 +24,8 @@ public class VigenereMain
       + "werden kann.\n";
 
   /**
-   * The manual text, shown to the user when he executes
-   * the program with wrong arguments.
+   * The manual key text, shown to the user when he executes
+   * the program with a unaccurate key.
    */
   private static final String MANUAL_KEY = "Das Schluesselwort ist "
       + "fuer eine sichere Verschluesselung zu schwach.\n"
@@ -63,15 +36,15 @@ public class VigenereMain
       + "  - mindestens 1 Sonderzeichen\n"
       + "  - mindestens 10 Zeichen lang sein\n"
       + "Wobei:\n"
-      + "  Sonderzeichen: " + SPECIALCHARS + "\n";
+      + "  Sonderzeichen: " + KeyController.getSpecialchars() + "\n";
 
-	/**
-   * Private constructor to prevent instances of this Class.
+  /**
+   * Pivate constructor to prevent instances of this Class.
    */
 	private VigenereMain()
 	{
 	}
-	
+
 	/**
    *
    *
@@ -81,95 +54,134 @@ public class VigenereMain
 	{
     try
     {
-      readAndValidateArguments(args);
-      if (option.equals("-v"))
-        encrypt();
-      else
-        decrypt();
+      validateArgumentLength(args);
+      process(args[0], args[1], args[2], args[3]);
     } catch (IllegalArgumentException e)
-    {
-      System.out.println(e.getMessage());
-    } catch (AccessControlException e)
     {
       System.out.println(e.getMessage());
     } catch (FileNotFoundException e)
     {
-      System.out.println(e.getMessage());
+      System.out.println("Datei " + e.getMessage()
+        + " nicht vorhanden!");
+    } catch (AccessControlException e)
+    {
+      System.out.println("Datei " + e.getMessage()
+        + " kann nicht gelesen werden!");
     }
 	}
 
   /**
-   * Encrypts sourcefile and writes into destfile.
+   * Encrypts/Decrypts sourcefile and writes content into destfile.
+   * Checks if destfile already exists. Lets user choose
+   * to override or not.
+   *
+   * @param option      Option to execute.
+   * @param key         Key for excryption.
+   * @param sourcefile  Filename of the file to En/Decrypt.
+   * @param destfile    Filename of the file to write the result in.
+   *
+   * @throws IllegalArgumentException
+   * @throws FileNotFoundException
+   * @throws AccessControlException
    */
-  private static void encrypt()
-    throws FileNotFoundException, AccessControlException, IllegalArgumentException
+  private static void process(String option, String key,
+      String sourcefile, String destfile)
+    throws IllegalArgumentException, FileNotFoundException,
+      AccessControlException
   {
-    System.out.println("Verschluesseln");
-    String text = FileController.readFile(sourcefile);
-    String encrypted = VigenereCipher.encrypt(text, key);
-    FileController.writeToFile(encrypted, destfile);
+    validateOption(option);
+    validateKeyStreangth(key);
+    validateSourcefile(sourcefile);
+    printActionInfo(option, key, sourcefile);
+    try
+    {
+      String text = FileController.readFile(sourcefile);
+      String manipulatedText = "";
+      if (option.equals("-v"))
+        manipulatedText = VigenereCipher.encrypt(text, key);
+      else if (option.equals("-e"))
+        manipulatedText = VigenereCipher.decrypt(text, key);
+      FileController.createFile(destfile);
+      FileController.writeToFile(manipulatedText, destfile);
+      System.out.println("Fertig.");
+    } catch (FileAlreadyExistsException e)
+    {
+      System.out.println("Abgebrochen.");
+    }
   }
 
   /**
-   * Decrypts sourcefile and writes into destfile.
+   * Prints out information about the executed action.
+   *
+   * @param option      Shortname of the action.
+   * @param key         Key to perform the action
+   * @param sourcefile  Sourcefile to perform the action on.
    */
-  private static void decrypt()
-    throws FileNotFoundException, AccessControlException, IllegalArgumentException
+  private static void printActionInfo(String option,
+    String key, String sourcefile)
   {
-    System.out.println("Entschluesseln");
-    String text = FileController.readFile(sourcefile);
-    String decrypted = VigenereCipher.decrypt(text, key);
-    FileController.writeToFile(decrypted, destfile);
+    String action = "";
+    if (option.equals("-v"))
+      action = "verschluessele";
+    else
+      action = "entschluessele";
+    System.out.println("Ich " + action + " die Datei "
+      + sourcefile + " mit dem Schluesselwort " + key);
   }
 
   /**
-   * Validates the arguments. When there is an input failure
-   * an IllegalArgumentException is thrown.
+   * Checks if the sourcefile is available and writable.
    *
-   * @param args  Arguments from the execution.
+   * @param sourcefile  Name of the sourcefile
    *
-   * @exception   IllegalArgumentException
-   * @exception   AccessControlException
-   * @exception   FileNotFoundException
+   * @throws FileNotFoundException
+   * @throws AccessControlException
    */
-  private static void readAndValidateArguments (String[] args) throws FileNotFoundException, AccessControlException, IllegalArgumentException
+  private static void validateSourcefile(String sourcefile)
+    throws FileNotFoundException, AccessControlException
   {
-    if (args.length != 4)
-      throw new IllegalArgumentException(MANUAL);
-
-    readArguments(args);
-
-    if (!option.equals("-e") && !option.equals("-v"))
-      throw new IllegalArgumentException(MANUAL);
-    else if (!validateKeyStreangth(key))
-      throw new IllegalArgumentException(MANUAL_KEY);
-
     FileController.checkReadeable(sourcefile);
   }
 
   /**
-   * Reads the arguments and saves thim in their
-   * specific fields; option, key and sourcefile.
+   * Checks if there are exactly four arguments entered by
+   * the user.
+   *
+   * @param args  Argument array from the user input.
+   *
+   * @throws IllegalArgumentException
    */
-  private static void readArguments(String[] args)
+  private static void validateArgumentLength(String[] args)
   {
-    option = args[0];
-    key = args[1];
-    sourcefile = args[2];
-    destfile = args[3];
+    if (args.length != 4)
+      throw new IllegalArgumentException(MANUAL);
   }
 
   /**
-   * Validateds if the given Keyword is accurate.
+   * Checks if there is a valid option entry.
+   * Valid entries are: -v and -e
    *
-   * @param key   Key to test for streangthness.
+   * @param option  Shortname of the option to check.
    *
-   * @return boolean if key is strong enougth or not.
+   * @throws IllegalArgumentException
    */
-  private static boolean validateKeyStreangth(String key)
+  private static void validateOption(String option)
   {
-    Pattern pattern = Pattern.compile(KEY_PATTERN);
-    Matcher matcher = pattern.matcher(key);
-    return matcher.matches();
+    if (!option.equals("-e") && !option.equals("-v"))
+      throw new IllegalArgumentException(MANUAL);
+  }
+
+  /**
+   * Checks if the entered key consists of an accurate
+   * combination of literals.
+   *
+   * @param key   Key to check for streangth.
+   *
+   * @throws IllegalArgumentException
+   */
+  private static void validateKeyStreangth(String key)
+  {
+    if (!KeyController.validateKeyStreangth(key))
+      throw new IllegalArgumentException(MANUAL_KEY);
   }
 }
