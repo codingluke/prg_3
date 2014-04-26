@@ -1,45 +1,124 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class VigenereCipher
 {
   /**
+   * The available specialchars for the keyword.
+   */
+  private static final String SPECIALCHARS = "@#$%+?!:/_¢^~`=.-";
+
+  /**
+   * Regex pattern for validating keyword strength.
+   * Keyword must include at least:
+   * - one small letter
+   * - one big letter
+   * - one digit
+   * - one Specialchrar defined in SPECIALCHARS
+   * - between 10 and 20 chars long.
+   */
+  private static final String KEY_PATTERN =
+    "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[" + SPECIALCHARS + "])" +
+    "[A-z\\d" + SPECIALCHARS + "]{10,}+$";
+
+  /**
    * Alphabet for shifting. Can be extended.
    */
-  private static String alphabet = "abcdefghijklmnopqrstuvwxyz"
+  private static final String alphabet = "abcdefghijklmnopqrstuvwxyz"
                                  + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                                 + "123456789"
-                                 + "#$%-*?!:/\n \\@\"',|.;[]_"
-                                 + "äüöÄÜÖÈè^~\t";
+                                 + "0123456789"
+                                 + "\n\t\\\" &',|.;*"
+                                 + "@#$%-+?!:/_¢^~`=."
+                                 + "äüöÄÜÖÈè";
+
+  /**
+   * The manual key text, shown to the user when he executes
+   * the program with a unaccurate key.
+   */
+  private static final String MANUAL_KEY = "Das Schluesselwort ist "
+      + "fuer eine sichere Verschluesselung zu schwach. Oder es wurden"
+      + "ungueltige Zeichen verwendet.\n"
+      + "Es sollte:\n"
+      + "  - mindestens 1 Grossbuchstaben\n"
+      + "  - mindestens 1 Kleinbuchstaben\n"
+      + "  - mindestens 1 Ziffer\n"
+      + "  - mindestens 1 Sonderzeichen\n"
+      + "  - mindestens 10 Zeichen lang sein\n"
+      + "Wobei:\n"
+      + "  Gueltige Sonderzeichen: " + SPECIALCHARS + "\n";
+
+
+  /**
+   * Key for the encrytion/decryption.
+   */
+  private String key;
 
   /**
    * private constructor for prevent instances.
+   *
+   * @param key                       Key for encryption/decryption
+   *
+   * @throws IllegalArgumentException when key is not valid
    */
-  private VigenereCipher()
+  public VigenereCipher(String key) throws IllegalArgumentException
   {
+    setKey(key);
+  }
+
+  /**
+   * Sets the key for encryption/decryption.
+   * Validates key for strongness and valid literals.
+   *
+   * @param key   Key to encrypt/decrypt
+   *
+   * @throws IllegalArgumentException
+   */
+  public void setKey(String key) throws IllegalArgumentException
+  {
+    if (!validateKey(key))
+      throw new IllegalArgumentException(MANUAL_KEY);
+    this.key = key;
   }
 
   /**
    * Encrypts a text with the VigenereCipher.
    *
    * @param text    Text to decrypt.
-   * @param key     Key for the algorithm.
    *
    * @return with vigenere-algorithm encrypted text.
    */
-  public static String encrypt(String text, String key)
+  public String encrypt(String text)
   {
-    return cipher(text, extendKey(key, text.length()), true);
+    String extendedKey = extendKey(this.key, text.length());
+    return cipher(text, extendedKey, true);
   }
 
   /**
    * Decrypts a text with the vigenere algorithm.
    *
    * @param text    Text to decrypt.
-   * @param key     Key for the algorithm.
    *
    * @return with vigenere-algorithm decrypted text.
    */
-  public static String decrypt(String text, String key)
+  public String decrypt(String text)
   {
-    return cipher(text, extendKey(key, text.length()), false);
+    String extendedKey = extendKey(this.key, text.length());
+    return cipher(text, extendedKey, false);
+  }
+
+  /**
+   * Validateds if the given Keyword is accurate and only
+   * contains literals available in the alphabet.
+   *
+   * @param key   Key to test.
+   *
+   * @return boolean if key is strong enougth or not.
+   */
+  private boolean validateKey(String key)
+  {
+    Pattern pattern = Pattern.compile(KEY_PATTERN);
+    Matcher matcher = pattern.matcher(key);
+    return matcher.matches();
   }
 
   /**
@@ -53,7 +132,7 @@ public class VigenereCipher
    *
    * @return A key with the length of the param length..
    */
-  private static String extendKey(String key, int length)
+  private String extendKey(String key, int length)
   {
     int times = length / key.length();
     int rest = length % key.length();
@@ -75,46 +154,37 @@ public class VigenereCipher
    * @param key         Key for the algorithm.
    * @param encrypt     Boolean to select encrypt/decrypt
    *
-   * @return with VigenereCipher algorithm de/encrypted text.
+   * @return with VigenereCipher encrypted/decrypted text.
    */
-  private static String cipher(String plaintext, String key, boolean encrypt)
+  private String cipher(String plaintext, String key, boolean encrypt)
   {
-    final int alphabetSize = alphabet.length();
-    final int textSize = plaintext.length();
-    final int keySize = key.length();
-    final StringBuilder encryptedText = new StringBuilder(textSize);
-    for (int i = 0; i < textSize; i++)
+    StringBuilder resultText = new StringBuilder(plaintext.length());
+    for (int i = 0; i < plaintext.length(); i++)
     {
-      final char plainChar = plaintext.charAt(i);
-      final char keyChar = key.charAt(i % keySize);
-      final int plainPos = alphabet.indexOf(plainChar);
+      char plainChar = plaintext.charAt(i);
+      char keyChar = key.charAt(i % key.length());
+      int plainPos = alphabet.indexOf(plainChar);
       if (plainPos == -1)
-      {
-        // if character not in alphabet just append unshifted
-        encryptedText.append(plainChar);
-      }
+        resultText.append(plainChar);
       else
       {
         // shift it and append the new character to the result text
-        final int keyPos = alphabet.indexOf(keyChar);
+        int keyPos = alphabet.indexOf(keyChar);
         if (encrypt)
         {
-          int shiftedPos = (plainPos + keyPos) % alphabetSize;
-          encryptedText.append(alphabet.charAt(shiftedPos));
+          int shiftedPos = (plainPos + keyPos) % alphabet.length();
+          resultText.append(alphabet.charAt(shiftedPos));
         }
         else
         {
-          // decrypt the input text
+          // decrypt
           int shiftedPos = plainPos - keyPos;
           if (shiftedPos < 0)
-          {
-            // negative numbers cannot be handled with modulo
-            shiftedPos += alphabetSize;
-          }
-          encryptedText.append(alphabet.charAt(shiftedPos));
+            shiftedPos += alphabet.length();
+          resultText.append(alphabet.charAt(shiftedPos));
         }
       }
     }
-    return encryptedText.toString();
+    return resultText.toString();
   }
 }

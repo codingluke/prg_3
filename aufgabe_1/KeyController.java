@@ -4,11 +4,9 @@ import java.util.regex.Pattern;
 public class KeyController
 {
   /**
-   * The available specialchars for the
-   * keyword. At least one should be included
-   * in the key.
+   * The available specialchars for the keyword.
    */
-  private static final String SPECIALCHARS = "@#$%-+*?!:/";
+  private static final String SPECIALCHARS = "@#$%-+?!:/_¢^~`";
 
   /**
    * Regex pattern for validating keyword strength.
@@ -16,12 +14,16 @@ public class KeyController
    * - one small letter
    * - one big letter
    * - one digit
-   * - one Specialchra defined in SPECIALCHARS
+   * - one Specialchrar defined in SPECIALCHARS
    * - between 10 and 20 chars long.
    */
   private static final String KEY_PATTERN =
-    "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[" + SPECIALCHARS + "]).{10,20})";
+    "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[" + SPECIALCHARS + "])" +
+    "[A-z\\d" + SPECIALCHARS + "]{10,}+$";
 
+  /**
+   * Pivate constructor to prevent instances of this Class.
+   */
   private KeyController()
   {
   }

@@ -3,7 +3,15 @@ import java.io.FileNotFoundException;
 import java.nio.file.FileAlreadyExistsException;
 
 /**
- * Description.
+ * VigenereMain is a terminal program to encrypt and decrypt textfiles with
+ * the Vigenere-Cipher. It informs the user automatically when started with
+ * wrong arguments or missing external resources.
+ * Unexpected side actions (like overwrideing existing files) are handled
+ * with a confirmation dialog. The Vigenre-Cipher is extended with a
+ * self-thought algorithm to extend the keyword to the length of the text.
+ *
+ * More information about the Cigenere-Cipher:
+ * https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
  *
  * @author Lukas Hodel
  */
@@ -24,21 +32,6 @@ public class VigenereMain
       + "werden kann.\n";
 
   /**
-   * The manual key text, shown to the user when he executes
-   * the program with a unaccurate key.
-   */
-  private static final String MANUAL_KEY = "Das Schluesselwort ist "
-      + "fuer eine sichere Verschluesselung zu schwach.\n"
-      + "Es sollte:\n"
-      + "  - mindestens 1 Grossbuchstaben\n"
-      + "  - mindestens 1 Kleinbuchstaben\n"
-      + "  - mindestens 1 Ziffer\n"
-      + "  - mindestens 1 Sonderzeichen\n"
-      + "  - mindestens 10 Zeichen lang sein\n"
-      + "Wobei:\n"
-      + "  Sonderzeichen: " + KeyController.getSpecialchars() + "\n";
-
-  /**
    * Pivate constructor to prevent instances of this Class.
    */
 	private VigenereMain()
@@ -46,7 +39,8 @@ public class VigenereMain
 	}
 
 	/**
-   *
+   * The entrypoint of VigenereMain. Checks if all arguments are set and starts
+   * the actual process. Handles eventual Exceptions of invalid user input.
    *
    * @param args		Arguments from the user input
    */
@@ -56,14 +50,17 @@ public class VigenereMain
     {
       validateArgumentLength(args);
       process(args[0], args[1], args[2], args[3]);
-    } catch (IllegalArgumentException e)
+    }
+    catch (IllegalArgumentException e)
     {
       System.out.println(e.getMessage());
-    } catch (FileNotFoundException e)
+    }
+    catch (FileNotFoundException e)
     {
       System.out.println("Datei " + e.getMessage()
         + " nicht vorhanden!");
-    } catch (AccessControlException e)
+    }
+    catch (AccessControlException e)
     {
       System.out.println("Datei " + e.getMessage()
         + " kann nicht gelesen werden!");
@@ -72,8 +69,7 @@ public class VigenereMain
 
   /**
    * Encrypts/Decrypts sourcefile and writes content into destfile.
-   * Checks if destfile already exists. Lets user choose
-   * to override or not.
+   * Checks if destfile already exists. Lets user choose to override or not.
    *
    * @param option      Option to execute.
    * @param key         Key for excryption.
@@ -85,26 +81,27 @@ public class VigenereMain
    * @throws AccessControlException
    */
   private static void process(String option, String key,
-      String sourcefile, String destfile)
+                              String sourcefile, String destfile)
     throws IllegalArgumentException, FileNotFoundException,
-      AccessControlException
+           AccessControlException
   {
     validateOption(option);
-    validateKeyStreangth(key);
     validateSourcefile(sourcefile);
+    VigenereCipher vigenere = new VigenereCipher(key);
     printActionInfo(option, key, sourcefile);
     try
     {
       String text = FileController.readFile(sourcefile);
       String manipulatedText = "";
       if (option.equals("-v"))
-        manipulatedText = VigenereCipher.encrypt(text, key);
+        manipulatedText = vigenere.encrypt(text);
       else if (option.equals("-e"))
-        manipulatedText = VigenereCipher.decrypt(text, key);
+        manipulatedText = vigenere.decrypt(text);
       FileController.createFile(destfile);
       FileController.writeToFile(manipulatedText, destfile);
       System.out.println("Fertig.");
-    } catch (FileAlreadyExistsException e)
+    }
+    catch (FileAlreadyExistsException e)
     {
       System.out.println("Abgebrochen.");
     }
@@ -117,8 +114,8 @@ public class VigenereMain
    * @param key         Key to perform the action
    * @param sourcefile  Sourcefile to perform the action on.
    */
-  private static void printActionInfo(String option,
-    String key, String sourcefile)
+  private static void printActionInfo(String option, String key,
+                                      String sourcefile)
   {
     String action = "";
     if (option.equals("-v"))
@@ -169,19 +166,5 @@ public class VigenereMain
   {
     if (!option.equals("-e") && !option.equals("-v"))
       throw new IllegalArgumentException(MANUAL);
-  }
-
-  /**
-   * Checks if the entered key consists of an accurate
-   * combination of literals.
-   *
-   * @param key   Key to check for streangth.
-   *
-   * @throws IllegalArgumentException
-   */
-  private static void validateKeyStreangth(String key)
-  {
-    if (!KeyController.validateKeyStreangth(key))
-      throw new IllegalArgumentException(MANUAL_KEY);
   }
 }

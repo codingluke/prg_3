@@ -35,7 +35,6 @@ public class FileController
     return file.isFile();
   }
 
-
   /**
    * Creates a new File. Checks if file already exists.
    * Asks if file should be overwridden.
@@ -53,9 +52,11 @@ public class FileController
     try
     {
       Files.createFile(target);
-    } catch (FileAlreadyExistsException e) {
+    }
+    catch (FileAlreadyExistsException e) {
       askToOverrideExistingFile(e.getMessage());
-    } catch (IOException e) {
+    }
+    catch (IOException e) {
       System.out.println(e.getMessage());
     }
   }
@@ -87,7 +88,8 @@ public class FileController
     try
     {
       input = scanner.next("j|n");
-    } catch (InputMismatchException e)
+    }
+    catch (InputMismatchException e)
     {
       System.out.print("Es sind nur die Zeichen 'j' und 'n' erlaubt!: ");
       input = readYesOrNo();
@@ -143,7 +145,6 @@ public class FileController
     String text = "";
     checkReadeable(file);
     Scanner scnr = new Scanner(file);
-
     while (scnr.hasNextLine())
     {
       if (text.isEmpty())
@@ -151,7 +152,6 @@ public class FileController
       else
         text += "\n" + scnr.nextLine();
     }
-
     return text;
   }
 
@@ -164,21 +164,23 @@ public class FileController
   public static void writeToFile(String text, String filename)
   {
     Writer writer = null;
-
     try {
       FileOutputStream fos = new FileOutputStream(filename);
       OutputStreamWriter osw = new OutputStreamWriter(fos, "utf-8");
       writer = new BufferedWriter(osw);
       writer.write(text);
-    } catch (IOException e)
+    }
+    catch (IOException e)
     {
       System.out.println("Die Datei " + e.getMessage()
         + "konnte nicht geschrieben werden.");
-    } finally
+    }
+    finally
     {
       try {
         writer.close();
-      } catch (Exception e)
+      }
+      catch (Exception e)
       {
         System.out.println("Die Datei " + e.getMessage()
           + "konnte nicht geschrieben werden.");
