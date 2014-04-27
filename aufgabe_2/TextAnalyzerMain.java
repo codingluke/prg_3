@@ -97,13 +97,21 @@ public class TextAnalyzerMain
       printActions();
       action = Cin.readInt("Bitte Auswahl treffen: ", 1, 13);
       if (action == 1)
-        analyzer.analyze();
+        analyzer.printByKey();
       else if (action == 2)
-        System.out.println("Action zwei");
+      {
+        int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
+        int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
+        analyzer.printByKey(min, max);
+      }
       else if (action == 3)
-        System.out.println("Action drei");
+        analyzer.printByKey(false);
       else if (action == 4)
-        System.out.println("Action vier");
+      {
+        int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
+        int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
+        analyzer.printByKey(false, min, max);
+      }
       else if (action == 5)
         System.out.println("Action fünf");
       else if (action == 6)
