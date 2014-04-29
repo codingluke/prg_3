@@ -125,7 +125,7 @@ public class Cin
 		int value = readInt(info);
 		while (value < min || value > max)
 		{
-			System.out.printf("Eine Zahl zwischen %d und %d eingeben!\n", min, max);
+			System.out.printf("Eine Zahl zwischen %d und %d eingeben!\n\n", min, max);
 			value = readInt(info);
 		}
 		return value;

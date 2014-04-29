@@ -12,6 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Comparator;
 import java.util.Collections;
+import java.text.Collator;
 
 public class TextAnalyzer
 {
@@ -48,40 +49,58 @@ public class TextAnalyzer
       min = max;
       max = min;
     }
-    Iterator<String> iterator = getIteratorSortedByKey(asc);
-    while (iterator.hasNext()) {
-      String word = iterator.next();
+    List<String> sortedWords = sortByKeys(wordCount, asc);
+    for(String word: sortedWords)
+    {
       int count = wordCount.get(word);
       if ((min == 0 && max == 0) || (count >= min && count <= max))
         System.out.println(word + "   " + wordCount.get(word));
     }
   }
 
-  private Iterator<String> getIteratorSortedByKey(boolean asc)
+  public void printByValue(boolean asc, int min, int max)
   {
-    NavigableSet<String> sortedSet = new TreeSet<String>(wordCount.keySet());
-    Iterator<String> iterator;
-    if (asc)
-      iterator = sortedSet.iterator();
-    else
-      iterator = sortedSet.descendingIterator();
-    return iterator;
+    if (min > max)
+    {
+      int tmp = min;
+      min = max;
+      max = min;
+    }
+    List<String> sortedWords = sortByValues(wordCount, asc);
+    for(String word: sortedWords)
+    {
+      int count = wordCount.get(word);
+      if ((min == 0 && max == 0) || (count >= min && count <= max))
+        System.out.println(word + "   " + wordCount.get(word));
+    }
   }
 
   /*
    * Paramterized method to sort Map e.g. HashMap or Hashtable in Java
    * throw NullPointerException if Map contains null key
    */
-  public static <K extends Comparable,V extends Comparable> Map<K,V>
-                sortByKeys(Map<K,V> map)
+  private LinkedList<String> sortByKeys(Map<String, Integer> map, boolean asc)
   {
-      List<K> keys = new LinkedList<K>(map.keySet());
-      Collections.sort(keys);
-      Map<K,V> sortedMap = new LinkedHashMap<K,V>();
-      for(K key: keys){
-          sortedMap.put(key, map.get(key));
-      }
-      return sortedMap;
+    LinkedList<String> keys = new LinkedList<String>(map.keySet());
+    if (asc)
+    {
+      Collections.sort(keys, new Comparator<String>() {
+        @Override
+        public int compare(String key1, String key2) {
+          return Collator.getInstance().compare(key1, key2);
+        }
+      });
+    }
+    else
+    {
+      Collections.sort(keys, new Comparator<String>() {
+        @Override
+        public int compare(String key1, String key2) {
+          return Collator.getInstance().compare(key2, key1);
+        }
+      });
+    }
+    return keys;
   }
 
   /*
@@ -89,21 +108,32 @@ public class TextAnalyzer
    * throw NullPointerException if Map contains null values
    * It also sort values even if they are duplicates
    */
-  public static <K extends Comparable,V extends Comparable> Map<K,V>
-                sortByValues(Map<K,V> map)
+  private LinkedList<String> sortByValues(Map<String, Integer> map, boolean asc)
   {
-    List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
-    Collections.sort(entries, new Comparator<Map.Entry<K,V>>() {
-      @Override
-      public int compare(Entry<K, V> o1, Entry<K, V> o2) {
-          return o1.getValue().compareTo(o2.getValue());
-      }
-    });
-    Map<K,V> sortedMap = new LinkedHashMap<K,V>();
-    for(Map.Entry<K,V> entry: entries){
-        sortedMap.put(entry.getKey(), entry.getValue());
+    LinkedList<Map.Entry<String, Integer>> entries = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
+    if (asc)
+    {
+      Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
+        @Override
+        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+          return ((Integer)o1.getValue()).compareTo(o2.getValue());
+        }
+      });
     }
-    return sortedMap;
+    else
+    {
+      Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
+        @Override
+        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+          return ((Integer)o2.getValue()).compareTo(o1.getValue());
+        }
+      });
+    }
+    LinkedList<String> keys = new LinkedList<String>();
+    for(Map.Entry<String, Integer> entry: entries){
+      keys.add(entry.getKey());
+    }
+    return keys;
   }
 
   private void countWords()
@@ -120,14 +150,14 @@ public class TextAnalyzer
             count = wordCount.get(tokenizer.sval) + 1;
           wordCount.put(tokenizer.sval, count);
         }
-        else if(tokenizer.ttype == StreamTokenizer.TT_NUMBER)
-        {
-          System.out.println(tokenizer.nval);
-        }
-        else if(tokenizer.ttype == StreamTokenizer.TT_EOL)
-        {
-            System.out.println();
-        }
+        //else if(tokenizer.ttype == StreamTokenizer.TT_NUMBER)
+        //{
+          //System.out.println(tokenizer.nval);
+        //}
+        //else if(tokenizer.ttype == StreamTokenizer.TT_EOL)
+        //{
+            //System.out.println();
+        //}
       }
     }
     catch (IOException ex)
