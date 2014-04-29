@@ -23,6 +23,7 @@ public class TextAnalyzer
   {
     StringReader reader = new StringReader(text);
     tokenizer = new StreamTokenizer(reader);
+    tokenizer.ordinaryChars(',', '.');
     countWords();
   }
 
@@ -115,8 +116,13 @@ public class TextAnalyzer
     {
       Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
         @Override
-        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-          return ((Integer)o1.getValue()).compareTo(o2.getValue());
+        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
+        {
+          int compare = ((Integer)o1.getValue()).compareTo(o2.getValue());
+          if (compare == 0)
+            compare = Collator.getInstance().compare(
+              (String)o1.getKey(), (String)o2.getKey());
+          return compare;
         }
       });
     }
@@ -124,8 +130,13 @@ public class TextAnalyzer
     {
       Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
         @Override
-        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-          return ((Integer)o2.getValue()).compareTo(o1.getValue());
+        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
+        {
+          int compare = ((Integer)o2.getValue()).compareTo(o1.getValue());
+          if (compare == 0)
+            compare = Collator.getInstance().compare(
+              (String)o2.getKey(), (String)o1.getKey());
+          return compare;
         }
       });
     }
@@ -150,14 +161,6 @@ public class TextAnalyzer
             count = wordCount.get(tokenizer.sval) + 1;
           wordCount.put(tokenizer.sval, count);
         }
-        //else if(tokenizer.ttype == StreamTokenizer.TT_NUMBER)
-        //{
-          //System.out.println(tokenizer.nval);
-        //}
-        //else if(tokenizer.ttype == StreamTokenizer.TT_EOL)
-        //{
-            //System.out.println();
-        //}
       }
     }
     catch (IOException ex)
