@@ -13,72 +13,195 @@ import java.util.List;
 import java.util.Comparator;
 import java.util.Collections;
 import java.text.Collator;
+import java.io.FileReader;
 
 public class TextAnalyzer
 {
-  private StreamTokenizer tokenizer;
+  /**
+   * HashMap containing all words as key and its count as value.
+   */
   private HashMap<String, Integer> wordCount;
 
-  public TextAnalyzer(String text)
+  /**
+   * Sorted and filtered HashMap. Contains just relevant words
+   * as key and its count as value.
+   */
+  private HashMap<String, Integer> filteredAndSorted;
+
+  /**
+   * TextAnalyzer, filters the words out of a FileReader and
+   * counts the occurence of the individual words.
+   *
+   * @param filename Name of the file to Analyze.
+   */
+  public TextAnalyzer(FileReader reader)
   {
-    StringReader reader = new StringReader(text);
-    tokenizer = new StreamTokenizer(reader);
-    tokenizer.ordinaryChars(',', '.');
-    countWords();
+    countWords(reader);
   }
 
-  public void printByKey()
+  /**
+   * Gives back the size of the actual wordlist.
+   *
+   * @return size of the actual wordlist.
+   */
+  public int size()
   {
-    printByKey(true, 0, 0);
+    return getActualMap().size();
   }
 
-  public void printByKey(boolean asc)
+  /**
+   * Sorts the wordlist by key, asc with no filter.
+   */
+  public void sort()
   {
-    printByKey(asc, 0, 0);
+    sort(true, true, 0, 0);
   }
 
-  public void printByKey(int min, int max)
+  /**
+   * Sorts the wordlist by key with no filter.
+   *
+   * @param asc   Direction true = asc, false = desc.
+   */
+  public void sort(boolean asc)
   {
-    printByKey(true, min, max);
+    sort(true, asc, 0, 0);
   }
 
-  public void printByKey(boolean asc, int min, int max)
+  /**
+   * Sorts the wordlist by key, asc.
+   *
+   * @param min   Filter for min occurence of the word in the list.
+   * @param max   Filter for max occurence of the word in the list.
+   */
+  public void sort(int min, int max)
   {
+    sort(true, true, min, max);
+  }
+
+  /**
+   * Sorts the wordlist by key.
+   *
+   * @param asc   Direction true = asc, false = desc.
+   * @param min   Filter for min occurence of the word in the list.
+   * @param max   Filter for max occurence of the word in the list.
+   */
+  public void sort(boolean asc, int min, int max)
+  {
+    sort(true, asc, min, max);
+  }
+
+  /**
+   * Sorts the wordlist by values, asc, without filter.
+   */
+  public void sortByValues()
+  {
+    sort(false, true, 0, 0);
+  }
+
+  /**
+   * Sorts the wordlist by values, without filter.
+   *
+   * @param asc   Direction true = asc, false = desc.
+   */
+  public void sortByValues(boolean asc)
+  {
+    sort(false, asc, 0, 0);
+  }
+
+  /**
+   * Sorts the wordlist by value, asc.
+   *
+   * @param min   Filter for min occurence of the word in the list.
+   * @param max   Filter for max occurence of the word in the list.
+   */
+  public void sortByValues(int min, int max)
+  {
+    sort(false, true, min, max);
+  }
+
+  /**
+   * Sorts the wordlist by value (word occurence).
+   *
+   * @param asc   Direction true = asc, false = desc.
+   * @param min   Filter for min occurence of the word in the list.
+   * @param max   Filter for max occurence of the word in the list.
+   */
+  public void sortByValues(boolean asc, int min, int max)
+  {
+    sort(false, asc, min, max);
+  }
+
+  /**
+   * Prints the actual wordlist line by line to the terminal.
+   * Format: "word1                   1\n"
+   */
+  public void print()
+  {
+    Iterator it = getActualMap().entrySet().iterator();
+    while (it.hasNext()) {
+      Entry pairs = (Entry)it.next();
+      String format = "%1$-25s%2$d%n";
+      System.out.format(format, pairs.getKey(), pairs.getValue());
+    }
+  }
+
+  /**
+   * Returns actual wordlist as a concatinated string.
+   * Format: "word1                   1\nword2                   10\n"
+   *
+   * @return actual wordlist concatinated to one String.
+   */
+  @Override
+  public String toString()
+  {
+    String result = "";
+    Iterator it = getActualMap().entrySet().iterator();
+    while (it.hasNext()) {
+      Entry pairs = (Entry)it.next();
+      String format = "%1$-25s%2$d%n";
+      result += String.format(format, pairs.getKey(), pairs.getValue());
+    }
+    return result;
+  }
+
+  /**
+   * Sorts and filters wordlist.
+   *
+   * @param byKey   Attribute to sort, true = byKey, false = byValue.
+   * @param asc     Sortdirection true = asc, false = desc.
+   * @param min     Filter for min occurence of the word in the list.
+   * @param max     Filter for max occurence of the word in the list.
+   */
+  private void sort(boolean byKey, boolean asc, int min, int max)
+  {
+    filteredAndSorted = new LinkedHashMap<String, Integer>();
+    LinkedList<String> sortedKeys = new LinkedList<String>();
     if (min > max)
     {
       int tmp = min;
       min = max;
-      max = min;
+      max = tmp;
     }
-    List<String> sortedWords = sortByKeys(wordCount, asc);
-    for(String word: sortedWords)
+    if (byKey)
+      sortedKeys = sortByKeys(wordCount, asc);
+    else
+      sortedKeys = sortByValues(wordCount, asc);
+    for(String key: sortedKeys)
     {
-      int count = wordCount.get(word);
+      int count = wordCount.get(key);
       if ((min == 0 && max == 0) || (count >= min && count <= max))
-        System.out.println(word + "   " + wordCount.get(word));
+        filteredAndSorted.put(key, count);
     }
   }
 
-  public void printByValue(boolean asc, int min, int max)
-  {
-    if (min > max)
-    {
-      int tmp = min;
-      min = max;
-      max = min;
-    }
-    List<String> sortedWords = sortByValues(wordCount, asc);
-    for(String word: sortedWords)
-    {
-      int count = wordCount.get(word);
-      if ((min == 0 && max == 0) || (count >= min && count <= max))
-        System.out.println(word + "   " + wordCount.get(word));
-    }
-  }
-
-  /*
-   * Paramterized method to sort Map e.g. HashMap or Hashtable in Java
-   * throw NullPointerException if Map contains null key
+  /**
+   * Sorts a Map by its keys and gives back the sorted keys as a
+   * LinkedList.
+   *
+   * @param map   The Map to be sorted.
+   * @param asc   Direction to be sorted. true = asc, flase = desc.
+   *
+   * @return Sorted LinkedList containing the keys (words).
    */
   private LinkedList<String> sortByKeys(Map<String, Integer> map, boolean asc)
   {
@@ -104,21 +227,26 @@ public class TextAnalyzer
     return keys;
   }
 
-  /*
-   * Java method to sort Map in Java by value e.g. HashMap or Hashtable
-   * throw NullPointerException if Map contains null values
-   * It also sort values even if they are duplicates
+  /**
+   * Sorts a Map by its value and gives back the sorted keys as a
+   * LinkedList.
+   *
+   * @param map   The Map to be sorted.
+   * @param asc   Direction to be sorted. true = asc, flase = desc.
+   *
+   * @return Sorted LinkedList containing the keys (words).
    */
   private LinkedList<String> sortByValues(Map<String, Integer> map, boolean asc)
   {
-    LinkedList<Map.Entry<String, Integer>> entries = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
+    LinkedList<Map.Entry<String, Integer>> entries =
+      new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
     if (asc)
     {
       Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
         @Override
         public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
         {
-          int compare = ((Integer)o1.getValue()).compareTo(o2.getValue());
+          int compare = ((Integer)o2.getValue()).compareTo(o1.getValue());
           if (compare == 0)
             compare = Collator.getInstance().compare(
               (String)o1.getKey(), (String)o2.getKey());
@@ -132,7 +260,7 @@ public class TextAnalyzer
         @Override
         public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
         {
-          int compare = ((Integer)o2.getValue()).compareTo(o1.getValue());
+          int compare = ((Integer)o1.getValue()).compareTo(o2.getValue());
           if (compare == 0)
             compare = Collator.getInstance().compare(
               (String)o2.getKey(), (String)o1.getKey());
@@ -141,14 +269,37 @@ public class TextAnalyzer
       });
     }
     LinkedList<String> keys = new LinkedList<String>();
-    for(Map.Entry<String, Integer> entry: entries){
+    for(Map.Entry<String, Integer> entry: entries)
       keys.add(entry.getKey());
-    }
     return keys;
   }
 
-  private void countWords()
+  /**
+   * Returns current wordlist.
+   *
+   * @return current wordlist.
+   */
+  private HashMap<String, Integer> getActualMap()
   {
+    HashMap<String, Integer> actualMap = filteredAndSorted;
+    if (actualMap == null)
+      actualMap = wordCount;
+    return actualMap;
+  }
+
+  /**
+   * Filters the words out of a FileReader and counts the occurence of the
+   * individual word. A word is at least two chars long and contains no
+   * special characters like (-,.«»§). Words are threated case-sensitive.
+   *
+   * @param reader  FileReader containing the textfile.
+   */
+  private void countWords(FileReader reader)
+  {
+    StreamTokenizer tokenizer = new StreamTokenizer(reader);
+    tokenizer.ordinaryChars(',', '.');
+    tokenizer.ordinaryChars('«', '»');
+    tokenizer.ordinaryChars('§', '§');
     wordCount = new HashMap<String, Integer>();
     try
     {
@@ -159,7 +310,8 @@ public class TextAnalyzer
           int count = 1;
           if (wordCount.containsKey(tokenizer.sval))
             count = wordCount.get(tokenizer.sval) + 1;
-          wordCount.put(tokenizer.sval, count);
+          if (tokenizer.sval.length() > 1)
+            wordCount.put(tokenizer.sval, count);
         }
       }
     }

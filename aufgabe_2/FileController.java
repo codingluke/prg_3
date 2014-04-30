@@ -130,6 +130,29 @@ public class FileController
       throw new AccessControlException(file.getName());
   }
 
+  public static void showFile(String filename)
+  {
+    try
+    {
+      System.out.println(filename);
+      File file = new File(filename);
+      checkReadeable(file);
+      Scanner scnr = new Scanner(file);
+      while (scnr.hasNextLine())
+        System.out.println(scnr.nextLine());
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("Datei " + e.getMessage()
+        + " nicht vorhanden!");
+    }
+    catch (AccessControlException e)
+    {
+      System.out.println("Datei " + e.getMessage()
+        + " kann nicht gelesen werden!");
+    }
+  }
+
   /**
    * Reads a textfile according the filename
    * and returns its contetn.

@@ -1,8 +1,14 @@
 import java.security.AccessControlException;
 import java.io.FileNotFoundException;
 import java.nio.file.FileAlreadyExistsException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.io.FileReader;
 
 /**
+ * TODO : Cleanup main!!
+ *
  * VigenereMain is a terminal program to encrypt and decrypt textfiles with
  * the Vigenere-Cipher. It informs the user automatically when started with
  * wrong arguments or missing external resources.
@@ -58,9 +64,9 @@ public class TextAnalyzerMain
     boolean state = false;
     try
     {
-      String text = FileController.readFile(filename,
-          filename + " wird eingelesen...");
-      analyzer = new TextAnalyzer(text);
+      FileController.checkReadeable(filename);
+      FileReader reader = new FileReader(filename);
+      analyzer = new TextAnalyzer(reader);
       state = true;
     }
     catch (FileNotFoundException e)
@@ -97,45 +103,78 @@ public class TextAnalyzerMain
       printActions();
       action = Cin.readInt("Bitte Auswahl treffen: ", 1, 13);
       if (action == 1)
-        analyzer.printByKey();
+      {
+        analyzer.sort();
+        analyzer.print();
+      }
       else if (action == 2)
       {
         int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
         int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.printByKey(min, max);
+        analyzer.sort(min, max);
+        analyzer.print();
       }
       else if (action == 3)
-        analyzer.printByKey(false);
+      {
+        analyzer.sort(false);
+        analyzer.print();
+      }
       else if (action == 4)
       {
         int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
         int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.printByKey(false, min, max);
+        analyzer.sort(false, min, max);
+        analyzer.print();
       }
       else if (action == 5)
-        analyzer.printByValue(true, 0, 0);
+      {
+        analyzer.sortByValues();
+        analyzer.print();
+      }
       else if (action == 6)
       {
         int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
         int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.printByValue(true, min, max);
+        analyzer.sortByValues(min, max);
+        analyzer.print();
       }
       else if (action == 7)
-        analyzer.printByValue(false, 0, 0);
+      {
+        analyzer.sortByValues(false);
+        analyzer.print();
+      }
       else if (action == 8)
       {
         int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
         int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.printByValue(false, min, max);
+        analyzer.sortByValues(false, min, max);
+        analyzer.print();
       }
       else if (action == 9)
-        System.out.println("Action zwei");
+        System.out.println("Die Liste enthaelt " + analyzer.size() + " Woerter");
       else if (action == 10)
-        System.out.println("Action zwei");
+      {
+        String filename = Cin.readString("Bitte filename angeben: ");
+        try
+        {
+          FileController.createFile(filename);
+          FileController.writeToFile(analyzer.toString(), filename);
+        }
+        catch (FileAlreadyExistsException e)
+        {
+          System.out.println("Abgebrochen.");
+        }
+      }
       else if (action == 11)
-        loadFileIntoAnalyzer("newfile");
+      {
+        String filename = Cin.readString("Bitte filename angeben: ");
+        loadFileIntoAnalyzer(filename);
+      }
       else if (action == 12)
-        System.out.println("Action zwei");
+      {
+        String filename = Cin.readString("Bitte filename angeben: ");
+        FileController.showFile(filename);
+      }
       else if (action == 13)
         System.out.println("Byebye");
     } while (action != 13);
