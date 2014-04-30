@@ -26,7 +26,7 @@ public class TextAnalyzer
    * Sorted and filtered HashMap. Contains just relevant words
    * as key and its count as value.
    */
-  private HashMap<String, Integer> filteredAndSorted;
+  private HashMap<String, Integer> currentMap;
 
   /**
    * TextAnalyzer, filters the words out of a FileReader and
@@ -46,7 +46,7 @@ public class TextAnalyzer
    */
   public int size()
   {
-    return getActualMap().size();
+    return getCurrentMap().size();
   }
 
   /**
@@ -137,7 +137,7 @@ public class TextAnalyzer
    */
   public void print()
   {
-    Iterator it = getActualMap().entrySet().iterator();
+    Iterator it = getCurrentMap().entrySet().iterator();
     while (it.hasNext()) {
       Entry pairs = (Entry)it.next();
       String format = "%1$-25s%2$d%n";
@@ -155,7 +155,7 @@ public class TextAnalyzer
   public String toString()
   {
     String result = "";
-    Iterator it = getActualMap().entrySet().iterator();
+    Iterator it = getCurrentMap().entrySet().iterator();
     while (it.hasNext()) {
       Entry pairs = (Entry)it.next();
       String format = "%1$-25s%2$d%n";
@@ -174,7 +174,7 @@ public class TextAnalyzer
    */
   private void sort(boolean byKey, boolean asc, int min, int max)
   {
-    filteredAndSorted = new LinkedHashMap<String, Integer>();
+    currentMap = new LinkedHashMap<String, Integer>();
     LinkedList<String> sortedKeys = new LinkedList<String>();
     if (min > max)
     {
@@ -190,7 +190,7 @@ public class TextAnalyzer
     {
       int count = wordCount.get(key);
       if ((min == 0 && max == 0) || (count >= min && count <= max))
-        filteredAndSorted.put(key, count);
+        currentMap.put(key, count);
     }
   }
 
@@ -198,76 +198,61 @@ public class TextAnalyzer
    * Sorts a Map by its keys and gives back the sorted keys as a
    * LinkedList.
    *
-   * @param map   The Map to be sorted.
+   * @param words The Map to be sorted.
    * @param asc   Direction to be sorted. true = asc, flase = desc.
    *
    * @return Sorted LinkedList containing the keys (words).
    */
-  private LinkedList<String> sortByKeys(Map<String, Integer> map, boolean asc)
+  private LinkedList<String> sortByKeys(HashMap<String, Integer> words,
+                                        final boolean asc)
   {
-    LinkedList<String> keys = new LinkedList<String>(map.keySet());
-    if (asc)
-    {
-      Collections.sort(keys, new Comparator<String>() {
-        @Override
-        public int compare(String key1, String key2) {
-          return Collator.getInstance().compare(key1, key2);
-        }
-      });
-    }
-    else
-    {
-      Collections.sort(keys, new Comparator<String>() {
-        @Override
-        public int compare(String key1, String key2) {
-          return Collator.getInstance().compare(key2, key1);
-        }
-      });
-    }
+    LinkedList<String> keys = new LinkedList<String>(words.keySet());
+    Collections.sort(keys, new Comparator<String>() {
+      @Override
+      public int compare(String key1, String key2) {
+        int compare = 0;
+        if (asc)
+          compare = Collator.getInstance().compare(key1, key2);
+        else
+          compare = Collator.getInstance().compare(key2, key1);
+        return compare;
+      }
+    });
     return keys;
   }
 
   /**
    * Sorts a Map by its value and gives back the sorted keys as a
-   * LinkedList.
+   * LinkedList. Overrides method compare in the ananoumous class Comperator
+   * used to define the sort direction.
    *
    * @param map   The Map to be sorted.
    * @param asc   Direction to be sorted. true = asc, flase = desc.
    *
    * @return Sorted LinkedList containing the keys (words).
    */
-  private LinkedList<String> sortByValues(Map<String, Integer> map, boolean asc)
+  private LinkedList<String> sortByValues(HashMap<String, Integer> words,
+                                          final boolean asc)
   {
-    LinkedList<Map.Entry<String, Integer>> entries =
-      new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
-    if (asc)
-    {
-      Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
-        @Override
-        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
+    LinkedList<Entry<String, Integer>> entries =
+      new LinkedList<Entry<String, Integer>>(words.entrySet());
+    Collections.sort(entries, new Comparator<Entry<String, Integer>>() {
+      @Override
+      public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
+      {
+        if (!asc)
         {
-          int compare = ((Integer)o2.getValue()).compareTo(o1.getValue());
-          if (compare == 0)
-            compare = Collator.getInstance().compare(
-              (String)o1.getKey(), (String)o2.getKey());
-          return compare;
+          Entry<String, Integer> tmp = o1;
+          o1 = o2;
+          o2 = tmp;
         }
-      });
-    }
-    else
-    {
-      Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
-        @Override
-        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
-        {
-          int compare = ((Integer)o1.getValue()).compareTo(o2.getValue());
-          if (compare == 0)
-            compare = Collator.getInstance().compare(
-              (String)o2.getKey(), (String)o1.getKey());
-          return compare;
-        }
-      });
-    }
+        int compare = ((Integer)o2.getValue()).compareTo(o1.getValue());
+        if (compare == 0)
+          compare = Collator.getInstance().compare(
+            (String)o1.getKey(), (String)o2.getKey());
+        return compare;
+      }
+    });
     LinkedList<String> keys = new LinkedList<String>();
     for(Map.Entry<String, Integer> entry: entries)
       keys.add(entry.getKey());
@@ -279,9 +264,9 @@ public class TextAnalyzer
    *
    * @return current wordlist.
    */
-  private HashMap<String, Integer> getActualMap()
+  private HashMap<String, Integer> getCurrentMap()
   {
-    HashMap<String, Integer> actualMap = filteredAndSorted;
+    HashMap<String, Integer> actualMap = currentMap;
     if (actualMap == null)
       actualMap = wordCount;
     return actualMap;
