@@ -6,7 +6,7 @@ public class VigenereCipher
   /**
    * The available specialchars for the keyword.
    */
-  private static final String SPECIALCHARS = "@#$%+?!:/_¢^~`=.-&";
+  private static final String SPECIALCHARS = "@#$%+?!:/_¢^~`=.-";
 
   /**
    * Regex pattern for validating keyword strength.
@@ -27,7 +27,7 @@ public class VigenereCipher
                                        + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                        + "0123456789"
                                        + "\n\t\\\" &',|.;*"
-                                       + "@#$%-+?!:/_¢^~`=."
+				       + "@#$%+?!:/_¢^~`=-"
                                        + "äüöÄÜÖÈè";
 
   /**
@@ -180,3 +180,4 @@ public class VigenereCipher
     return resultText.toString();
   }
 }
+

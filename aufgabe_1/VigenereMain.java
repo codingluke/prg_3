@@ -38,14 +38,14 @@ public class VigenereMain
 	{
 	}
 
-	/**
+	/**Dateiende.
    * The entrypoint of VigenereMain. Checks if all arguments are set and starts
    * the actual process. Handles eventual Exceptions of invalid user input.
    *
    * @param args		Arguments from the user input
    */
-	public static void main(String[] args)
-	{
+   public static void main(String[] args)
+   {
     try
     {
       validateArgumentLength(args);
@@ -168,3 +168,4 @@ public class VigenereMain
       throw new IllegalArgumentException(MANUAL);
   }
 }
+

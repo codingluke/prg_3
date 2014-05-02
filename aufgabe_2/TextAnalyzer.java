@@ -71,7 +71,7 @@ public class TextAnalyzer
       sortedKeys = sortByKeys(wordCount, asc);
     else
       sortedKeys = sortByValues(wordCount, asc);
-    for(String key: sortedKeys)
+    for (String key: sortedKeys)
     {
       int count = wordCount.get(key);
       if ((min == 0 && max == 0) || (count >= min && count <= max))
