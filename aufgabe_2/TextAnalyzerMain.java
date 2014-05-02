@@ -7,17 +7,12 @@ import java.util.Map.Entry;
 import java.io.FileReader;
 
 /**
- * TODO : Cleanup main!!
- *
- * VigenereMain is a terminal program to encrypt and decrypt textfiles with
- * the Vigenere-Cipher. It informs the user automatically when started with
- * wrong arguments or missing external resources.
- * Unexpected side actions (like overwrideing existing files) are handled
- * with a confirmation dialog. The Vigenre-Cipher is extended with a
- * self-thought algorithm to extend the keyword to the length of the text.
- *
- * More information about the Cigenere-Cipher:
- * https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+ * TextAnalyzerMain is a program to analyze a textfile. It filters out all the
+ * words and counts their occurence. It gives the ability to sort the wordlist
+ * ascending or descending Alphabetically or by their occurence. It is
+ * also possible to filter out words which occour in a certain interval.
+ * The manipulated list can be saved to a file. Input and Output Exceptions gets
+ * handles so that datalost should be prevented.
  *
  * @author Lukas Hodel
  */
