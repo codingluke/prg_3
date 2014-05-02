@@ -1,6 +1,7 @@
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.File;
+import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -132,25 +133,31 @@ public class FileController
 
   public static void showFile(String filename)
   {
-    try
+    FileReader reader = openFile(filename);
+    if (reader != null)
     {
-      System.out.println(filename);
-      File file = new File(filename);
-      checkReadeable(file);
-      Scanner scnr = new Scanner(file);
+      Scanner scnr = new Scanner(reader);
       while (scnr.hasNextLine())
         System.out.println(scnr.nextLine());
     }
+  }
+
+  public static FileReader openFile(String filename)
+  {
+    FileReader reader = null;
+    try
+    {
+      reader = new FileReader(filename);
+    }
     catch (FileNotFoundException e)
     {
-      System.out.println("Datei " + e.getMessage()
-        + " nicht vorhanden!");
+      System.out.println("Datei " + filename + " nicht vorhanden!");
     }
     catch (AccessControlException e)
     {
-      System.out.println("Datei " + e.getMessage()
-        + " kann nicht gelesen werden!");
+      System.out.println("Datei " + filename + " kann nicht gelesen werden!");
     }
+    return reader;
   }
 
   /**

@@ -44,7 +44,7 @@ public class TextAnalyzer
    *
    * @return size of the actual wordlist.
    */
-  public int size()
+  public int currentSize()
   {
     return getCurrentMap().size();
   }
@@ -129,20 +129,6 @@ public class TextAnalyzer
   public void sortByValues(boolean asc, int min, int max)
   {
     sort(false, asc, min, max);
-  }
-
-  /**
-   * Prints the actual wordlist line by line to the terminal.
-   * Format: "word1                   1\n"
-   */
-  public void print()
-  {
-    Iterator it = getCurrentMap().entrySet().iterator();
-    while (it.hasNext()) {
-      Entry pairs = (Entry)it.next();
-      String format = "%1$-25s%2$d%n";
-      System.out.format(format, pairs.getKey(), pairs.getValue());
-    }
   }
 
   /**
@@ -240,13 +226,11 @@ public class TextAnalyzer
       @Override
       public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2)
       {
-        if (!asc)
-        {
-          Entry<String, Integer> tmp = o1;
-          o1 = o2;
-          o2 = tmp;
-        }
-        int compare = ((Integer)o2.getValue()).compareTo(o1.getValue());
+        int compare = 0;
+        if (asc)
+          compare = ((Integer)o1.getValue()).compareTo(o2.getValue());
+        else
+          compare = ((Integer)o2.getValue()).compareTo(o1.getValue());
         if (compare == 0)
           compare = Collator.getInstance().compare(
             (String)o1.getKey(), (String)o2.getKey());
@@ -264,7 +248,7 @@ public class TextAnalyzer
    *
    * @return current wordlist.
    */
-  private HashMap<String, Integer> getCurrentMap()
+  public HashMap<String, Integer> getCurrentMap()
   {
     HashMap<String, Integer> actualMap = currentMap;
     if (actualMap == null)

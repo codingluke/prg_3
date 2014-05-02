@@ -62,22 +62,11 @@ public class TextAnalyzerMain
   private static boolean loadFileIntoAnalyzer(String filename)
   {
     boolean state = false;
-    try
+    FileReader reader = FileController.openFile(filename);
+    if (reader != null)
     {
-      FileController.checkReadeable(filename);
-      FileReader reader = new FileReader(filename);
       analyzer = new TextAnalyzer(reader);
       state = true;
-    }
-    catch (FileNotFoundException e)
-    {
-      System.out.println("Datei " + e.getMessage()
-        + " nicht vorhanden!");
-    }
-    catch (AccessControlException e)
-    {
-      System.out.println("Datei " + e.getMessage()
-        + " kann nicht gelesen werden!");
     }
     return state;
   }
@@ -101,83 +90,104 @@ public class TextAnalyzerMain
     do
     {
       printActions();
-      action = Cin.readInt("Bitte Auswahl treffen: ", 1, 13);
+      action = ConsoleInput.readInt("Bitte Auswahl treffen: ", 1, 13);
       if (action == 1)
       {
         analyzer.sort();
-        analyzer.print();
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 2)
       {
-        int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
+        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
+        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
         analyzer.sort(min, max);
-        analyzer.print();
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 3)
       {
         analyzer.sort(false);
-        analyzer.print();
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 4)
       {
-        int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
+        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
+        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
         analyzer.sort(false, min, max);
-        analyzer.print();
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 5)
       {
-        analyzer.sortByValues();
-        analyzer.print();
+        analyzer.sortByValues(false);
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 6)
       {
-        int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.sortByValues(min, max);
-        analyzer.print();
+        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
+        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
+        analyzer.sortByValues(false, min, max);
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 7)
       {
-        analyzer.sortByValues(false);
-        analyzer.print();
+        analyzer.sortByValues();
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 8)
       {
-        int min = Cin.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = Cin.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.sortByValues(false, min, max);
-        analyzer.print();
+        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
+        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
+        analyzer.sortByValues(min, max);
+        printWordList(analyzer.getCurrentMap());
       }
       else if (action == 9)
-        System.out.println("Die Liste enthaelt " + analyzer.size() + " Woerter");
+        System.out.println("Die Liste enthaelt "
+            + analyzer.currentSize() + " Woerter");
       else if (action == 10)
       {
-        String filename = Cin.readString("Bitte filename angeben: ");
-        try
-        {
-          FileController.createFile(filename);
-          FileController.writeToFile(analyzer.toString(), filename);
-        }
-        catch (FileAlreadyExistsException e)
-        {
-          System.out.println("Abgebrochen.");
-        }
+        String filename = ConsoleInput.readString("Bitte filename angeben: ");
+        writeWordList(filename);
       }
       else if (action == 11)
       {
-        String filename = Cin.readString("Bitte filename angeben: ");
+        String filename = ConsoleInput.readString("Bitte filename angeben: ");
         loadFileIntoAnalyzer(filename);
       }
       else if (action == 12)
       {
-        String filename = Cin.readString("Bitte filename angeben: ");
+        String filename = ConsoleInput.readString("Bitte filename angeben: ");
         FileController.showFile(filename);
       }
       else if (action == 13)
         System.out.println("Byebye");
     } while (action != 13);
+  }
+
+
+  /**
+   * Prints the actual wordlist line by line to the terminal.
+   * Format: "word1                   1\n"
+   */
+  private static void writeWordList(String filename)
+  {
+    try
+    {
+      FileController.createFile(filename);
+      FileController.writeToFile(analyzer.toString(), filename);
+    }
+    catch (FileAlreadyExistsException e)
+    {
+      System.out.println("Abgebrochen.");
+    }
+  }
+
+  private static void printWordList(HashMap wordList)
+  {
+    Iterator it = wordList.entrySet().iterator();
+    while (it.hasNext()) {
+      Entry pairs = (Entry)it.next();
+      String format = "%1$-25s%2$d%n";
+      System.out.format(format, pairs.getKey(), pairs.getValue());
+    }
   }
 
   /**

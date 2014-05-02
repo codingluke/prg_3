@@ -17,36 +17,28 @@ public class VigenereCipher
    * - one Specialchrar defined in SPECIALCHARS
    * - between 10 and 20 chars long.
    */
-  private static final String KEY_PATTERN =
-    "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[" + SPECIALCHARS + "])" +
-    "[A-z\\d" + SPECIALCHARS + "]{10,}+$";
+  private static final String KEY_PATTERN = "[A-z\\d" + SPECIALCHARS
+                                          + "]+$";
 
   /**
    * Alphabet for shifting. Can be extended.
    */
   private static final String alphabet = "abcdefghijklmnopqrstuvwxyz"
-                                 + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                                 + "0123456789"
-                                 + "\n\t\\\" &',|.;*"
-                                 + "@#$%-+?!:/_¢^~`=."
-                                 + "äüöÄÜÖÈè";
+                                       + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                       + "0123456789"
+                                       + "\n\t\\\" &',|.;*"
+                                       + "@#$%-+?!:/_¢^~`=."
+                                       + "äüöÄÜÖÈè";
 
   /**
    * The manual key text, shown to the user when he executes
    * the program with a unaccurate key.
    */
-  private static final String MANUAL_KEY = "Das Schluesselwort ist "
-      + "fuer eine sichere Verschluesselung zu schwach. Oder es wurden"
-      + "ungueltige Zeichen verwendet.\n"
-      + "Es sollte:\n"
-      + "  - mindestens 1 Grossbuchstaben\n"
-      + "  - mindestens 1 Kleinbuchstaben\n"
-      + "  - mindestens 1 Ziffer\n"
-      + "  - mindestens 1 Sonderzeichen\n"
-      + "  - mindestens 10 Zeichen lang sein\n"
-      + "Wobei:\n"
-      + "  Gueltige Sonderzeichen: " + SPECIALCHARS + "\n";
-
+  private static final String MANUAL_KEY = "Für das Schluesselwort wurden"
+                                         + "ungueltige Zeichen verwendet.\n"
+                                         + "Wobei:\n"
+                                         + "  Gueltige Sonderzeichen: "
+                                         + SPECIALCHARS + "\n";
 
   /**
    * Key for the encrytion/decryption.
