@@ -30,6 +30,7 @@ public class TextAnalyzerMain
   private static final String MANUAL = "Benutzung: "
     + "java TextAnalyzerMain <textdatei>";
 
+  /** Object responsible for text analyzation. */
   private static TextAnalyzer analyzer;
 
   /**
@@ -59,6 +60,16 @@ public class TextAnalyzerMain
     }
 	}
 
+  /**
+   * Reads a file with FileController and instantiates a new TextAnalyzer
+   * with this file. When everything was successfull it returns true,
+   * otherwise false. The file handling completely delegated to the
+   * class FileController as method openFile.
+   *
+   * @param filename  The filename of the file to load into the TextAnalyzer.
+   *
+   * @return Boolean true or false if successfull or not.
+   */
   private static boolean loadFileIntoAnalyzer(String filename)
   {
     boolean state = false;
@@ -69,6 +80,16 @@ public class TextAnalyzerMain
       state = true;
     }
     return state;
+  }
+
+  /**
+   * Reads filename from user input and reads afterward the file with
+   * the given filename into the analyzer.
+   */
+  private static void loadFileIntoAnalyzer()
+  {
+    String filename = ConsoleInput.readString("Bitte filename angeben: ");
+    loadFileIntoAnalyzer(filename);
   }
 
   /**
@@ -92,83 +113,107 @@ public class TextAnalyzerMain
       printActions();
       action = ConsoleInput.readInt("Bitte Auswahl treffen: ", 1, 13);
       if (action == 1)
-      {
-        analyzer.sort();
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrint(true);
       else if (action == 2)
-      {
-        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.sort(min, max);
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrintAscInterval(true);
       else if (action == 3)
-      {
-        analyzer.sort(false);
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrintDesc(true);
       else if (action == 4)
-      {
-        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.sort(false, min, max);
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrintDescInterval(true);
       else if (action == 5)
-      {
-        analyzer.sortByValues(false);
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrintDesc(false);
       else if (action == 6)
-      {
-        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.sortByValues(false, min, max);
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrintDescInterval(false);
       else if (action == 7)
-      {
-        analyzer.sortByValues();
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrintAsc(false);
       else if (action == 8)
-      {
-        int min = ConsoleInput.readInt("Bitte min bestimmen: ", 1, 9999999);
-        int max = ConsoleInput.readInt("Bitte max bestimmen: ", 1, 9999999);
-        analyzer.sortByValues(min, max);
-        printWordList(analyzer.getCurrentMap());
-      }
+        sortAndPrintAscInterval(false);
       else if (action == 9)
-        System.out.println("Die Liste enthaelt "
-            + analyzer.currentSize() + " Woerter");
+        printWordCount();
       else if (action == 10)
-      {
-        String filename = ConsoleInput.readString("Bitte filename angeben: ");
-        writeWordList(filename);
-      }
+        writeWordList();
       else if (action == 11)
-      {
-        String filename = ConsoleInput.readString("Bitte filename angeben: ");
-        loadFileIntoAnalyzer(filename);
-      }
+        loadFileIntoAnalyzer();
       else if (action == 12)
-      {
-        String filename = ConsoleInput.readString("Bitte filename angeben: ");
-        FileController.showFile(filename);
-      }
+        showFile();
       else if (action == 13)
         System.out.println("Byebye");
     } while (action != 13);
   }
 
+  /**
+   * Sorts the wordlist ascending by key or by value and prints the
+   * list to the console. Key is the Words, value is the word count.
+   *
+   * @param byKey  Selector to sort by key or value. true = key, false = value.
+   */
+  private static void sortAndPrint(boolean byKey)
+  {
+    if (byKey)
+      analyzer.sort(asc);
+    else
+      analyzer.sortByValues(asc);
+    printWordList(analyzer.getCurrentWordMap());
+  }
+
+  /**
+   * Sorts the wordlist ascending by key or by value, filters the words by a
+   * given interval and prints the list to the console. Keys are words, values
+   * are the word-counts. It prompts the user to enter the interval to filter
+   * the words.
+   *
+   * @param byKey  Selector to sort by key or value. true = key, false = value.
+   */
+  private static void sortAndPrintAscInterval(boolean byKey)
+  {
+    int min = ConsoleInput.readInt("Bitte min bestimmen: ");
+    int max = ConsoleInput.readInt("Bitte max bestimmen: ");
+    if (byKey)
+      analyzer.sort(min, max);
+    else
+      analyzer.sortByValues(min, max);
+    printWordList(analyzer.getCurrentWordMap());
+  }
+
+  private static void sortAndPrintDesc(boolean byKey)
+  {
+    if (byKey)
+      analyzer.sort(false);
+    else
+      analyzer.sortByValues(false);
+    printWordList(analyzer.getCurrentWordMap());
+  }
+
+  private static void sortAndPrintDescInterval(boolean byKey)
+  {
+    int min = ConsoleInput.readInt("Bitte min bestimmen: ");
+    int max = ConsoleInput.readInt("Bitte max bestimmen: ");
+    if (byKey)
+      analyzer.sort(false, min, max);
+    else
+      analyzer.sortByValues(false, min, max);
+    printWordList(analyzer.getCurrentWordMap());
+  }
+
+  private static void printWordCount()
+  {
+    System.out.println("Die Liste enthaelt " + analyzer.currentSize()
+                       + " Woerter");
+  }
+
+  private static void showFile()
+  {
+    String filename = ConsoleInput.readString("Bitte filename angeben: ");
+    FileController.showFile(filename);
+  }
 
   /**
    * Prints the actual wordlist line by line to the terminal.
    * Format: "word1                   1\n"
    */
-  private static void writeWordList(String filename)
+  private static void writeWordList()
   {
+    String filename = ConsoleInput.readString("Bitte filename angeben: ");
     try
     {
       FileController.createFile(filename);

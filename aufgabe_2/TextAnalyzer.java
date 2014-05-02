@@ -26,7 +26,7 @@ public class TextAnalyzer
    * Sorted and filtered HashMap. Contains just relevant words
    * as key and its count as value.
    */
-  private HashMap<String, Integer> currentMap;
+  private HashMap<String, Integer> currentWordMap;
 
   /**
    * TextAnalyzer, filters the words out of a FileReader and
@@ -46,7 +46,7 @@ public class TextAnalyzer
    */
   public int currentSize()
   {
-    return getCurrentMap().size();
+    return getCurrentWordMap().size();
   }
 
   /**
@@ -141,7 +141,7 @@ public class TextAnalyzer
   public String toString()
   {
     String result = "";
-    Iterator it = getCurrentMap().entrySet().iterator();
+    Iterator it = getCurrentWordMap().entrySet().iterator();
     while (it.hasNext()) {
       Entry pairs = (Entry)it.next();
       String format = "%1$-25s%2$d%n";
@@ -160,7 +160,7 @@ public class TextAnalyzer
    */
   private void sort(boolean byKey, boolean asc, int min, int max)
   {
-    currentMap = new LinkedHashMap<String, Integer>();
+    currentWordMap = new LinkedHashMap<String, Integer>();
     LinkedList<String> sortedKeys = new LinkedList<String>();
     if (min > max)
     {
@@ -176,7 +176,7 @@ public class TextAnalyzer
     {
       int count = wordCount.get(key);
       if ((min == 0 && max == 0) || (count >= min && count <= max))
-        currentMap.put(key, count);
+        currentWordMap.put(key, count);
     }
   }
 
@@ -248,9 +248,9 @@ public class TextAnalyzer
    *
    * @return current wordlist.
    */
-  public HashMap<String, Integer> getCurrentMap()
+  public HashMap<String, Integer> getCurrentWordMap()
   {
-    HashMap<String, Integer> actualMap = currentMap;
+    HashMap<String, Integer> actualMap = currentWordMap;
     if (actualMap == null)
       actualMap = wordCount;
     return actualMap;
