@@ -6,7 +6,7 @@ public class VigenereCipher
   /**
    * The available specialchars for the keyword.
    */
-  private static final String SPECIALCHARS = "@#$%+?!:/_¢^~`=.-";
+  private static final String SPECIALCHARS = "@#$%+?!:/_¢^~`=.-&";
 
   /**
    * Regex pattern for validating keyword strength.
