@@ -291,7 +291,7 @@ public class TextAnalyzerMain
   private static void printActions()
 
   {
-    String info = "(1)  Woerter aufsteigend alphabetisch sortiert\n";
+    String info = "\n\n(1)  Woerter aufsteigend alphabetisch sortiert\n";
     info += "(2)  Woerter mit Haeufigkeit von min bis max aufsteigend ";
     info += "alphabetisch sortiert\n";
     info += "(3)  Woerter absteigend alphabetisch sortiert\n";
