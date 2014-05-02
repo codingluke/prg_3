@@ -93,13 +93,10 @@ public class TextAnalyzerMain
   }
 
   /**
-   * Encrypts/Decrypts sourcefile and writes content into destfile.
-   * Checks if destfile already exists. Lets user choose to override or not.
-   *
-   * @param option      Option to execute.
-   * @param key         Key for excryption.
-   * @param sourcefile  Filename of the file to En/Decrypt.
-   * @param destfile    Filename of the file to write the result in.
+   * Prints the user menu to the console prompts the user to chose an action,
+   * validates the input and starts the action. When there is an invalid user
+   * input it prints an error and the user has to reenter. When the action is
+   * handled the menu gets printed again until the action "13" is chosen.
    *
    * @throws IllegalArgumentException
    * @throws FileNotFoundException
@@ -226,8 +223,6 @@ public class TextAnalyzerMain
    * @param byKey     Sort by key or value. key = words, value = wordcount.
    * @param asc       Sort direction true = asc, false = desc.
    * @param interval  Filtered interval or not.
-   *
-   * @return
    */
   private static void sortAndPrint(boolean byKey, boolean asc, boolean interval)
   {
@@ -296,11 +291,7 @@ public class TextAnalyzerMain
   }
 
   /**
-   * Prints out information about the executed action.
-   *
-   * @param option      Shortname of the action.
-   * @param key         Key to perform the action
-   * @param sourcefile  Sourcefile to perform the action on.
+   * Prints the action menu with short action descriptions to the console.
    */
   private static void printActions()
 

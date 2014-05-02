@@ -32,7 +32,7 @@ public class TextAnalyzer
    * TextAnalyzer, filters the words out of a FileReader and
    * counts the occurence of the individual words.
    *
-   * @param filename Name of the file to Analyze.
+   * @param reader FileReader Object containing file to Analyze.
    */
   public TextAnalyzer(FileReader reader)
   {
@@ -142,7 +142,7 @@ public class TextAnalyzer
    * LinkedList. Overrides method compare in the ananoumous class Comperator
    * used to define the sort direction.
    *
-   * @param map   The Map to be sorted.
+   * @param words The Map to be sorted.
    * @param asc   Direction to be sorted. true = asc, flase = desc.
    *
    * @return Sorted LinkedList containing the keys (words).

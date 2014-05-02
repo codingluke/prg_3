@@ -43,8 +43,6 @@ public class FileController
    * @param filename  Filename for the new file.
    *
    * @throws FileAlreadyExistsException
-   *
-   * @return boolean if File gets created or not.
    */
   public static void createFile (String filename)
     throws FileAlreadyExistsException
