@@ -50,107 +50,6 @@ public class TextAnalyzer
   }
 
   /**
-   * Sorts the wordlist by key, asc with no filter.
-   */
-  public void sort()
-  {
-    sort(true, true, 0, 0);
-  }
-
-  /**
-   * Sorts the wordlist by key with no filter.
-   *
-   * @param asc   Direction true = asc, false = desc.
-   */
-  public void sort(boolean asc)
-  {
-    sort(true, asc, 0, 0);
-  }
-
-  /**
-   * Sorts the wordlist by key, asc.
-   *
-   * @param min   Filter for min occurence of the word in the list.
-   * @param max   Filter for max occurence of the word in the list.
-   */
-  public void sort(int min, int max)
-  {
-    sort(true, true, min, max);
-  }
-
-  /**
-   * Sorts the wordlist by key.
-   *
-   * @param asc   Direction true = asc, false = desc.
-   * @param min   Filter for min occurence of the word in the list.
-   * @param max   Filter for max occurence of the word in the list.
-   */
-  public void sort(boolean asc, int min, int max)
-  {
-    sort(true, asc, min, max);
-  }
-
-  /**
-   * Sorts the wordlist by values, asc, without filter.
-   */
-  public void sortByValues()
-  {
-    sort(false, true, 0, 0);
-  }
-
-  /**
-   * Sorts the wordlist by values, without filter.
-   *
-   * @param asc   Direction true = asc, false = desc.
-   */
-  public void sortByValues(boolean asc)
-  {
-    sort(false, asc, 0, 0);
-  }
-
-  /**
-   * Sorts the wordlist by value, asc.
-   *
-   * @param min   Filter for min occurence of the word in the list.
-   * @param max   Filter for max occurence of the word in the list.
-   */
-  public void sortByValues(int min, int max)
-  {
-    sort(false, true, min, max);
-  }
-
-  /**
-   * Sorts the wordlist by value (word occurence).
-   *
-   * @param asc   Direction true = asc, false = desc.
-   * @param min   Filter for min occurence of the word in the list.
-   * @param max   Filter for max occurence of the word in the list.
-   */
-  public void sortByValues(boolean asc, int min, int max)
-  {
-    sort(false, asc, min, max);
-  }
-
-  /**
-   * Returns actual wordlist as a concatinated string.
-   * Format: "word1                   1\nword2                   10\n"
-   *
-   * @return actual wordlist concatinated to one String.
-   */
-  @Override
-  public String toString()
-  {
-    String result = "";
-    Iterator it = getCurrentWordMap().entrySet().iterator();
-    while (it.hasNext()) {
-      Entry pairs = (Entry)it.next();
-      String format = "%1$-25s%2$d%n";
-      result += String.format(format, pairs.getKey(), pairs.getValue());
-    }
-    return result;
-  }
-
-  /**
    * Sorts and filters wordlist.
    *
    * @param byKey   Attribute to sort, true = byKey, false = byValue.
@@ -158,7 +57,7 @@ public class TextAnalyzer
    * @param min     Filter for min occurence of the word in the list.
    * @param max     Filter for max occurence of the word in the list.
    */
-  private void sort(boolean byKey, boolean asc, int min, int max)
+  public void sort(boolean byKey, boolean asc, int min, int max)
   {
     currentWordMap = new LinkedHashMap<String, Integer>();
     LinkedList<String> sortedKeys = new LinkedList<String>();
@@ -178,6 +77,37 @@ public class TextAnalyzer
       if ((min == 0 && max == 0) || (count >= min && count <= max))
         currentWordMap.put(key, count);
     }
+  }
+
+  /**
+   * Sorts and wordlist by key (words) or by value (word count)
+   * ascending or descending.
+   *
+   * @param byKey Defines sortfield. true = key, false = value.
+   * @param asc   Defines the direction, true = asc, false = desc.
+   */
+  public void sort(boolean byKey, boolean asc)
+  {
+    sort(byKey, asc, 0, 0);
+  }
+
+  /**
+   * Returns actual wordlist as a concatinated string.
+   * Format: "word1                   1\nword2                   10\n"
+   *
+   * @return actual wordlist concatinated to one String.
+   */
+  @Override
+  public String toString()
+  {
+    String result = "";
+    Iterator it = getCurrentWordMap().entrySet().iterator();
+    while (it.hasNext()) {
+      Entry pairs = (Entry)it.next();
+      String format = "%1$-25s%2$d%n";
+      result += String.format(format, pairs.getKey(), pairs.getValue());
+    }
+    return result;
   }
 
   /**

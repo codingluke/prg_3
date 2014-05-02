@@ -113,21 +113,21 @@ public class TextAnalyzerMain
       printActions();
       action = ConsoleInput.readInt("Bitte Auswahl treffen: ", 1, 13);
       if (action == 1)
-        sortAndPrint(true);
+        sortAndPrintAsc();
       else if (action == 2)
-        sortAndPrintAscInterval(true);
+        sortAndPrintAscInterval();
       else if (action == 3)
-        sortAndPrintDesc(true);
+        sortAndPrintDesc();
       else if (action == 4)
-        sortAndPrintDescInterval(true);
+        sortAndPrintDescInterval();
       else if (action == 5)
-        sortAndPrintDesc(false);
+        sortAndPrintDescByValue();
       else if (action == 6)
-        sortAndPrintDescInterval(false);
+        sortAndPrintDescIntervalByValue();
       else if (action == 7)
-        sortAndPrintAsc(false);
+        sortAndPrintAscByValue();
       else if (action == 8)
-        sortAndPrintAscInterval(false);
+        sortAndPrintAscIntervalByValue();
       else if (action == 9)
         printWordCount();
       else if (action == 10)
@@ -142,65 +142,120 @@ public class TextAnalyzerMain
   }
 
   /**
-   * Sorts the wordlist ascending by key or by value and prints the
-   * list to the console. Key is the Words, value is the word count.
-   *
-   * @param byKey  Selector to sort by key or value. true = key, false = value.
+   * Sorts the wordlist ascending by key (words) and prints the
+   * wordlist to the console.
    */
-  private static void sortAndPrint(boolean byKey)
+  private static void sortAndPrintAsc()
   {
-    if (byKey)
-      analyzer.sort(asc);
+    sortAndPrint(true, true, false);
+  }
+
+  /**
+   * Sorts the wordlist ascending by value (word count) and prints the
+   * wordlist to the console.
+   */
+  private static void sortAndPrintAscByValue()
+  {
+    sortAndPrint(false, true, false);
+  }
+
+  /**
+   * Promts the user to input an interval, sorts the wordlist
+   * ascending by key (words), filters the worldlist with the interval
+   * and prints the wordlist to the console.
+   */
+  private static void sortAndPrintAscInterval()
+  {
+    sortAndPrint(true, true, true);
+  }
+
+  /**
+   * Promts the user to input an interval, sorts the wordlist
+   * ascending by value (word count), filters the worldlist with the interval
+   * and prints the wordlist to the console.
+   */
+  private static void sortAndPrintAscIntervalByValue()
+  {
+    sortAndPrint(false, true, true);
+  }
+
+  /**
+   * Sorts the wordlist descending by keys (words) and prints the
+   * wordlist to the console.
+   */
+  private static void sortAndPrintDesc()
+  {
+    sortAndPrint(true, false, false);
+  }
+
+  /**
+   * Sorts the wordlist descending by values (word count) and prints the
+   * wordlist to the console.
+   */
+  private static void sortAndPrintDescByValue()
+  {
+    sortAndPrint(false, false, false);
+  }
+
+  /**
+   * Promts the user to input an interval, sorts the wordlist
+   * descending by Key, filters the worldlist with the interval
+   * and prints the wordlist to the console.
+   */
+  private static void sortAndPrintDescInterval()
+  {
+    sortAndPrint(true, false, true);
+  }
+
+  /**
+   * Promts the user to input an interval, sorts the wordlist
+   * descending by Value, filters the worldlist with the interval
+   * and prints the wordlist to the console.
+   */
+  private static void sortAndPrintDescIntervalByValue()
+  {
+    sortAndPrint(false, false, true);
+  }
+
+  /**
+   * Sorts the wordlist according the parameters and prints it to the console.
+   * When interval is set, it promts the user to input the min and max bound of
+   * the interval. When is given the wordlist gets also filtered the words
+   * occurence, in between the the interval.
+   *
+   * @param byKey     Sort by key or value. key = words, value = wordcount.
+   * @param asc       Sort direction true = asc, false = desc.
+   * @param interval  Filtered interval or not.
+   *
+   * @return
+   */
+  private static void sortAndPrint(boolean byKey, boolean asc, boolean interval)
+  {
+    if (interval)
+    {
+      int min = ConsoleInput.readInt("Bitte min bestimmen: ");
+      int max = ConsoleInput.readInt("Bitte max bestimmen: ");
+      analyzer.sort(byKey, asc, min, max);
+    }
     else
-      analyzer.sortByValues(asc);
+      analyzer.sort(byKey, asc);
     printWordList(analyzer.getCurrentWordMap());
   }
 
   /**
-   * Sorts the wordlist ascending by key or by value, filters the words by a
-   * given interval and prints the list to the console. Keys are words, values
-   * are the word-counts. It prompts the user to enter the interval to filter
-   * the words.
-   *
-   * @param byKey  Selector to sort by key or value. true = key, false = value.
+   * Prints the total word count of the current Wordlist to the console.
    */
-  private static void sortAndPrintAscInterval(boolean byKey)
-  {
-    int min = ConsoleInput.readInt("Bitte min bestimmen: ");
-    int max = ConsoleInput.readInt("Bitte max bestimmen: ");
-    if (byKey)
-      analyzer.sort(min, max);
-    else
-      analyzer.sortByValues(min, max);
-    printWordList(analyzer.getCurrentWordMap());
-  }
-
-  private static void sortAndPrintDesc(boolean byKey)
-  {
-    if (byKey)
-      analyzer.sort(false);
-    else
-      analyzer.sortByValues(false);
-    printWordList(analyzer.getCurrentWordMap());
-  }
-
-  private static void sortAndPrintDescInterval(boolean byKey)
-  {
-    int min = ConsoleInput.readInt("Bitte min bestimmen: ");
-    int max = ConsoleInput.readInt("Bitte max bestimmen: ");
-    if (byKey)
-      analyzer.sort(false, min, max);
-    else
-      analyzer.sortByValues(false, min, max);
-    printWordList(analyzer.getCurrentWordMap());
-  }
-
   private static void printWordCount()
   {
     System.out.println("Die Liste enthaelt " + analyzer.currentSize()
                        + " Woerter");
   }
 
+  /**
+   * Reads a filename from the console, reads the file according the filename
+   * and prints its content to the console. If the file is not available, an
+   * error gets printet to the console.
+   */
   private static void showFile()
   {
     String filename = ConsoleInput.readString("Bitte filename angeben: ");
@@ -225,9 +280,14 @@ public class TextAnalyzerMain
     }
   }
 
-  private static void printWordList(HashMap wordList)
+  /**
+   * Prints the wordlist to the console.
+   *
+   * @param wordMap   Wordlist as a HashMap.
+   */
+  private static void printWordList(HashMap wordMap)
   {
-    Iterator it = wordList.entrySet().iterator();
+    Iterator it = wordMap.entrySet().iterator();
     while (it.hasNext()) {
       Entry pairs = (Entry)it.next();
       String format = "%1$-25s%2$d%n";
