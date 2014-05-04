@@ -15,7 +15,7 @@ import java.util.InputMismatchException;
 
 public class FileController
 {
-	/**
+  /**
    * Private constructor to prevent instances of this Class.
    */
   private FileController()
@@ -166,7 +166,7 @@ public class FileController
       FileOutputStream fos = new FileOutputStream(filename);
       OutputStreamWriter osw = new OutputStreamWriter(fos, "utf-8");
       writer = new BufferedWriter(osw);
-      writer.write(text);
+      writer.write(text + "\n");
     }
     catch (IOException e)
     {
