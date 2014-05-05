@@ -95,7 +95,64 @@ int calculate_start_column(int month, int year)
   return ((days % 7) + 6) % 7;
 }
 
-//void print_calender(int start_column, int num_days, int month, int year)
-//{
+void print_line(char* sign, int length)
+{
+  cout << "\n";
+  for (int i = 0; i < length; i++)
+    cout << sign;
+  cout << "\n";
+}
 
-//}
+void print_days(int start_column, int num_days)
+{
+  int column = 0;
+  while (column < start_column)
+  {
+    string empty_day = "      ";
+    ios_base::fmtflags flag = cout.left;
+    write_text(empty_day, 6, flag);
+    column++;
+  }
+  for (int day = 1; day <= num_days; day++)
+  {
+    streamsize fieldwith = 6;
+    ios_base::fmtflags flag = cout.left;
+    write_number((long)day, fieldwith, flag);
+    column++;
+    if (column == 7)
+    {
+      column = 0;
+      if (day != num_days)
+        cout << "\n";
+    }
+  }
+}
+
+void print_calender(int start_column, int num_days, int month, int year)
+{
+  string month_names[] = {"Januar", "Februar", "Maerz", "April", "Mai", "Juni",
+                          "Juli", "August", "September", "Oktober", "November",
+                          "Dezember"};
+  string day_names[] = {"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"};
+  write_text(month_names[month - 1], 10, cout.left);
+  write_number((long)year, cout.left);
+  cout << "\n\n";
+  for (int i = 0; i < 7; i++)
+    write_text(day_names[i], 6, cout.left);
+  char sign[] = "=";
+  print_line(sign, 40);
+  print_days(start_column, num_days);
+  print_line(sign, 40);
+  write_number((long)num_days, cout.left);
+  write_number((long)start_column, cout.left);
+}
+
+void print_calender(int month, int year)
+{
+  int start = calculate_start_column(month, year);
+  int days = calculate_days_of_month(month, year);
+  print_calender(start, days, month, year);
+}
+
+
+

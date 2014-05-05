@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "io_util.h"
 
 using namespace std;
@@ -96,4 +97,22 @@ void write_number(long double number, streamsize fieldwith,
   ios_base::fmtflags format_array[] = {format};
   write_number(number, fieldwith, fillsign, format_array, 1);
 }
+
+void write_text(string text, streamsize fieldwith,
+                   ios_base::fmtflags direction)
+{
+  streamsize old_fieldwith = cout.width();
+  cout.width(fieldwith);
+  cout.setf(direction);
+  cout << text;
+  cout.unsetf(direction);
+  cout.width(old_fieldwith);
+}
+
+void write_text(char *text, streamsize fieldwith,
+                   ios_base::fmtflags direction)
+{
+  write_text(string(text), fieldwith, direction);
+}
+
 
