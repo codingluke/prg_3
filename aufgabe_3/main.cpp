@@ -28,7 +28,9 @@ void calc_and_print_days_between_dates()
   Date date1 = read_date("Erstes Datum eingeben:");
   Date date2 = read_date("Zweites Datum eingeben:");
   int days_bewteen = calc_days_between_dates(date1, date2);
-  cout << "Tage zwischen den Daten: " << days_bewteen << endl << endl;
+  cout << "Zwischen dem " << date1.day << "." << date1.month << "." << date1.year
+       << " und dem " << date2.day << "." << date2.month << "." << date2.year
+       << " liegen " << days_bewteen << " Tage." << endl << endl;
 }
 
 int main()
