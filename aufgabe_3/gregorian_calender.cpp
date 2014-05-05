@@ -1,5 +1,4 @@
 #include <iostream>
-#include "console_input.h"
 #include "console_output.h"
 #include "io_util.h"
 #include "date.h"
@@ -25,7 +24,6 @@ bool is_leap_year(int year)
   }
   return leap_year;
 }
-
 
 /**
  * calcs the amount of days for the given month and year.
@@ -78,6 +76,15 @@ int calc_days_since_the_beginning(int day, int month, int year)
   return (amouth + (day - 1));
 }
 
+/**
+ * Calculates the days in between two dates. The order of the dates
+ * is not important.
+ *
+ * @param date1   first date to calculate days in between.
+ * @param date2   second date to calculate days in between.
+ *
+ * @return days in between the given dates.
+ */
 int calc_days_between_dates(Date date1, Date date2)
 {
   int days1 = calc_days_since_the_beginning(date1.day, date1.month, date1.year);
@@ -106,6 +113,12 @@ int calc_start_column(int month, int year)
   return ((days % 7) + 6) % 7;
 }
 
+/**
+ * Prints a line of a given sign for a given length to the console.
+ *
+ * @param sign    sign to print the line with.
+ * @param length  length of the line.
+ */
 void print_line(char* sign, int length)
 {
   cout << "\n";
@@ -114,22 +127,32 @@ void print_line(char* sign, int length)
   cout << "\n";
 }
 
-
+/**
+ * Prints days in the format of a Calendar to the console. Days before
+ * the start_column are filled empty.
+ *
+ *       1     2    3     4     5     6
+ * 7     8     9    10    11    12    13
+ * 14    15    16   17    18    19    20
+ * 21    22    23   24    25    26    27
+ * 28    29    30
+ *
+ * @param start_column  column of the first day.
+ * @param num_days      amouth of days to print.
+ */
 void print_days(int start_column, int num_days)
 {
   int column = 0;
   while (column < start_column)
   {
     string empty_day = "      ";
-    ios_base::fmtflags flag = cout.left;
-    write_text(empty_day, 6, flag);
+    write_text(empty_day, 6, cout.left);
     column++;
   }
   for (int day = 1; day <= num_days; day++)
   {
     streamsize fieldwith = 6;
-    ios_base::fmtflags flag = cout.left;
-    write_number((long)day, fieldwith, flag);
+    write_number((long)day, fieldwith, cout.left);
     column++;
     if (column == 7)
     {
@@ -140,8 +163,16 @@ void print_days(int start_column, int num_days)
   }
 }
 
-void print_calender(int start_column, int num_days, int month, int year)
+/**
+ * Prints the calendar of a given month and year to the console.
+ *
+ * @param month         month of the calendar.
+ * @param year          year of the calendar.
+ */
+void print_calendar(int month, int year)
 {
+  int start_column = calc_start_column(month, year);
+  int num_days = calc_days_of_month(month, year);
   string month_names[] = {
     "Januar", "Februar", "Maerz", "April", "Mai", "Juni",
     "Juli", "August", "September", "Oktober", "November",
@@ -158,13 +189,3 @@ void print_calender(int start_column, int num_days, int month, int year)
   print_days(start_column, num_days);
   print_line(sign, 40);
 }
-
-void print_calender(int month, int year)
-{
-  int start = calc_start_column(month, year);
-  int days = calc_days_of_month(month, year);
-  print_calender(start, days, month, year);
-}
-
-
-

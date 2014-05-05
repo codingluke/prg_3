@@ -1,7 +1,8 @@
-#ifndef _console_input_h
-#define _console_input_h
+#ifndef _CONSOLE_INPUT_H
+#define _CONSOLE_INPUT_H
 
 #include <string>
+#include "date.h"
 
 using namespace std;
 
@@ -14,5 +15,6 @@ int read_int(string text, int min, int max);
 int read_int(int min, int max);
 int read_int(string text);
 int read_int();
+Date read_date(string text);
 
 #endif

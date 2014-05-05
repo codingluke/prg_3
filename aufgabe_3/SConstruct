@@ -30,14 +30,13 @@ std = Environment(
 # Teil 3: Programm bauen
 
 cpp_dateien = [
- 'hello_world.cpp',
+ 'main.cpp',
  'io_util.cpp',
  'console_input.cpp',
  'console_output.cpp',
  'gregorian_calender.cpp',
- 'date.h',
 ]
 
-programm_name = 'test' # hier Programmnamen
+programm_name = 'aufgabe3'
 
 std.Program(programm_name, cpp_dateien) # Programm bauen

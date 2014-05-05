@@ -1,5 +1,5 @@
-#ifndef DATE_H
-#define DATE_H
+#ifndef _DATE_H
+#define _DATE_H
 
 typedef struct Date {
   int day;

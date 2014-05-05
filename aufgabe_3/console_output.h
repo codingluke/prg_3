@@ -1,8 +1,10 @@
-#ifndef _console_output_h
-#define _console_output_h
+#ifndef _CONSOLE_OUTPUT_H
+#define _CONSOLE_OUTPUT_H
 
 #include <iostream>
 #include <string>
+
+using namespace std;
 
 void write_number(long number, ios_base::fmtflags format[], int num_formats);
 void write_number(long number, ios_base::fmtflags format);

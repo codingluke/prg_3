@@ -2,25 +2,10 @@
 #include <climits>
 #include <string>
 #include "io_util.h"
+#include "date.h"
+#include "gregorian_calender.h"
 
 using namespace std;
-
-long read_long_0()
-{
-  long entry = 0;
-  bool entry_ok = false;
-  cin.clear();
-  do
-  {
-    cin >> entry;
-    entry_ok = cin.good();
-    cin.clear();
-    cin.ignore(static_cast<streamsize>(LONG_MAX), '\n');
-    if (!entry_ok)
-      cout << "Bitte eine ganze Zahl eingeben: ";
-  } while (!entry_ok);
-  return entry;
-}
 
 long read_long(long min, long max)
 {
@@ -83,4 +68,14 @@ int read_int(string text, int min, int max)
 {
   cout << text;
   return read_int(min, max);
+}
+
+Date read_date(string text)
+{
+  cout << text << "\n";
+  Date date;
+  date.year = read_int("Jahr:\t", 1583, 1000000);
+  date.month = read_int("Monat:\t", 1, 12);
+  date.day = read_int("Tag:\t", 1, calc_days_of_month(date.month, date.year));
+  return date;
 }
