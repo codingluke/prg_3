@@ -7,43 +7,43 @@ using namespace std;
 
 long read_long_0()
 {
-  long eingabe = 0;
-  bool eingabe_ok = false;
+  long entry = 0;
+  bool entry_ok = false;
   cin.clear();
   do
   {
-    cin >> eingabe;
-    eingabe_ok = cin.good();
+    cin >> entry;
+    entry_ok = cin.good();
     cin.clear();
     cin.ignore(static_cast<streamsize>(LONG_MAX), '\n');
-    if (!eingabe_ok)
+    if (!entry_ok)
       cout << "Bitte eine ganze Zahl eingeben: ";
-  } while (!eingabe_ok);
-  return eingabe;
+  } while (!entry_ok);
+  return entry;
 }
 
 long read_long(long min, long max)
 {
   if (max < min)
     swap(min, max);
-  long eingabe = 0;
-  bool eingabe_ok = false;
+  long entry = 0;
+  bool entry_ok = false;
   cin.clear();
   cin.unsetf(cin.skipws);
   do
   {
-   cin >> eingabe;
-   eingabe_ok = cin.good() && min <= eingabe && eingabe <= max;
+   cin >> entry;
+   entry_ok = cin.good() && min <= entry && entry <= max;
    cin.clear();
    cin.ignore(static_cast<streamsize>(LONG_MAX), '\n');
-   if (!eingabe_ok)
+   if (!entry_ok)
    {
      cout << "Bitte eine ganze Zahl eingeben [";
      cout << min << " - " << max << "]: ";
    }
-  } while (!eingabe_ok);
+  } while (!entry_ok);
   cin.setf(cin.skipws);
-  return eingabe;
+  return entry;
 }
 
 long read_long()

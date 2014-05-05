@@ -6,7 +6,7 @@ include_dateien = [ # wo wird nach .h Dateien gesucht?
 
 shared_libraries = [
  'm' # mathematische Funktionen der Standardbibliothek
-] 
+]
 
 cpp_standard = [ # Angaben zum Standard
  '-std=c++98', # ISO/IEC Standard 14882
@@ -17,7 +17,7 @@ warnungen = [ # Einstellungen zu Fehlern
  '-Wall', # viel meckern
  '-Wextra', # extra viel meckern
  '-Werror' # Warnungen sind Fehler
-] 
+]
 
 # Teil 2: Definition des Environments
 
@@ -25,7 +25,7 @@ std = Environment(
  CXXFLAGS = cpp_standard + warnungen,
  CPPPATH = include_dateien,
  LIBS = shared_libraries
-) 
+)
 
 # Teil 3: Programm bauen
 
@@ -34,6 +34,7 @@ cpp_dateien = [
  'io_util.cpp',
  'console_input.cpp',
  'console_output.cpp',
+ 'gregorian_calender.cpp',
 ]
 
 programm_name = 'test' # hier Programmnamen
