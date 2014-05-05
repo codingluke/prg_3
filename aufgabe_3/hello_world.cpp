@@ -1,25 +1,52 @@
 #include <iostream>
 #include "console_input.h"
 #include "console_output.h"
+#include "date.h"
 #include "gregorian_calender.h"
 
 using namespace std;
 
+void print_actions()
+{
+  cout << "Waehle eine option:\n";
+  cout << "1) Kalender erstellen:\n";
+  cout << "2) Anzahl Tage zwischen zwei Datumsangaben berechnen:\n";
+  cout << "3) Programm beenden\n";
+}
+
 int main()
 {
-  //typedef ios_base::fmtflags Formattype;
-  //Formattype fixed_rechts[] = {cout.right, cout.fixed, cout.showpoint};
-
-  //int i = calculate_days_of_month(1, 2014);
-  //int i = calculate_days_from_the_beginning(1, 2, 1905);
-
-  //char text1[] = "Dies ist der erste Text.\n";
-  //for (int breite = 33; breite >= 25; breite--)
-    //write_text(text1, breite, cout.right);
-  //string text2 = "Dies ist der zweite Text.\n";
-  //for (int breite = 25; breite <= 33; breite++)
-    //write_text(text2, breite, cout.right);
-
-  print_calender(2, 1583);
-  //write_number((long)i, fixed_rechts, 3);
+  int action = 0;
+  do
+  {
+    print_actions();
+    action = read_int("Bitte waehlen:\t", 1, 3);
+    if (action == 1)
+    {
+      int month = read_int("Monat angeben:\t", 1, 12);
+      int year = read_int("Jahr angeben:\t", 1583, 1000000);
+      cout << "\n";
+      print_calender(month, year);
+      cout << "\n\n";
+    }
+    else if (action == 2)
+    {
+      cout << "\nErstes Datum angeben:\n";
+      Date date1;
+      date1.day = read_int("Tag:\t", 1, 12);
+      date1.month = read_int("Monat:\t", 1, 12);
+      date1.year = read_int("Jahr:\t", 1583, 1000000);
+      cout << "Zweites Datum angeben:\n";
+      Date date2;
+      date2.day = read_int("Tag:\t", 1, 12);
+      date2.month = read_int("Monat:\t", 1, 12);
+      date2.year = read_int("Jahr:\t", 1583, 1000000);
+      int days_bewteen = calc_days_between_dates(date1, date2);
+      cout << "Tage zwischen den daten: ";
+      write_number((long)days_bewteen, cout.left);
+      cout << "\n\n";
+    }
+  } while (action != 3);
+  cout << "Byebye";
 }
+

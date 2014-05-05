@@ -35,6 +35,7 @@ cpp_dateien = [
  'console_input.cpp',
  'console_output.cpp',
  'gregorian_calender.cpp',
+ 'date.h',
 ]
 
 programm_name = 'test' # hier Programmnamen

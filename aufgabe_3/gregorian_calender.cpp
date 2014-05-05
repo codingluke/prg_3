@@ -1,6 +1,8 @@
 #include <iostream>
 #include "console_input.h"
 #include "console_output.h"
+#include "io_util.h"
+#include "date.h"
 
 /**
  * Checks if a year is a leap year.
@@ -26,14 +28,14 @@ bool is_leap_year(int year)
 
 
 /**
- * Calculates the amount of days for the given month and year.
+ * calcs the amount of days for the given month and year.
  *
  * @param month   the month.
  * @param year    the year.
  *
  * @return amounth the amounth of days of the month.
  */
-int calculate_days_of_month(int month, int year)
+int calc_days_of_month(int month, int year)
 {
   int amouth = 31;
   if (month == 4 || month == 6 || month == 9 || month == 11)
@@ -52,7 +54,7 @@ int calculate_days_of_month(int month, int year)
 }
 
 /**
- * Calculate with a given date how many days are past since
+ * calc with a given date how many days are past since
  * the 1.1.1583.
  *
  * @param day     the day of the date.
@@ -61,7 +63,7 @@ int calculate_days_of_month(int month, int year)
  *
  * @return amouth the amouth days past since 1.1.1583.
  */
-int calculate_days_from_the_beginning(int day, int month, int year)
+int calc_days_since_the_beginning(int day, int month, int year)
 {
   int amouth = 0;
   for (int i = 1583; i < year; i++)
@@ -72,12 +74,21 @@ int calculate_days_from_the_beginning(int day, int month, int year)
   }
   if (month != 1)
     for (int j = 1; j < month; j++)
-      amouth += calculate_days_of_month(j, year);
+      amouth += calc_days_of_month(j, year);
   return (amouth + (day - 1));
 }
 
+int calc_days_between_dates(Date date1, Date date2)
+{
+  int days1 = calc_days_since_the_beginning(date1.day, date1.month, date1.year);
+  int days2 = calc_days_since_the_beginning(date2.day, date2.month, date2.year);
+  if (days1 < days2)
+    swap(days1, days2);
+  return days1 - days2;
+}
+
 /**
- * Calculates for a given month and year the start column of
+ * calcs for a given month and year the start column of
  * a calendar for the first day of the month. The calendar starts
  * with Sunday.
  *
@@ -89,9 +100,9 @@ int calculate_days_from_the_beginning(int day, int month, int year)
  *
  * @return the column in which the first year lies.
  */
-int calculate_start_column(int month, int year)
+int calc_start_column(int month, int year)
 {
-  int days = calculate_days_from_the_beginning(1, month, year);
+  int days = calc_days_since_the_beginning(1, month, year);
   return ((days % 7) + 6) % 7;
 }
 
@@ -102,6 +113,7 @@ void print_line(char* sign, int length)
     cout << sign;
   cout << "\n";
 }
+
 
 void print_days(int start_column, int num_days)
 {
@@ -130,9 +142,11 @@ void print_days(int start_column, int num_days)
 
 void print_calender(int start_column, int num_days, int month, int year)
 {
-  string month_names[] = {"Januar", "Februar", "Maerz", "April", "Mai", "Juni",
-                          "Juli", "August", "September", "Oktober", "November",
-                          "Dezember"};
+  string month_names[] = {
+    "Januar", "Februar", "Maerz", "April", "Mai", "Juni",
+    "Juli", "August", "September", "Oktober", "November",
+    "Dezember"
+  };
   string day_names[] = {"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"};
   write_text(month_names[month - 1], 10, cout.left);
   write_number((long)year, cout.left);
@@ -143,14 +157,12 @@ void print_calender(int start_column, int num_days, int month, int year)
   print_line(sign, 40);
   print_days(start_column, num_days);
   print_line(sign, 40);
-  write_number((long)num_days, cout.left);
-  write_number((long)start_column, cout.left);
 }
 
 void print_calender(int month, int year)
 {
-  int start = calculate_start_column(month, year);
-  int days = calculate_days_of_month(month, year);
+  int start = calc_start_column(month, year);
+  int days = calc_days_of_month(month, year);
   print_calender(start, days, month, year);
 }
 
