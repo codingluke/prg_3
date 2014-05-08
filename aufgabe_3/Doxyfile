@@ -2,16 +2,15 @@
 OUTPUT_DIRECTORY = doc
 
 # Basis für die Dokumentation ist das aktuelle Verzeichnis.
-INPUT		 = .
+INPUT = .
 
 # Alle in Frage kommenden Dateien werden untersucht.
-EXTRACT_ALL	 = YES
+EXTRACT_ALL	= YES
 
 # Das Werkzeug dot wird zum Zeichnen der Aufrufhierarchie benutzt.
 # Es gehört zur Visualisierungssoftware Graphviz.
-# Siehe:
-http://www.graphviz.org/
-HAVE_DOT	 = YES
+# Siehe: http://www.graphviz.org/
+HAVE_DOT = YES
 
 # Die Aufrufhierarchie wird erstellt.
-CALL_GRAPH	 = YES
+CALL_GRAPH = YES
