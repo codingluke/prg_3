@@ -16,6 +16,9 @@ void print_actions()
        << "  3) Programm beenden" << endl;
 }
 
+/**
+ * Prints a goodbye text to the console, when the program ends.
+ */
 void print_goodbye()
 {
   cout << "Byebye";
