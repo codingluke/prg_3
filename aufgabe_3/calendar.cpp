@@ -1,17 +1,30 @@
 #include <iostream>
 #include "console_input.h"
-#include "date.h"
 #include "gregorian_calender.h"
+#include "date.h"
 
 using namespace std;
 
+/**
+ * Prints a description of the available actions to the console.
+ */
 void print_actions()
 {
-  cout << "Waehle eine option:\n" << "1) Kalender erstellen:" << endl
-       << "2) Anzahl Tage zwischen zwei Datumsangaben berechnen:" << endl
-       << "3) Programm beenden\n";
+  cout << "Waehle eine option:" << endl
+       << "  1) Kalender erstellen:" << endl
+       << "  2) Anzahl Tage zwischen zwei Datumsangaben berechnen:" << endl
+       << "  3) Programm beenden" << endl;
 }
 
+void print_goodbye()
+{
+  cout << "Byebye";
+}
+
+/**
+ * Promts the user to enter a month of a year, and prints the according
+ * gregorian calender to the console.
+ */
 void generate_and_print_calendar()
 {
   cout << endl;
@@ -22,6 +35,10 @@ void generate_and_print_calendar()
   cout << endl;
 }
 
+/**
+ * Promts the user to enter two dates, calculates the days between them
+ * and prints the result to the console.
+ */
 void calc_and_print_days_between_dates()
 {
   cout << endl;
@@ -32,19 +49,3 @@ void calc_and_print_days_between_dates()
        << " und dem " << date2.day << "." << date2.month << "." << date2.year
        << " liegen " << days_bewteen << " Tage." << endl << endl;
 }
-
-int main()
-{
-  int action = 0;
-  do
-  {
-    print_actions();
-    action = read_int("Bitte waehlen:\t", 1, 3);
-    if (action == 1)
-      generate_and_print_calendar();
-    else if (action == 2)
-      calc_and_print_days_between_dates();
-  } while (action != 3);
-  cout << "Byebye";
-}
-
