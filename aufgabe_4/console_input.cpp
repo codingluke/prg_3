@@ -6,6 +6,47 @@
 
 using namespace std;
 
+double read_double(double min, double max)
+{
+  if (max < min)
+    swap(min, max);
+  double entry = 0;
+  bool entry_ok = false;
+  cin.clear();
+  cin.unsetf(cin.skipws);
+  do
+  {
+    cin >> entry;
+    entry_ok = cin.good() && min <= entry && entry <= max;
+    cin.clear();
+    cin.ignore(static_cast<streamsize>(LONG_MAX), '\n');
+    if (!entry_ok)
+    {
+      cout << "Bitte eine Zahl eingeben [";
+      cout << min << " - " << max << "]: ";
+    }
+  } while (!entry_ok);
+  cin.setf(cin.skipws);
+  return entry;
+}
+
+double read_double()
+{
+  return read_double(LONG_MIN, LONG_MAX);
+}
+
+double read_double(string text)
+{
+  cout << text;
+  return read_double();
+}
+
+double read_double(string text, double min, double max)
+{
+  cout << text;
+  return read_double(min, max);
+}
+
 /**
  * Reads a long value in between a given interval from the console.
  * When the entered value is not valid to the interval, the user
@@ -18,26 +59,7 @@ using namespace std;
  */
 long read_long(long min, long max)
 {
-  if (max < min)
-    swap(min, max);
-  long entry = 0;
-  bool entry_ok = false;
-  cin.clear();
-  cin.unsetf(cin.skipws);
-  do
-  {
-   cin >> entry;
-   entry_ok = cin.good() && min <= entry && entry <= max;
-   cin.clear();
-   cin.ignore(static_cast<streamsize>(LONG_MAX), '\n');
-   if (!entry_ok)
-   {
-     cout << "Bitte eine ganze Zahl eingeben [";
-     cout << min << " - " << max << "]: ";
-   }
-  } while (!entry_ok);
-  cin.setf(cin.skipws);
-  return entry;
+  return static_cast<long>(read_double(min, max));
 }
 
 /**
