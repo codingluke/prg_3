@@ -158,3 +158,27 @@ int read_int(string text, int min, int max)
   cout << text;
   return read_int(min, max);
 }
+
+
+bool read_yes_no(string text)
+{
+  string input;
+  bool yes = false;
+  do
+  {
+    cout << text << " (j/n): ";
+    getline(cin, input);
+  }
+  while (!cin.fail() && input != "j" && input != "n");
+  if (input == "j")
+    yes = true;
+  return yes;
+}
+
+string read_text(string text)
+{
+  string input;
+  cout << text;
+  getline(cin, input);
+  return input;
+}

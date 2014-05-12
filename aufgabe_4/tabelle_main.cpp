@@ -54,16 +54,45 @@ void handle_action(int action)
     "cos", "sin", "tan", "acos", "asin", "atan",
     "exp", "log", "log10", "sqrt"
   };
+  string table;
   if (action < 10)
-    print_function_table(functions[action], function_names[action]);
+    table = generate_function_table(functions[action], function_names[action]);
   else if (action == 10)
     cout << "pow!!";
+
+  cout << table;
+
+  // write to file
+  string filename = read_secure_filename();
+  ofstream outfile(filename.c_str());
+  outfile << table;
 }
 
-void print_function_table(double (*pointer_function)(double), string name)
+bool file_exists(const std::string& filename) {
+  ifstream ifile(filename.c_str());
+  return ifile;
+}
+
+string read_secure_filename()
 {
-  //ostringstream wandler(ios::out);
-  ofstream outfile("myfile");
+  string filename;
+  bool file_ok;
+  do
+  {
+    filename = read_text("Bitte Dateiname angeben: ");
+    file_ok = !file_exists(filename);
+    if (!file_ok)
+    {
+      cout << "Achtung! Datei " << filename << " bereits vorhanden." << endl;
+      file_ok = read_yes_no("ueberschreiben?");
+    }
+  } while (!file_ok);
+  return filename;
+}
+
+string generate_function_table(double (*pointer_function)(double), string name)
+{
+  ostringstream wandler(ios::out);
 
   double start = read_double("Bitte Startwert angeben:\t\t");
   double end = read_double("Bitte Endwert angeben:\t\t");
@@ -71,13 +100,13 @@ void print_function_table(double (*pointer_function)(double), string name)
   double column_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t");
   int precision = read_int("Bitte Nachkommastellen angeben:\t\t");
 
-  outfile << "Funktion:\t" << name << " x" << endl << endl;
+  wandler << "Funktion:\t" << name << " x" << endl << endl;
 
   // Table header
-  outfile << left << setw(7) << "x";
+  wandler << left << setw(7) << "x";
   for (int i = 0; i < (int)(column_steps / steps); i++)
-    outfile << right << setw(precision + 4) << i;
-  outfile << endl;
+    wandler << right << setw(precision + 4) << i;
+  wandler << endl;
 
   // Table content
   double index = start;
@@ -85,12 +114,13 @@ void print_function_table(double (*pointer_function)(double), string name)
   {
     if (fabs(index - start) < 0.00001)
     {
-      outfile << endl << left << setw(7) << index;
+      wandler << endl << left << setw(7) << index;
       index += column_steps;
     }
-    outfile << setprecision(precision) << setw(precision + 4)
+    wandler << setprecision(precision) << setw(precision + 4)
          << right << pointer_function(start);
     start += steps;
   }
-  outfile << endl << endl;
+  wandler << endl << endl;
+  return wandler.str();
 }

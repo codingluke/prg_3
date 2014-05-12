@@ -17,5 +17,7 @@ int read_int(string text, int min, int max);
 int read_int(int min, int max);
 int read_int(string text);
 int read_int();
+bool read_yes_no(string text);
+string read_text(string text);
 
 #endif
