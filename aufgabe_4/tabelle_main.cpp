@@ -1,11 +1,11 @@
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include <cmath>
 #include <string>
 #include <iomanip>
 #include "console_input.h"
 #include "tabelle_main.h"
-
 
 using namespace std;
 
@@ -63,24 +63,34 @@ void handle_action(int action)
 void print_function_table(double (*pointer_function)(double), string name)
 {
   //ostringstream wandler(ios::out);
+  ofstream outfile("myfile");
 
   double start = read_double("Bitte Startwert angeben:\t\t");
   double end = read_double("Bitte Endwert angeben:\t\t");
   double steps = read_double("Bitte Schrittgroesse angeben:\t\t");
   double column_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t");
   int precision = read_int("Bitte Nachkommastellen angeben:\t\t");
-  cout << name << " x" << endl;
+
+  outfile << "Funktion:\t" << name << " x" << endl << endl;
+
+  // Table header
+  outfile << left << setw(7) << "x";
+  for (int i = 0; i < (int)(column_steps / steps); i++)
+    outfile << right << setw(precision + 4) << i;
+  outfile << endl;
+
+  // Table content
   double index = start;
   while (start <= end)
   {
     if (fabs(index - start) < 0.00001)
     {
-      cout << endl << left << setw(7) << index;
+      outfile << endl << left << setw(7) << index;
       index += column_steps;
     }
-    cout << setprecision(precision) << setw(precision + 4)
-         << left << pointer_function(start);
+    outfile << setprecision(precision) << setw(precision + 4)
+         << right << pointer_function(start);
     start += steps;
   }
-  cout << endl;
+  outfile << endl << endl;
 }
