@@ -31,8 +31,10 @@ std = Environment(
 
 cpp_dateien = [
  'console_input.cpp',
+ 'file_controller.cpp',
  'io_util.cpp',
- 'tabelle_main.cpp',
+ 'table.cpp',
+ 'table_main.cpp',
 ]
 
 programm_name = 'tabelle'
