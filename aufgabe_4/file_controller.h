@@ -5,6 +5,7 @@
 
 using namespace std;
 
+void write_to_file(string filename, string text);
 void write_to_file(string text);
 bool file_exists(const std::string& filename);
 string read_secure_filename();

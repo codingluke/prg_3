@@ -4,11 +4,16 @@
 #include "console_input.h"
 #include "file_controller.h"
 
+void write_to_file(string filename, string text)
+{
+  ofstream outfile(filename.c_str());
+  outfile << text;
+}
+
 void write_to_file(string text)
 {
   string filename = read_secure_filename();
-  ofstream outfile(filename.c_str());
-  outfile << text;
+  write_to_file(filename, text);
 }
 
 bool file_exists(const std::string& filename) {
