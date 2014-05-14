@@ -124,16 +124,7 @@ void handle_action(char *argv[])
     filename = argv[8];
   }
   cout << table;
-  if (file_exists(filename))
-  {
-    cout << "Achtung! Datei " << filename << " bereits vorhanden." << endl;
-    if (read_yes_no("ueberschreiben?"))
-      write_to_file(filename, table);
-    else
-      cout << "Abgebrochen";
-  }
-  else
-    write_to_file(filename, table);
+  write_to_file(filename, table);
 }
 
 /**
@@ -268,6 +259,7 @@ bool validate_param_types(string function_type, char *argv[])
 bool validate_params_length(string function_type, int argc)
 {
   bool valid = false;
+  cout << function_type << argc;
   if ((function_type == "ONE" && argc == 8) ||
       (function_type == "TWO" && argc == 9))
     valid = true;

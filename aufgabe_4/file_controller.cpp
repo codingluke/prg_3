@@ -10,10 +10,24 @@
  * @param filename Name of the file to wirte.
  * @param text     Text to write into the file.
  */
-void write_to_file(string filename, string text)
+void write_to_file(string filename, string text, bool secure)
 {
-  ofstream outfile(filename.c_str());
-  outfile << text;
+  if (secure)
+  {
+    if (file_exists(filename))
+    {
+      cout << "Achtung! Datei " << filename << " bereits vorhanden." << endl;
+      if (read_yes_no("ueberschreiben?"))
+        write_to_file(filename, text, false);
+      else
+        cout << "Abgebrochen";
+    }
+  }
+  else
+  {
+    ofstream outfile(filename.c_str());
+    outfile << text;
+  }
 }
 
 /**
@@ -27,7 +41,7 @@ void write_to_file(string filename, string text)
 void write_to_file(string text)
 {
   string filename = read_secure_filename();
-  write_to_file(filename, text);
+  write_to_file(filename, text, false);
 }
 
 /**
