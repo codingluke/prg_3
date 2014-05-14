@@ -1,49 +1,40 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
+#include <climits>
 #include <string>
 #include <iomanip>
 #include "console_input.h"
 #include "table.h"
-#include "table_main.h"
+#include "pt_math_functions.h"
 #include "file_controller.h"
 
 using namespace std;
 
-string generate_table(double (*pointer_function)(double, double), string name,
-                               double exp, double start, double end, double steps,
-                               double column_steps, int precision)
-{
-  ostringstream wandler(ios::out);
-  wandler << "Funktion:\t" << name << " x, " << exp << endl << endl;
-  wandler << left << setw(7) << "x";
-  for (int i = 0; i < (int)(column_steps / steps); i++)
-    wandler << right << setw(precision + 4) << i;
-  wandler << endl;
-  double index = start;
-  while (start <= end)
-  {
-    if (fabs(index - start) < 0.00001)
-    {
-      wandler << endl << left << setw(7) << index;
-      index += column_steps;
-    }
-    wandler << setprecision(precision) << setw(precision + 4)
-         << right << pointer_function(start, exp);
-    start += steps;
-  }
-  wandler << endl << endl;
-  return wandler.str();
-}
-
-string generate_table(double (*pointer_function)(double), string name,
-                               double start, double end, double steps,
-                               double column_steps, int precision)
+/**
+ * Generates a value-table of a given function. The parameter of the given
+ * function is iterated by 'steps' and lies between the 'start' and 'end' value
+ * over the whole table.
+ *
+ * @param function     Pointer to the function to generate values.
+ * @param name         Name of the function.
+ * @param start        Start value of the first parameter.
+ * @param end          End value of the first parameter.
+ * @param steps        Iteration stepts for the values between start, end.
+ * @param row_steps Iteration steps for the columns of the table.
+ * @param precision    Precision of the calculated values.
+ *
+ * @return a formatted value-table as a string.
+ */
+string generate_table(ptMathFunctionOne function, string name,
+                      double start, double end, double steps,
+                      double row_steps, int precision)
 {
   ostringstream wandler(ios::out);
   wandler << "Funktion:\t" << name << " x" << endl << endl;
   wandler << left << setw(7) << "x";
-  for (int i = 0; i < (int)(column_steps / steps); i++)
+  int num_columns = (int)(row_steps / steps);
+  for (int i = 0; i < num_columns; i++)
     wandler << right << setw(precision + 4) << i;
   wandler << endl;
   double index = start;
@@ -52,35 +43,96 @@ string generate_table(double (*pointer_function)(double), string name,
     if (fabs(index - start) < 0.00001)
     {
       wandler << endl << left << setw(7) << index;
-      index += column_steps;
+      index += row_steps;
     }
     wandler << setprecision(precision) << setw(precision + 4)
-         << right << pointer_function(start);
+         << right << function(start);
     start += steps;
   }
   wandler << endl << endl;
   return wandler.str();
 }
 
-string generate_table(double (*pointer_function)(double), string name)
+/**
+ * Generates a value-table of a given function. The first parameter of the given
+ * function is iterated by 'steps' and lies between the 'start' and 'end' value
+ * over the whole table. The second parameter 'param_two' is static.
+ *
+ * @param function     Pointer to the function to generate values.
+ * @param name         Name of the function.
+ * @param start        Start value of the first parameter.
+ * @param end          End value of the first parameter.
+ * @param steps        Iteration stepts for the values between start, end.
+ * @param row_steps Iteration steps for the columns of the table.
+ * @param precision    Precision of the calculated values.
+ * @param param_two    Second parameter for the function.
+ *
+ * @return a formatted value-table as a string.
+ */
+string generate_table(ptMathFunctionTwo function, string name, double start,
+                      double end, double steps, double row_steps,
+                      int precision, double param_two)
 {
-  double start = read_double("Bitte Startwert angeben:\t\t");
-  double end = read_double("Bitte Endwert angeben:\t\t");
-  double steps = read_double("Bitte Schrittgroesse angeben:\t\t");
-  double column_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t");
-  int precision = read_int("Bitte Nachkommastellen angeben:\t\t");
-  return generate_table(pointer_function, name, start, end,
-                                 steps, column_steps, precision);
+  ostringstream wandler(ios::out);
+  wandler << "Funktion:\t" << name << " x, " << param_two << endl << endl;
+  wandler << left << setw(7) << "x";
+  int num_columns = (int)(row_steps / steps);
+  for (int i = 0; i < num_columns; i++)
+    wandler << right << setw(precision + 4) << i;
+  wandler << endl;
+  double index = start;
+  while (start <= end)
+  {
+    if (fabs(index - start) < 0.00001)
+    {
+      wandler << endl << left << setw(7) << index;
+      index += row_steps;
+    }
+    wandler << setprecision(precision) << setw(precision + 4)
+         << right << function(start, param_two);
+    start += steps;
+  }
+  wandler << endl << endl;
+  return wandler.str();
 }
 
-string generate_table(double (*pointer_function)(double, double), string name)
+/**
+ * Promts the user to enter all values to generate the value-table for a given
+ * function. It then generates the value-table according the entered data.
+ *
+ * @param function     Pointer to the function to generate values.
+ * @param name         Name of the function.
+ *
+ * @return a formatted value-table as a string.
+ */
+string generate_table(ptMathFunctionOne function, string name)
 {
-  double exp = read_double("Bitte Exponent angeben:\t\t");
   double start = read_double("Bitte Startwert angeben:\t\t");
-  double end = read_double("Bitte Endwert angeben:\t\t");
+  double end = read_double("Bitte Endwert angeben:\t\t", start, LONG_MAX);
   double steps = read_double("Bitte Schrittgroesse angeben:\t\t");
-  double column_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t");
+  double row_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t", steps, LONG_MAX);
   int precision = read_int("Bitte Nachkommastellen angeben:\t\t");
-  return generate_table(pointer_function, name, exp, start, end,
-                                 steps, column_steps, precision);
+  return generate_table(function, name, start, end,
+                        steps, row_steps, precision);
+}
+
+/**
+ * Promts the user to enter all values to generate the value-table for a given
+ * function. It then generates the value-table according the entered data.
+ *
+ * @param function     Pointer to the function to generate values.
+ * @param name         Name of the function.
+ *
+ * @return a formatted value-table as a string.
+ */
+string generate_table(ptMathFunctionTwo function, string name)
+{
+  double start = read_double("Bitte Startwert angeben:\t\t");
+  double end = read_double("Bitte Endwert angeben:\t\t", start, LONG_MAX);
+  double steps = read_double("Bitte Schrittgroesse angeben:\t\t");
+  double row_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t", steps, LONG_MAX);
+  double param_two = read_double("Bitte zweiter Parameter angeben:\t\t");
+  int precision = read_int("Bitte Nachkommastellen angeben:\t\t");
+  return generate_table(function, name, param_two, start, end,
+                        steps, row_steps, precision);
 }

@@ -2,11 +2,10 @@
 #define TABELLE_MAIN_H
 
 #include <string>
+#include "pt_math_functions.h"
 
 using namespace std;
 
-typedef double (*ptMathFunctionOne)(double);
-typedef double (*ptMathFunctionTwo)(double, double);
 int main(int argc, char *argv[]);
 void print_actions();
 void handle_action(int action);
