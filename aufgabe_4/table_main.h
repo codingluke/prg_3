@@ -5,8 +5,8 @@
 
 using namespace std;
 
-typedef double (*ptMathFunction)(double);
-typedef double (*ptMathFunction2)(double, double);
+typedef double (*ptMathFunctionOne)(double);
+typedef double (*ptMathFunctionTwo)(double, double);
 int main(int argc, char *argv[]);
 void print_actions();
 void handle_action(int action);

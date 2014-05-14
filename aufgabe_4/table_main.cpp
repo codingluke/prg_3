@@ -10,17 +10,18 @@
 
 using namespace std;
 
-const int BUFFSIZE = 10;
-const ptMathFunction functions[10] = {
+const int FUNCTIONS_ONE_LENGTH = 10;
+const ptMathFunctionOne FUNCTIONS_ONE[FUNCTIONS_ONE_LENGTH] = {
   &cos, &sin, &tan, &acos, &asin, &atan,
   &exp, &log, &log10, &sqrt
 };
-const string function_names[10] = {
+const string FUNCTION_ONE_NAMES[FUNCTIONS_ONE_LENGTH] = {
   "cos", "sin", "tan", "acos", "asin", "atan",
-  "exp", "log", "log10", "sqrt",
+  "exp", "log", "log10", "sqrt"
 };
-const ptMathFunction2 functions2[1] = { &pow };
-const string function2_names[1] = { "pow" };
+const int FUNCTIONS_TWO_LENGTH = 1;
+const ptMathFunctionTwo FUNCTIONS_TWO[FUNCTIONS_TWO_LENGTH] = { &pow };
+const string FUNCTION_TWO_NAMES[FUNCTIONS_TWO_LENGTH] = { "pow" };
 
 int main(int argc, char *argv[])
 {
@@ -50,16 +51,16 @@ void handle_action(char *argv[])
   int function_index;
   if (type == "one")
   {
-    function_index = get_array_index(argv[1], function_names, 11);
-    table = generate_table(functions[function_index],
+    function_index = get_array_index(argv[1], FUNCTION_ONE_NAMES, FUNCTIONS_ONE_LENGTH);
+    table = generate_table(FUNCTIONS_ONE[function_index],
                            argv[1], atof(argv[2]), atof(argv[3]),
                            atof(argv[4]), atof(argv[5]), atof(argv[6]));
     filename = argv[7];
   }
   else if (type == "two")
   {
-    function_index = get_array_index(argv[1], function2_names, 1);
-    table = generate_table(functions2[function_index], argv[1], atof(argv[2]), atof(argv[3]),
+    function_index = get_array_index(argv[1], FUNCTION_TWO_NAMES, FUNCTIONS_TWO_LENGTH);
+    table = generate_table(FUNCTIONS_TWO[function_index], argv[1], atof(argv[2]), atof(argv[3]),
                            atof(argv[4]), atof(argv[5]), atof(argv[6]),
                            atof(argv[7]));
     filename = argv[8];
@@ -82,9 +83,9 @@ void handle_action(int action)
   action--; // because an array starts with 0
   string table;
   if (action < 10)
-    table = generate_table(functions[action], function_names[action]);
+    table = generate_table(FUNCTIONS_ONE[action], FUNCTION_ONE_NAMES[action]);
   else if (action > 9)
-    table = generate_table(functions2[action - 10], function2_names[action - 10]);
+    table = generate_table(FUNCTIONS_TWO[action - 10], FUNCTION_TWO_NAMES[action - 10]);
   cout << table;
   write_to_file(table);
 }
@@ -95,10 +96,10 @@ void handle_action(int action)
 void print_actions()
 {
   cout << "Waehle die Funktion zur Tabellengenerierung:" << endl;
-  for (int i = 0; i < 10 ; i++)
-    cout << setw(2) << left << i + 1 << ") " << function_names[i] << endl;
-  for (int i = 0; i < 1 ; i++)
-    cout << setw(2) << left << i + 11 << ") " << function2_names[i] << endl;
+  for (int i = 0; i < FUNCTIONS_ONE_LENGTH ; i++)
+    cout << setw(2) << left << i + 1 << ") " << FUNCTION_ONE_NAMES[i] << endl;
+  for (int i = 0; i < FUNCTIONS_TWO_LENGTH ; i++)
+    cout << setw(2) << left << i + 11 << ") " << FUNCTION_TWO_NAMES[i] << endl;
 }
 
 /**
@@ -131,8 +132,8 @@ int get_array_index(string item, const string items[], int length)
 string get_function_type(string name)
 {
   string type = "one";
-  for (int i = 0; i < 1 ; i++)
-    if (function2_names[i] == name)
+  for (int i = 0; i < FUNCTIONS_TWO_LENGTH ; i++)
+    if (FUNCTION_TWO_NAMES[i] == name)
       type = "two";
   return type;
 }
@@ -213,8 +214,11 @@ bool validate_params_length(string function_type, int argc)
 bool validate_function_name(string name)
 {
   bool valid = false;
-  for (int i = 0; i < 11 ; i++)
-    if (function_names[i] == name)
+  for (int i = 0; i < FUNCTIONS_ONE_LENGTH ; i++)
+    if (FUNCTION_ONE_NAMES[i] == name)
+      valid = true;
+  for (int i = 0; i < FUNCTIONS_TWO_LENGTH ; i++)
+    if (FUNCTION_TWO_NAMES[i] == name)
       valid = true;
   if (!valid)
     cout << "Nicht gueltige Funktion '" << name << "'" << endl;
