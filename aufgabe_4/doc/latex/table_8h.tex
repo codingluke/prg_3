@@ -1,0 +1,168 @@
+\hypertarget{table_8h}{\section{table.\-h File Reference}
+\label{table_8h}\index{table.\-h@{table.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}pt\-\_\-math\-\_\-functions.\-h\char`\"{}}\\*
+Include dependency graph for table.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{table_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{table_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{table_8h_abcc4aab1943a9c00c117c35b5c2e373f}{generate\-\_\-table} (\hyperlink{pt__math__functions_8h_ad6f1c83ac0e2e8b6e0393aeddfda805f}{pt\-Math\-Function\-Two} function, string name, double start, double end, double steps, double row\-\_\-steps, int precision, double param\-\_\-two)
+\item 
+string \hyperlink{table_8h_a27258c1b46c178213606bf2c13eb085b}{generate\-\_\-table} (\hyperlink{pt__math__functions_8h_aaead49151b753b4ef6a4c84ee8aa8c36}{pt\-Math\-Function\-One} function, string name, double start, double end, double steps, double row\-\_\-steps, int precision)
+\item 
+string \hyperlink{table_8h_a1e9cb801bd8f49deb54fb1afc97cbdde}{generate\-\_\-table} (\hyperlink{pt__math__functions_8h_aaead49151b753b4ef6a4c84ee8aa8c36}{pt\-Math\-Function\-One} function, string name)
+\item 
+string \hyperlink{table_8h_a00e1177592ae74a7e1df38e1e1cd88f3}{generate\-\_\-table} (\hyperlink{pt__math__functions_8h_ad6f1c83ac0e2e8b6e0393aeddfda805f}{pt\-Math\-Function\-Two} function, string name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{table_8h_abcc4aab1943a9c00c117c35b5c2e373f}{\index{table.\-h@{table.\-h}!generate\-\_\-table@{generate\-\_\-table}}
+\index{generate\-\_\-table@{generate\-\_\-table}!table.h@{table.\-h}}
+\subsubsection[{generate\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}string generate\-\_\-table (
+\begin{DoxyParamCaption}
+\item[{{\bf pt\-Math\-Function\-Two}}]{function, }
+\item[{string}]{name, }
+\item[{double}]{start, }
+\item[{double}]{end, }
+\item[{double}]{steps, }
+\item[{double}]{row\-\_\-steps, }
+\item[{int}]{precision, }
+\item[{double}]{param\-\_\-two}
+\end{DoxyParamCaption}
+)}}\label{table_8h_abcc4aab1943a9c00c117c35b5c2e373f}
+Generates a value-\/table of a given function. The first parameter of the given function is iterated by 'steps' and lies between the 'start' and 'end' value over the whole table. The second parameter 'param\-\_\-two' is static.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Pointer to the function to generate values. \\
+\hline
+{\em name} & Name of the function. \\
+\hline
+{\em start} & Start value of the first parameter. \\
+\hline
+{\em end} & End value of the first parameter. \\
+\hline
+{\em steps} & Iteration stepts for the values between start, end. \\
+\hline
+{\em row\-\_\-steps} & Iteration steps for the columns of the table. \\
+\hline
+{\em precision} & Precision of the calculated values. \\
+\hline
+{\em param\-\_\-two} & Second parameter for the function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a formatted value-\/table as a string. 
+\end{DoxyReturn}
+\hypertarget{table_8h_a27258c1b46c178213606bf2c13eb085b}{\index{table.\-h@{table.\-h}!generate\-\_\-table@{generate\-\_\-table}}
+\index{generate\-\_\-table@{generate\-\_\-table}!table.h@{table.\-h}}
+\subsubsection[{generate\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}string generate\-\_\-table (
+\begin{DoxyParamCaption}
+\item[{{\bf pt\-Math\-Function\-One}}]{function, }
+\item[{string}]{name, }
+\item[{double}]{start, }
+\item[{double}]{end, }
+\item[{double}]{steps, }
+\item[{double}]{row\-\_\-steps, }
+\item[{int}]{precision}
+\end{DoxyParamCaption}
+)}}\label{table_8h_a27258c1b46c178213606bf2c13eb085b}
+Generates a value-\/table of a given function. The parameter of the given function is iterated by 'steps' and lies between the 'start' and 'end' value over the whole table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Pointer to the function to generate values. \\
+\hline
+{\em name} & Name of the function. \\
+\hline
+{\em start} & Start value of the first parameter. \\
+\hline
+{\em end} & End value of the first parameter. \\
+\hline
+{\em steps} & Iteration stepts for the values between start, end. \\
+\hline
+{\em row\-\_\-steps} & Iteration steps for the columns of the table. \\
+\hline
+{\em precision} & Precision of the calculated values.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a formatted value-\/table as a string. 
+\end{DoxyReturn}
+\hypertarget{table_8h_a1e9cb801bd8f49deb54fb1afc97cbdde}{\index{table.\-h@{table.\-h}!generate\-\_\-table@{generate\-\_\-table}}
+\index{generate\-\_\-table@{generate\-\_\-table}!table.h@{table.\-h}}
+\subsubsection[{generate\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}string generate\-\_\-table (
+\begin{DoxyParamCaption}
+\item[{{\bf pt\-Math\-Function\-One}}]{function, }
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}}\label{table_8h_a1e9cb801bd8f49deb54fb1afc97cbdde}
+Promts the user to enter all values to generate the value-\/table for a given function. It then generates the value-\/table according the entered data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Pointer to the function to generate values. \\
+\hline
+{\em name} & Name of the function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a formatted value-\/table as a string. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{table_8h_a1e9cb801bd8f49deb54fb1afc97cbdde_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{table_8h_a00e1177592ae74a7e1df38e1e1cd88f3}{\index{table.\-h@{table.\-h}!generate\-\_\-table@{generate\-\_\-table}}
+\index{generate\-\_\-table@{generate\-\_\-table}!table.h@{table.\-h}}
+\subsubsection[{generate\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}string generate\-\_\-table (
+\begin{DoxyParamCaption}
+\item[{{\bf pt\-Math\-Function\-Two}}]{function, }
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}}\label{table_8h_a00e1177592ae74a7e1df38e1e1cd88f3}
+Promts the user to enter all values to generate the value-\/table for a given function. It then generates the value-\/table according the entered data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Pointer to the function to generate values. \\
+\hline
+{\em name} & Name of the function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a formatted value-\/table as a string. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{table_8h_a00e1177592ae74a7e1df38e1e1cd88f3_cgraph}
+\end{center}
+\end{figure}
+
+

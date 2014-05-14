@@ -1,0 +1,123 @@
+\hypertarget{file__controller_8cpp}{\section{file\-\_\-controller.\-cpp File Reference}
+\label{file__controller_8cpp}\index{file\-\_\-controller.\-cpp@{file\-\_\-controller.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include \char`\"{}console\-\_\-input.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}file\-\_\-controller.\-h\char`\"{}}\\*
+Include dependency graph for file\-\_\-controller.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__controller_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{file__controller_8cpp_a8600a74cc7b9657c803885b9f6844fe7}{write\-\_\-to\-\_\-file} (string filename, string text, bool secure)
+\item 
+void \hyperlink{file__controller_8cpp_a90ee1f4929750a48a0e201f8923a2449}{write\-\_\-to\-\_\-file} (string text)
+\item 
+bool \hyperlink{file__controller_8cpp_acde73c899ec0618eeb8ae54b0a823f39}{file\-\_\-exists} (const std\-::string \&filename)
+\item 
+string \hyperlink{file__controller_8cpp_a5b269a712c2a290dd75694ab5ed3cb18}{read\-\_\-secure\-\_\-filename} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{file__controller_8cpp_acde73c899ec0618eeb8ae54b0a823f39}{\index{file\-\_\-controller.\-cpp@{file\-\_\-controller.\-cpp}!file\-\_\-exists@{file\-\_\-exists}}
+\index{file\-\_\-exists@{file\-\_\-exists}!file_controller.cpp@{file\-\_\-controller.\-cpp}}
+\subsubsection[{file\-\_\-exists}]{\setlength{\rightskip}{0pt plus 5cm}bool file\-\_\-exists (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{file__controller_8cpp_acde73c899ec0618eeb8ae54b0a823f39}
+Checks if a file already exists by its name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Filename to check for existence.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when the file exists. false when the file don't exists. 
+\end{DoxyReturn}
+\hypertarget{file__controller_8cpp_a5b269a712c2a290dd75694ab5ed3cb18}{\index{file\-\_\-controller.\-cpp@{file\-\_\-controller.\-cpp}!read\-\_\-secure\-\_\-filename@{read\-\_\-secure\-\_\-filename}}
+\index{read\-\_\-secure\-\_\-filename@{read\-\_\-secure\-\_\-filename}!file_controller.cpp@{file\-\_\-controller.\-cpp}}
+\subsubsection[{read\-\_\-secure\-\_\-filename}]{\setlength{\rightskip}{0pt plus 5cm}string read\-\_\-secure\-\_\-filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{file__controller_8cpp_a5b269a712c2a290dd75694ab5ed3cb18}
+Promts the user to enter a filename. The filename gets checked for existance. When there is already an existing file for the enterd filename, the user gets promted to override or reenter e new name.
+
+\begin{DoxyReturn}{Returns}
+a filename of a new file or of an existing file which can be overwritten. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{file__controller_8cpp_a5b269a712c2a290dd75694ab5ed3cb18_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{file__controller_8cpp_a8600a74cc7b9657c803885b9f6844fe7}{\index{file\-\_\-controller.\-cpp@{file\-\_\-controller.\-cpp}!write\-\_\-to\-\_\-file@{write\-\_\-to\-\_\-file}}
+\index{write\-\_\-to\-\_\-file@{write\-\_\-to\-\_\-file}!file_controller.cpp@{file\-\_\-controller.\-cpp}}
+\subsubsection[{write\-\_\-to\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void write\-\_\-to\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{string}]{text, }
+\item[{bool}]{secure}
+\end{DoxyParamCaption}
+)}}\label{file__controller_8cpp_a8600a74cc7b9657c803885b9f6844fe7}
+Writes given text into a file with the given filename.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to wirte. \\
+\hline
+{\em text} & Text to write into the file. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{file__controller_8cpp_a8600a74cc7b9657c803885b9f6844fe7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{file__controller_8cpp_a90ee1f4929750a48a0e201f8923a2449}{\index{file\-\_\-controller.\-cpp@{file\-\_\-controller.\-cpp}!write\-\_\-to\-\_\-file@{write\-\_\-to\-\_\-file}}
+\index{write\-\_\-to\-\_\-file@{write\-\_\-to\-\_\-file}!file_controller.cpp@{file\-\_\-controller.\-cpp}}
+\subsubsection[{write\-\_\-to\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void write\-\_\-to\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{file__controller_8cpp_a90ee1f4929750a48a0e201f8923a2449}
+Writes a given text into a file. The name of the file has to be entered by the user. When the file already exists. The user gets prompted to overwrite or entering a new name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Text to write into the file. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__controller_8cpp_a90ee1f4929750a48a0e201f8923a2449_cgraph}
+\end{center}
+\end{figure}
+
+
