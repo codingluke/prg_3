@@ -12,16 +12,13 @@
  */
 void write_to_file(string filename, string text, bool secure)
 {
-  if (secure)
+  if (secure && file_exists(filename))
   {
-    if (file_exists(filename))
-    {
-      cout << "Achtung! Datei " << filename << " bereits vorhanden." << endl;
-      if (read_yes_no("ueberschreiben?"))
-        write_to_file(filename, text, false);
-      else
-        cout << "Abgebrochen";
-    }
+    cout << "Achtung! Datei " << filename << " bereits vorhanden." << endl;
+    if (read_yes_no("ueberschreiben?"))
+      write_to_file(filename, text, false);
+    else
+      cout << "Abgebrochen";
   }
   else
   {

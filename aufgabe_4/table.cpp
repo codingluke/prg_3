@@ -45,7 +45,7 @@ string generate_table(ptMathFunctionOne function, string name,
       index += row_steps;
     }
     wandler << setprecision(precision) << setw(precision + 4)
-         << right << function(start);
+            << right << function(start);
     start += steps;
   }
   wandler << endl << endl;

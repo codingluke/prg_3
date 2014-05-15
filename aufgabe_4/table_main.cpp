@@ -53,8 +53,8 @@ const string FUNCTION_TWO_NAMES[FUNCTIONS_TWO_LENGTH] = { "pow" };
 
 /**
  * Entrypoint to the program 'tabelle'. Tabelle is a program to generate
- * value-tables for the mathematical functions cos, sin, tan, acos, asin,
- * atan, exp, log, log10, sqrt and pow.
+ * value-tables for the mathematical functions
+ * cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
  *
  * The user can define following parameters:
  * - Start value of the table
@@ -90,7 +90,10 @@ int main(int argc, char *argv[])
     if (validate_input(argc, argv))
       handle_action(argv);
     else
+    {
+      // TODO : READ man.txt and print it to console
       cout << "failure!";
+    }
 }
 
 /**
@@ -123,8 +126,8 @@ void handle_action(char *argv[])
                            atof(argv[6]), atof(argv[7]));
     filename = argv[8];
   }
-  cout << table;
-  write_to_file(filename, table);
+  cout << endl << table;
+  write_to_file(filename, table, true);
 }
 
 /**
@@ -220,6 +223,8 @@ bool validate_input(int argc, char *argv[])
   string function_type = get_function_type(argv[1]);
   valid = valid && validate_params_length(function_type, argc);
   valid = valid && validate_param_types(function_type, argv);
+  valid = valid && validate_start_end_range(atof(argv[2]), atof(argv[3]));
+  valid = valid && validate_steps_range(atof(argv[4]), atof(argv[5]));
   return valid;
 }
 
@@ -245,6 +250,16 @@ bool validate_param_types(string function_type, char *argv[])
       && atof(argv[6]) && atof(argv[7]) && !atof(argv[8]))
     valid = true;
   return valid;
+}
+
+bool validate_start_end_range(double start, double end)
+{
+  return start < end;
+}
+
+bool validate_steps_range(double step, double row_step)
+{
+  return step < row_step;
 }
 
 /**
