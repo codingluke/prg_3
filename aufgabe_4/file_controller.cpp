@@ -79,3 +79,19 @@ string read_secure_filename()
   } while (!file_ok);
   return filename;
 }
+
+/**
+ * Reads a file according a given filename and prints the content
+ * to the console.
+ *
+ * @param filename Name of the file to print to the console.
+ */
+void show_file(string filename)
+{
+  ifstream infile(filename.c_str());
+  string line;
+  if (!infile)
+    cout << "File " << filename << " existiert nicht!";
+  while (getline(infile, line))
+    cout << line << endl;
+}

@@ -90,10 +90,7 @@ int main(int argc, char *argv[])
     if (validate_input(argc, argv))
       handle_action(argv);
     else
-    {
-      // TODO : READ man.txt and print it to console
-      cout << "failure!";
-    }
+      show_file("man.txt");
 }
 
 /**
