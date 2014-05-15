@@ -271,7 +271,6 @@ bool validate_steps_range(double step, double row_step)
 bool validate_params_length(string function_type, int argc)
 {
   bool valid = false;
-  cout << function_type << argc;
   if ((function_type == "ONE" && argc == 8) ||
       (function_type == "TWO" && argc == 9))
     valid = true;

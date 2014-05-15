@@ -88,10 +88,10 @@ string read_secure_filename()
  */
 void show_file(string filename)
 {
-  ifstream infile(filename.c_str());
   string line;
+  ifstream infile(filename.c_str());
   if (!infile)
-    cout << "File " << filename << " existiert nicht!";
+    cout << "File '" << filename << "' existiert nicht!" << endl;
   while (getline(infile, line))
     cout << line << endl;
 }

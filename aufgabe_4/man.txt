@@ -4,54 +4,51 @@ NAME
 
 SYNOPSIS
 
-       tabelle <funktion> <startwert> <endwert> <schrittgroesse> 
-               <zeilenschrittgroesse> <preazision> [param2] <dateiname> 
+       tabelle [<funktion> <startwert> <endwert> <schrittgroesse>
+               <zeilenschrittgroesse> <preazision> [param2] <dateiname>]
 
 DESCRIPTION
 
 
 OPTIONS
-       
+
       <funktion>
             Funktion fuer welche die Tabelle generiert werden soll.
-            Pflichtfeld
             Vorhandene funktionen
                 cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
-      
-      <startwert> 
+
+      <startwert>
             Startwert der Tabelle.
-            Pflichtfeld
+            Pflichtfeld wenn auch Funktion angegeben
             Gleitkommazahl
             Muss kleiner sein als endwert.
-      
-      <endwert> 
+
+      <endwert>
             Endwert der Tabelle.
-            Pflichtfeld
+            Pflichtfeld wenn auch Funktion angegeben
             Gleitkommazahl
             Muss groesser sein als startwert.
 
       <schrittgroesse>
             Schrittgroesse zwischen den einzelnen zu berechnenden Werten.
-            Pflichtfeld
+            Pflichtfeld wenn auch Funktion angegeben
             Gleitkommazahl
             Muss kleiner sein als Zeilenschrittgroesse.
 
       <zeilenschrittgroesse>
             Schrittgroesse zwischen den einzelnen Zeilen.
-            Pflichtfeld
+            Pflichtfeld wenn auch Funktion angegeben
             Gleitkommazahl
             Muss groesser sein als Schrittgroesse.
 
       [param2]
             Wert fuer den zweiten Parameter der Funktion.
-            Pflichtfeld bei Funktionen mit zwei Parametern.
+            Pflichtfeld nur bei Funktionen mit zwei Parametern.
                 pow => exponent
             Natuerliche zahl
 
       <dateiname>
             Name der Datei in welche die Tabelle geschrieben werden soll.
-            Pflichtfeld
+            Pflichtfeld wenn auch Funktion angegeben
             Wenn datei berreits vorhanden wird nachgefragt ob diese
               ueberschrieben werden soll.
-
-
