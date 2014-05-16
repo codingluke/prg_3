@@ -146,10 +146,10 @@ int read_int(string text, int min, int max)
  *
  * @return the readed valid date.
  */
-Date read_date(string text)
+date read_date(string text)
 {
   cout << text << "\n";
-  Date date;
+  date date;
   date.year = read_int("Jahr:\t", 1583, 1000000);
   date.month = read_int("Monat:\t", 1, 12);
   date.day = read_int("Tag:\t", 1, calc_days_of_month(date.month, date.year));

@@ -5,10 +5,10 @@
  * Typedefinition of a struct Date.
  * It consists of three integers: day, month and year.
  */
-typedef struct Date {
+typedef struct date {
   int day;
   int month;
   int year;
-} Date;
+} date;
 
 #endif

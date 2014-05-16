@@ -15,6 +15,6 @@ int read_int(string text, int min, int max);
 int read_int(int min, int max);
 int read_int(string text);
 int read_int();
-Date read_date(string text);
+date read_date(string text);
 
 #endif

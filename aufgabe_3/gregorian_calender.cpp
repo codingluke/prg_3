@@ -87,7 +87,7 @@ int calc_days_since_the_beginning(int day, int month, int year)
  *
  * @return days in between the given dates.
  */
-int calc_days_between_dates(Date date1, Date date2)
+int calc_days_between_dates(date date1, date date2)
 {
   int days1 = calc_days_since_the_beginning(date1.day, date1.month, date1.year);
   int days2 = calc_days_since_the_beginning(date2.day, date2.month, date2.year);
