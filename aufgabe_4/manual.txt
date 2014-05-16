@@ -22,7 +22,7 @@ DESCRIPTION
 
         x            0      1      2      3      4      5      6      7      8      9
 
-        5        0.284  0.293  0.303  0.312  0.322  0.331  0.341   0.35  0.359  0.369
+        5.0      0.284  0.293  0.303  0.312  0.322  0.331  0.341   0.35  0.359  0.369
         5.1      0.378  0.387  0.396  0.406  0.415  0.424  0.433  0.442  0.451   0.46
         5.2      0.469  0.477  0.486  0.495  0.503  0.512  0.521  0.529  0.538  0.546
         5.3      0.554  0.563  0.571  0.579  0.587  0.595  0.603  0.611  0.619  0.627
@@ -32,13 +32,13 @@ DESCRIPTION
         5.7      0.835   0.84  0.846  0.851  0.856  0.861  0.866  0.871  0.876  0.881
         5.8      0.886   0.89  0.895  0.899  0.903  0.908  0.912  0.916   0.92  0.924
         5.9      0.927  0.931  0.935  0.938  0.942  0.945  0.948  0.951  0.954  0.957
-        6         0.96
+        6.0      0.96
 
 OPTIONS
 
       <funktion>
             Funktion fuer welche die Tabelle generiert werden soll.
-            Vorhandene funktionen
+            Vorhandene funktionen:
                 cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
 
       <startwert>
@@ -69,7 +69,7 @@ OPTIONS
             Wert fuer den zweiten Parameter der Funktion.
             Pflichtfeld nur bei Funktionen mit zwei Parametern.
                 pow => exponent
-            Natuerliche zahl
+            Gleitkommazahl
 
       <dateiname>
             Name der Datei in welche die Tabelle geschrieben werden soll.
