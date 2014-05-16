@@ -8,6 +8,8 @@
 #include "table.h"
 #include "pt_math_functions.h"
 
+#define EPSILON 0.00001
+
 using namespace std;
 
 const double DBL_MAX = numeric_limits<double>::max();
@@ -34,7 +36,7 @@ string generate_table(ptMathFunctionOne function, string name,
 {
   ostringstream wandler(ios::out);
   wandler << "Funktion:\t" << name << " x" << endl << endl;
-  wandler << left << setw(7) << "x";
+  wandler << left << setw(6) << "x";
   int num_columns = (int)(row_steps / steps);
   for (int i = 0; i < num_columns; i++)
     wandler << right << setw(precision + 4) << i;
@@ -42,13 +44,14 @@ string generate_table(ptMathFunctionOne function, string name,
   double index = start;
   while (start <= end)
   {
-    if (fabs(index - start) < 0.00001)
+    if (fabs(index - start) < EPSILON)
     {
-      wandler << endl << left << setw(7) << index;
+      wandler << endl << left << setw(6) << setprecision(1)
+              << fixed << index;
       index += row_steps;
     }
     wandler << setprecision(precision) << setw(precision + 4)
-            << right << function(start);
+            << right << fixed << function(start);
     start += steps;
   }
   wandler << endl << endl;
@@ -77,7 +80,7 @@ string generate_table(ptMathFunctionTwo function, string name, double start,
 {
   ostringstream wandler(ios::out);
   wandler << "Funktion:\t" << name << " x, " << param_two << endl << endl;
-  wandler << left << setw(7) << "x";
+  wandler << left << setw(6) << "x";
   int num_columns = (int)(row_steps / steps);
   for (int i = 0; i < num_columns; i++)
     wandler << right << setw(precision + 4) << i;
@@ -85,13 +88,14 @@ string generate_table(ptMathFunctionTwo function, string name, double start,
   double index = start;
   while (start <= end)
   {
-    if (fabs(index - start) < 0.00001)
+    if (fabs(index - start) < EPSILON)
     {
-      wandler << endl << left << setw(7) << index;
+      wandler << endl << left << setw(6) << setprecision(1)
+              << fixed << index;
       index += row_steps;
     }
     wandler << setprecision(precision) << setw(precision + 4)
-         << right << function(start, param_two);
+            << right << fixed << function(start, param_two);
     start += steps;
   }
   wandler << endl << endl;
