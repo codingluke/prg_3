@@ -12,8 +12,8 @@
 
 using namespace std;
 
-const double DBL_MAX = numeric_limits<double>::max();
-const double DBL_MIN = numeric_limits<double>::min();
+static const double DBL_MAX = numeric_limits<double>::max();
+static const double DBL_MIN = numeric_limits<double>::min();
 
 /**
  * Generates a value-table of a given function. The parameter of the given
@@ -138,7 +138,7 @@ string generate_table(ptMathFunctionTwo function, string name)
   double end = read_double("Bitte Endwert angeben: ", start, DBL_MAX);
   double steps = read_double("Bitte Schrittgroesse angeben: ");
   double row_steps = read_double("Bitte Zeilenschrittgroesse angeben: ", steps, DBL_MAX);
-  double param_two = read_double("Bitte zweiter Parameter angeben: ");
+  double param_two = read_double("Bitte zweiter Parameter angeben (Exponent): ");
   int precision = read_int("Bitte Nachkommastellen angeben: ");
   return generate_table(function, name, param_two, start, end,
                         steps, row_steps, precision);
