@@ -101,7 +101,7 @@ int calc_days_between_dates(date date1, date date2)
  * a calendar for the first day of the month. The calendar starts
  * with Sunday.
  *
- * So | Mo | Di | Mi | Do | Fr | Sa </ br>
+ * So | Mo | Di | Mi | Do | Fr | Sa <br>
  *  0 |  1 |  2 |  3 |  4 |  5 |  6
  *
  * @param month the given month.
