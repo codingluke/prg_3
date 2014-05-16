@@ -43,7 +43,7 @@ string generate_table(ptMathFunctionOne function, string name,
     wandler << right << setw(precision + 4) << i;
   wandler << endl;
   double index = start;
-  while (start <= end)
+  while (start <= end + EPSILON)
   {
     if (fabs(index - start) < EPSILON)
     {
@@ -87,7 +87,7 @@ string generate_table(ptMathFunctionTwo function, string name, double start,
     wandler << right << setw(precision + 4) << i;
   wandler << endl;
   double index = start;
-  while (start <= end)
+  while (start <= end + EPSILON)
   {
     if (fabs(index - start) < EPSILON)
     {
