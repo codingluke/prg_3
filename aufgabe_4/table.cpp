@@ -140,8 +140,8 @@ string generate_table(ptMathFunctionTwo function, string name)
   double row_steps = read_double("Bitte Zeilenschrittgroesse angeben: ", steps, DBL_MAX);
   double param_two = read_double("Bitte zweiter Parameter angeben (Exponent): ");
   int precision = read_int("Bitte Nachkommastellen angeben: ");
-  return generate_table(function, name, param_two, start, end,
-                        steps, row_steps, precision);
+  return generate_table(function, name, start, end,
+                        steps, row_steps, precision, param_two);
 }
 
 /**
