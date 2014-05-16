@@ -1,0 +1,252 @@
+\hypertarget{gregorian__calender_8cpp}{\section{gregorian\-\_\-calender.\-cpp File Reference}
+\label{gregorian__calender_8cpp}\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include \char`\"{}io\-\_\-util.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}date.\-h\char`\"{}}\\*
+Include dependency graph for gregorian\-\_\-calender.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{gregorian__calender_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{gregorian__calender_8cpp_ab345f7b66a3e361e0a77d7b7cbf235b9}{is\-\_\-leap\-\_\-year} (int year)
+\item 
+int \hyperlink{gregorian__calender_8cpp_ac931749f66720bdcba4d662b52d7de2b}{calc\-\_\-days\-\_\-of\-\_\-month} (int month, int year)
+\item 
+int \hyperlink{gregorian__calender_8cpp_a41d52c6b7790f79277145b6b1a67ee06}{calc\-\_\-days\-\_\-since\-\_\-the\-\_\-beginning} (int day, int month, int year)
+\item 
+int \hyperlink{gregorian__calender_8cpp_a14f3cbd497f4d93afc51445dc707b559}{calc\-\_\-days\-\_\-between\-\_\-dates} (\hyperlink{structDate}{Date} date1, \hyperlink{structDate}{Date} date2)
+\item 
+int \hyperlink{gregorian__calender_8cpp_a4c2416957da54061e0d8c03fff83d1a4}{calc\-\_\-start\-\_\-column} (int month, int year)
+\item 
+void \hyperlink{gregorian__calender_8cpp_aca17156e104486b3f78700b9c851f689}{print\-\_\-line} (char $\ast$sign, int length)
+\item 
+void \hyperlink{gregorian__calender_8cpp_a6b369b069a8ab93392690de255004d06}{print\-\_\-days} (int start\-\_\-column, int num\-\_\-days)
+\item 
+void \hyperlink{gregorian__calender_8cpp_af4184876e86f7f1935154dc22b034db0}{print\-\_\-calendar} (int month, int year)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{gregorian__calender_8cpp_a14f3cbd497f4d93afc51445dc707b559}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!calc\-\_\-days\-\_\-between\-\_\-dates@{calc\-\_\-days\-\_\-between\-\_\-dates}}
+\index{calc\-\_\-days\-\_\-between\-\_\-dates@{calc\-\_\-days\-\_\-between\-\_\-dates}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{calc\-\_\-days\-\_\-between\-\_\-dates}]{\setlength{\rightskip}{0pt plus 5cm}int calc\-\_\-days\-\_\-between\-\_\-dates (
+\begin{DoxyParamCaption}
+\item[{{\bf Date}}]{date1, }
+\item[{{\bf Date}}]{date2}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_a14f3cbd497f4d93afc51445dc707b559}
+Calculates the days in between two dates. The order of the dates is not important.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date1} & first date to calculate days in between. \\
+\hline
+{\em date2} & second date to calculate days in between.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+days in between the given dates. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gregorian__calender_8cpp_a14f3cbd497f4d93afc51445dc707b559_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{gregorian__calender_8cpp_ac931749f66720bdcba4d662b52d7de2b}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!calc\-\_\-days\-\_\-of\-\_\-month@{calc\-\_\-days\-\_\-of\-\_\-month}}
+\index{calc\-\_\-days\-\_\-of\-\_\-month@{calc\-\_\-days\-\_\-of\-\_\-month}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{calc\-\_\-days\-\_\-of\-\_\-month}]{\setlength{\rightskip}{0pt plus 5cm}int calc\-\_\-days\-\_\-of\-\_\-month (
+\begin{DoxyParamCaption}
+\item[{int}]{month, }
+\item[{int}]{year}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_ac931749f66720bdcba4d662b52d7de2b}
+calcs the amount of days for the given month and year.
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & the month. \\
+\hline
+{\em year} & the year.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amount the amount of days of the month. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{gregorian__calender_8cpp_ac931749f66720bdcba4d662b52d7de2b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{gregorian__calender_8cpp_a41d52c6b7790f79277145b6b1a67ee06}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!calc\-\_\-days\-\_\-since\-\_\-the\-\_\-beginning@{calc\-\_\-days\-\_\-since\-\_\-the\-\_\-beginning}}
+\index{calc\-\_\-days\-\_\-since\-\_\-the\-\_\-beginning@{calc\-\_\-days\-\_\-since\-\_\-the\-\_\-beginning}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{calc\-\_\-days\-\_\-since\-\_\-the\-\_\-beginning}]{\setlength{\rightskip}{0pt plus 5cm}int calc\-\_\-days\-\_\-since\-\_\-the\-\_\-beginning (
+\begin{DoxyParamCaption}
+\item[{int}]{day, }
+\item[{int}]{month, }
+\item[{int}]{year}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_a41d52c6b7790f79277145b6b1a67ee06}
+calc with a given date how many days are past since the 1.\-1.\-1583.
+
+
+\begin{DoxyParams}{Parameters}
+{\em day} & the day of the date. \\
+\hline
+{\em month} & the month of the date. \\
+\hline
+{\em year} & the year of the date.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amount the amount days past since 1.\-1.\-1583. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gregorian__calender_8cpp_a41d52c6b7790f79277145b6b1a67ee06_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{gregorian__calender_8cpp_a4c2416957da54061e0d8c03fff83d1a4}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!calc\-\_\-start\-\_\-column@{calc\-\_\-start\-\_\-column}}
+\index{calc\-\_\-start\-\_\-column@{calc\-\_\-start\-\_\-column}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{calc\-\_\-start\-\_\-column}]{\setlength{\rightskip}{0pt plus 5cm}int calc\-\_\-start\-\_\-column (
+\begin{DoxyParamCaption}
+\item[{int}]{month, }
+\item[{int}]{year}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_a4c2416957da54061e0d8c03fff83d1a4}
+Calculates for a given month and year the start column of a calendar for the first day of the month. The calendar starts with Sunday.
+
+So $\vert$ Mo $\vert$ Di $\vert$ Mi $\vert$ Do $\vert$ Fr $\vert$ Sa 0 $\vert$ 1 $\vert$ 2 $\vert$ 3 $\vert$ 4 $\vert$ 5 $\vert$ 6
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & the given month. \\
+\hline
+{\em year} & the given year.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the column in which the first year lies. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gregorian__calender_8cpp_a4c2416957da54061e0d8c03fff83d1a4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{gregorian__calender_8cpp_ab345f7b66a3e361e0a77d7b7cbf235b9}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!is\-\_\-leap\-\_\-year@{is\-\_\-leap\-\_\-year}}
+\index{is\-\_\-leap\-\_\-year@{is\-\_\-leap\-\_\-year}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{is\-\_\-leap\-\_\-year}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-\_\-leap\-\_\-year (
+\begin{DoxyParamCaption}
+\item[{int}]{year}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_ab345f7b66a3e361e0a77d7b7cbf235b9}
+Checks if a year is a leap year.
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & the year to investigate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the year is a leap year. false if the year is not a leap year. 
+\end{DoxyReturn}
+\hypertarget{gregorian__calender_8cpp_af4184876e86f7f1935154dc22b034db0}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!print\-\_\-calendar@{print\-\_\-calendar}}
+\index{print\-\_\-calendar@{print\-\_\-calendar}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{print\-\_\-calendar}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-calendar (
+\begin{DoxyParamCaption}
+\item[{int}]{month, }
+\item[{int}]{year}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_af4184876e86f7f1935154dc22b034db0}
+Prints the calendar of a given month and year to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em month} & month of the calendar. \\
+\hline
+{\em year} & year of the calendar. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gregorian__calender_8cpp_af4184876e86f7f1935154dc22b034db0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{gregorian__calender_8cpp_a6b369b069a8ab93392690de255004d06}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!print\-\_\-days@{print\-\_\-days}}
+\index{print\-\_\-days@{print\-\_\-days}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{print\-\_\-days}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-days (
+\begin{DoxyParamCaption}
+\item[{int}]{start\-\_\-column, }
+\item[{int}]{num\-\_\-days}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_a6b369b069a8ab93392690de255004d06}
+Prints days in the format of a Calendar to the console. Days before the start\-\_\-column are filled empty. \begin{DoxyVerb}  1     2    3     4     5     6
+\end{DoxyVerb}
+ 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\-\_\-column} & column of the first day. \\
+\hline
+{\em num\-\_\-days} & amount of days to print. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gregorian__calender_8cpp_aca17156e104486b3f78700b9c851f689}{\index{gregorian\-\_\-calender.\-cpp@{gregorian\-\_\-calender.\-cpp}!print\-\_\-line@{print\-\_\-line}}
+\index{print\-\_\-line@{print\-\_\-line}!gregorian_calender.cpp@{gregorian\-\_\-calender.\-cpp}}
+\subsubsection[{print\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{sign, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{gregorian__calender_8cpp_aca17156e104486b3f78700b9c851f689}
+Prints a line of a given sign for a given length to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & sign to print the line with. \\
+\hline
+{\em length} & length of the line. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,8 @@
+<map id="print_calendar" name="print_calendar">
+<area shape="rect" id="node2" href="$gregorian__calender_8cpp.html#a4c2416957da54061e0d8c03fff83d1a4" title="calc_start_column" alt="" coords="157,16,285,43"/>
+<area shape="rect" id="node5" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="526,63,669,89"/>
+<area shape="rect" id="node6" href="$gregorian__calender_8cpp.html#aca17156e104486b3f78700b9c851f689" title="print_line" alt="" coords="184,121,259,148"/>
+<area shape="rect" id="node7" href="$gregorian__calender_8cpp.html#a6b369b069a8ab93392690de255004d06" title="print_days" alt="" coords="180,172,263,199"/>
+<area shape="rect" id="node3" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="333,5,477,46"/>
+<area shape="rect" id="node4" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="718,37,813,64"/>
+</map>

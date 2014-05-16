@@ -1,0 +1,5 @@
+<map id="calc_start_column" name="calc_start_column">
+<area shape="rect" id="node2" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="181,5,325,46"/>
+<area shape="rect" id="node3" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="566,12,661,39"/>
+<area shape="rect" id="node4" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="374,37,517,64"/>
+</map>

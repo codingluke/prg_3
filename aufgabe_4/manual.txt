@@ -1,0 +1,78 @@
+NAME
+
+       tabelle - Generiert eine Wertetabelle für mathematische Funktionen und
+                 speichert diese in einer Textdatei.
+
+SYNOPSIS
+
+       tabelle [<funktion> <startwert> <endwert> <schrittgroesse>
+               <zeilenschrittgroesse> <preazision> [param2] <dateiname>]
+
+DESCRIPTION
+
+        Mit dem Program 'tabelle' lassen sich Wertetabellen für eine Reihe von
+        mathematischen Funktionen erstellen. Zu verfuegung stehende Funktionen
+        sind: cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
+        Dabei kann der Wertebereich, die Schrittgrösse und die Praezision der 
+        Tabelle selbst bestimmt werden.
+
+        Folgend ein Beispiel zu: ./tabelle cos 5 6 0.01 0.1 3 ausgabedatei.txt
+
+        Funktion:	cos x
+
+        x            0      1      2      3      4      5      6      7      8      9
+
+        5        0.284  0.293  0.303  0.312  0.322  0.331  0.341   0.35  0.359  0.369
+        5.1      0.378  0.387  0.396  0.406  0.415  0.424  0.433  0.442  0.451   0.46
+        5.2      0.469  0.477  0.486  0.495  0.503  0.512  0.521  0.529  0.538  0.546
+        5.3      0.554  0.563  0.571  0.579  0.587  0.595  0.603  0.611  0.619  0.627
+        5.4      0.635  0.642   0.65  0.658  0.665  0.673   0.68  0.687  0.694  0.702
+        5.5      0.709  0.716  0.723   0.73  0.736  0.743   0.75  0.756  0.763  0.769
+        5.6      0.776  0.782  0.788  0.794    0.8  0.806  0.812  0.818  0.824  0.829
+        5.7      0.835   0.84  0.846  0.851  0.856  0.861  0.866  0.871  0.876  0.881
+        5.8      0.886   0.89  0.895  0.899  0.903  0.908  0.912  0.916   0.92  0.924
+        5.9      0.927  0.931  0.935  0.938  0.942  0.945  0.948  0.951  0.954  0.957
+        6         0.96
+
+OPTIONS
+
+      <funktion>
+            Funktion fuer welche die Tabelle generiert werden soll.
+            Vorhandene funktionen
+                cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
+
+      <startwert>
+            Startwert der Tabelle.
+            Pflichtfeld wenn auch Funktion angegeben wurde.
+            Gleitkommazahl
+            Muss kleiner sein als endwert.
+
+      <endwert>
+            Endwert der Tabelle.
+            Pflichtfeld wenn auch Funktion angegeben wurde.
+            Gleitkommazahl
+            Muss groesser sein als startwert.
+
+      <schrittgroesse>
+            Schrittgroesse zwischen den einzelnen zu berechnenden Werten.
+            Pflichtfeld wenn auch Funktion angegeben wurde.
+            Gleitkommazahl
+            Muss kleiner sein als Zeilenschrittgroesse.
+
+      <zeilenschrittgroesse>
+            Schrittgroesse zwischen den einzelnen Zeilen.
+            Pflichtfeld wenn auch Funktion angegeben wurde.
+            Gleitkommazahl
+            Muss groesser sein als Schrittgroesse.
+
+      [param2]
+            Wert fuer den zweiten Parameter der Funktion.
+            Pflichtfeld nur bei Funktionen mit zwei Parametern.
+                pow => exponent
+            Natuerliche zahl
+
+      <dateiname>
+            Name der Datei in welche die Tabelle geschrieben werden soll.
+            Pflichtfeld wenn auch Funktion angegeben wurde.
+            Wenn datei berreits vorhanden wird nachgefragt ob diese
+              ueberschrieben werden soll.

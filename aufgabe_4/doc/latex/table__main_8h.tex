@@ -1,0 +1,268 @@
+\hypertarget{table__main_8h}{\section{table\-\_\-main.\-h File Reference}
+\label{table__main_8h}\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}pt\-\_\-math\-\_\-functions.\-h\char`\"{}}\\*
+Include dependency graph for table\-\_\-main.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{table__main_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{table__main_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{table__main_8h_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{table__main_8h_ad115f1168104746bd6f125391fbd0a99}{print\-\_\-actions} ()
+\item 
+void \hyperlink{table__main_8h_a352bcc46c3693e405cc701ece70bd196}{handle\-\_\-action} (int action)
+\item 
+void \hyperlink{table__main_8h_a13a516479df3fbac2dec79ce076c160d}{handle\-\_\-action} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+bool \hyperlink{table__main_8h_a0bf5ec7e48000c167f6d7b5aeda3e4c4}{validate\-\_\-input} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+bool \hyperlink{table__main_8h_a0f86595eb8dcc1bb533ed3ee87a5c603}{validate\-\_\-function\-\_\-name} (string function\-\_\-name)
+\item 
+bool \hyperlink{table__main_8h_a040a1047545278bd502f2b1ec1b70759}{validate\-\_\-params\-\_\-length} (string function\-\_\-type, int argc)
+\item 
+bool \hyperlink{table__main_8h_a4b45b9f42125840c08d7b70c1fd921bc}{validate\-\_\-param\-\_\-types} (string function\-\_\-type, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{table__main_8h_a0bb0944ea7a4f2b01d571239acf8cce9}{get\-\_\-array\-\_\-index} (string name, const string names\mbox{[}$\,$\mbox{]}, int length)
+\item 
+string \hyperlink{table__main_8h_a9f56c4605d18aa78fcd4634bd55a0f87}{get\-\_\-function\-\_\-type} (string name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{table__main_8h_a0bb0944ea7a4f2b01d571239acf8cce9}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!get\-\_\-array\-\_\-index@{get\-\_\-array\-\_\-index}}
+\index{get\-\_\-array\-\_\-index@{get\-\_\-array\-\_\-index}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{get\-\_\-array\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-array\-\_\-index (
+\begin{DoxyParamCaption}
+\item[{string}]{item, }
+\item[{const string}]{items\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a0bb0944ea7a4f2b01d571239acf8cce9}
+Returns the index of a string inside an array of strings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & String to be searched in the array. \\
+\hline
+{\em items} & Array which contains the item.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int index of the item in the array. -\/1 if not in the array. 
+\end{DoxyReturn}
+\hypertarget{table__main_8h_a9f56c4605d18aa78fcd4634bd55a0f87}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!get\-\_\-function\-\_\-type@{get\-\_\-function\-\_\-type}}
+\index{get\-\_\-function\-\_\-type@{get\-\_\-function\-\_\-type}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{get\-\_\-function\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}string get\-\_\-function\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a9f56c4605d18aa78fcd4634bd55a0f87}
+Returns a string representing the type of a function by its name. There are two defined types (\char`\"{}\-O\-N\-E\char`\"{} and \char`\"{}\-T\-W\-O\char`\"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String Name of the function to be checked.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String O\-N\-E pt\-Math\-Function\-One\-: double ($\ast$)(double) T\-W\-O pt\-Math\-Function\-Two\-: double ($\ast$)(double, double) 
+\end{DoxyReturn}
+\hypertarget{table__main_8h_a352bcc46c3693e405cc701ece70bd196}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!handle\-\_\-action@{handle\-\_\-action}}
+\index{handle\-\_\-action@{handle\-\_\-action}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{handle\-\_\-action}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-action (
+\begin{DoxyParamCaption}
+\item[{int}]{action}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a352bcc46c3693e405cc701ece70bd196}
+Generates the table for e certain action given by the id. prints the table to the console and writes the table in a file chosen by the users input. If the file already exists, it promts the user to chose wheather to override it or to abord.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & int The action for witch to generate the table. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{table__main_8h_a352bcc46c3693e405cc701ece70bd196_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{table__main_8h_a13a516479df3fbac2dec79ce076c160d}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!handle\-\_\-action@{handle\-\_\-action}}
+\index{handle\-\_\-action@{handle\-\_\-action}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{handle\-\_\-action}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-action (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a13a516479df3fbac2dec79ce076c160d}
+Handles a given action according the arguments array. Generates the table for the action and writes the table to a file. When the file already exists. The user gets prompted to chose if the file gets overwridden or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argv\mbox{[}$\,$\mbox{]}} & Arguments array from the program execution. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{table__main_8h_a13a516479df3fbac2dec79ce076c160d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{table__main_8h_a0ddf1224851353fc92bfbff6f499fa97}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!main@{main}}
+\index{main@{main}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a0ddf1224851353fc92bfbff6f499fa97}
+Entrypoint to the program 'tabelle'. Tabelle is a program to generate value-\/tables for the mathematical functions cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
+
+The user can define following parameters\-:
+\begin{DoxyItemize}
+\item Start value of the table
+\item End value of the table
+\item Value for the iteration steps
+\item Value for the steps of the column (after how many iteration should start a new column)
+\item Precision of the function output.
+\item Filename of the file to save the table.
+\end{DoxyItemize}
+
+When a function needs other parameters, the user has to enter these too. e.\-g. sin(x) =$>$ x is for all values between the start value and end value with the iteration of the step value. pow(x, exp) =$>$ exp has to be entered. the iteration is just for x.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & int Length of $\ast$argv\mbox{[}\mbox{]} \\
+\hline
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & char Arguments array form the program execution. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{table__main_8h_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{table__main_8h_ad115f1168104746bd6f125391fbd0a99}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!print\-\_\-actions@{print\-\_\-actions}}
+\index{print\-\_\-actions@{print\-\_\-actions}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{print\-\_\-actions}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_ad115f1168104746bd6f125391fbd0a99}
+Prints a description of the available actions to the console. \hypertarget{table__main_8h_a0f86595eb8dcc1bb533ed3ee87a5c603}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!validate\-\_\-function\-\_\-name@{validate\-\_\-function\-\_\-name}}
+\index{validate\-\_\-function\-\_\-name@{validate\-\_\-function\-\_\-name}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{validate\-\_\-function\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}bool validate\-\_\-function\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{string}]{name}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a0f86595eb8dcc1bb533ed3ee87a5c603}
+Checks if a function (by its name) is defined.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String function by name, to be checked.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the function exists. fales if the function don't exists. 
+\end{DoxyReturn}
+\hypertarget{table__main_8h_a0bf5ec7e48000c167f6d7b5aeda3e4c4}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!validate\-\_\-input@{validate\-\_\-input}}
+\index{validate\-\_\-input@{validate\-\_\-input}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{validate\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}bool validate\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a0bf5ec7e48000c167f6d7b5aeda3e4c4}
+Validates the input arguments. Checks if the function is available. Checks if there are enough argumends for the given function type. Checks if the arguments are in the right types.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & int lenght of the argument array. \\
+\hline
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & char argument array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when the arguments are valid. false when the arguments are invalid. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{table__main_8h_a0bf5ec7e48000c167f6d7b5aeda3e4c4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{table__main_8h_a4b45b9f42125840c08d7b70c1fd921bc}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!validate\-\_\-param\-\_\-types@{validate\-\_\-param\-\_\-types}}
+\index{validate\-\_\-param\-\_\-types@{validate\-\_\-param\-\_\-types}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{validate\-\_\-param\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}bool validate\-\_\-param\-\_\-types (
+\begin{DoxyParamCaption}
+\item[{string}]{function\-\_\-type, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a4b45b9f42125840c08d7b70c1fd921bc}
+Validates the type of the arguments according the type of the given function to be called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\-\_\-type} & String Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
+\hline
+{\em argv\mbox{[}$\,$\mbox{]}} & $\ast$char input arguments.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when the argument types fit the functions type. false when the argument types don't fit the functions type. 
+\end{DoxyReturn}
+\hypertarget{table__main_8h_a040a1047545278bd502f2b1ec1b70759}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!validate\-\_\-params\-\_\-length@{validate\-\_\-params\-\_\-length}}
+\index{validate\-\_\-params\-\_\-length@{validate\-\_\-params\-\_\-length}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{validate\-\_\-params\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}bool validate\-\_\-params\-\_\-length (
+\begin{DoxyParamCaption}
+\item[{string}]{function\-\_\-type, }
+\item[{int}]{argc}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a040a1047545278bd502f2b1ec1b70759}
+Validates the argument length according a given function type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em function\-\_\-type} & String Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
+\hline
+{\em argc} & int Length of the argument array.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the argument length fit the function type false if the argument length don fit the function type. 
+\end{DoxyReturn}

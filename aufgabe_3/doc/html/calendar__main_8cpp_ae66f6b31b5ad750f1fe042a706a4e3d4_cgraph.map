@@ -1,0 +1,18 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$calendar_8cpp.html#ad115f1168104746bd6f125391fbd0a99" title="print_actions" alt="" coords="127,105,223,132"/>
+<area shape="rect" id="node3" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="499,309,567,336"/>
+<area shape="rect" id="node6" href="$calendar_8cpp.html#ab638c6fed68a7769bf26f7caecae3297" title="generate_and_print\l_calendar" alt="" coords="109,157,241,198"/>
+<area shape="rect" id="node14" href="$calendar_8cpp.html#a767223919a21b7a1054cbb8a3c543b76" title="calc_and_print_days\l_between_dates" alt="" coords="104,230,245,271"/>
+<area shape="rect" id="node17" href="$calendar_8cpp.html#a395d2605875a0bf3296f56675c12edd7" title="print_goodbye" alt="" coords="123,360,226,387"/>
+<area shape="rect" id="node4" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="702,360,781,387"/>
+<area shape="rect" id="node5" href="$io__util_8cpp.html#acd3415eef442ced2b5e064f95f04b624" title="swap" alt="" coords="907,335,960,361"/>
+<area shape="rect" id="node7" href="$gregorian__calender_8cpp.html#af4184876e86f7f1935154dc22b034db0" title="print_calendar" alt="" coords="294,107,397,133"/>
+<area shape="rect" id="node8" href="$gregorian__calender_8cpp.html#a4c2416957da54061e0d8c03fff83d1a4" title="calc_start_column" alt="" coords="469,5,597,32"/>
+<area shape="rect" id="node11" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="862,156,1005,183"/>
+<area shape="rect" id="node12" href="$gregorian__calender_8cpp.html#aca17156e104486b3f78700b9c851f689" title="print_line" alt="" coords="496,56,571,83"/>
+<area shape="rect" id="node13" href="$gregorian__calender_8cpp.html#a6b369b069a8ab93392690de255004d06" title="print_days" alt="" coords="492,107,575,133"/>
+<area shape="rect" id="node9" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="669,91,813,133"/>
+<area shape="rect" id="node10" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="1054,129,1149,156"/>
+<area shape="rect" id="node15" href="$console__input_8cpp.html#ae8b03184fcf6f3b469df6c0c426ca394" title="read_date" alt="" coords="306,259,385,285"/>
+<area shape="rect" id="node16" href="$gregorian__calender_8cpp.html#a14f3cbd497f4d93afc51445dc707b559" title="calc_days_between_dates" alt="" coords="445,208,621,235"/>
+</map>
