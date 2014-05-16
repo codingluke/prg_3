@@ -1,0 +1,170 @@
+ ..;
+ ..Fle;
+ v.n..FleAEpti;
+
+/**
+ * VM   te pror    e  
+ * t -. It nf  us    wth
+ * wrn rg   e .
+ * Une  s (ke n  )  d
+ *   rmio . T -r s  wth 
+ * -t  to      t   txt.
+ *
+ *  t   Cr-Ci:
+ * ://.wipe./wi/%3%8_r
+ *
+ * @  Hl
+ */
+ ss M
+{
+  /**
+   * T mul , wn to   wh   t rogr 
+   *  rumn.
+   */
+  pr  il  MANUA = "B: v Mi "
+      + "<o> <ssort> <ti> <>\"
+      + ":\"
+      + "  o -        vrsl\"
+      + "   -        nussln\"
+      + "  lu   n, Z   r Ze "
+      + " \"
+      + "          Tt   , i  "
+      + " n.\";
+
+  /**
+   *  trtor t   o ti .
+   */
+	 Vne()
+	{
+	}
+
+	/**
+   * T tryp  VgM. C   um r   strt
+   *   ros.  v Exton  v  pu.
+   *
+   * @rm rgs		s   use 
+   */
+    t v (Sg[] rg)
+   {
+    ty
+    {
+      Arum();
+      (rs[], [1], [2], r[3]);
+    }
+     (ItExc )
+    {
+      S..tn(.());
+    }
+    th (NtFo e)
+    {
+      Sy..prn("Dti " + .et()
+        + "  vo!");
+    }
+    c (Aol )
+    {
+      .ou.n(" " + .()
+        + " k t el !");
+    }
+	}
+
+  /**
+   * Erypt/  n  t  .
+   * Ce   r e. Ls u   ovr  t.
+   *
+   * @ oti      Oti  .
+   * @pr          K or e.
+   * @ i   o  i  /Dryp.
+   * @p       t     re .
+   *
+   * @thro Arg
+   * @ows NFou
+   * @trows ton
+   */
+  t   proc( tio, St ,
+                              S , i )
+     Ilun, FlEpt,
+           ssExpti
+  {
+    t();
+    Sou(sou);
+    VCpr v = nw rC(y);
+    tAt(pt, , re);
+    t
+    {
+      Sri  = Firr.(ol);
+      S mni = "";
+       (.("-v"))
+        mnT = vi.(txt);
+      lse  (ton.e("-"))
+        Txt = .(xt);
+      FCon.reFi(le);
+      Firoller.TF(nipTx, tl);
+      Sys..pri(".");
+    }
+     (ArEx )
+    {
+      ..pri(".");
+    }
+  }
+
+  /**
+   * Pri  f ou  x o.
+   *
+   * @ ton      Sme  th .
+   * @ y         Ky t  te 
+   * @p   Surc  r  tio .
+   */
+  pr stic  rinI(S op, Str ,
+                                       sour)
+  {
+     tio = "";
+     (op.s("-"))
+       = "vuss";
+    
+      n = "ue";
+    .ut.(" " +  + "  Dt "
+      +  + " m  Ss " + );
+  }
+
+  /**
+   * Cs  t   v  t.
+   *
+   * @ i     
+   *
+   * @tho tin
+   * @ws Exp
+   */
+  pvte   vSurc(S urle)
+     NFoundx, AsEpti
+  {
+    FCtrol.R(f);
+  }
+
+  /**
+   *   re  y o nt  y
+   *  usr.
+   *
+   * @r   Arg r    nput.
+   *
+   * @t Iltio
+   */
+  pvt   vtLngh([] r)
+  {
+    i (. != )
+       w lumeton(UL);
+  }
+
+  /**
+   * C  re i    try.
+   * V trie : -  -
+   *
+   * @pr   S o the  to c.
+   *
+   * @s IlArumo
+   */
+  rv s  Opti(Srn )
+  {
+     (!.s("-") && !.("-"))
+      t  ArgtExce(MNUL);
+  }
+}
