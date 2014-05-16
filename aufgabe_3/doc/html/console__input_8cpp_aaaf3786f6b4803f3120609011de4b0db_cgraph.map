@@ -1,5 +1,4 @@
 <map id="read_int" name="read_int">
-<area shape="rect" id="node2" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="123,5,191,32"/>
-<area shape="rect" id="node3" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="241,5,319,32"/>
-<area shape="rect" id="node4" href="$io__util_8cpp.html#acd3415eef442ced2b5e064f95f04b624" title="swap" alt="" coords="368,5,421,32"/>
+<area shape="rect" id="node3" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="124,5,191,35"/>
+<area shape="rect" id="node5" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="241,5,319,35"/>
 </map>

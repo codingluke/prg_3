@@ -4,9 +4,9 @@
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$climits$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
-{\ttfamily \#include \char`\"{}io\-\_\-util.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}date.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}gregorian\-\_\-calender.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}console\-\_\-input.\-h\char`\"{}}\\*
 Include dependency graph for console\-\_\-input.\-cpp\-:
 \nopagebreak
 \begin{figure}[H]
@@ -34,18 +34,18 @@ int \hyperlink{console__input_8cpp_aaaf3786f6b4803f3120609011de4b0db}{read\-\_\-
 \item 
 int \hyperlink{console__input_8cpp_a4f8c1bb51d432116d3eda43db3340c8c}{read\-\_\-int} (string text, int min, int max)
 \item 
-\hyperlink{structDate}{Date} \hyperlink{console__input_8cpp_ae8b03184fcf6f3b469df6c0c426ca394}{read\-\_\-date} (string text)
+\hyperlink{structdate}{date} \hyperlink{console__input_8cpp_a318aed1ff745e0e6b573108147ad21f4}{read\-\_\-date} (string text)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\hypertarget{console__input_8cpp_ae8b03184fcf6f3b469df6c0c426ca394}{\index{console\-\_\-input.\-cpp@{console\-\_\-input.\-cpp}!read\-\_\-date@{read\-\_\-date}}
+\hypertarget{console__input_8cpp_a318aed1ff745e0e6b573108147ad21f4}{\index{console\-\_\-input.\-cpp@{console\-\_\-input.\-cpp}!read\-\_\-date@{read\-\_\-date}}
 \index{read\-\_\-date@{read\-\_\-date}!console_input.cpp@{console\-\_\-input.\-cpp}}
-\subsubsection[{read\-\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Date} read\-\_\-date (
+\subsubsection[{read\-\_\-date}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date} read\-\_\-date (
 \begin{DoxyParamCaption}
 \item[{string}]{text}
 \end{DoxyParamCaption}
-)}}\label{console__input_8cpp_ae8b03184fcf6f3b469df6c0c426ca394}
+)}}\label{console__input_8cpp_a318aed1ff745e0e6b573108147ad21f4}
 Prints a text to the console and reads a valid date from the console. It is not possible to read a invalid date like 29.\-2.\-2014.
 
 
@@ -63,7 +63,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_ae8b03184fcf6f3b469df6c0c426ca394_cgraph}
+\includegraphics[width=350pt]{console__input_8cpp_a318aed1ff745e0e6b573108147ad21f4_cgraph}
 \end{center}
 \end{figure}
 
@@ -95,7 +95,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=304pt]{console__input_8cpp_ad0ccfbb50d0e333ef8acfeab2b7d8071_cgraph}
+\includegraphics[width=228pt]{console__input_8cpp_ad0ccfbb50d0e333ef8acfeab2b7d8071_cgraph}
 \end{center}
 \end{figure}
 
@@ -119,7 +119,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=304pt]{console__input_8cpp_af310540093ee953c3018bc13bbde3da5_cgraph}
+\includegraphics[width=228pt]{console__input_8cpp_af310540093ee953c3018bc13bbde3da5_cgraph}
 \end{center}
 \end{figure}
 
@@ -148,7 +148,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_aaaf3786f6b4803f3120609011de4b0db_cgraph}
+\includegraphics[width=316pt]{console__input_8cpp_aaaf3786f6b4803f3120609011de4b0db_cgraph}
 \end{center}
 \end{figure}
 
@@ -183,7 +183,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_a4f8c1bb51d432116d3eda43db3340c8c_cgraph}
+\includegraphics[width=316pt]{console__input_8cpp_a4f8c1bb51d432116d3eda43db3340c8c_cgraph}
 \end{center}
 \end{figure}
 
@@ -208,18 +208,6 @@ Reads a long value in between a given interval from the console. When the entere
 \begin{DoxyReturn}{Returns}
 a long value in between min and max. 
 \end{DoxyReturn}
-
-
-Here is the call graph for this function\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=216pt]{console__input_8cpp_a710a686867142de265860584f4147592_cgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{console__input_8cpp_a347c616893b725a74f60ea1f7ee325d2}{\index{console\-\_\-input.\-cpp@{console\-\_\-input.\-cpp}!read\-\_\-long@{read\-\_\-long}}
 \index{read\-\_\-long@{read\-\_\-long}!console_input.cpp@{console\-\_\-input.\-cpp}}
 \subsubsection[{read\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}long read\-\_\-long (
@@ -239,7 +227,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=312pt]{console__input_8cpp_a347c616893b725a74f60ea1f7ee325d2_cgraph}
+\includegraphics[width=236pt]{console__input_8cpp_a347c616893b725a74f60ea1f7ee325d2_cgraph}
 \end{center}
 \end{figure}
 
@@ -268,7 +256,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=312pt]{console__input_8cpp_a9128c63513d87af5259597d8c9930476_cgraph}
+\includegraphics[width=236pt]{console__input_8cpp_a9128c63513d87af5259597d8c9930476_cgraph}
 \end{center}
 \end{figure}
 
@@ -303,7 +291,7 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=312pt]{console__input_8cpp_a03ebbd2a45117ee03be4e9002210ab36_cgraph}
+\includegraphics[width=236pt]{console__input_8cpp_a03ebbd2a45117ee03be4e9002210ab36_cgraph}
 \end{center}
 \end{figure}
 

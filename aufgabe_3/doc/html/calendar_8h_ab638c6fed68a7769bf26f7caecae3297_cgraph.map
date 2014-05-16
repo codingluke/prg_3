@@ -1,12 +1,11 @@
 <map id="generate_and_print_calendar" name="generate_and_print_calendar">
-<area shape="rect" id="node2" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="205,41,273,68"/>
-<area shape="rect" id="node5" href="$gregorian__calender_8cpp.html#af4184876e86f7f1935154dc22b034db0" title="print_calendar" alt="" coords="187,123,290,149"/>
-<area shape="rect" id="node3" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="363,13,442,40"/>
-<area shape="rect" id="node4" href="$io__util_8cpp.html#acd3415eef442ced2b5e064f95f04b624" title="swap" alt="" coords="560,5,613,32"/>
-<area shape="rect" id="node6" href="$gregorian__calender_8cpp.html#a4c2416957da54061e0d8c03fff83d1a4" title="calc_start_column" alt="" coords="339,68,467,95"/>
-<area shape="rect" id="node9" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="707,115,850,141"/>
-<area shape="rect" id="node10" href="$gregorian__calender_8cpp.html#aca17156e104486b3f78700b9c851f689" title="print_line" alt="" coords="365,173,440,200"/>
-<area shape="rect" id="node11" href="$gregorian__calender_8cpp.html#a6b369b069a8ab93392690de255004d06" title="print_days" alt="" coords="361,224,444,251"/>
-<area shape="rect" id="node7" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="515,57,659,98"/>
-<area shape="rect" id="node8" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="899,89,994,116"/>
+<area shape="rect" id="node3" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="205,32,272,61"/>
+<area shape="rect" id="node7" href="$gregorian__calender_8cpp.html#af4184876e86f7f1935154dc22b034db0" title="print_calendar" alt="" coords="188,111,289,140"/>
+<area shape="rect" id="node5" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="364,5,441,35"/>
+<area shape="rect" id="node9" href="$gregorian__calender_8cpp.html#a4c2416957da54061e0d8c03fff83d1a4" title="calc_start_column" alt="" coords="339,59,467,88"/>
+<area shape="rect" id="node15" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="708,103,849,132"/>
+<area shape="rect" id="node19" href="$gregorian__calender_8cpp.html#aca17156e104486b3f78700b9c851f689" title="print_line" alt="" coords="365,163,440,192"/>
+<area shape="rect" id="node21" href="$gregorian__calender_8cpp.html#a6b369b069a8ab93392690de255004d06" title="print_days" alt="" coords="361,216,444,245"/>
+<area shape="rect" id="node11" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="515,42,659,89"/>
+<area shape="rect" id="node13" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="900,77,993,107"/>
 </map>

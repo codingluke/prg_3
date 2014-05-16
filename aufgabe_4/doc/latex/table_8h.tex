@@ -27,6 +27,8 @@ string \hyperlink{table_8h_a27258c1b46c178213606bf2c13eb085b}{generate\-\_\-tabl
 string \hyperlink{table_8h_a1e9cb801bd8f49deb54fb1afc97cbdde}{generate\-\_\-table} (\hyperlink{pt__math__functions_8h_aaead49151b753b4ef6a4c84ee8aa8c36}{pt\-Math\-Function\-One} function, string name)
 \item 
 string \hyperlink{table_8h_a00e1177592ae74a7e1df38e1e1cd88f3}{generate\-\_\-table} (\hyperlink{pt__math__functions_8h_ad6f1c83ac0e2e8b6e0393aeddfda805f}{pt\-Math\-Function\-Two} function, string name)
+\item 
+int \hyperlink{table_8h_a17774c1a04ac3735b8843f0d6b1f1afb}{get\-\_\-floating\-\_\-point\-\_\-length} (double number)
 \end{DoxyCompactItemize}
 
 
@@ -104,6 +106,17 @@ Generates a value-\/table of a given function. The parameter of the given functi
 \begin{DoxyReturn}{Returns}
 a formatted value-\/table as a string. 
 \end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{table_8h_a27258c1b46c178213606bf2c13eb085b_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{table_8h_a1e9cb801bd8f49deb54fb1afc97cbdde}{\index{table.\-h@{table.\-h}!generate\-\_\-table@{generate\-\_\-table}}
 \index{generate\-\_\-table@{generate\-\_\-table}!table.h@{table.\-h}}
 \subsubsection[{generate\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}string generate\-\_\-table (
@@ -166,3 +179,20 @@ Here is the call graph for this function\-:\nopagebreak
 \end{figure}
 
 
+\hypertarget{table_8h_a17774c1a04ac3735b8843f0d6b1f1afb}{\index{table.\-h@{table.\-h}!get\-\_\-floating\-\_\-point\-\_\-length@{get\-\_\-floating\-\_\-point\-\_\-length}}
+\index{get\-\_\-floating\-\_\-point\-\_\-length@{get\-\_\-floating\-\_\-point\-\_\-length}!table.h@{table.\-h}}
+\subsubsection[{get\-\_\-floating\-\_\-point\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}int get\-\_\-floating\-\_\-point\-\_\-length (
+\begin{DoxyParamCaption}
+\item[{double}]{number}
+\end{DoxyParamCaption}
+)}}\label{table_8h_a17774c1a04ac3735b8843f0d6b1f1afb}
+Gives back the length of a given floating point number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Floating-\/point number to calculate the length.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+amouth of numerics including the point of the number. 
+\end{DoxyReturn}

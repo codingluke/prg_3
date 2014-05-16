@@ -2,15 +2,14 @@
 \label{console__input_8cpp}\index{console\-\_\-input.\-cpp@{console\-\_\-input.\-cpp}}
 }
 {\ttfamily \#include $<$iostream$>$}\\*
-{\ttfamily \#include $<$climits$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
-{\ttfamily \#include \char`\"{}io\-\_\-util.\-h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}console\-\_\-input.\-h\char`\"{}}\\*
 Include dependency graph for console\-\_\-input.\-cpp\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=348pt]{console__input_8cpp__incl}
+\includegraphics[width=332pt]{console__input_8cpp__incl}
 \end{center}
 \end{figure}
 \subsection*{Functions}
@@ -55,17 +54,18 @@ string \hyperlink{console__input_8cpp_a44ccadd65be527f89bdcf6d27a3b1147}{read\-\
 \item[{double}]{max}
 \end{DoxyParamCaption}
 )}}\label{console__input_8cpp_a8a9df77c5c4adba7ebadb77f3b3dc8ee}
+Reads a double value in between a given interval from the console. When the entered value is not valid to the interval, the user gets prompted to reenter a valid.
 
 
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=226pt]{console__input_8cpp_a8a9df77c5c4adba7ebadb77f3b3dc8ee_cgraph}
-\end{center}
-\end{figure}
-
-
+\begin{DoxyParams}{Parameters}
+{\em min} & lower bound of the interval. \\
+\hline
+{\em max} & top bound of the interval\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double value in between min and max. 
+\end{DoxyReturn}
 \hypertarget{console__input_8cpp_a65f2421973540c10e5ae7d10177c566a}{\index{console\-\_\-input.\-cpp@{console\-\_\-input.\-cpp}!read\-\_\-double@{read\-\_\-double}}
 \index{read\-\_\-double@{read\-\_\-double}!console_input.cpp@{console\-\_\-input.\-cpp}}
 \subsubsection[{read\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}double read\-\_\-double (
@@ -73,13 +73,18 @@ Here is the call graph for this function\-:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )}}\label{console__input_8cpp_a65f2421973540c10e5ae7d10177c566a}
+Reads a double value from the console in between the whole range of double.
+
+\begin{DoxyReturn}{Returns}
+a valid double value. 
+\end{DoxyReturn}
 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=332pt]{console__input_8cpp_a65f2421973540c10e5ae7d10177c566a_cgraph}
+\includegraphics[width=256pt]{console__input_8cpp_a65f2421973540c10e5ae7d10177c566a_cgraph}
 \end{center}
 \end{figure}
 
@@ -91,13 +96,23 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{string}]{text}
 \end{DoxyParamCaption}
 )}}\label{console__input_8cpp_a46878a8594ba71f54911c572031d4614}
+Prints a text to the console and reads a double value from the console in between the whole range of double.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text to print to the console.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a valid double value. 
+\end{DoxyReturn}
 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=332pt]{console__input_8cpp_a46878a8594ba71f54911c572031d4614_cgraph}
+\includegraphics[width=256pt]{console__input_8cpp_a46878a8594ba71f54911c572031d4614_cgraph}
 \end{center}
 \end{figure}
 
@@ -117,7 +132,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=332pt]{console__input_8cpp_aca43573be8fe10d4bfede3fc5bd0bd63_cgraph}
+\includegraphics[width=256pt]{console__input_8cpp_aca43573be8fe10d4bfede3fc5bd0bd63_cgraph}
 \end{center}
 \end{figure}
 
@@ -148,7 +163,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_ad0ccfbb50d0e333ef8acfeab2b7d8071_cgraph}
+\includegraphics[width=334pt]{console__input_8cpp_ad0ccfbb50d0e333ef8acfeab2b7d8071_cgraph}
 \end{center}
 \end{figure}
 
@@ -171,7 +186,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_af310540093ee953c3018bc13bbde3da5_cgraph}
+\includegraphics[width=334pt]{console__input_8cpp_af310540093ee953c3018bc13bbde3da5_cgraph}
 \end{center}
 \end{figure}
 
@@ -264,7 +279,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=322pt]{console__input_8cpp_a710a686867142de265860584f4147592_cgraph}
+\includegraphics[width=246pt]{console__input_8cpp_a710a686867142de265860584f4147592_cgraph}
 \end{center}
 \end{figure}
 
@@ -287,7 +302,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_a347c616893b725a74f60ea1f7ee325d2_cgraph}
+\includegraphics[width=342pt]{console__input_8cpp_a347c616893b725a74f60ea1f7ee325d2_cgraph}
 \end{center}
 \end{figure}
 
@@ -315,7 +330,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_a9128c63513d87af5259597d8c9930476_cgraph}
+\includegraphics[width=342pt]{console__input_8cpp_a9128c63513d87af5259597d8c9930476_cgraph}
 \end{center}
 \end{figure}
 
@@ -349,7 +364,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{console__input_8cpp_a03ebbd2a45117ee03be4e9002210ab36_cgraph}
+\includegraphics[width=342pt]{console__input_8cpp_a03ebbd2a45117ee03be4e9002210ab36_cgraph}
 \end{center}
 \end{figure}
 

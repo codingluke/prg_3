@@ -1,8 +1,8 @@
 <map id="date.h" name="date.h">
-<area shape="rect" id="node2" href="$console__input_8h.html" title="console_input.h" alt="" coords="34,80,147,107"/>
-<area shape="rect" id="node3" href="$calendar_8cpp.html" title="calendar.cpp" alt="" coords="159,155,255,181"/>
-<area shape="rect" id="node5" href="$gregorian__calender_8h.html" title="gregorian_calender.h" alt="" coords="223,80,365,107"/>
-<area shape="rect" id="node6" href="$console__input_8cpp.html" title="console_input.cpp" alt="" coords="299,155,425,181"/>
-<area shape="rect" id="node7" href="$gregorian__calender_8cpp.html" title="gregorian_calender.cpp" alt="" coords="442,80,597,107"/>
-<area shape="rect" id="node4" href="$calendar__main_8cpp.html" title="calendar_main.cpp" alt="" coords="4,155,133,181"/>
+<area shape="rect" id="node3" href="$console__input_8h.html" title="console_input.h" alt="" coords="91,83,203,112"/>
+<area shape="rect" id="node5" href="$calendar_8cpp.html" title="calendar.cpp" alt="" coords="160,160,256,189"/>
+<area shape="rect" id="node9" href="$console__input_8cpp.html" title="console_input.cpp" alt="" coords="280,160,405,189"/>
+<area shape="rect" id="node11" href="$gregorian__calender_8h.html" title="gregorian_calender.h" alt="" coords="328,83,469,112"/>
+<area shape="rect" id="node15" href="$gregorian__calender_8cpp.html" title="gregorian_calender.cpp" alt="" coords="429,160,584,189"/>
+<area shape="rect" id="node7" href="$calendar__main_8cpp.html" title="calendar_main.cpp" alt="" coords="5,160,136,189"/>
 </map>

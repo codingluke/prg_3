@@ -1,6 +1,7 @@
 <map id="handle_action" name="handle_action">
-<area shape="rect" id="node2" href="$table_8cpp.html#a27258c1b46c178213606bf2c13eb085b" title="generate_table" alt="" coords="157,5,264,32"/>
-<area shape="rect" id="node3" href="$file__controller_8cpp.html#a8600a74cc7b9657c803885b9f6844fe7" title="write_to_file" alt="" coords="165,80,257,107"/>
-<area shape="rect" id="node4" href="$file__controller_8cpp.html#acde73c899ec0618eeb8ae54b0a823f39" title="file_exists" alt="" coords="319,55,401,81"/>
-<area shape="rect" id="node5" href="$console__input_8cpp.html#a6bac3909a28fff2736a171022343380b" title="read_yes_no" alt="" coords="312,105,408,132"/>
+<area shape="rect" id="node3" href="$table_8cpp.html#a27258c1b46c178213606bf2c13eb085b" title="generate_table" alt="" coords="157,13,264,43"/>
+<area shape="rect" id="node7" href="$file__controller_8cpp.html#a8600a74cc7b9657c803885b9f6844fe7" title="write_to_file" alt="" coords="165,91,256,120"/>
+<area shape="rect" id="node5" href="$table_8cpp.html#a17774c1a04ac3735b8843f0d6b1f1afb" title="get_floating_point\l_length" alt="" coords="313,5,436,51"/>
+<area shape="rect" id="node9" href="$file__controller_8cpp.html#acde73c899ec0618eeb8ae54b0a823f39" title="file_exists" alt="" coords="335,83,415,112"/>
+<area shape="rect" id="node11" href="$console__input_8cpp.html#a6bac3909a28fff2736a171022343380b" title="read_yes_no" alt="" coords="327,136,423,165"/>
 </map>
