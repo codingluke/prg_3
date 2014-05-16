@@ -101,7 +101,7 @@ int calc_days_between_dates(date date1, date date2)
  * a calendar for the first day of the month. The calendar starts
  * with Sunday.
  *
- * So | Mo | Di | Mi | Do | Fr | Sa
+ * So | Mo | Di | Mi | Do | Fr | Sa</br>
  *  0 |  1 |  2 |  3 |  4 |  5 |  6
  *
  * @param month the given month.
@@ -132,12 +132,6 @@ void print_line(char* sign, int length)
 /**
  * Prints days in the format of a Calendar to the console. Days before
  * the start_column are filled empty.
- *
- *       1     2    3     4     5     6
- * 7     8     9    10    11    12    13
- * 14    15    16   17    18    19    20
- * 21    22    23   24    25    26    27
- * 28    29    30
  *
  * @param start_column  column of the first day.
  * @param num_days      amount of days to print.
