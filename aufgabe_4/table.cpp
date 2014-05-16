@@ -38,6 +38,7 @@ string generate_table(ptMathFunctionOne function, string name,
   wandler << "Funktion:\t" << name << " x" << endl << endl;
   wandler << left << setw(6) << "x";
   int num_columns = (int)(row_steps / steps);
+  int index_precision = get_floating_point_length(row_steps) - 2;
   for (int i = 0; i < num_columns; i++)
     wandler << right << setw(precision + 4) << i;
   wandler << endl;
@@ -46,7 +47,7 @@ string generate_table(ptMathFunctionOne function, string name,
   {
     if (fabs(index - start) < EPSILON)
     {
-      wandler << endl << left << setw(6) << setprecision(1)
+      wandler << endl << left << setw(6) << setprecision(index_precision)
               << fixed << index;
       index += row_steps;
     }
@@ -141,4 +142,18 @@ string generate_table(ptMathFunctionTwo function, string name)
   int precision = read_int("Bitte Nachkommastellen angeben: ");
   return generate_table(function, name, param_two, start, end,
                         steps, row_steps, precision);
+}
+
+/**
+ * Gives back the length of a given floating point number.
+ *
+ * @param number  Floating-point number to calculate the length.
+ *
+ * @return amouth of numerics including the point of the number.
+ */
+int get_floating_point_length(double number)
+{
+  ostringstream wandler(ios::out);
+  wandler << number;
+  return wandler.str().length();
 }

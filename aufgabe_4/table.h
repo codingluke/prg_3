@@ -14,5 +14,6 @@ string generate_table(ptMathFunctionOne function, string name, double start,
                       int precision);
 string generate_table(ptMathFunctionOne function, string name);
 string generate_table(ptMathFunctionTwo function, string name);
+int get_floating_point_length(double number);
 
 #endif
