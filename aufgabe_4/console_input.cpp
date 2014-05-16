@@ -1,8 +1,6 @@
 #include <iostream>
 #include <limits>
 #include <string>
-//#include <algorithm>
-//#include "io_util.h"
 #include "console_input.h"
 
 using namespace std;

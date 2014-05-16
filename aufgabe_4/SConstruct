@@ -32,7 +32,6 @@ std = Environment(
 cpp_dateien = [
  'console_input.cpp',
  'file_controller.cpp',
- 'io_util.cpp',
  'table.cpp',
  'table_main.cpp',
 ]
