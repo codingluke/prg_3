@@ -1,11 +1,29 @@
 #include <iostream>
-#include <climits>
+#include <limits>
 #include <string>
-#include "io_util.h"
+//#include <algorithm>
+//#include "io_util.h"
 #include "console_input.h"
 
 using namespace std;
 
+const double DBL_MAX = numeric_limits<double>::max();
+const double DBL_MIN = numeric_limits<double>::min();
+const long LONG_MAX = numeric_limits<long>::max();
+const long LONG_MIN = numeric_limits<long>::min();
+const int INT_MAX = numeric_limits<int>::max();
+const int INT_MIN = numeric_limits<int>::min();
+
+/**
+ * Reads a double value in between a given interval from the console.
+ * When the entered value is not valid to the interval, the user
+ * gets prompted to reenter a valid.
+ *
+ * @param min   lower bound of the interval.
+ * @param max   top bound of the interval
+ *
+ * @return a double value in between min and max.
+ */
 double read_double(double min, double max)
 {
   if (max < min)
@@ -30,11 +48,25 @@ double read_double(double min, double max)
   return entry;
 }
 
+/**
+ * Reads a double value from the console in between the whole range of double.
+ *
+ * @return a valid double value.
+ */
 double read_double()
 {
-  return read_double(LONG_MIN, LONG_MAX);
+  return read_double(DBL_MIN, DBL_MAX);
 }
 
+
+/**
+ * Prints a text to the console and reads a double value from the console
+ * in between the whole range of double.
+ *
+ * @param text text to print to the console.
+ *
+ * @return a valid double value.
+ */
 double read_double(string text)
 {
   cout << text;
