@@ -69,7 +69,7 @@ string generate_table(ptMathFunctionOne function, string name,
  * @param start        Start value of the first parameter.
  * @param end          End value of the first parameter.
  * @param steps        Iteration stepts for the values between start, end.
- * @param row_steps Iteration steps for the columns of the table.
+ * @param row_steps    Iteration steps for the columns of the table.
  * @param precision    Precision of the calculated values.
  * @param param_two    Second parameter for the function.
  *

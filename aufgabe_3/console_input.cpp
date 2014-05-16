@@ -55,7 +55,7 @@ long read_long()
  * Prints a text to the console and reads a long value from the console
  * in between the whole range of long.
  *
- * @param text text to print to the console.
+ * @param text    text to print to the console.
  *
  * @return a valid long value.
  */
@@ -111,7 +111,7 @@ int read_int()
  * Prints a text to the console and reads a integer value from the console
  * in between the whole range of integer.
  *
- * @param text text to print to the console.
+ * @param text    text to print to the console.
  *
  * @return a valid integer value.
  */

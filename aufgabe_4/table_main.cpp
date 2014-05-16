@@ -71,8 +71,8 @@ const string FUNCTION_TWO_NAMES[FUNCTIONS_TWO_LENGTH] = { "pow" };
  *                with the iteration of the step value.
  *      pow(x, exp) => exp has to be entered too. The iteration is just for x.
  *
- * @param argc    int   Length of the arguments array.
- * @param *argv[] char  Arguments array form the program execution.
+ * @param argc        Length of the arguments array.
+ * @param *argv[]     Arguments array form the program execution.
  */
 int main(int argc, char *argv[])
 {
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
  * to a file. When the file already exists. The user gets
  * prompted to chose if the file gets overwridden or not.
  *
- * @param argv[] Arguments array from the program execution.
+ * @param *argv[]   Arguments array from the program execution.
  */
 void handle_action(char *argv[])
 {
@@ -135,7 +135,7 @@ void handle_action(char *argv[])
  * file chosen by the users input. If the file already exists,
  * it promts the user to chose wheather to override it or to abord.
  *
- * @param action int The action for witch to generate the table.
+ * @param action    The action for witch to generate the table.
  */
 void handle_action(int action)
 {
@@ -170,8 +170,8 @@ void print_actions()
 /**
  * Returns the index of a string inside an array of strings.
  *
- * @param item  String to be searched in the array.
- * @param items Array which contains the item.
+ * @param item    String to be searched in the array.
+ * @param items   Array which contains the item.
  *
  * @return int index of the item in the array.
  *             -1 if not in the array.
@@ -189,7 +189,7 @@ int get_array_index(string item, const string items[], int length)
  * Returns a string representing the type of a function by its name.
  * There are two defined types ("ONE" and "TWO").
  *
- * @param name String Name of the function to be checked.
+ * @param name    Name of the function to be checked.
  *
  * @return String ONE ptMathFunctionOne: double (*)(double)
  *                TWO ptMathFunctionTwo: double (*)(double, double)
@@ -209,8 +209,8 @@ string get_function_type(string name)
  * Checks if there are enough argumends for the given function type.
  * Checks if the arguments are in the right types.
  *
- * @param argc     int  lenght of the argument array.
- * @param *argv[]  char argument array.
+ * @param argc     Lenght of the argument array.
+ * @param *argv[]  Argument array.
  *
  * @return true   when the arguments are valid.
  *         false  when the arguments are invalid.
@@ -231,8 +231,8 @@ bool validate_input(int argc, char *argv[])
  * Validates the type of the arguments according the type of the given
  * function to be called.
  *
- * @param function_type String Type of the function ("ONE" ore "TWO")
- * @param argv[]        *char  input arguments.
+ * @param function_type   Type of the function ("ONE" ore "TWO")
+ * @param *argv[]         Input arguments.
  *
  * @return true  when the argument types fit the functions type.
  *         false when the argument types don't fit the functions type.
@@ -254,8 +254,8 @@ bool validate_param_types(string function_type, char *argv[])
 /**
  * Validates the argument length according a given function type.
  *
- * @param function_type String Type of the function ("ONE" ore "TWO")
- * @param argc          int    Length of the argument array.
+ * @param function_type   Type of the function ("ONE" ore "TWO")
+ * @param argc            Length of the argument array.
  *
  * @return true   if the argument length fit the function type
  *         false  if the argument length don fit the function type.
@@ -272,7 +272,7 @@ bool validate_params_length(string function_type, int argc)
 /**
  * Checks if a function (by its name) is defined.
  *
- * @param name String function by name, to be checked.
+ * @param name    Name of the function to be checked.
  *
  * @return true   if the function exists.
  *         fales  if the function don't exists.
