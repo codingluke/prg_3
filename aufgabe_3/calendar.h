@@ -1,5 +1,5 @@
-#ifndef _CALENDAR_H
-#define _CALENDAR_H
+#ifndef CALENDAR_H
+#define CALENDAR_H
 
 void print_actions();
 void print_goodbye();

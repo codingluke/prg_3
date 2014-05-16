@@ -1,5 +1,5 @@
-#ifndef _DATE_H
-#define _DATE_H
+#ifndef DATE_H
+#define DATE_H
 
 /**
  * Typedefinition of a struct Date.

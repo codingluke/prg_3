@@ -1,5 +1,5 @@
-#ifndef _GREGORIAN_CALENDAR_H
-#define _GREGORIAN_CALENDAR_H
+#ifndef GREGORIAN_CALENDAR_H
+#define GREGORIAN_CALENDAR_H
 
 #include "date.h"
 

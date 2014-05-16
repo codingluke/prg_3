@@ -1,5 +1,5 @@
-#ifndef _CONSOLE_INPUT_H
-#define _CONSOLE_INPUT_H
+#ifndef CONSOLE_INPUT_H
+#define CONSOLE_INPUT_H
 
 #include <string>
 #include "date.h"

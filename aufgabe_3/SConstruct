@@ -36,6 +36,6 @@ cpp_dateien = [
  'gregorian_calender.cpp',
 ]
 
-programm_name = 'aufgabe3'
+programm_name = 'kalender'
 
 std.Program(programm_name, cpp_dateien) # Programm bauen
