@@ -5,12 +5,12 @@
 
 using namespace std;
 
-const double DBL_MAX = numeric_limits<double>::max();
-const double DBL_MIN = numeric_limits<double>::min();
-const long LONG_MAX = numeric_limits<long>::max();
-const long LONG_MIN = numeric_limits<long>::min();
-const int INT_MAX = numeric_limits<int>::max();
-const int INT_MIN = numeric_limits<int>::min();
+static const double DBL_MAX = numeric_limits<double>::max();
+static const double DBL_MIN = numeric_limits<double>::min();
+static const long LONG_MAX = numeric_limits<long>::max();
+static const long LONG_MIN = numeric_limits<long>::min();
+static const int INT_MAX = numeric_limits<int>::max();
+static const int INT_MIN = numeric_limits<int>::min();
 
 /**
  * Reads a double value in between a given interval from the console.

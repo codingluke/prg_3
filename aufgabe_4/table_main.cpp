@@ -14,12 +14,12 @@ using namespace std;
 /**
  * Length of the arrays FUNCTIONS_ONE and FUNCTION_ONE_NAMES.
  */
-const int FUNCTIONS_ONE_LENGTH = 10;
+static const int FUNCTIONS_ONE_LENGTH = 10;
 
 /**
  * Pointers to functions available for value-table generation.
  */
-const ptMathFunctionOne FUNCTIONS_ONE[FUNCTIONS_ONE_LENGTH] = {
+static const ptMathFunctionOne FUNCTIONS_ONE[FUNCTIONS_ONE_LENGTH] = {
   &cos, &sin, &tan, &acos, &asin, &atan,
   &exp, &log, &log10, &sqrt
 };
@@ -29,7 +29,7 @@ const ptMathFunctionOne FUNCTIONS_ONE[FUNCTIONS_ONE_LENGTH] = {
  * The names and the functions are mapped by the index.
  * The array must have the same length as FUNCTIONS_ONE.
  */
-const string FUNCTION_ONE_NAMES[FUNCTIONS_ONE_LENGTH] = {
+static const string FUNCTION_ONE_NAMES[FUNCTIONS_ONE_LENGTH] = {
   "cos", "sin", "tan", "acos", "asin", "atan",
   "exp", "log", "log10", "sqrt"
 };
@@ -37,19 +37,19 @@ const string FUNCTION_ONE_NAMES[FUNCTIONS_ONE_LENGTH] = {
 /**
  * Length of the arrays FUNCTIONS_TWO and FUNCTION_TWO_NAMES.
  */
-const int FUNCTIONS_TWO_LENGTH = 1;
+static const int FUNCTIONS_TWO_LENGTH = 1;
 
 /**
  * Pointers to functions available for value-table generation.
  */
-const ptMathFunctionTwo FUNCTIONS_TWO[FUNCTIONS_TWO_LENGTH] = { &pow };
+static const ptMathFunctionTwo FUNCTIONS_TWO[FUNCTIONS_TWO_LENGTH] = { &pow };
 
 /**
  * Names of the functions from the array FUNCTIONS_TWO.
  * The names and the functions are mapped by the index.
  * The array must have the same length as FUNCTIONS_TWO.
  */
-const string FUNCTION_TWO_NAMES[FUNCTIONS_TWO_LENGTH] = { "pow" };
+static const string FUNCTION_TWO_NAMES[FUNCTIONS_TWO_LENGTH] = { "pow" };
 
 /**
  * Entrypoint to the program 'tabelle'. Tabelle is a program to generate
