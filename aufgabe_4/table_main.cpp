@@ -63,8 +63,8 @@ static const string FUNCTION_TWO_NAMES[FUNCTIONS_TWO_LENGTH] = { "pow" };
  * 4. Value for the iteration steps
  * 5. Value for the steps of the rows (after how many iterations (colums) should start a new row)
  * 6. Precision of the function output.
- * [7]. Additional parameter for the function (just for the function pow)
- * [8|7]. Filename of the file to save the table.
+ * 7. Additional parameter for the function (just for the function pow)
+ * 8. Filename of the file to save the table.
  *
  * When a function needs additional parameters, the user has to enter these too.
  * e.g. sin(x) => x is for all values between the start value and end value
