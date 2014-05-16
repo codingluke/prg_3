@@ -32,6 +32,10 @@ bool \hyperlink{table__main_8h_a0bf5ec7e48000c167f6d7b5aeda3e4c4}{validate\-\_\-
 \item 
 bool \hyperlink{table__main_8h_a0f86595eb8dcc1bb533ed3ee87a5c603}{validate\-\_\-function\-\_\-name} (string function\-\_\-name)
 \item 
+bool \hyperlink{table__main_8h_acfb44a8598d2bdc702d3ba190e156231}{validate\-\_\-start\-\_\-end\-\_\-range} (double start, double end)
+\item 
+bool \hyperlink{table__main_8h_a036e051985dce76f757d19f2dfb78800}{validate\-\_\-steps\-\_\-range} (double step, double row\-\_\-step)
+\item 
 bool \hyperlink{table__main_8h_a040a1047545278bd502f2b1ec1b70759}{validate\-\_\-params\-\_\-length} (string function\-\_\-type, int argc)
 \item 
 bool \hyperlink{table__main_8h_a4b45b9f42125840c08d7b70c1fd921bc}{validate\-\_\-param\-\_\-types} (string function\-\_\-type, char $\ast$argv\mbox{[}$\,$\mbox{]})
@@ -75,7 +79,7 @@ Returns a string representing the type of a function by its name. There are two 
 
 
 \begin{DoxyParams}{Parameters}
-{\em name} & String Name of the function to be checked.\\
+{\em name} & Name of the function to be checked.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -92,7 +96,7 @@ Generates the table for e certain action given by the id. prints the table to th
 
 
 \begin{DoxyParams}{Parameters}
-{\em action} & int The action for witch to generate the table. \\
+{\em action} & The action for witch to generate the table. \\
 \hline
 \end{DoxyParams}
 
@@ -117,7 +121,7 @@ Handles a given action according the arguments array. Generates the table for th
 
 
 \begin{DoxyParams}{Parameters}
-{\em argv\mbox{[}$\,$\mbox{]}} & Arguments array from the program execution. \\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array from the program execution. \\
 \hline
 \end{DoxyParams}
 
@@ -141,23 +145,25 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{table__main_8h_a0ddf1224851353fc92bfbff6f499fa97}
 Entrypoint to the program 'tabelle'. Tabelle is a program to generate value-\/tables for the mathematical functions cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
 
-The user can define following parameters\-:
-\begin{DoxyItemize}
+The user can define following arguments\-:
+\begin{DoxyEnumerate}
+\item Name of the function
 \item Start value of the table
 \item End value of the table
 \item Value for the iteration steps
-\item Value for the steps of the column (after how many iteration should start a new column)
+\item Value for the steps of the rows (after how many iterations (colums) should start a new row)
 \item Precision of the function output.
+\item Additional parameter for the function (just for the function pow)
 \item Filename of the file to save the table.
-\end{DoxyItemize}
+\end{DoxyEnumerate}
 
-When a function needs other parameters, the user has to enter these too. e.\-g. sin(x) =$>$ x is for all values between the start value and end value with the iteration of the step value. pow(x, exp) =$>$ exp has to be entered. the iteration is just for x.
+When a function needs additional parameters, the user has to enter these too. e.\-g. sin(x) =$>$ x is for all values between the start value and end value with the iteration of the step value. pow(x, exp) =$>$ exp has to be entered too. The iteration is just for x.
 
 
 \begin{DoxyParams}{Parameters}
-{\em argc} & int Length of $\ast$argv\mbox{[}\mbox{]} \\
+{\em argc} & Length of the arguments array. \\
 \hline
-{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & char Arguments array form the program execution. \\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array form the program execution. \\
 \hline
 \end{DoxyParams}
 
@@ -189,7 +195,7 @@ Checks if a function (by its name) is defined.
 
 
 \begin{DoxyParams}{Parameters}
-{\em name} & String function by name, to be checked.\\
+{\em name} & Name of the function to be checked.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -207,9 +213,9 @@ Validates the input arguments. Checks if the function is available. Checks if th
 
 
 \begin{DoxyParams}{Parameters}
-{\em argc} & int lenght of the argument array. \\
+{\em argc} & Lenght of the argument array. \\
 \hline
-{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & char argument array.\\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Argument array.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -238,9 +244,9 @@ Validates the type of the arguments according the type of the given function to 
 
 
 \begin{DoxyParams}{Parameters}
-{\em function\-\_\-type} & String Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
+{\em function\-\_\-type} & Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
 \hline
-{\em argv\mbox{[}$\,$\mbox{]}} & $\ast$char input arguments.\\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Input arguments.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -258,11 +264,27 @@ Validates the argument length according a given function type.
 
 
 \begin{DoxyParams}{Parameters}
-{\em function\-\_\-type} & String Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
+{\em function\-\_\-type} & Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
 \hline
-{\em argc} & int Length of the argument array.\\
+{\em argc} & Length of the argument array.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if the argument length fit the function type false if the argument length don fit the function type. 
 \end{DoxyReturn}
+\hypertarget{table__main_8h_acfb44a8598d2bdc702d3ba190e156231}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!validate\-\_\-start\-\_\-end\-\_\-range@{validate\-\_\-start\-\_\-end\-\_\-range}}
+\index{validate\-\_\-start\-\_\-end\-\_\-range@{validate\-\_\-start\-\_\-end\-\_\-range}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{validate\-\_\-start\-\_\-end\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}bool validate\-\_\-start\-\_\-end\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{double}]{start, }
+\item[{double}]{end}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_acfb44a8598d2bdc702d3ba190e156231}
+\hypertarget{table__main_8h_a036e051985dce76f757d19f2dfb78800}{\index{table\-\_\-main.\-h@{table\-\_\-main.\-h}!validate\-\_\-steps\-\_\-range@{validate\-\_\-steps\-\_\-range}}
+\index{validate\-\_\-steps\-\_\-range@{validate\-\_\-steps\-\_\-range}!table_main.h@{table\-\_\-main.\-h}}
+\subsubsection[{validate\-\_\-steps\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}bool validate\-\_\-steps\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{double}]{step, }
+\item[{double}]{row\-\_\-step}
+\end{DoxyParamCaption}
+)}}\label{table__main_8h_a036e051985dce76f757d19f2dfb78800}

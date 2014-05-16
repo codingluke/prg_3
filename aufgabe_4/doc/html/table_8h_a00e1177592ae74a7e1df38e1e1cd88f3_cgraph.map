@@ -1,7 +1,7 @@
 <map id="generate_table" name="generate_table">
-<area shape="rect" id="node2" href="$console__input_8cpp.html#a8a9df77c5c4adba7ebadb77f3b3dc8ee" title="read_double" alt="" coords="443,5,535,32"/>
-<area shape="rect" id="node4" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="179,31,247,57"/>
-<area shape="rect" id="node6" href="$table_8cpp.html#a27258c1b46c178213606bf2c13eb085b" title="generate_table" alt="" coords="160,81,267,108"/>
-<area shape="rect" id="node3" href="$io__util_8cpp.html#acd3415eef442ced2b5e064f95f04b624" title="swap" alt="" coords="584,5,637,32"/>
-<area shape="rect" id="node5" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="315,31,394,57"/>
+<area shape="rect" id="node3" href="$console__input_8cpp.html#a8a9df77c5c4adba7ebadb77f3b3dc8ee" title="read_double" alt="" coords="489,5,580,35"/>
+<area shape="rect" id="node5" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="180,31,247,60"/>
+<area shape="rect" id="node10" href="$table_8cpp.html#a27258c1b46c178213606bf2c13eb085b" title="generate_table" alt="" coords="160,88,267,117"/>
+<area shape="rect" id="node7" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="339,31,416,60"/>
+<area shape="rect" id="node12" href="$table_8cpp.html#a17774c1a04ac3735b8843f0d6b1f1afb" title="get_floating_point\l_length" alt="" coords="316,83,439,130"/>
 </map>

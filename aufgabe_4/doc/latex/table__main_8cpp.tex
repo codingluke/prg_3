@@ -41,21 +41,6 @@ bool \hyperlink{table__main_8cpp_a040a1047545278bd502f2b1ec1b70759}{validate\-\_
 \item 
 bool \hyperlink{table__main_8cpp_aed78c4c2efe4694f7e61f0440294e674}{validate\-\_\-function\-\_\-name} (string name)
 \end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-const int \hyperlink{table__main_8cpp_a85d247f1f95a449a39f6aa35e6a215a4}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H} = 10
-\item 
-const \hyperlink{pt__math__functions_8h_aaead49151b753b4ef6a4c84ee8aa8c36}{pt\-Math\-Function\-One} \hyperlink{table__main_8cpp_ad3c75ef444546c9331bced1ed9ad9281}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E} \mbox{[}\hyperlink{table__main_8cpp_a85d247f1f95a449a39f6aa35e6a215a4}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
-\item 
-const string \hyperlink{table__main_8cpp_a06e23918ac7a0767c47fbdd1f0532b3f}{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S} \mbox{[}\hyperlink{table__main_8cpp_a85d247f1f95a449a39f6aa35e6a215a4}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}
-\item 
-const int \hyperlink{table__main_8cpp_aec7560a1354e3428a2d6a8b1fa18e894}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H} = 1
-\item 
-const \hyperlink{pt__math__functions_8h_ad6f1c83ac0e2e8b6e0393aeddfda805f}{pt\-Math\-Function\-Two} \hyperlink{table__main_8cpp_a9488fea82b4cf1f934f68c5b55e886ce}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O} \mbox{[}\hyperlink{table__main_8cpp_aec7560a1354e3428a2d6a8b1fa18e894}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{ \&pow \}
-\item 
-const string \hyperlink{table__main_8cpp_a281f82ef3a898f30ce01724130f14a75}{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S} \mbox{[}\hyperlink{table__main_8cpp_aec7560a1354e3428a2d6a8b1fa18e894}{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{ \char`\"{}pow\char`\"{} \}
-\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -91,7 +76,7 @@ Returns a string representing the type of a function by its name. There are two 
 
 
 \begin{DoxyParams}{Parameters}
-{\em name} & String Name of the function to be checked.\\
+{\em name} & Name of the function to be checked.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -108,7 +93,7 @@ Handles a given action according the arguments array. Generates the table for th
 
 
 \begin{DoxyParams}{Parameters}
-{\em argv\mbox{[}$\,$\mbox{]}} & Arguments array from the program execution. \\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array from the program execution. \\
 \hline
 \end{DoxyParams}
 
@@ -133,7 +118,7 @@ Generates the table for e certain action given by the id. prints the table to th
 
 
 \begin{DoxyParams}{Parameters}
-{\em action} & int The action for witch to generate the table. \\
+{\em action} & The action for witch to generate the table. \\
 \hline
 \end{DoxyParams}
 
@@ -157,23 +142,25 @@ Here is the call graph for this function\-:\nopagebreak
 )}}\label{table__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
 Entrypoint to the program 'tabelle'. Tabelle is a program to generate value-\/tables for the mathematical functions cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
 
-The user can define following parameters\-:
-\begin{DoxyItemize}
+The user can define following arguments\-:
+\begin{DoxyEnumerate}
+\item Name of the function
 \item Start value of the table
 \item End value of the table
 \item Value for the iteration steps
-\item Value for the steps of the column (after how many iteration should start a new column)
+\item Value for the steps of the rows (after how many iterations (colums) should start a new row)
 \item Precision of the function output.
+\item Additional parameter for the function (just for the function pow)
 \item Filename of the file to save the table.
-\end{DoxyItemize}
+\end{DoxyEnumerate}
 
-When a function needs other parameters, the user has to enter these too. e.\-g. sin(x) =$>$ x is for all values between the start value and end value with the iteration of the step value. pow(x, exp) =$>$ exp has to be entered. the iteration is just for x.
+When a function needs additional parameters, the user has to enter these too. e.\-g. sin(x) =$>$ x is for all values between the start value and end value with the iteration of the step value. pow(x, exp) =$>$ exp has to be entered too. The iteration is just for x.
 
 
 \begin{DoxyParams}{Parameters}
-{\em argc} & int Length of $\ast$argv\mbox{[}\mbox{]} \\
+{\em argc} & Length of the arguments array. \\
 \hline
-{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & char Arguments array form the program execution. \\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array form the program execution. \\
 \hline
 \end{DoxyParams}
 
@@ -205,7 +192,7 @@ Checks if a function (by its name) is defined.
 
 
 \begin{DoxyParams}{Parameters}
-{\em name} & String function by name, to be checked.\\
+{\em name} & Name of the function to be checked.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -223,9 +210,9 @@ Validates the input arguments. Checks if the function is available. Checks if th
 
 
 \begin{DoxyParams}{Parameters}
-{\em argc} & int lenght of the argument array. \\
+{\em argc} & Lenght of the argument array. \\
 \hline
-{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & char argument array.\\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Argument array.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -254,9 +241,9 @@ Validates the type of the arguments according the type of the given function to 
 
 
 \begin{DoxyParams}{Parameters}
-{\em function\-\_\-type} & String Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
+{\em function\-\_\-type} & Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
 \hline
-{\em argv\mbox{[}$\,$\mbox{]}} & $\ast$char input arguments.\\
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Input arguments.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -274,47 +261,11 @@ Validates the argument length according a given function type.
 
 
 \begin{DoxyParams}{Parameters}
-{\em function\-\_\-type} & String Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
+{\em function\-\_\-type} & Type of the function (\char`\"{}\-O\-N\-E\char`\"{} ore \char`\"{}\-T\-W\-O\char`\"{}) \\
 \hline
-{\em argc} & int Length of the argument array.\\
+{\em argc} & Length of the argument array.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true if the argument length fit the function type false if the argument length don fit the function type. 
 \end{DoxyReturn}
-
-
-\subsection{Variable Documentation}
-\hypertarget{table__main_8cpp_a06e23918ac7a0767c47fbdd1f0532b3f}{\index{table\-\_\-main.\-cpp@{table\-\_\-main.\-cpp}!F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S@{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S}}
-\index{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S@{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S}!table_main.cpp@{table\-\_\-main.\-cpp}}
-\subsubsection[{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S\mbox{[}{\bf F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}}\label{table__main_8cpp_a06e23918ac7a0767c47fbdd1f0532b3f}
-{\bfseries Initial value\-:}
-\begin{DoxyCode}
-= \{
-  \textcolor{stringliteral}{"cos"}, \textcolor{stringliteral}{"sin"}, \textcolor{stringliteral}{"tan"}, \textcolor{stringliteral}{"acos"}, \textcolor{stringliteral}{"asin"}, \textcolor{stringliteral}{"atan"},
-  \textcolor{stringliteral}{"exp"}, \textcolor{stringliteral}{"log"}, \textcolor{stringliteral}{"log10"}, \textcolor{stringliteral}{"sqrt"}
-\}
-\end{DoxyCode}
-Names of the functions from the array F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E. The names and the functions are mapped by the index. The array must have the same length as F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E. \hypertarget{table__main_8cpp_a281f82ef3a898f30ce01724130f14a75}{\index{table\-\_\-main.\-cpp@{table\-\_\-main.\-cpp}!F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S@{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S}}
-\index{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S@{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S}!table_main.cpp@{table\-\_\-main.\-cpp}}
-\subsubsection[{F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S\mbox{[}{\bf F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{ \char`\"{}pow\char`\"{} \}}}\label{table__main_8cpp_a281f82ef3a898f30ce01724130f14a75}
-Names of the functions from the array F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O. The names and the functions are mapped by the index. The array must have the same length as F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O. \hypertarget{table__main_8cpp_ad3c75ef444546c9331bced1ed9ad9281}{\index{table\-\_\-main.\-cpp@{table\-\_\-main.\-cpp}!F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E}}
-\index{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E}!table_main.cpp@{table\-\_\-main.\-cpp}}
-\subsubsection[{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf pt\-Math\-Function\-One} F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\mbox{[}{\bf F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]}}}\label{table__main_8cpp_ad3c75ef444546c9331bced1ed9ad9281}
-{\bfseries Initial value\-:}
-\begin{DoxyCode}
-= \{
-  &cos, &sin, &tan, &acos, &asin, &atan,
-  &exp, &log, &log10, &sqrt
-\}
-\end{DoxyCode}
-Pointers to functions available for value-\/table generation. \hypertarget{table__main_8cpp_a85d247f1f95a449a39f6aa35e6a215a4}{\index{table\-\_\-main.\-cpp@{table\-\_\-main.\-cpp}!F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H}}
-\index{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H}!table_main.cpp@{table\-\_\-main.\-cpp}}
-\subsubsection[{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E\-\_\-\-L\-E\-N\-G\-T\-H = 10}}\label{table__main_8cpp_a85d247f1f95a449a39f6aa35e6a215a4}
-Length of the arrays F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-O\-N\-E and F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-E\-\_\-\-N\-A\-M\-E\-S. \hypertarget{table__main_8cpp_a9488fea82b4cf1f934f68c5b55e886ce}{\index{table\-\_\-main.\-cpp@{table\-\_\-main.\-cpp}!F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O}}
-\index{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O}!table_main.cpp@{table\-\_\-main.\-cpp}}
-\subsubsection[{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf pt\-Math\-Function\-Two} F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\mbox{[}{\bf F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H}\mbox{]} = \{ \&pow \}}}\label{table__main_8cpp_a9488fea82b4cf1f934f68c5b55e886ce}
-Pointers to functions available for value-\/table generation. \hypertarget{table__main_8cpp_aec7560a1354e3428a2d6a8b1fa18e894}{\index{table\-\_\-main.\-cpp@{table\-\_\-main.\-cpp}!F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H}}
-\index{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H@{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H}!table_main.cpp@{table\-\_\-main.\-cpp}}
-\subsubsection[{F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O\-\_\-\-L\-E\-N\-G\-T\-H = 1}}\label{table__main_8cpp_aec7560a1354e3428a2d6a8b1fa18e894}
-Length of the arrays F\-U\-N\-C\-T\-I\-O\-N\-S\-\_\-\-T\-W\-O and F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-T\-W\-O\-\_\-\-N\-A\-M\-E\-S. 

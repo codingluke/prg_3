@@ -1,10 +1,9 @@
 <map id="calc_and_print_days_between_dates" name="calc_and_print_days_between_dates">
-<area shape="rect" id="node2" href="$console__input_8cpp.html#ae8b03184fcf6f3b469df6c0c426ca394" title="read_date" alt="" coords="243,56,322,83"/>
-<area shape="rect" id="node8" href="$gregorian__calender_8cpp.html#a14f3cbd497f4d93afc51445dc707b559" title="calc_days_between_dates" alt="" coords="195,107,371,133"/>
-<area shape="rect" id="node3" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="457,5,525,32"/>
-<area shape="rect" id="node6" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="611,157,754,184"/>
-<area shape="rect" id="node4" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="643,31,722,57"/>
-<area shape="rect" id="node5" href="$io__util_8cpp.html#acd3415eef442ced2b5e064f95f04b624" title="swap" alt="" coords="824,95,877,121"/>
-<area shape="rect" id="node7" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="803,171,898,197"/>
-<area shape="rect" id="node9" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="419,158,563,199"/>
+<area shape="rect" id="node3" href="$console__input_8cpp.html#a318aed1ff745e0e6b573108147ad21f4" title="read_date" alt="" coords="244,57,321,87"/>
+<area shape="rect" id="node13" href="$gregorian__calender_8cpp.html#a1c60d2912e73f8d8d90f8152f171cf40" title="calc_days_between_dates" alt="" coords="195,113,371,143"/>
+<area shape="rect" id="node5" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="457,5,524,35"/>
+<area shape="rect" id="node9" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="612,65,753,95"/>
+<area shape="rect" id="node7" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="644,5,721,35"/>
+<area shape="rect" id="node11" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="804,92,897,121"/>
+<area shape="rect" id="node15" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="419,109,563,155"/>
 </map>
