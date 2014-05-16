@@ -12,19 +12,17 @@
  */
 void write_to_file(string filename, string text, bool secure)
 {
+  ofstream outfile(filename.c_str());
   if (secure && file_exists(filename))
   {
     cout << "Achtung! Datei '" << filename << "' bereits vorhanden." << endl;
     if (read_yes_no("ueberschreiben?"))
-      write_to_file(filename, text, false);
+      outfile << text;
     else
       cout << "Abgebrochen: die Datei '" << filename << "' wurde nicht ueberschrieben";
   }
   else
-  {
-    ofstream outfile(filename.c_str());
     outfile << text;
-  }
 }
 
 /**
