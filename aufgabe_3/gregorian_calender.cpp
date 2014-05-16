@@ -1,8 +1,9 @@
 #include <iostream>
 #include <iomanip>
-#include "io_util.h"
 #include "date.h"
 #include "gregorian_calender.h"
+
+using namespace std;
 
 /**
  * Checks if a year is a leap year.

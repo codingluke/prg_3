@@ -32,7 +32,6 @@ std = Environment(
 cpp_dateien = [
  'calendar_main.cpp',
  'calendar.cpp',
- 'io_util.cpp',
  'console_input.cpp',
  'gregorian_calender.cpp',
 ]
