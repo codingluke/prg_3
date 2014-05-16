@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <cmath>
-#include <climits>
+#include <limits>
 #include <string>
 #include <iomanip>
 #include "console_input.h"
@@ -9,6 +9,9 @@
 #include "pt_math_functions.h"
 
 using namespace std;
+
+const double DBL_MAX = numeric_limits<double>::max();
+const double DBL_MIN = numeric_limits<double>::min();
 
 /**
  * Generates a value-table of a given function. The parameter of the given
@@ -106,11 +109,11 @@ string generate_table(ptMathFunctionTwo function, string name, double start,
  */
 string generate_table(ptMathFunctionOne function, string name)
 {
-  double start = read_double("Bitte Startwert angeben:\t\t");
-  double end = read_double("Bitte Endwert angeben:\t\t", start, LONG_MAX);
-  double steps = read_double("Bitte Schrittgroesse angeben:\t\t");
-  double row_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t", steps, LONG_MAX);
-  int precision = read_int("Bitte Nachkommastellen angeben:\t\t");
+  double start = read_double("Bitte Startwert angeben: ");
+  double end = read_double("Bitte Endwert angeben: ", start, DBL_MAX);
+  double steps = read_double("Bitte Schrittgroesse angeben: ");
+  double row_steps = read_double("Bitte Zeilenschrittgroesse angeben: ", steps, DBL_MAX);
+  int precision = read_int("Bitte Nachkommastellen angeben: ");
   return generate_table(function, name, start, end,
                         steps, row_steps, precision);
 }
@@ -126,12 +129,12 @@ string generate_table(ptMathFunctionOne function, string name)
  */
 string generate_table(ptMathFunctionTwo function, string name)
 {
-  double start = read_double("Bitte Startwert angeben:\t\t");
-  double end = read_double("Bitte Endwert angeben:\t\t", start, LONG_MAX);
-  double steps = read_double("Bitte Schrittgroesse angeben:\t\t");
-  double row_steps = read_double("Bitte Zeilenschrittgroesse angeben:\t\t", steps, LONG_MAX);
-  double param_two = read_double("Bitte zweiter Parameter angeben:\t\t");
-  int precision = read_int("Bitte Nachkommastellen angeben:\t\t");
+  double start = read_double("Bitte Startwert angeben: ");
+  double end = read_double("Bitte Endwert angeben: ", start, DBL_MAX);
+  double steps = read_double("Bitte Schrittgroesse angeben: ");
+  double row_steps = read_double("Bitte Zeilenschrittgroesse angeben: ", steps, DBL_MAX);
+  double param_two = read_double("Bitte zweiter Parameter angeben: ");
+  int precision = read_int("Bitte Nachkommastellen angeben: ");
   return generate_table(function, name, param_two, start, end,
                         steps, row_steps, precision);
 }

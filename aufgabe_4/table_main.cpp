@@ -56,20 +56,22 @@ const string FUNCTION_TWO_NAMES[FUNCTIONS_TWO_LENGTH] = { "pow" };
  * value-tables for the mathematical functions
  * cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
  *
- * The user can define following parameters:
- * - Start value of the table
- * - End value of the table
- * - Value for the iteration steps
- * - Value for the steps of the column (after how many iteration should start a new column)
- * - Precision of the function output.
- * - Filename of the file to save the table.
+ * The user can define following arguments:
+ * 1. Name of the function
+ * 2. Start value of the table
+ * 3. End value of the table
+ * 4. Value for the iteration steps
+ * 5. Value for the steps of the rows (after how many iterations (colums) should start a new row)
+ * 6. Precision of the function output.
+ * [7]. Additional parameter for the function (just for the function pow)
+ * [8|7]. Filename of the file to save the table.
  *
- * When a function needs other parameters, the user has to enter these too.
+ * When a function needs additional parameters, the user has to enter these too.
  * e.g. sin(x) => x is for all values between the start value and end value
  *                with the iteration of the step value.
- *      pow(x, exp) => exp has to be entered. the iteration is just for x.
+ *      pow(x, exp) => exp has to be entered too. The iteration is just for x.
  *
- * @param argc    int   Length of *argv[]
+ * @param argc    int   Length of the arguments array.
  * @param *argv[] char  Arguments array form the program execution.
  */
 int main(int argc, char *argv[])
@@ -90,7 +92,7 @@ int main(int argc, char *argv[])
     if (validate_input(argc, argv))
       handle_action(argv);
     else
-      show_file("man.txt");
+      show_file("manual.txt");
 }
 
 /**
