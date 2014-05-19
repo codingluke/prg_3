@@ -2,18 +2,30 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include "console_input.h"
 #include "fraction.h"
+
+Fraction::Fraction()
+{
+  numerator = 0;
+  denominator = 1;
+}
 
 Fraction::Fraction(int a_numerator, int a_denominator)
 {
+  if (a_denominator == 0)
+    throw "Nenner darf nicht 0 sein!";
   numerator = a_numerator;
   denominator = a_denominator;
   normalize();
+  shorten();
 }
 
 Fraction::Fraction(int low_numerator, int low_denominator,
                    int high_numerator, int high_denominator)
 {
+  if (low_denominator == 0 || high_denominator == 0)
+    throw "Nenner darf nicht 0 sein!";
   Fraction lower(low_numerator, low_denominator);
   Fraction higher(high_numerator, high_denominator);
   denominator = lcm(lower.denominator, higher.denominator);
@@ -35,7 +47,10 @@ Fraction::Fraction(int low_numerator, int low_denominator,
 std::string Fraction::str() const
 {
   std::ostringstream modifier(std::ios::out);
-  modifier << numerator << "/" << denominator;
+  if (numerator == 0)
+    modifier << 0;
+  else
+    modifier << numerator << "/" << denominator;
   return modifier.str();
 }
 
@@ -224,4 +239,33 @@ Fraction operator/(const int& number, const Fraction& frc)
 {
   Fraction tmp(number, number);
   return tmp / frc;
+}
+
+istream& operator>>(istream& entry, Fraction& frc)
+{
+  int numerator = 0;
+  int denominator = 0;
+  bool entry_ok = false;
+  do
+  {
+    try
+    {
+      numerator = read_int("Bitte den Zaehler eingeben: ");
+      denominator = read_int("Bitte den Nenner eingeben: ");
+      frc = Fraction(numerator, denominator);
+      entry_ok = true;
+    }
+    catch(const char* msg)
+    {
+      cout << msg << endl;
+    }
+  } while (!entry_ok);
+  return entry;
+}
+
+
+std::ostream& operator<<(std::ostream& output, const Fraction& frc)
+{
+  output << frc.str();
+  return output;
 }

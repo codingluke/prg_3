@@ -10,6 +10,7 @@ class Fraction
     int denominator;
 
   public:
+    Fraction();
     Fraction(int a_counter, int a_denominator);
     Fraction(int a, int b, int c, int d);
 
@@ -43,5 +44,7 @@ Fraction operator+(const int& number, const Fraction& frc);
 Fraction operator-(const int& number, const Fraction& frc);
 Fraction operator*(const int& number, const Fraction& frc);
 Fraction operator/(const int& number, const Fraction& frc);
+std::istream& operator>>(std::istream& entry, Fraction& frc);
+std::ostream& operator<<(std::ostream& output, const Fraction& frc);
 
 #endif

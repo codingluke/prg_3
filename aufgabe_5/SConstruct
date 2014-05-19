@@ -30,6 +30,7 @@ std = Environment(
 # Teil 3: Programm bauen
 
 cpp_dateien = [
+  'console_input.cpp',
   'fraction.cpp',
   'main.cpp',
 ]

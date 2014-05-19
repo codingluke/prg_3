@@ -12,10 +12,17 @@
  */
 //int main(int argc, char *argv[])
 int main() {
-  Fraction f(2, -2);
-  Fraction f2(2, 2);
-  Fraction rand_f(-1,1,1,99);
-  std::cout << rand_f.str_normed();
+  try
+  {
+    Fraction f(0,9);
+    Fraction f2(1,2);
+    //std::cin >> f;
+    std::cout << (f + f2);
+  }
+  catch(const char* msg)
+  {
+    std::cout << msg;
+  }
 
   //Fraction f3 = f + f2;
   //Fraction f4 = f - f2;
