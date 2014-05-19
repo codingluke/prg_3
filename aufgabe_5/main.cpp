@@ -14,7 +14,8 @@
 int main() {
   Fraction f(2, 2);
   Fraction f2(2, 2);
-  std::cout << (f == f2);
+  Fraction rand_f(3,9,17,4);
+  std::cout << rand_f.str_normed();
 
   //Fraction f3 = f + f2;
   //Fraction f4 = f - f2;

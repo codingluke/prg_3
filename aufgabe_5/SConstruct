@@ -31,7 +31,7 @@ std = Environment(
 
 cpp_dateien = [
   'fraction.cpp',
-  'break_main.cpp',
+  'main.cpp',
 ]
 
 programm_name = 'bruch'

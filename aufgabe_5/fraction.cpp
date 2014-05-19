@@ -1,11 +1,25 @@
 #include <sstream>
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 #include "fraction.h"
 
-Fraction::Fraction(int a_numerator, int a_denominator)
+Fraction::Fraction(int a_numerator, unsigned int a_denominator)
 {
   numerator = a_numerator;
   denominator = a_denominator;
+}
+
+Fraction::Fraction(int a, unsigned int b, int c, unsigned int d)
+{
+  denominator = lcm(b, d);
+  srand(time(0));
+  Fraction lower(a, b);
+  Fraction higher(c, d);
+  int low = lower.extend(denominator).numerator;
+  int high = higher.extend(denominator).numerator;
+  numerator = rand() % (high - low + 1) + low;
+  shorten();
 }
 
 std::string Fraction::str() const
@@ -27,11 +41,11 @@ std::string Fraction::str_normed() const
   return modifier.str();
 }
 
-int Fraction::compare(const Fraction& frc) const
+int Fraction::compare(const Fraction& other) const
 {
-  int new_denominator = denominator * frc.denominator;
+  int new_denominator = denominator * other.denominator;
   Fraction tmp = extend(new_denominator);
-  Fraction tmp1 = frc.extend(new_denominator);
+  Fraction tmp1 = other.extend(new_denominator);
   int result = 0;
   if (tmp.numerator > tmp1.numerator)
     result = 1;
@@ -40,11 +54,11 @@ int Fraction::compare(const Fraction& frc) const
   return result;
 }
 
-Fraction Fraction::operator+(const Fraction& frc) const
+Fraction Fraction::operator+(const Fraction& other) const
 {
-  unsigned int new_denominator = lcm(denominator, frc.denominator);
+  unsigned int new_denominator = lcm(denominator, other.denominator);
   Fraction tmp1 = extend(new_denominator);
-  Fraction tmp2 = frc.extend(new_denominator);
+  Fraction tmp2 = other.extend(new_denominator);
   Fraction result(tmp1.numerator + tmp2.numerator, new_denominator);
   result.shorten();
   return result;
@@ -56,11 +70,11 @@ Fraction Fraction::operator+(const int& number) const
   return tmp + *this;
 }
 
-Fraction Fraction::operator-(const Fraction& frc) const
+Fraction Fraction::operator-(const Fraction& other) const
 {
-  unsigned int new_denominator = lcm(denominator, frc.denominator);
+  unsigned int new_denominator = lcm(denominator, other.denominator);
   Fraction tmp1 = extend(new_denominator);
-  Fraction tmp2 = frc.extend(new_denominator);
+  Fraction tmp2 = other.extend(new_denominator);
   Fraction result(tmp1.numerator - tmp2.numerator, new_denominator);
   result.shorten();
   return result;
@@ -72,10 +86,10 @@ Fraction Fraction::operator-(const int& number) const
   return *this - tmp;
 }
 
-Fraction Fraction::operator*(const Fraction& frc) const
+Fraction Fraction::operator*(const Fraction& other) const
 {
-  int new_numerator = numerator * frc.numerator;
-  unsigned int new_denominator = denominator * frc.denominator;
+  int new_numerator = numerator * other.numerator;
+  unsigned int new_denominator = denominator * other.denominator;
   Fraction result(new_numerator, new_denominator);
   result.shorten();
   return result;
@@ -92,40 +106,40 @@ Fraction Fraction::operator/(const int& number) const
   return *this / tmp;
 }
 
-Fraction Fraction::operator/(const Fraction& frc) const
+Fraction Fraction::operator/(const Fraction& other) const
 {
-  return *this * Fraction(frc.denominator, frc.numerator);
+  return *this * Fraction(other.denominator, other.numerator);
 }
 
-bool Fraction::operator==(const Fraction& frc) const
+bool Fraction::operator==(const Fraction& other) const
 {
   bool result = true;
-  if (compare(frc) != 0)
+  if (compare(other) != 0)
     result = false;
   return result;
 }
 
-bool Fraction::operator<(const Fraction& frc) const
+bool Fraction::operator<(const Fraction& other) const
 {
   bool result = true;
-  if (compare(frc) != -1)
+  if (compare(other) != -1)
     result = false;
   return result;
 }
 
-bool Fraction::operator>(const Fraction& frc) const
+bool Fraction::operator>(const Fraction& other) const
 {
-  return !(*this <= frc);
+  return !(*this <= other);
 }
 
-bool Fraction::operator<=(const Fraction& frc) const
+bool Fraction::operator<=(const Fraction& other) const
 {
-  return (*this < frc) || (*this == frc);
+  return (*this < other) || (*this == other);
 }
 
-bool Fraction::operator>=(const Fraction& frc) const
+bool Fraction::operator>=(const Fraction& other) const
 {
-  return (*this > frc) || (*this == frc);
+  return (*this > other) || (*this == other);
 }
 
 
