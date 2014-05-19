@@ -6,7 +6,7 @@
 using namespace std;
 
 static const double DBL_MAX = numeric_limits<double>::max();
-static const double DBL_MIN = -1 * numeric_limits<double>::max();
+static const double DBL_MIN = -1 * numeric_limit<double>::max();
 static const long LONG_MAX = numeric_limits<long>::max();
 static const long LONG_MIN = numeric_limits<long>::min();
 static const int INT_MAX = numeric_limits<int>::max();
