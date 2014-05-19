@@ -136,7 +136,7 @@ int Fraction::gcd(unsigned int a, unsigned int b) const
     if (a > b)
       a -= b;
     else
-    b -= a;
+      b -= a;
   }
   int gcd = a;
   if (a == 0)
