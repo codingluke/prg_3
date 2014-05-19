@@ -132,15 +132,15 @@ bool Fraction::operator>=(const Fraction& frc) const
 int Fraction::gcd(unsigned int a, unsigned int b) const
 {
   while (a != 0 && b != 0)
-	{
-		if (a > b)
-			a -= b;
-		else
-			b -= a;
-	}
-	int gcd = a;
-	if (a == 0)
-		gcd = b;
+  {
+    if (a > b)
+      a -= b;
+    else
+    b -= a;
+  }
+  int gcd = a;
+  if (a == 0)
+    gcd = b;
   return gcd;
 }
 
