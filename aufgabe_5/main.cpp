@@ -12,9 +12,9 @@
  */
 //int main(int argc, char *argv[])
 int main() {
-  Fraction f(2, 2);
+  Fraction f(2, -2);
   Fraction f2(2, 2);
-  Fraction rand_f(3,9,17,4);
+  Fraction rand_f(-1,1,1,99);
   std::cout << rand_f.str_normed();
 
   //Fraction f3 = f + f2;

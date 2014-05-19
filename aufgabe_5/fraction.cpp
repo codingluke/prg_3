@@ -4,22 +4,32 @@
 #include <cstdlib>
 #include "fraction.h"
 
-Fraction::Fraction(int a_numerator, unsigned int a_denominator)
+Fraction::Fraction(int a_numerator, int a_denominator)
 {
   numerator = a_numerator;
   denominator = a_denominator;
+  normalize();
 }
 
-Fraction::Fraction(int a, unsigned int b, int c, unsigned int d)
+Fraction::Fraction(int low_numerator, int low_denominator,
+                   int high_numerator, int high_denominator)
 {
-  denominator = lcm(b, d);
-  srand(time(0));
-  Fraction lower(a, b);
-  Fraction higher(c, d);
+  Fraction lower(low_numerator, low_denominator);
+  Fraction higher(high_numerator, high_denominator);
+  denominator = lcm(lower.denominator, higher.denominator);
   int low = lower.extend(denominator).numerator;
   int high = higher.extend(denominator).numerator;
-  numerator = rand() % (high - low + 1) + low;
+
+  srand(time(0));
+  int range = 11;
+  if (low < 0 && high > 0)
+    range = (high + abs(low)) + 1;
+  else if (low <= 0)
+    range = high - low + 1;
+  numerator = (rand() % range) + low;
+  //numerator = 1;
   shorten();
+  normalize();
 }
 
 std::string Fraction::str() const
@@ -56,7 +66,7 @@ int Fraction::compare(const Fraction& other) const
 
 Fraction Fraction::operator+(const Fraction& other) const
 {
-  unsigned int new_denominator = lcm(denominator, other.denominator);
+  int new_denominator = lcm(denominator, other.denominator);
   Fraction tmp1 = extend(new_denominator);
   Fraction tmp2 = other.extend(new_denominator);
   Fraction result(tmp1.numerator + tmp2.numerator, new_denominator);
@@ -72,7 +82,7 @@ Fraction Fraction::operator+(const int& number) const
 
 Fraction Fraction::operator-(const Fraction& other) const
 {
-  unsigned int new_denominator = lcm(denominator, other.denominator);
+  int new_denominator = lcm(denominator, other.denominator);
   Fraction tmp1 = extend(new_denominator);
   Fraction tmp2 = other.extend(new_denominator);
   Fraction result(tmp1.numerator - tmp2.numerator, new_denominator);
@@ -89,7 +99,7 @@ Fraction Fraction::operator-(const int& number) const
 Fraction Fraction::operator*(const Fraction& other) const
 {
   int new_numerator = numerator * other.numerator;
-  unsigned int new_denominator = denominator * other.denominator;
+  int new_denominator = denominator * other.denominator;
   Fraction result(new_numerator, new_denominator);
   result.shorten();
   return result;
@@ -143,7 +153,7 @@ bool Fraction::operator>=(const Fraction& other) const
 }
 
 
-int Fraction::gcd(unsigned int a, unsigned int b) const
+int Fraction::gcd(int a, int b) const
 {
   while (a != 0 && b != 0)
   {
@@ -158,21 +168,37 @@ int Fraction::gcd(unsigned int a, unsigned int b) const
   return gcd;
 }
 
-int Fraction::lcm(unsigned int a, unsigned int b) const
+int Fraction::lcm(int a, int b) const
 {
   return (a * b) / gcd(a, b);
 }
 
 void Fraction::shorten()
 {
-  unsigned int tmp = gcd(numerator, denominator);
-  numerator /= tmp;
+  int tmp = gcd(abs(numerator), denominator);
+  if (numerator < 0)
+  {
+    numerator *= -1;
+    numerator /= tmp;
+    numerator *= -1;
+  }
+  else
+    numerator /= tmp;
   denominator /= tmp;
 }
 
-Fraction Fraction::extend(unsigned int a_denominator) const
+void Fraction::normalize()
 {
-  unsigned int new_numerator = (a_denominator / denominator) * numerator;
+  if (denominator < 0)
+  {
+    numerator *= -1;
+    denominator *= -1;
+  }
+}
+
+Fraction Fraction::extend(int a_denominator) const
+{
+  int new_numerator = (a_denominator / denominator) * numerator;
   return Fraction(new_numerator, a_denominator);
 }
 

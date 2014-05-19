@@ -7,11 +7,11 @@ class Fraction
 {
   private:
     int numerator;
-    unsigned int denominator;
+    int denominator;
 
   public:
-    Fraction(int a_counter, unsigned int a_denominator);
-    Fraction(int a, unsigned int b, int c, unsigned int d);
+    Fraction(int a_counter, int a_denominator);
+    Fraction(int a, int b, int c, int d);
 
     std::string str() const;
     std::string str_normed() const;
@@ -32,10 +32,11 @@ class Fraction
     bool operator>=(const Fraction& other) const;
 
   private:
-    int gcd(unsigned int a, unsigned int b) const;
-    int lcm(unsigned int a, unsigned int b) const;
+    int gcd(int a, int b) const;
+    int lcm(int a, int b) const;
+    Fraction extend(int a_denominator) const;
     void shorten();
-    Fraction extend(unsigned int a_denominator) const;
+    void normalize();
 };
 
 Fraction operator+(const int& number, const Fraction& frc);
