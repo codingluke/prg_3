@@ -19,5 +19,6 @@ void compare(Fraction f1, Fraction f2);
 std::vector<Fraction> random_fractions(int amounth, int low_numerator,
                                        int low_denominator, int high_numerator,
                                        int high_denominator);
+void random_handler(int n, int a, int b, int c, int d, bool asc);
 
 #endif

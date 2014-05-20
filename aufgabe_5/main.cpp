@@ -64,36 +64,37 @@ void actionHandling(int argc, char *argv[])
   {
     bool check_int = atoi(argv[1]) && atoi(argv[3]) && atoi(argv[4]) &&
                      atoi(argv[5]) && atoi(argv[6]);
-    bool check_brackets = strcmp(argv[2], "[") == 0 &&
-                          strcmp(argv[7], "]") == 0;
     bool check_operator = strcmp(argv[8], "-") == 0 ||
                           strcmp(argv[8], "+") == 0;
-    if (check_int && check_brackets && check_operator)
+    if (check_int && check_operator)
     {
-      std::vector<Fraction> fractions = random_fractions(atoi(argv[1]),
-                                                         atoi(argv[3]),
-                                                         atoi(argv[4]),
-                                                         atoi(argv[5]),
-                                                         atoi(argv[6]));
-      std::cout << "Unsoriert" << std::endl;
-      for (int i = 0; i < atoi(argv[1]); i++)
-        std::cout << fractions[i] << std::endl;
-
-      std::cout << "Soriert" << std::endl;
-      sort(fractions, atoi(argv[1]), false);
-      for (int i = 0; i < atoi(argv[1]); i++)
-        std::cout << fractions[i] << std::endl;
+      bool asc = strcmp(argv[8], "+") == 0;
+      random_handler(atoi(argv[1]), atoi(argv[3]),
+                     atoi(argv[4]), atoi(argv[5]),
+                     atoi(argv[6]), asc);
     }
   }
 }
 
-std::vector<Fraction> random_fractions(int amounth, int low_numerator,
+void random_handler(int n, int a, int b, int c, int d, bool asc)
+{
+  std::vector<Fraction> fractions = random_fractions(n, a, b, c, d);
+  std::cout << "Unsoriert" << std::endl;
+  for (int i = 0; i < n; i++)
+    std::cout << fractions[i] << std::endl;
+  std::cout << "Soriert" << std::endl;
+  sort(fractions, n, asc);
+  for (int i = 0; i < n; i++)
+    std::cout << fractions[i] << std::endl;
+}
+
+std::vector<Fraction> random_fractions(int n, int low_numerator,
                                        int low_denominator, int high_numerator,
                                        int high_denominator)
 {
   srand(time(0));
-  std::vector<Fraction> fractions (amounth);
-  for (int i = 0; i < amounth; i++)
+  std::vector<Fraction> fractions (n);
+  for (int i = 0; i < n; i++)
     fractions[i] = Fraction(low_numerator, low_denominator,
                             high_numerator, high_denominator, rand());
   return fractions;
