@@ -5,6 +5,11 @@
 #include <string>
 #include <vector>
 
+
+typedef Fraction (Fraction::*fptr)(const Fraction&) const;
+typedef Fraction (Fraction::*fptr2)(const int&) const;
+typedef Fraction (*fptr3)(const int&, const Fraction&);
+
 void actionHandling(int argc, char *argv[]);
 void sort(std::vector<Fraction> &array, int length, bool asc);
 void calculate(Fraction f1, Fraction f2, std::string op);

@@ -5,7 +5,7 @@
 #include <vector>
 #include "fraction.h"
 #include "main.h"
-
+#include "calculator.h"
 
 /**
  * Entrypoint to the program "tabelle". Tabelle is a program to generate
@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 
 void actionHandling(int argc, char *argv[])
 {
+  Calculator calc;
   if (argc == 5)
   {
     bool num_first_int = atoi(argv[1]) && atoi(argv[3]) && atoi(argv[4]);
@@ -36,12 +37,12 @@ void actionHandling(int argc, char *argv[])
     if (num_first_int && !atoi(argv[2]))
     {
       Fraction f(atoi(argv[3]), atoi(argv[4]));
-      calculate(atoi(argv[1]), f, argv[2]);
+      calc.calculate(atoi(argv[1]), f, argv[2]);
     }
     else if (frc_first_int && !atoi(argv[3]))
     {
       Fraction f(atoi(argv[1]), atoi(argv[2]));
-      calculate(f, atoi(argv[1]), argv[3]);
+      calc.calculate(f, atoi(argv[1]), argv[3]);
     }
   }
   else if (argc == 6)
@@ -54,9 +55,9 @@ void actionHandling(int argc, char *argv[])
       Fraction f2(atoi(argv[4]), atoi(argv[5]));
       std::string op = argv[3];
       if (op == "-v")
-        compare(f1, f2);
+        calc.compare(f1, f2);
       else
-        calculate(f1, f2, op);
+        calc.calculate(f1, f2, op);
     }
   }
   else if (argc == 9)
@@ -120,64 +121,3 @@ void sort(std::vector<Fraction> &array, int length, bool asc)
     }
   }
 }
-
-void calculate(Fraction f1, Fraction f2, std::string op)
-{
-  Fraction result;
-  if (op == "+")
-    result = f1 + f2;
-  else if (op == "-")
-    result = f1 - f2;
-  else if (op == "*")
-    result = f1 * f2;
-  else if (op == "/")
-    result = f1 / f2;
-  std::cout << f1 << " " << op << " " << f2
-            << " = " << result.str_normed();
-}
-
-void compare(Fraction f1, Fraction f2)
-{
-  std::string op = "<";
-  if (f1 == f2)
-    op = "=";
-  else if (f1 > f2)
-    op = ">";
-  std::cout << f1 << " " << op << " " << f2 << std::endl;
-}
-
-void calculate(int number, Fraction f, std::string op)
-{
-  Fraction result;
-  if (op == "+")
-    result = number + f;
-  else if (op == "-")
-    result = number - f;
-  else if (op == "*")
-    result = number * f;
-  else if (op == "/")
-    result = number / f;
-  else
-    throw "Fehler!";
-  std::cout << number << " " << op << " " << f << " = "
-            << result.str_normed();
-}
-
-void calculate(Fraction f, int number, std::string op)
-{
-  Fraction result;
-  if (op == "+")
-    result = f + number;
-  else if (op == "-")
-    result = f - number;
-  else if (op == "*")
-    result = f * number;
-  else if (op == "/")
-    result = f / number;
-  else
-    throw "Fehler!";
-  std::cout << f << " " << op << " " << number << " = "
-            << result.str_normed();
-}
-
-
