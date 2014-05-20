@@ -74,6 +74,14 @@ void actionHandling(int argc, char *argv[])
                                                          atoi(argv[4]),
                                                          atoi(argv[5]),
                                                          atoi(argv[6]));
+      std::cout << "Unsoriert" << std::endl;
+      for (int i = 0; i < atoi(argv[1]); i++)
+        std::cout << fractions[i] << std::endl;
+
+      std::cout << "Soriert" << std::endl;
+      sort(fractions, atoi(argv[1]), false);
+      for (int i = 0; i < atoi(argv[1]); i++)
+        std::cout << fractions[i] << std::endl;
     }
   }
 }
@@ -88,6 +96,29 @@ std::vector<Fraction> random_fractions(int amounth, int low_numerator,
     fractions[i] = Fraction(low_numerator, low_denominator,
                             high_numerator, high_denominator, rand());
   return fractions;
+}
+
+void sort(std::vector<Fraction> &array, int length, bool asc)
+{
+  int index_max = 0;
+  Fraction ablage;
+  for (int i = length - 1; i > 0; i--)
+  {
+    index_max = 0;
+    for (int j = 0; j <= i; j++)
+    {
+      if ((asc && array[j] > array[index_max]) ||
+          (!asc && array[j] < array[index_max]))
+        index_max = j;
+    }
+    if ((asc && array[index_max] > array[i]) ||
+        (!asc && array[index_max] < array[i]))
+    {
+      ablage = array[i];
+      array[i] = array[index_max];
+      array[index_max] = ablage;
+    }
+  }
 }
 
 void calculate(Fraction f1, Fraction f2, std::string op)
@@ -112,7 +143,7 @@ void compare(Fraction f1, Fraction f2)
     op = "=";
   else if (f1 > f2)
     op = ">";
-  std::cout << f1 << " " << op << " " << f2;
+  std::cout << f1 << " " << op << " " << f2 << std::endl;
 }
 
 void calculate(int number, Fraction f, std::string op)
@@ -149,22 +180,4 @@ void calculate(Fraction f, int number, std::string op)
             << result.str_normed();
 }
 
-void sort(Fraction array[], int length)
-{
-  int index_max = 0;
-  Fraction store;
-  for (int i = length - 1; i < 0; i--)
-  {
-    index_max = 0;
-    for (int j = 0; j <= i; j++)
-      if (array[j] < array[index_max])
-        index_max = j;
-    if (array[index_max] > array[i])
-    {
-      store = array[i];
-      array[i] = array[index_max];
-      array[index_max] = store;
-    }
-  }
-}
 

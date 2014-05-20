@@ -6,7 +6,7 @@
 #include <vector>
 
 void actionHandling(int argc, char *argv[]);
-void sort(Fraction array[], int length);
+void sort(std::vector<Fraction> &array, int length, bool asc);
 void calculate(Fraction f1, Fraction f2, std::string op);
 void calculate(int number, Fraction f, std::string op);
 void calculate(Fraction f, int number, std::string op);
