@@ -12,7 +12,9 @@ class Fraction
   public:
     Fraction();
     Fraction(int a_counter, int a_denominator);
-    Fraction(int a, int b, int c, int d);
+    Fraction(int low_numerator, int low_denominator,
+             int high_numerator, int high_denominator,
+             int random);
 
     std::string str() const;
     std::string str_normed() const;

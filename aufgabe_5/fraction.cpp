@@ -18,11 +18,11 @@ Fraction::Fraction(int a_numerator, int a_denominator)
   numerator = a_numerator;
   denominator = a_denominator;
   normalize();
-  shorten();
 }
 
 Fraction::Fraction(int low_numerator, int low_denominator,
-                   int high_numerator, int high_denominator)
+                   int high_numerator, int high_denominator,
+                   int random)
 {
   if (low_denominator == 0 || high_denominator == 0)
     throw "Nenner darf nicht 0 sein!";
@@ -31,15 +31,12 @@ Fraction::Fraction(int low_numerator, int low_denominator,
   denominator = lcm(lower.denominator, higher.denominator);
   int low = lower.extend(denominator).numerator;
   int high = higher.extend(denominator).numerator;
-
-  srand(time(0));
   int range = 11;
   if (low < 0 && high > 0)
     range = (high + abs(low)) + 1;
   else if (low <= 0)
     range = high - low + 1;
-  numerator = (rand() % range) + low;
-  //numerator = 1;
+  numerator = (random % range) + low;
   shorten();
   normalize();
 }
@@ -82,9 +79,13 @@ int Fraction::compare(const Fraction& other) const
 Fraction Fraction::operator+(const Fraction& other) const
 {
   int new_denominator = lcm(denominator, other.denominator);
+  std::cout << "denominator: " << new_denominator << "\n";
   Fraction tmp1 = extend(new_denominator);
+  std::cout << "tmp1: " << tmp1 << "\n";
   Fraction tmp2 = other.extend(new_denominator);
+  std::cout << "tmp2: " << tmp2 << "\n";
   Fraction result(tmp1.numerator + tmp2.numerator, new_denominator);
+  std::cout << "result: " << result << "\n";
   result.shorten();
   return result;
 }
@@ -220,6 +221,7 @@ Fraction Fraction::extend(int a_denominator) const
 Fraction operator+(const int& number, const Fraction& frc)
 {
   Fraction tmp(number, number);
+  std::cout << tmp << "\n";
   return frc + tmp;
 }
 

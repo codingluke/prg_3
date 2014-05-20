@@ -1,0 +1,106 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DBL_MAX	console_input.cpp	/^static const double DBL_MAX = numeric_limits<double>::max();$/;"	v	language:C++	file:
+DBL_MIN	console_input.cpp	/^static const double DBL_MIN = numeric_limits<double>::min();$/;"	v	language:C++	file:
+FRACTION_H	fraction.h	2;"	d	language:C++
+Fraction	fraction.cpp	/^Fraction::Fraction()$/;"	f	language:C++	class:Fraction	signature:()
+Fraction	fraction.cpp	/^Fraction::Fraction(int a_numerator, int a_denominator)$/;"	f	language:C++	class:Fraction	signature:(int a_numerator, int a_denominator)
+Fraction	fraction.cpp	/^Fraction::Fraction(int low_numerator, int low_denominator,$/;"	f	language:C++	class:Fraction	signature:(int low_numerator, int low_denominator, int high_numerator, int high_denominator)
+Fraction	fraction.h	/^    Fraction();$/;"	p	language:C++	class:Fraction	access:public	signature:()
+Fraction	fraction.h	/^    Fraction(int a, int b, int c, int d);$/;"	p	language:C++	class:Fraction	access:public	signature:(int a, int b, int c, int d)
+Fraction	fraction.h	/^    Fraction(int a_counter, int a_denominator);$/;"	p	language:C++	class:Fraction	access:public	signature:(int a_counter, int a_denominator)
+Fraction	fraction.h	/^class Fraction$/;"	c	language:C++
+INT_MAX	console_input.cpp	/^static const int INT_MAX = numeric_limits<int>::max();$/;"	v	language:C++	file:
+INT_MIN	console_input.cpp	/^static const int INT_MIN = numeric_limits<int>::min();$/;"	v	language:C++	file:
+LONG_MAX	console_input.cpp	/^static const long LONG_MAX = numeric_limits<long>::max();$/;"	v	language:C++	file:
+LONG_MIN	console_input.cpp	/^static const long LONG_MIN = numeric_limits<long>::min();$/;"	v	language:C++	file:
+_CONSOLE_INPUT_H	console_input.h	2;"	d	language:C++
+compare	fraction.cpp	/^int Fraction::compare(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+compare	fraction.h	/^    int compare(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+denominator	fraction.h	/^    int denominator;$/;"	m	language:C++	class:Fraction	access:private
+extend	fraction.cpp	/^Fraction Fraction::extend(int a_denominator) const$/;"	f	language:C++	class:Fraction	signature:(int a_denominator) const
+extend	fraction.h	/^    Fraction extend(int a_denominator) const;$/;"	p	language:C++	class:Fraction	access:private	signature:(int a_denominator) const
+gcd	fraction.cpp	/^int Fraction::gcd(int a, int b) const$/;"	f	language:C++	class:Fraction	signature:(int a, int b) const
+gcd	fraction.h	/^    int gcd(int a, int b) const;$/;"	p	language:C++	class:Fraction	access:private	signature:(int a, int b) const
+lcm	fraction.cpp	/^int Fraction::lcm(int a, int b) const$/;"	f	language:C++	class:Fraction	signature:(int a, int b) const
+lcm	fraction.h	/^    int lcm(int a, int b) const;$/;"	p	language:C++	class:Fraction	access:private	signature:(int a, int b) const
+main	main.cpp	/^int main() {$/;"	f	language:C++	signature:()
+normalize	fraction.cpp	/^void Fraction::normalize()$/;"	f	language:C++	class:Fraction	signature:()
+normalize	fraction.h	/^    void normalize();$/;"	p	language:C++	class:Fraction	access:private	signature:()
+numerator	fraction.h	/^    int numerator;$/;"	m	language:C++	class:Fraction	access:private
+operator *	fraction.cpp	/^Fraction Fraction::operator*(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator *	fraction.cpp	/^Fraction Fraction::operator*(const int& number) const$/;"	f	language:C++	class:Fraction	signature:(const int& number) const
+operator *	fraction.cpp	/^Fraction operator*(const int& number, const Fraction& frc)$/;"	f	language:C++	signature:(const int& number, const Fraction& frc)
+operator *	fraction.h	/^    Fraction operator*(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator *	fraction.h	/^    Fraction operator*(const int& number) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const int& number) const
+operator *	fraction.h	/^Fraction operator*(const int& number, const Fraction& frc);$/;"	p	language:C++	signature:(const int& number, const Fraction& frc)
+operator +	fraction.cpp	/^Fraction Fraction::operator+(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator +	fraction.cpp	/^Fraction Fraction::operator+(const int& number) const$/;"	f	language:C++	class:Fraction	signature:(const int& number) const
+operator +	fraction.cpp	/^Fraction operator+(const int& number, const Fraction& frc)$/;"	f	language:C++	signature:(const int& number, const Fraction& frc)
+operator +	fraction.h	/^    Fraction operator+(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator +	fraction.h	/^    Fraction operator+(const int& number) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const int& number) const
+operator +	fraction.h	/^Fraction operator+(const int& number, const Fraction& frc);$/;"	p	language:C++	signature:(const int& number, const Fraction& frc)
+operator -	fraction.cpp	/^Fraction Fraction::operator-(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator -	fraction.cpp	/^Fraction Fraction::operator-(const int& number) const$/;"	f	language:C++	class:Fraction	signature:(const int& number) const
+operator -	fraction.cpp	/^Fraction operator-(const int& number, const Fraction& frc)$/;"	f	language:C++	signature:(const int& number, const Fraction& frc)
+operator -	fraction.h	/^    Fraction operator-(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator -	fraction.h	/^    Fraction operator-(const int& number) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const int& number) const
+operator -	fraction.h	/^Fraction operator-(const int& number, const Fraction& frc);$/;"	p	language:C++	signature:(const int& number, const Fraction& frc)
+operator /	fraction.cpp	/^Fraction Fraction::operator\/(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator /	fraction.cpp	/^Fraction Fraction::operator\/(const int& number) const$/;"	f	language:C++	class:Fraction	signature:(const int& number) const
+operator /	fraction.cpp	/^Fraction operator\/(const int& number, const Fraction& frc)$/;"	f	language:C++	signature:(const int& number, const Fraction& frc)
+operator /	fraction.h	/^    Fraction operator\/(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator /	fraction.h	/^    Fraction operator\/(const int& number) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const int& number) const
+operator /	fraction.h	/^Fraction operator\/(const int& number, const Fraction& frc);$/;"	p	language:C++	signature:(const int& number, const Fraction& frc)
+operator <	fraction.cpp	/^bool Fraction::operator<(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator <	fraction.h	/^    bool operator<(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator <<	fraction.cpp	/^std::ostream& operator<<(std::ostream& output, const Fraction& frc)$/;"	f	language:C++	signature:(std::ostream& output, const Fraction& frc)
+operator <<	fraction.h	/^std::ostream& operator<<(std::ostream& output, const Fraction& frc);$/;"	p	language:C++	signature:(std::ostream& output, const Fraction& frc)
+operator <=	fraction.cpp	/^bool Fraction::operator<=(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator <=	fraction.h	/^    bool operator<=(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator ==	fraction.cpp	/^bool Fraction::operator==(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator ==	fraction.h	/^    bool operator==(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator >	fraction.cpp	/^bool Fraction::operator>(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator >	fraction.h	/^    bool operator>(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator >=	fraction.cpp	/^bool Fraction::operator>=(const Fraction& other) const$/;"	f	language:C++	class:Fraction	signature:(const Fraction& other) const
+operator >=	fraction.h	/^    bool operator>=(const Fraction& other) const;$/;"	p	language:C++	class:Fraction	access:public	signature:(const Fraction& other) const
+operator >>	fraction.cpp	/^istream& operator>>(istream& entry, Fraction& frc)$/;"	f	language:C++	signature:(istream& entry, Fraction& frc)
+operator >>	fraction.h	/^std::istream& operator>>(std::istream& entry, Fraction& frc);$/;"	p	language:C++	signature:(std::istream& entry, Fraction& frc)
+read_double	console_input.cpp	/^double read_double()$/;"	f	language:C++	signature:()
+read_double	console_input.cpp	/^double read_double(double min, double max)$/;"	f	language:C++	signature:(double min, double max)
+read_double	console_input.cpp	/^double read_double(string text)$/;"	f	language:C++	signature:(string text)
+read_double	console_input.cpp	/^double read_double(string text, double min, double max)$/;"	f	language:C++	signature:(string text, double min, double max)
+read_double	console_input.h	/^double read_double();$/;"	p	language:C++	signature:()
+read_double	console_input.h	/^double read_double(double min, double max);$/;"	p	language:C++	signature:(double min, double max)
+read_double	console_input.h	/^double read_double(string text);$/;"	p	language:C++	signature:(string text)
+read_double	console_input.h	/^double read_double(string text, double min, double max);$/;"	p	language:C++	signature:(string text, double min, double max)
+read_int	console_input.cpp	/^int read_int()$/;"	f	language:C++	signature:()
+read_int	console_input.cpp	/^int read_int(int min, int max)$/;"	f	language:C++	signature:(int min, int max)
+read_int	console_input.cpp	/^int read_int(string text)$/;"	f	language:C++	signature:(string text)
+read_int	console_input.cpp	/^int read_int(string text, int min, int max)$/;"	f	language:C++	signature:(string text, int min, int max)
+read_int	console_input.h	/^int read_int();$/;"	p	language:C++	signature:()
+read_int	console_input.h	/^int read_int(int min, int max);$/;"	p	language:C++	signature:(int min, int max)
+read_int	console_input.h	/^int read_int(string text);$/;"	p	language:C++	signature:(string text)
+read_int	console_input.h	/^int read_int(string text, int min, int max);$/;"	p	language:C++	signature:(string text, int min, int max)
+read_long	console_input.cpp	/^long read_long()$/;"	f	language:C++	signature:()
+read_long	console_input.cpp	/^long read_long(long min, long max)$/;"	f	language:C++	signature:(long min, long max)
+read_long	console_input.cpp	/^long read_long(string text)$/;"	f	language:C++	signature:(string text)
+read_long	console_input.cpp	/^long read_long(string text, long min, long max)$/;"	f	language:C++	signature:(string text, long min, long max)
+read_long	console_input.h	/^long read_long();$/;"	p	language:C++	signature:()
+read_long	console_input.h	/^long read_long(long min, long max);$/;"	p	language:C++	signature:(long min, long max)
+read_long	console_input.h	/^long read_long(string text);$/;"	p	language:C++	signature:(string text)
+read_long	console_input.h	/^long read_long(string text, long min, long max);$/;"	p	language:C++	signature:(string text, long min, long max)
+read_text	console_input.cpp	/^string read_text(string text)$/;"	f	language:C++	signature:(string text)
+read_text	console_input.h	/^string read_text(string text);$/;"	p	language:C++	signature:(string text)
+read_yes_no	console_input.cpp	/^bool read_yes_no(string text)$/;"	f	language:C++	signature:(string text)
+read_yes_no	console_input.h	/^bool read_yes_no(string text);$/;"	p	language:C++	signature:(string text)
+shorten	fraction.cpp	/^void Fraction::shorten()$/;"	f	language:C++	class:Fraction	signature:()
+shorten	fraction.h	/^    void shorten();$/;"	p	language:C++	class:Fraction	access:private	signature:()
+str	fraction.cpp	/^std::string Fraction::str() const$/;"	f	language:C++	class:Fraction	signature:() const
+str	fraction.h	/^    std::string str() const;$/;"	p	language:C++	class:Fraction	access:public	signature:() const
+str_normed	fraction.cpp	/^std::string Fraction::str_normed() const$/;"	f	language:C++	class:Fraction	signature:() const
+str_normed	fraction.h	/^    std::string str_normed() const;$/;"	p	language:C++	class:Fraction	access:public	signature:() const
