@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string.h>
+#include <sstream>
 #include <cstdlib>
 #include <vector>
 #include "fraction.h"
@@ -17,63 +18,69 @@
  */
 int main(int argc, char *argv[])
 {
-  try
+  if (argc == 5)
+    handle_five(argv);
+  else if (argc == 6)
+    handle_six(argv);
+  else if (argc == 9)
+    handle_nine(argv);
+}
+
+void handle_five(char *argv[])
+{
+  Calculator calc;
+  bool num_first_int = isi(argv[1]) && isi(argv[3]) && isi(argv[4]);
+  bool frc_first_int = isi(argv[1]) && isi(argv[2]) && isi(argv[4]);
+  if (num_first_int && !isi(argv[2]))
   {
-    actionHandling(argc, argv);
+    Fraction f(atoi(argv[3]), atoi(argv[4]));
+    calc.calculate(atoi(argv[1]), f, argv[2]);
   }
-  catch(const char* msg)
+  else if (frc_first_int && !isi(argv[3]))
   {
-    std::cout << msg;
+    Fraction f(atoi(argv[1]), atoi(argv[2]));
+    calc.calculate(f, atoi(argv[1]), argv[3]);
   }
 }
 
-void actionHandling(int argc, char *argv[])
+void handle_six(char *argv[])
 {
   Calculator calc;
-  if (argc == 5)
+  bool check_int = isi(argv[1]) && isi(argv[2]) &&
+                   isi(argv[4]) && isi(argv[5]);
+  if (check_int && !isi(argv[3]))
   {
-    bool num_first_int = atoi(argv[1]) && atoi(argv[3]) && atoi(argv[4]);
-    bool frc_first_int = atoi(argv[1]) && atoi(argv[2]) && atoi(argv[4]);
-    if (num_first_int && !atoi(argv[2]))
-    {
-      Fraction f(atoi(argv[3]), atoi(argv[4]));
-      calc.calculate(atoi(argv[1]), f, argv[2]);
-    }
-    else if (frc_first_int && !atoi(argv[3]))
-    {
-      Fraction f(atoi(argv[1]), atoi(argv[2]));
-      calc.calculate(f, atoi(argv[1]), argv[3]);
-    }
+    Fraction f1(atoi(argv[1]), atoi(argv[2]));
+    Fraction f2(atoi(argv[4]), atoi(argv[5]));
+    std::string op = argv[3];
+    if (op == "-v")
+      calc.compare(f1, f2);
+    else
+      calc.calculate(f1, f2, op);
   }
-  else if (argc == 6)
+}
+
+void handle_nine(char *argv[])
+{
+  bool check_int = isi(argv[1]) && isi(argv[3]) && isi(argv[4]) &&
+                   isi(argv[5]) && isi(argv[6]);
+  bool check_operator = strcmp(argv[8], "-") == 0 ||
+                        strcmp(argv[8], "+") == 0;
+  bool check_range = 0 < atoi(argv[1]) && atoi(argv[1]) < 10001;
+  if (check_int && check_operator && check_range)
   {
-    bool check_int = atoi(argv[1]) && atoi(argv[2]) &&
-                     atoi(argv[4]) && atoi(argv[5]);
-    if (check_int && !atoi(argv[3]))
-    {
-      Fraction f1(atoi(argv[1]), atoi(argv[2]));
-      Fraction f2(atoi(argv[4]), atoi(argv[5]));
-      std::string op = argv[3];
-      if (op == "-v")
-        calc.compare(f1, f2);
-      else
-        calc.calculate(f1, f2, op);
-    }
+    bool asc = strcmp(argv[8], "+") == 0;
+    random_handler(atoi(argv[1]), atoi(argv[3]),
+                   atoi(argv[4]), atoi(argv[5]),
+                   atoi(argv[6]), asc);
   }
-  else if (argc == 9)
-  {
-    bool check_int = atoi(argv[1]) && atoi(argv[3]) && atoi(argv[4]) &&
-                     atoi(argv[5]) && atoi(argv[6]);
-    bool check_operator = strcmp(argv[8], "-") == 0 ||
-                          strcmp(argv[8], "+") == 0;
-    if (check_int && check_operator)
-    {
-      bool asc = strcmp(argv[8], "+") == 0;
-      random_handler(atoi(argv[1]), atoi(argv[3]),
-                     atoi(argv[4]), atoi(argv[5]),
-                     atoi(argv[6]), asc);
-    }
-  }
+}
+
+bool isi(char text[])
+{
+  int i;
+  std::istringstream in(text);
+  return in >> i && in.eof();
 }
 
 void random_handler(int n, int a, int b, int c, int d, bool asc)
