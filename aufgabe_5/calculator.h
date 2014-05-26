@@ -20,12 +20,16 @@ class Calculator
   public:
     Calculator();
 
-    void calculate(Fraction f1, Fraction f2, std::string op) const;
-    void calculate(int number, Fraction f, std::string op) const;
-    void calculate(Fraction f, int number, std::string op) const;
+    void calculate(Fraction left, Fraction right,
+                   std::string op) const throw (const char*);
+    void calculate(int left, Fraction right,
+                   std::string op) const throw (const char*);
+    void calculate(Fraction left, int right,
+                   std::string op) const throw (const char*);
     void compare(Fraction f1, Fraction f2) const;
 
   private:
+    void init_default_operators();
     int get_op_index(std::string op) const;
 };
 

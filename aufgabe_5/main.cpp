@@ -9,9 +9,27 @@
 #include "calculator.h"
 
 /**
- * Entrypoint to the program "tabelle". Tabelle is a program to generate
- * value-tables for the mathematical functions
- * cos, sin, tan, acos, asin, atan, exp, log, log10, sqrt and pow.
+ * Entrypoint to the program "Bruch". Bruch lets you calculate and
+ * compare Fractions directly in the console.
+ * There is also the possibility to generate random Fraction in a
+ * certain range. It prompts the user while inserting wrong Fractions
+ * where the denominator is zero.
+ *
+ * Possible calculation execution forms (op = +,-,*,/):
+ * bruch a b op c d         a/b op c/d = e/f
+ * => bruch 1 2 - 1 3       1/2 - 1/3 = 1/6
+ * bruch a op c d           a op c/d = e/f
+ * => bruch 1 - 1 2         1 - 1/2 = 1/2
+ * bruch a b op c           a/b op c = e/f
+ * => bruch 1 2 - 1         1/2 - 1 = -1/2
+ *
+ * Possible compare executions:
+ * bruch a b -v c d         a/b [<|>|=] c/d
+ * => 1 2 -v 1 3            1/2 > 1/3
+ *
+ * Possible random number generator
+ * bruch n [ a b c d ] +    n numbers between a/b and c/d ascendent sorted.
+ * bruch n [ a b c d ] -    n numbers between a/b and c/d descendent sorted.
  *
  * @param argc        Length of the arguments array.
  * @param *argv[]     Arguments array form the program execution.
@@ -26,56 +44,129 @@ int main(int argc, char *argv[])
     handle_nine(argv);
 }
 
+/**
+ * Handles program when executed with five arguments. Validates
+ * input format.
+ *
+ * Possible actions are:
+ * bruch a op c d       a op c/d = e/f
+ * => bruch 1 - 1 2     1 - 1/2 = 1/2
+ * bruch a b op c       a/b op c = e/f
+ * => bruch 1 2 - 1     1/2 - 1 = -1/2
+ *
+ * @param *argv[]       Arguments array form the program execution.
+ */
 void handle_five(char *argv[])
 {
-  Calculator calc;
-  bool num_first_int = isi(argv[1]) && isi(argv[3]) && isi(argv[4]);
-  bool frc_first_int = isi(argv[1]) && isi(argv[2]) && isi(argv[4]);
-  if (num_first_int && !isi(argv[2]))
+  try
   {
-    Fraction f(atoi(argv[3]), atoi(argv[4]));
-    calc.calculate(atoi(argv[1]), f, argv[2]);
+    Calculator calc = Calculator();
+    bool num_first_int = isi(argv[1]) && isi(argv[3]) && isi(argv[4]);
+    bool frc_first_int = isi(argv[1]) && isi(argv[2]) && isi(argv[4]);
+    if (num_first_int && !isi(argv[2]))
+    {
+      Fraction f(atoi(argv[3]), atoi(argv[4]));
+      calc.calculate(atoi(argv[1]), f, argv[2]);
+    }
+    else if (frc_first_int && !isi(argv[3]))
+    {
+      Fraction f(atoi(argv[1]), atoi(argv[2]));
+      calc.calculate(f, atoi(argv[1]), argv[3]);
+    }
+    else
+      std::cout << "shit";
   }
-  else if (frc_first_int && !isi(argv[3]))
+  catch(const char* msg)
   {
-    Fraction f(atoi(argv[1]), atoi(argv[2]));
-    calc.calculate(f, atoi(argv[1]), argv[3]);
+    std::cout << msg << std::endl;
   }
 }
 
+/**
+ * Handles program when executed with six arguments. Validates
+ * input format.
+ *
+ * Possible actions are:
+ * bruch a b op c d         a/b op c/d = e/f
+ * => bruch 1 2 - 1 3       1/2 - 1/3 = 1/6
+ * bruch a b -v c d         a/b [<|>|=] c/d
+ * => 1 2 -v 1 3            1/2 > 1/3
+ *
+ * @param *argv[]       Arguments array form the program execution.
+ */
 void handle_six(char *argv[])
 {
-  Calculator calc;
-  bool check_int = isi(argv[1]) && isi(argv[2]) &&
-                   isi(argv[4]) && isi(argv[5]);
-  if (check_int && !isi(argv[3]))
+  Calculator calc = Calculator();
+  bool numerator_ok = isi(argv[1]) && isi(argv[4]);
+  bool denumerator_ok = isi(argv[2]) && isi(argv[5]);
+  bool operator_ok = !isi(argv[3]);
+  if (numerator_ok && denumerator_ok && operator_ok)
   {
-    Fraction f1(atoi(argv[1]), atoi(argv[2]));
-    Fraction f2(atoi(argv[4]), atoi(argv[5]));
-    std::string op = argv[3];
-    if (op == "-v")
-      calc.compare(f1, f2);
-    else
-      calc.calculate(f1, f2, op);
+    try
+    {
+      Fraction f1(atoi(argv[1]), atoi(argv[2]));
+      Fraction f2(atoi(argv[4]), atoi(argv[5]));
+      std::string op = argv[3];
+      if (op == "-v")
+        calc.compare(f1, f2);
+      else
+        calc.calculate(f1, f2, op);
+    }
+    catch(const char* msg)
+    {
+      std::cout << msg << std::endl;
+    }
   }
+  else
+    std::cout << "SHIT!";
 }
 
+/**
+ *
+ * Handles program when executed with nine arguments. Validates
+ * input format.
+ *
+ * Possible actions are:
+ * bruch n [ a b c d ] +    n numbers between a/b and c/d ascendent sorted.
+ * bruch n [ a b c d ] -    n numbers between a/b and c/d descendent sorted.
+ *
+ * @param *argv[]       Arguments array form the program execution.
+ */
 void handle_nine(char *argv[])
 {
-  bool check_int = isi(argv[1]) && isi(argv[3]) && isi(argv[4]) &&
-                   isi(argv[5]) && isi(argv[6]);
-  bool check_operator = strcmp(argv[8], "-") == 0 ||
+  bool denumerator_ok = isi(argv[4]) && isi(argv[6]);
+  bool integers_ok = isi(argv[1]) && isi(argv[3]) && isi(argv[4]) &&
+                     isi(argv[5]) && isi(argv[6]);
+  bool direction_ok = strcmp(argv[8], "-") == 0 ||
                         strcmp(argv[8], "+") == 0;
-  bool check_range = 0 < atoi(argv[1]) && atoi(argv[1]) < 10001;
-  if (check_int && check_operator && check_range)
+  bool range_ok = 0 < atoi(argv[1]) && atoi(argv[1]) < 10001;
+  if (denumerator_ok && integers_ok && direction_ok && range_ok)
   {
+    try
+    {
     bool asc = strcmp(argv[8], "+") == 0;
     random_handler(atoi(argv[1]), atoi(argv[3]),
                    atoi(argv[4]), atoi(argv[5]),
                    atoi(argv[6]), asc);
+    }
+    catch(const char* msg)
+    {
+      std::cout << msg << std::endl;
+    }
   }
+  else
+    std::cout << "SHIT!";
 }
 
+/**
+ * Checks whether an array of chars represents an integer or not.
+ * Solfs atoi problem that returns a 0 for a char which is not a number.
+ *
+ * @param text[] Array of chars.
+ *
+ * @return true when text[] represents a number.
+ *         false when text[] doesn't represent a number.
+ */
 bool isi(char text[])
 {
   int i;
@@ -83,31 +174,80 @@ bool isi(char text[])
   return in >> i && in.eof();
 }
 
+/**
+ * Generates n random Fractions in between the Fractions a/b and c/d,
+ * sorts them eigther ascendent or descendent according the parameter
+ * asc and prints the sorted and unsorted result to the console.
+ *
+ * @param n   Number of random fractions.
+ * @param a   Numerator of the low bound fraction.
+ * @param b   Denominator of the low bound fraction.
+ * @param c   Numerator of the high bound fraction.
+ * @param d   Denominator of the high bound fraction.
+ * @param asc Deriction to sort, true => asc, false => desc.
+ */
 void random_handler(int n, int a, int b, int c, int d, bool asc)
 {
-  std::vector<Fraction> fractions = random_fractions(n, a, b, c, d);
-  std::cout << "Unsoriert" << std::endl;
-  for (int i = 0; i < n; i++)
-    std::cout << fractions[i] << std::endl;
-  std::cout << "Soriert" << std::endl;
-  sort(fractions, n, asc);
-  for (int i = 0; i < n; i++)
-    std::cout << fractions[i] << std::endl;
+  try
+  {
+    std::vector<Fraction> fractions = random_fractions(n, a, b, c, d);
+    std::cout << "unsoriert:" << std::endl;
+    for (int i = 0; i < n; i++)
+      std::cout << fractions[i] << std::endl;
+    if (asc)
+      std::cout << std::endl << "aufsteigend soriert:" << std::endl;
+    else
+      std::cout << std::endl << "absteigend soriert:" << std::endl;
+    sort(fractions, n, asc);
+    for (int i = 0; i < n; i++)
+      std::cout << fractions[i] << std::endl;
+  }
+  catch(const char* msg)
+  {
+    throw msg;
+  }
 }
 
+/**
+ * Generates n random Fractions with value in between the Fractions a/b and c/d
+ * and gives them back as vector.
+ *
+ * @param n   Number of random fractions.
+ * @param low_numerator     Numerator of the low bound fraction.
+ * @param low_denominator   Denominator of the low bound fraction.
+ * @param high_numerator    Numerator of the high bound fraction.
+ * @param high_deominator   Denominator of the high bound fraction.
+ *
+ * @return vector with the fractions.
+ */
 std::vector<Fraction> random_fractions(int n, int low_numerator,
                                        int low_denominator, int high_numerator,
                                        int high_denominator)
 {
   srand(time(0));
   std::vector<Fraction> fractions (n);
-  for (int i = 0; i < n; i++)
-    fractions[i] = Fraction(low_numerator, low_denominator,
-                            high_numerator, high_denominator, rand());
+  try
+  {
+    for (int i = 0; i < n; i++)
+      fractions[i] = Fraction(low_numerator, low_denominator,
+                              high_numerator, high_denominator, rand());
+  }
+  catch(const char* msg)
+  {
+    throw msg;
+  }
   return fractions;
 }
 
-void sort(std::vector<Fraction> &array, int length, bool asc)
+/**
+ * Sorts an vector of fractions with the entry sort algorithm in according
+ * to the param asc ascendent or descendent.
+ *
+ * @param fractions   Vector with the fraction to sort.
+ * @param length      Length of the vector.
+ * @param asc         Direction to sort. true => asc, false => desc.
+ */
+void sort(std::vector<Fraction> &fractions, int length, bool asc)
 {
   int index_max = 0;
   Fraction ablage;
@@ -116,16 +256,16 @@ void sort(std::vector<Fraction> &array, int length, bool asc)
     index_max = 0;
     for (int j = 0; j <= i; j++)
     {
-      if ((asc && array[j] > array[index_max]) ||
-          (!asc && array[j] < array[index_max]))
+      if ((asc && fractions[j] > fractions[index_max]) ||
+          (!asc && fractions[j] < fractions[index_max]))
         index_max = j;
     }
-    if ((asc && array[index_max] > array[i]) ||
-        (!asc && array[index_max] < array[i]))
+    if ((asc && fractions[index_max] > fractions[i]) ||
+        (!asc && fractions[index_max] < fractions[i]))
     {
-      ablage = array[i];
-      array[i] = array[index_max];
-      array[index_max] = ablage;
+      ablage = fractions[i];
+      fractions[i] = fractions[index_max];
+      fractions[index_max] = ablage;
     }
   }
 }
