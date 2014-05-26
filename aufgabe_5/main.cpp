@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string.h>
 #include <sstream>
+#include <fstream>
 #include <cstdlib>
 #include <vector>
 #include "fraction.h"
@@ -42,6 +43,8 @@ int main(int argc, char *argv[])
     handle_six(argv);
   else if (argc == 9)
     handle_nine(argv);
+  else
+    show_manual();
 }
 
 /**
@@ -268,4 +271,21 @@ void sort(std::vector<Fraction> &fractions, int length, bool asc)
       fractions[index_max] = ablage;
     }
   }
+}
+
+/**
+ * Reads a file according a given filename and prints the content
+ * to the console.
+ *
+ * @param filename Name of the file to print to the console.
+ */
+void show_manual()
+{
+  std::string line;
+  std::string filename = "manual.txt";
+  std::ifstream infile(filename.c_str());
+  if (!infile)
+    std::cout << "File '" << filename << "' existiert nicht!" << std::endl;
+  while (getline(infile, line))
+    std::cout << line << std::endl;
 }

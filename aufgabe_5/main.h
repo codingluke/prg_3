@@ -14,14 +14,11 @@ void handle_five(char *argv[]);
 void handle_six(char *argv[]);
 void handle_nine(char *argv[]);
 void sort(std::vector<Fraction> &array, int length, bool asc);
-void calculate(Fraction f1, Fraction f2, std::string op);
-void calculate(int number, Fraction f, std::string op);
-void calculate(Fraction f, int number, std::string op);
-void compare(Fraction f1, Fraction f2);
 std::vector<Fraction> random_fractions(int amounth, int low_numerator,
                                        int low_denominator, int high_numerator,
                                        int high_denominator);
 void random_handler(int n, int a, int b, int c, int d, bool asc);
 bool isi(char text[]);
+void show_manual();
 
 #endif
