@@ -30,12 +30,14 @@ std = Environment(
 # Teil 3: Programm bauen
 
 cpp_dateien = [
+  'coin.cpp',
+  'price_computer.cpp',
+  'refound_computer.cpp',
+  'destination_collection.cpp',
   'console_input.cpp',
-  'calculator.cpp',
-  'fraction.cpp',
   'main.cpp',
 ]
 
-programm_name = 'bruch'
+programm_name = 'Fahrkartenautomat'
 
 std.Program(programm_name, cpp_dateien) # Programm bauen
