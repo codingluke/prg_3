@@ -13,9 +13,10 @@ class RefoundComputer
     vector<double> accepted_coins;
     vector<double> refound_in_coins;
     double refound;
+    string currency;
 
   public:
-    RefoundComputer(double refound);
+    RefoundComputer(double refound, string currency);
     string str() const;
 
   private:

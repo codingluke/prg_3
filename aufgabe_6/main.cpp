@@ -23,7 +23,8 @@ using namespace std;
  */
 int main()
 {
-  RefoundComputer ref(20);
+  RefoundComputer ref(27.3, "Euro");
+  cout << ref;
   //DestinationCollection dest;
   //dest.add("Fahrziel 1", 1.23);
   //dest.add("Fahrziel 2", 234);
