@@ -44,6 +44,7 @@ void Coin::init_default_coins()
   accepted_coins.push_back(1);
   accepted_coins.push_back(0.5);
   accepted_coins.push_back(0.1);
+  accepted_coins.push_back(0.0);
 }
 
 bool Coin::validate_value(double a_value)

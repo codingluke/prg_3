@@ -22,7 +22,6 @@ class Coin
   private:
     void init_default_coins();
     bool validate_value(double a_value);
-
 };
 
 istream& operator>>(istream& input, Coin& coin);

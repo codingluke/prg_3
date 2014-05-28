@@ -9,6 +9,7 @@ double read_double(double min, double max);
 double read_double(string text);
 double read_double(string text, double min, double max);
 double read_double();
+void read_enter();
 long read_long(string text, long min, long max);
 long read_long(long min, long max);
 long read_long(string text);

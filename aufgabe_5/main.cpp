@@ -227,7 +227,7 @@ std::vector<Fraction> random_fractions(int n, int low_numerator,
                                        int low_denominator, int high_numerator,
                                        int high_denominator)
 {
-  srand(time(0));
+  srand((unsigned)time(0));
   std::vector<Fraction> fractions (n);
   try
   {

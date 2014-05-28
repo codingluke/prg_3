@@ -15,7 +15,7 @@ class Fraction
     Fraction(int a_counter, int a_denominator) throw (const char*);
     Fraction(int low_numerator, int low_denominator,
              int high_numerator, int high_denominator,
-             int random) throw (const char*);
+             long random) throw (const char*);
 
     std::string str() const;
     std::string str_normed() const;

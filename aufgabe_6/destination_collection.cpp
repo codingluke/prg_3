@@ -33,14 +33,15 @@ Destination DestinationCollection::operator[](int key) const
 
 ostream& operator<<(ostream& output, const DestinationCollection& destinations)
 {
-  output << "Bitte waehle ein Fahrziel:" << endl;
-  output << setw(7) << left << "Nummer" << setw(20) << "Fahrziel"
-         << "Preis" << endl;
+  output << "Vorhandene Fahrziele:" << endl;
+  output << setw(8) << left << "Ziffer" << setw(20) << "Fahrziel"
+         << "Preis" << endl << setw(35) << setfill('-') << "-" << endl;
   for(int i = 0; i < destinations.count(); i++)
   {
     Destination dest = destinations[i];
-    output << setw(7) << left << (i + 1) << setw(20) << dest.name
-           << dest.price << " " << dest.currency << endl;
+    output << setfill(' ') << setw(8) << left << (i + 1)
+           << setw(20) << dest.name << setprecision(6) << dest.price << " "
+           << dest.currency << endl;
   }
   return output;
 }

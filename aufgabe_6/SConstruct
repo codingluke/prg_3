@@ -30,6 +30,7 @@ std = Environment(
 # Teil 3: Programm bauen
 
 cpp_dateien = [
+  'ticket_machine.cpp',
   'coin.cpp',
   'price_computer.cpp',
   'refound_computer.cpp',

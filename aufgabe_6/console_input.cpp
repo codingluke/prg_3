@@ -6,7 +6,7 @@
 using namespace std;
 
 static const double DBL_MAX = numeric_limits<double>::max();
-static const double DBL_MIN = numeric_limits<double>::min();
+static const double DBL_MIN = numeric_limits<double>::max() * -1;
 static const long LONG_MAX = numeric_limits<long>::max();
 static const long LONG_MIN = numeric_limits<long>::min();
 static const int INT_MAX = numeric_limits<int>::max();
@@ -44,6 +44,15 @@ double read_double(double min, double max)
   } while (!entry_ok);
   cin.setf(cin.skipws);
   return entry;
+}
+
+void read_enter()
+{
+  char entry = ' ';
+  cin.clear();
+  cin >> entry;
+  cin.clear();
+  cin.ignore(static_cast<streamsize>(LONG_MAX), '\n');
 }
 
 /**

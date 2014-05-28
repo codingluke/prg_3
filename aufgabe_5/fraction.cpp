@@ -66,21 +66,22 @@ Fraction::Fraction(int a_numerator, int a_denominator) throw (const char*)
  */
 Fraction::Fraction(int low_numerator, int low_denominator,
                    int high_numerator, int high_denominator,
-                   int random) throw (const char *)
+                   long random) throw (const char *)
 {
   if (low_denominator == 0 || high_denominator == 0)
     throw "Nenner darf nicht 0 sein!";
   Fraction lower(low_numerator, low_denominator);
   Fraction higher(high_numerator, high_denominator);
-  denominator = lcm(lower.denominator, higher.denominator);
+  denominator = lcm(lower.denominator, higher.denominator) * 128;
   int low = lower.extend(denominator).numerator;
   int high = higher.extend(denominator).numerator;
-  int range = 11;
+  int range = 0;
   if (low < 0 && high > 0)
     range = (high + abs(low)) + 1;
-  else if (low <= 0)
+  else
     range = high - low + 1;
-  numerator = (random % range) + low;
+  int r = range * (random / (RAND_MAX + 1.0));
+  numerator = r + low;
   shorten();
   normalize();
 }

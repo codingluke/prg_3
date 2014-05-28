@@ -17,6 +17,7 @@ class RefoundComputer
 
   public:
     RefoundComputer(double refound, string currency);
+    RefoundComputer(const vector<double>& coins, double sum, string a_currency);
     string str() const;
 
   private:
