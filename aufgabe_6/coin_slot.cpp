@@ -25,7 +25,7 @@ CoinSlot::CoinSlot()
  *
  * @param a_currency currency of the coins.
  */
-CoinSlot::CoinSlot(string a_currency)
+CoinSlot::CoinSlot(const string& a_currency)
 {
   value = 0;
   currency = a_currency;
@@ -38,7 +38,8 @@ CoinSlot::CoinSlot(string a_currency)
  * @param a_currency          Currency of the coins.
  * @param accepted_coins_list List of accepted coins.
  */
-CoinSlot::CoinSlot(string a_currency, vector<double> accepted_coins_list)
+CoinSlot::CoinSlot(const string& a_currency,
+                   const vector<double>& accepted_coins_list)
 {
   value = 0;
   currency = a_currency;

@@ -26,8 +26,9 @@ class CoinSlot
 
   public:
     CoinSlot();
-    CoinSlot(string a_currency);
-    CoinSlot(string a_currency, vector<double> accepted_coins_list);
+    CoinSlot(const string& a_currency);
+    CoinSlot(const string& a_currency,
+             const vector<double>& accepted_coins_list);
 
     void insert(double a_coin) throw(const invalid_argument);
     void add_accepted(double a_coin);
