@@ -1,10 +1,3 @@
-/**
- * RefoundComputer represents the sum of a refound with a list of
- * accepted values.
- *
- * @author    Lukas Hodel
- */
-
 #include <iostream>
 #include <sstream>
 #include <iomanip>

@@ -1,10 +1,3 @@
-/**
- * PriceComputer is a state machine for counting monetary units
- * up to a certain value.
- *
- * @author  Lukas Hodel
- */
-
 #include <cmath>
 #include <string>
 #include <sstream>

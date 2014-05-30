@@ -1,13 +1,3 @@
-/**
- * CoinSlot represents a coin slot of a ticket machine. You can define
- * certain accepted coins.WWhen inserting a coin (double), it
- * validates for acceptance. The class also overrides the global
- * operatro>> "get from" and operator<< "put to" for easy console input handling.
- *
- * @author  Lukas Hodel
- * @version 1.0
- */
-
 #include <iostream>
 #include <iomanip>
 #include <sstream>

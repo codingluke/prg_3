@@ -7,6 +7,13 @@
 
 using namespace std;
 
+/**
+ * RefoundComputer represents the sum of a refound with a list of
+ * accepted values.
+ *
+ * @author    Lukas Hodel
+ * @version   1.0
+ */
 class RefoundComputer
 {
   private:

@@ -7,6 +7,13 @@
 
 using namespace std;
 
+/**
+ * DestinationCollection represents a collection of Destinations.
+ * Destinations is a struct with the data fields name and price.
+ *
+ * @author  Lukas Hodel
+ * @version 1.0
+ */
 class DestinationCollection
 {
   private:

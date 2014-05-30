@@ -7,6 +7,12 @@
 
 using namespace std;
 
+/**
+ * PriceComputer is a state machine for counting monetary units
+ * up to a certain value.
+ *
+ * @author  Lukas Hodel
+ */
 class PriceComputer
 {
   private:

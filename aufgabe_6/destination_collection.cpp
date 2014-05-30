@@ -1,10 +1,3 @@
-/**
- * DestinationCollection represents a collection of Destinations.
- * Destinations is a struct with the data fields name and price.
- *
- * @author  Lukas Hodel
- */
-
 #include <iostream>
 #include <iomanip>
 #include "destination_collection.h"

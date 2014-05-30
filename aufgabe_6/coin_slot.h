@@ -8,6 +8,15 @@
 
 using namespace std;
 
+/**
+ * CoinSlot represents a coin slot of a ticket machine. You can define
+ * certain accepted coins. When inserting a coin (double), it
+ * validates for acceptance. The class also overrides the global
+ * operators >> "get from" and << "put to" for easy console input handling.
+ *
+ * @author  Lukas Hodel
+ * @version 1.0
+ */
 class CoinSlot
 {
   private:
