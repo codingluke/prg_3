@@ -75,7 +75,7 @@ void handle_five(char *argv[])
     else if (frc_first_int && !isi(argv[3]))
     {
       Fraction f(atoi(argv[1]), atoi(argv[2]));
-      calc.calculate(f, atoi(argv[1]), argv[3]);
+      calc.calculate(f, atoi(argv[4]), argv[3]);
     }
     else
       show_manual();
@@ -142,7 +142,7 @@ void handle_nine(char *argv[])
   bool integers_ok = isi(argv[1]) && isi(argv[3]) && isi(argv[4]) &&
                      isi(argv[5]) && isi(argv[6]);
   bool direction_ok = strcmp(argv[8], "-") == 0 ||
-                        strcmp(argv[8], "+") == 0;
+                      strcmp(argv[8], "+") == 0;
   bool range_ok = 0 < atoi(argv[1]) && atoi(argv[1]) < 10001;
   if (denumerator_ok && integers_ok && direction_ok && range_ok)
   {
@@ -216,7 +216,7 @@ void random_handler(int n, int a, int b, int c, int d, bool asc)
  * Generates n random Fractions with value in between the Fractions a/b and c/d
  * and gives them back as vector.
  *
- * @param n   Number of random fractions.
+ * @param n   		    Number of random fractions.
  * @param low_numerator     Numerator of the low bound fraction.
  * @param low_denominator   Denominator of the low bound fraction.
  * @param high_numerator    Numerator of the high bound fraction.
@@ -230,16 +230,10 @@ std::vector<Fraction> random_fractions(int n, int low_numerator,
 {
   srand((unsigned)time(0));
   std::vector<Fraction> fractions (n);
-  //try
-  //{
   for (int i = 0; i < n; i++)
     fractions[i] = Fraction(low_numerator, low_denominator,
                             high_numerator, high_denominator, rand());
-  //}
-  //catch(const std::invalid_argument& ex)
-  //{
-    //throw std::invalid_argument(ex.what());
-  //}
+
   return fractions;
 }
 

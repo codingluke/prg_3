@@ -34,7 +34,7 @@ Fraction::Fraction(int number)
  * @param a_numerator   numerator of the fraction.
  * @param a_denominator denominator of the Fraction.
  *
- * @throws invalid_argument when denominator is 0.
+ * @throws std::invalid_argument when denominator is 0.
  */
 Fraction::Fraction(int a_numerator, int a_denominator) throw(const std::invalid_argument)
 {
@@ -55,7 +55,7 @@ Fraction::Fraction(int a_numerator, int a_denominator) throw(const std::invalid_
  * @param high_denominator  denominator of the higher boud Fraction.
  * @param random            a random number for example the result of rand().
  *
- * @throws invalid_argument when low_denominator or high_denominator is 0.
+ * @throws std::invalid_argument when low_denominator or high_denominator is 0.
  */
 Fraction::Fraction(int low_numerator, int low_denominator,
                    int high_numerator, int high_denominator,
@@ -163,7 +163,7 @@ Fraction Fraction::operator+(const Fraction& other) const
  */
 Fraction Fraction::operator+(const int& number) const
 {
-  Fraction tmp(number, number);
+  Fraction tmp(number, 1);
   return tmp + *this;
 }
 
@@ -195,7 +195,7 @@ Fraction Fraction::operator-(const Fraction& other) const
  */
 Fraction Fraction::operator-(const int& number) const
 {
-  Fraction tmp(number, number);
+  Fraction tmp(number, 1);
   return *this - tmp;
 }
 
@@ -253,7 +253,7 @@ Fraction Fraction::operator/(const Fraction& other) const
  * @return a new Fraction with the quotion from the division
  *         of the Fraction with the number (right).
  *
- * @throws invalid_argument when divisor number is 0.
+ * @throws std::invalid_argument when divisor number is 0.
  */
 Fraction Fraction::operator/(const int& number) const throw(const std::invalid_argument)
 {
@@ -266,7 +266,7 @@ Fraction Fraction::operator/(const int& number) const throw(const std::invalid_a
 /**
  * Defines the equalness of two Fractions.
  *
- * @param other The Other Fraction to compare equalness.
+ * @param other The other Fraction to compare equalness.
  *
  * @return true  The fractions are equal, represent the same rational number.
  *         false The Fractions are not equal.
@@ -407,7 +407,7 @@ void Fraction::normalize()
  *
  * @return a new Fraction extended to the given denominator.
  *
- * @throws invalid_argument when a_denominator is 0.
+ * @throws std::invalid_argument when a_denominator is 0.
  */
 Fraction Fraction::extend(int a_denominator) const throw(const std::invalid_argument)
 {

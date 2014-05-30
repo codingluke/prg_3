@@ -20,7 +20,7 @@ Calculator::Calculator()
  * @param right right Fraction of the operation.
  * @param op    operator of hte operation.
  *
- * @throws invalid_argument when the operator op don't exists.
+ * @throws std::invalid_argument when the operator op don't exists.
  */
 void Calculator::calculate(Fraction left, Fraction right, std::string op) const throw(const std::invalid_argument)
 {
@@ -40,7 +40,7 @@ void Calculator::calculate(Fraction left, Fraction right, std::string op) const 
  * @param right right Fraction of the operation.
  * @param op    operator of the operation.
  *
- * @throws invalid_argument exception when the operator op doesn't exists.
+ * @throws std::invalid_argument exception when the operator op doesn't exists.
  */
 void Calculator::calculate(int left, Fraction right, std::string op) const throw(const std::invalid_argument)
 {
