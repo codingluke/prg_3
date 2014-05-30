@@ -82,15 +82,16 @@ double PriceComputer::remainder() const
  * Representation of a PriceComputer object as a string.
  * Has a differen output for every state.
  *
- * when state is -1:
- *    Noch zu bezahlen: remainder currency
- * when state is 0:
- *    Rückgabe: sum of all entered coins
- *    Zalungseinheiten: 1 * 50.00 Euro 2 * 5.00 Euro ...
- * When state is 1:
- *    Nothing ...
- * When state is 2:
- *    Zu viel bezahlt! 3.30 Euro
+ * when state is -1: \n
+ * Noch zu bezahlen: remainder currency \n\n
+ * 
+ * when state is 0: \n
+ * Rückgabe: sum of all entered coins \n
+ * Zalungseinheiten: 1 * 50.00 Euro 2 * 5.00 Euro ... \n
+ * When state is 1: \n
+ * Nothing ... \n\n
+ * When state is 2:\n
+ * Zu viel bezahlt! 3.30 Euro
  *
  * @return Stringrepresentation according the different states.
  */

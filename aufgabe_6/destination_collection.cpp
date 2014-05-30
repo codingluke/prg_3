@@ -74,10 +74,10 @@ Destination DestinationCollection::operator[](int key) const
  * DestinationCollection when print out to the console.
  *
  * Vorhandene Fahrziele:
- * Ziffer   Fahrziel      Preis
- * 1        Fahrziel 1    10.00
- * 2        Fahrziel 2     5.00
- * ...
+ * Ziffer   Fahrziel      Preis \n
+ * 1\       Fahrziel 1    10.00 \n
+ * 2        Fahrziel 2     5.00 \n
+ * ...\n\n
  *
  * @param output        IO output stream
  * @param destinations  The DestinationCollection to print to the console.
@@ -87,14 +87,14 @@ Destination DestinationCollection::operator[](int key) const
 ostream& operator<<(ostream& output, const DestinationCollection& destinations)
 {
   output << "Vorhandene Fahrziele:" << endl;
-  output << setw(8) << left << "Ziffer"
+  output << setw(9) << left << "Ziffer"
          << setw(20) << left << "Fahrziel"
          << setw(10) << right << "Preis" << endl
-         << setw(43) << setfill('-') << "-" << setfill(' ') << endl;
+         << setw(44) << setfill('-') << "-" << setfill(' ') << endl;
   for(int i = 0; i < destinations.size(); i++)
   {
     Destination dest = destinations[i];
-    output << setw(8) << left << (i + 1)
+    output << " " << setw(8) << left << (i + 1)
            << setw(20) << left << fixed << dest.name
            << setw(10) << right << setprecision(2) << fixed << dest.price
            << setw(5) << " " + dest.currency << endl;

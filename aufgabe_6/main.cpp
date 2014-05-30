@@ -11,20 +11,16 @@ using namespace std;
  */
 int main()
 {
-  // Vector with accepted coins for the Machine
   vector<double> coins;
-  coins.push_back(50);
-  coins.push_back(20);
+  coins.push_back(0.1);
   coins.push_back(10);
+  coins.push_back(20);
   coins.push_back(5);
+  coins.push_back(50);
   coins.push_back(2);
   coins.push_back(1);
   coins.push_back(0.5);
-  coins.push_back(0.1);
   coins.push_back(0.0);
-  
-  // DestinationCollection with the available
-  // destinations
   DestinationCollection destinations("Euro");
   destinations.add("Kitzbuel", 11.20);
   destinations.add("Nenzlingen", 23.00);
@@ -37,7 +33,6 @@ int main()
   destinations.add("Teufeldberg", 6.60);
   destinations.add("Niderbuepp", 14.10);
   destinations.add("Burgdorf", 3.70);
-  // Create an Instance for the accepted coins and destinations.
   TicketMachine ticket_machine("Luki's Menschentransporte e.V.",
                                "Euro", coins, destinations);
   ticket_machine.run();

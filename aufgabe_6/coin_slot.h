@@ -37,6 +37,7 @@ class CoinSlot
 
   private:
     bool validate(double a_value) const;
+    void sort_coins();
 };
 
 istream& operator>>(istream& input, CoinSlot& coin_slot);

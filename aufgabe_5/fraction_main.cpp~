@@ -214,7 +214,7 @@ void random_handler(int n, int a, int b, int c, int d, bool asc)
 
 /**
  * Generates n random Fractions with value in between the Fractions a/b and c/d
- * and gives them back as vector.
+ * and gives them back in a vector.
  *
  * @param n   		    Number of random fractions.
  * @param low_numerator     Numerator of the low bound fraction.

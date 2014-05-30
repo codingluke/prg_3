@@ -44,6 +44,7 @@ CoinSlot::CoinSlot(const string& a_currency,
   value = 0;
   currency = a_currency;
   accepted_coins = accepted_coins_list;
+  sort_coins();
 }
 
 /**
@@ -63,12 +64,12 @@ void CoinSlot::insert(double a_coin) throw(const invalid_argument)
 
 /**
  * Represents the CoinSlot as a string. It shows a list of the
- * accepted coins.
+ * accepted coins.\n\n
  *
- * Moegliche Zahlungseinehten:
- * 50.00 Euro
- * 20.00 Euro
- * ...
+ * Moegliche Zahlungseinehten: \n
+ * 50.00 Euro \n
+ * 20.00 Euro \n
+ * ...\n\n
  *
  * @return String with the list of the accepted coins.
  */
@@ -101,6 +102,7 @@ double CoinSlot::get_value() const
 void CoinSlot::add_accepted(double a_coin)
 {
   accepted_coins.push_back(a_coin);
+  sort_coins();
 }
 
 /**
@@ -108,7 +110,7 @@ void CoinSlot::add_accepted(double a_coin)
  *
  * @param a_value value of the coin to check.
  *
- * @return true if the coin is in the accepted list.
+ * @return true if the coin is in the accepted list. \n
  *         false if the coin is not int accepted list.
  */
 bool CoinSlot::validate(double a_value) const
@@ -118,6 +120,30 @@ bool CoinSlot::validate(double a_value) const
     if (accepted_coins[i] == a_value)
       value_ok = true;
   return value_ok;
+}
+
+/**
+ * Sorts the accepted coins with the entry sort algorithm ascendent.
+ */
+void CoinSlot::sort_coins()
+{
+  int index_max = 0;
+  double tmp = 0;
+  for (int i = accepted_coins.size() - 1; i > 0; i--)
+  {
+    index_max = 0;
+    for (int j = 0; j <= i; j++)
+    {
+      if (accepted_coins[j] < accepted_coins[index_max])
+        index_max = j;
+    }
+    if (accepted_coins[index_max] < accepted_coins[i])
+    {
+      tmp = accepted_coins[i];
+      accepted_coins[i] = accepted_coins[index_max];
+      accepted_coins[index_max] = tmp;
+    }
+  }
 }
 
 /**
