@@ -19,7 +19,7 @@ class DestinationCollection
     int add(string name, float price);
     void remove(int key);
     void clear();
-    int count() const;
+    int size() const;
 
     Destination operator[](int key) const;
 };

@@ -16,13 +16,16 @@ class RefoundComputer
     string currency;
 
   public:
-    RefoundComputer(double refound, string currency);
-    RefoundComputer(const vector<double>& coins, double sum, string a_currency);
+    RefoundComputer();
+    RefoundComputer(string currency, vector<double> accepted_coins_list);
+
+    void set_refound(double a_refound);
     string str() const;
 
   private:
     void init_default_coins();
     void calculate();
+    string str_grouped() const;
 };
 
 ostream& operator<<(ostream& output, const RefoundComputer& refound);

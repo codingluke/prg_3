@@ -14,7 +14,17 @@ using namespace std;
  */
 int main()
 {
-  TicketMachine bvg("Luki Menschentransport e.V.", "Euro");
+  vector<double> coins;
+  coins.push_back(50);
+  coins.push_back(20);
+  coins.push_back(10);
+  coins.push_back(5);
+  coins.push_back(2);
+  coins.push_back(1);
+  coins.push_back(0.5);
+  coins.push_back(0.1);
+  coins.push_back(0.0);
+  TicketMachine bvg("Luki Menschentransport e.V.", "Euro", coins);
   bvg.run();
 }
 

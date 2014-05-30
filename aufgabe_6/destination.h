@@ -5,6 +5,10 @@
 
 using namespace std;
 
+
+/**
+ * Represents a destination for a ticket machine.
+ */
 struct Destination
 {
   string name;
