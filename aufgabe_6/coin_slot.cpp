@@ -87,7 +87,7 @@ string CoinSlot::str() const
   modifier << "Moegliche Zahlungseinheiten:" << endl;
   for (unsigned int i = 0; i < accepted_coins.size(); i++)
     modifier << setprecision(2) << fixed << accepted_coins[i]
-             << " " << "Euro" << endl;
+             << " " << currency << endl;
   modifier << endl;
   return modifier.str();
 }

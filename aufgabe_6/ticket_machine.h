@@ -20,7 +20,9 @@ class TicketMachine
     bool running;
 
   public:
-    TicketMachine(string a_name, string a_currency, vector<double> accepted_coins);
+    TicketMachine(string a_name, string a_currency,
+                  vector<double> accepted_coins,
+                  DestinationCollection a_dest_collection);
 
     void run();
     bool is_running();

@@ -15,6 +15,7 @@ class DestinationCollection
 
   public:
     DestinationCollection();
+    DestinationCollection(string a_currency);
 
     int add(string name, float price);
     void remove(int key);

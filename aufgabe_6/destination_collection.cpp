@@ -21,6 +21,15 @@ DestinationCollection::DestinationCollection()
 }
 
 /**
+ * Constructor without parameters initializes a empty
+ * collection with a given currency.
+ */
+DestinationCollection::DestinationCollection(string a_currency)
+{
+  currency = a_currency;
+}
+
+/**
  * Adds a new destination to the collection.
  *
  * @param name    Name of the destination.

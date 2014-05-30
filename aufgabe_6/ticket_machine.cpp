@@ -34,13 +34,15 @@ using namespace std;
  * @param a_currency      Currency of the price.
  * @param accepted_coins  List of accepted coins to pai the price.
  */
-TicketMachine::TicketMachine(string a_name, string a_currency, vector<double> accepted_coins)
+TicketMachine::TicketMachine(string a_name, string a_currency,
+                             vector<double> accepted_coins,
+                             DestinationCollection a_dest_collection)
 {
   currency = a_currency;
   name = a_name;
   coin_slot = CoinSlot(a_currency, accepted_coins);
   refound = RefoundComputer(a_currency, accepted_coins);
-  init_destinations();
+  destinations = a_dest_collection;
 }
 
 /**
@@ -102,17 +104,17 @@ bool TicketMachine::is_running()
 /**
  * Initialsation of the default destinations.
  */
-void TicketMachine::init_destinations()
-{
-  destinations.add("Kitzbuel", 11.20);
-  destinations.add("Nenzlingen", 23.00);
-  destinations.add("Ostermundingen", 2.30);
-  destinations.add("Hinterduggingen", 9.20);
-  destinations.add("Schweinsfurt", 8.90);
-  destinations.add("Entenhausen", 60.00);
-  destinations.add("Matterhorn", 51.50);
-  destinations.add("Schwaebische alm", 1.00);
-  destinations.add("Teufeldberg", 6.60);
-  destinations.add("Niderbuepp", 14.10);
-  destinations.add("Burgdorf", 3.70);
-}
+//void TicketMachine::init_destinations()
+//{
+  //destinations.add("Kitzbuel", 11.20);
+  //destinations.add("Nenzlingen", 23.00);
+  //destinations.add("Ostermundingen", 2.30);
+  //destinations.add("Hinterduggingen", 9.20);
+  //destinations.add("Schweinsfurt", 8.90);
+  //destinations.add("Entenhausen", 60.00);
+  //destinations.add("Matterhorn", 51.50);
+  //destinations.add("Schwaebische alm", 1.00);
+  //destinations.add("Teufeldberg", 6.60);
+  //destinations.add("Niderbuepp", 14.10);
+  //destinations.add("Burgdorf", 3.70);
+//}

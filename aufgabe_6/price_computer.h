@@ -15,9 +15,9 @@ class PriceComputer
     string currency;
 
   public:
-    PriceComputer(double a_price, string a_currency);
+    PriceComputer(double a_price, string a_currency) throw();
 
-    double add(double a_coin);
+    double add(double a_coin) throw();
     int state() const;
     double remainder() const;
     string str() const;

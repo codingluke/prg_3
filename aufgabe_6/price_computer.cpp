@@ -10,6 +10,7 @@
 #include <sstream>
 #include <iomanip>
 #include <vector>
+#include <stdexcept>
 #include "price_computer.h"
 #include "refound_computer.h"
 
@@ -20,10 +21,10 @@
  * @param a_price     Price to count to.
  * @param a_currency  Currency of the price.
  */
-PriceComputer::PriceComputer(double a_price, string a_currency)
+PriceComputer::PriceComputer(double a_price, string a_currency) throw()
 {
   if (a_price < 0)
-    throw "Es gibt keine negative Preise";
+    throw invalid_argument("Es gibt keine negative Preise.");
   price = a_price;
   currency = a_currency;
   abordet = false;
@@ -37,10 +38,10 @@ PriceComputer::PriceComputer(double a_price, string a_currency)
  *
  * @return sum of all added coins until now.
  */
-double PriceComputer::add(double a_coin)
+double PriceComputer::add(double a_coin) throw()
 {
   if (a_coin < 0)
-    throw "Es gib keine negativen Geldeinheiten";
+    throw invalid_argument("Es gib keine negativen Geldeinheiten");
   else if (a_coin == 0)
     abordet = true;
   coin_stack.push_back(a_coin);
