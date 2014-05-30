@@ -9,7 +9,11 @@ using namespace std;
 
 /**
  * PriceComputer is a state machine for counting monetary units
- * up to a certain value.
+ * up to a certain value. It gives the possibility to check if he
+ * price is reached or even surpassed. The counting can be abordet
+ * with inserting the value 0.00. The "put to" operator is globally
+ * overwritten so that there is always an accurate stream output
+ * presentation as string. 
  *
  * @author  Lukas Hodel
  */
