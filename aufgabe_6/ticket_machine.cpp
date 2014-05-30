@@ -96,7 +96,7 @@ void TicketMachine::run()
  * @return true when the ticket machine is running.
  *         false when the ticket machine is not running.
  */
-bool TicketMachine::is_running()
+bool TicketMachine::is_running() const
 {
   return running;
 }

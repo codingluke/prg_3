@@ -25,11 +25,7 @@ class TicketMachine
                   DestinationCollection a_dest_collection);
 
     void run();
-    bool is_running();
-
-  private:
-    void init_destinations();
-    void init_coin_slot();
+    bool is_running() const;
 };
 
 #endif

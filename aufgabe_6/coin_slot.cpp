@@ -62,7 +62,7 @@ CoinSlot::CoinSlot(string a_currency, vector<double> accepted_coins_list)
  *
  * @throws std::invalid_argument when coin is not accepted.
  */
-void CoinSlot::insert(double a_coin) throw()
+void CoinSlot::insert(double a_coin) throw(const invalid_argument)
 {
   if (validate(a_coin))
     value = a_coin;
@@ -120,7 +120,7 @@ void CoinSlot::add_accepted(double a_coin)
  * @return true if the coin is in the accepted list.
  *         false if the coin is not int accepted list.
  */
-bool CoinSlot::validate(double a_value)
+bool CoinSlot::validate(double a_value) const
 {
   bool value_ok = false;
   for (unsigned int i = 0; i < accepted_coins.size(); i++)

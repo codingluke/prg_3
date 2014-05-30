@@ -21,7 +21,8 @@
  * @param a_price     Price to count to.
  * @param a_currency  Currency of the price.
  */
-PriceComputer::PriceComputer(double a_price, string a_currency) throw()
+PriceComputer::PriceComputer(double a_price, string a_currency)
+  throw(const invalid_argument)
 {
   if (a_price < 0)
     throw invalid_argument("Es gibt keine negative Preise.");
@@ -38,7 +39,7 @@ PriceComputer::PriceComputer(double a_price, string a_currency) throw()
  *
  * @return sum of all added coins until now.
  */
-double PriceComputer::add(double a_coin) throw()
+double PriceComputer::add(double a_coin) throw(const invalid_argument)
 {
   if (a_coin < 0)
     throw invalid_argument("Es gib keine negativen Geldeinheiten");

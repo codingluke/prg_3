@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <stdexcept>
 
 using namespace std;
 
@@ -15,9 +16,10 @@ class PriceComputer
     string currency;
 
   public:
-    PriceComputer(double a_price, string a_currency) throw();
+    PriceComputer(double a_price, string a_currency)
+      throw(const invalid_argument);
 
-    double add(double a_coin) throw();
+    double add(double a_coin) throw(const invalid_argument);
     int state() const;
     double remainder() const;
     string str() const;
