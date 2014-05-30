@@ -1,0 +1,93 @@
+\hypertarget{classRefoundComputer}{\section{Refound\-Computer Class Reference}
+\label{classRefoundComputer}\index{Refound\-Computer@{Refound\-Computer}}
+}
+
+
+{\ttfamily \#include $<$refound\-\_\-computer.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRefoundComputer_a48f52d711a12490074da778084fa9b19}{Refound\-Computer} ()
+\item 
+\hyperlink{classRefoundComputer_aeda2206b8e58332ab9b7873f0b3a7419}{Refound\-Computer} (string currency, vector$<$ double $>$ accepted\-\_\-coins\-\_\-list)
+\item 
+void \hyperlink{classRefoundComputer_a2ed7a4501d14097325c5575fa3c5eab7}{set\-\_\-refound} (double a\-\_\-refound)
+\item 
+string \hyperlink{classRefoundComputer_a94f386e9c403ffc5e47e50628be4731f}{str} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classRefoundComputer}{Refound\-Computer} represents the sum of a refound with a list of accepted values.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRefoundComputer_a48f52d711a12490074da778084fa9b19}{\index{Refound\-Computer@{Refound\-Computer}!Refound\-Computer@{Refound\-Computer}}
+\index{Refound\-Computer@{Refound\-Computer}!RefoundComputer@{Refound\-Computer}}
+\subsubsection[{Refound\-Computer}]{\setlength{\rightskip}{0pt plus 5cm}Refound\-Computer\-::\-Refound\-Computer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRefoundComputer_a48f52d711a12490074da778084fa9b19}
+Initializes a \hyperlink{classRefoundComputer}{Refound\-Computer} instance with a refound of zero, the currency \char`\"{}\-Euro\char`\"{} and a empty list of accepted values. \hypertarget{classRefoundComputer_aeda2206b8e58332ab9b7873f0b3a7419}{\index{Refound\-Computer@{Refound\-Computer}!Refound\-Computer@{Refound\-Computer}}
+\index{Refound\-Computer@{Refound\-Computer}!RefoundComputer@{Refound\-Computer}}
+\subsubsection[{Refound\-Computer}]{\setlength{\rightskip}{0pt plus 5cm}Refound\-Computer\-::\-Refound\-Computer (
+\begin{DoxyParamCaption}
+\item[{string}]{a\-\_\-currency, }
+\item[{vector$<$ double $>$}]{accepted\-\_\-coins\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{classRefoundComputer_aeda2206b8e58332ab9b7873f0b3a7419}
+Initializes a Refound\-Coumputer instance with a given currency and a given list of accepted values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-currency} & the currency for string representation. \\
+\hline
+{\em accepted\-\_\-coins\-\_\-list} & list of accepted values to represent the refound. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRefoundComputer_a2ed7a4501d14097325c5575fa3c5eab7}{\index{Refound\-Computer@{Refound\-Computer}!set\-\_\-refound@{set\-\_\-refound}}
+\index{set\-\_\-refound@{set\-\_\-refound}!RefoundComputer@{Refound\-Computer}}
+\subsubsection[{set\-\_\-refound}]{\setlength{\rightskip}{0pt plus 5cm}void Refound\-Computer\-::set\-\_\-refound (
+\begin{DoxyParamCaption}
+\item[{double}]{a\-\_\-refound}
+\end{DoxyParamCaption}
+)}}\label{classRefoundComputer_a2ed7a4501d14097325c5575fa3c5eab7}
+Sets the refound to represent through the accepted values. and calculates the the sum out of the accepted values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-refound} & Refound to calculate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classRefoundComputer_a94f386e9c403ffc5e47e50628be4731f}{\index{Refound\-Computer@{Refound\-Computer}!str@{str}}
+\index{str@{str}!RefoundComputer@{Refound\-Computer}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string Refound\-Computer\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classRefoundComputer_a94f386e9c403ffc5e47e50628be4731f}
+Returns the representation of the \hyperlink{classRefoundComputer}{Refound\-Computer} as a string. When there are no values calculated for the refound, there will be a empty string. When there is a combination of values calculated, it will return a string like this\-:
+
+Rückgabe\-: 10.\-10 Zahlungseinheigen\-: 1 $\ast$ 10 Euro 1 $\ast$ 0.\-00 Euro.
+
+\begin{DoxyReturn}{Returns}
+string representation of the \hyperlink{classRefoundComputer}{Refound\-Computer}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{refound__computer_8h}{refound\-\_\-computer.\-h}\item 
+\hyperlink{refound__computer_8cpp}{refound\-\_\-computer.\-cpp}\end{DoxyCompactItemize}

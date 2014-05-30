@@ -4,6 +4,14 @@
 #include <string>
 #include <stdexcept>
 
+/**
+ * Implementation of a Fraction. Gives the possibility to represent
+ * Fractions and calculate with them. As the defaut mathematical operators
+ * are overwridden, the class can be used the same way as standard c++ classes.
+ *
+ * @author  Lukas Hodel
+ * @version 1.0
+ */
 class Fraction
 {
   private:

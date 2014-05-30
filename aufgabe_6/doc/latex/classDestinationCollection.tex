@@ -1,0 +1,124 @@
+\hypertarget{classDestinationCollection}{\section{Destination\-Collection Class Reference}
+\label{classDestinationCollection}\index{Destination\-Collection@{Destination\-Collection}}
+}
+
+
+{\ttfamily \#include $<$destination\-\_\-collection.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDestinationCollection_a8cd302a3be128dde1c742a40268d0768}{Destination\-Collection} ()
+\item 
+\hyperlink{classDestinationCollection_ab31794d8d9769b43d4c903f4e835b8be}{Destination\-Collection} (string a\-\_\-currency)
+\item 
+int \hyperlink{classDestinationCollection_abe6e5181031cc5db9bac4b6a39000964}{add} (string name, float price)
+\item 
+void \hyperlink{classDestinationCollection_a764aaa3f333fc5d0bc6101e35e2bfbaa}{remove} (int key)
+\item 
+void \hyperlink{classDestinationCollection_a27de949dd04a84f108f246a579b22fdc}{clear} ()
+\item 
+int \hyperlink{classDestinationCollection_a35325e80b3ba8d6e935c7474463c9434}{size} () const 
+\item 
+\hyperlink{structDestination}{Destination} \hyperlink{classDestinationCollection_af0552ec87e81f036994e8d9838bc36ea}{operator\mbox{[}$\,$\mbox{]}} (int key) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classDestinationCollection}{Destination\-Collection} represents a collection of Destinations. Destinations is a struct with the data fields name and price.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDestinationCollection_a8cd302a3be128dde1c742a40268d0768}{\index{Destination\-Collection@{Destination\-Collection}!Destination\-Collection@{Destination\-Collection}}
+\index{Destination\-Collection@{Destination\-Collection}!DestinationCollection@{Destination\-Collection}}
+\subsubsection[{Destination\-Collection}]{\setlength{\rightskip}{0pt plus 5cm}Destination\-Collection\-::\-Destination\-Collection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDestinationCollection_a8cd302a3be128dde1c742a40268d0768}
+Constructor without parameters initializes a empty collection with the currency as \char`\"{}\-Euro\char`\"{}. \hypertarget{classDestinationCollection_ab31794d8d9769b43d4c903f4e835b8be}{\index{Destination\-Collection@{Destination\-Collection}!Destination\-Collection@{Destination\-Collection}}
+\index{Destination\-Collection@{Destination\-Collection}!DestinationCollection@{Destination\-Collection}}
+\subsubsection[{Destination\-Collection}]{\setlength{\rightskip}{0pt plus 5cm}Destination\-Collection\-::\-Destination\-Collection (
+\begin{DoxyParamCaption}
+\item[{string}]{a\-\_\-currency}
+\end{DoxyParamCaption}
+)}}\label{classDestinationCollection_ab31794d8d9769b43d4c903f4e835b8be}
+Constructor without parameters initializes a empty collection with a given currency. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classDestinationCollection_abe6e5181031cc5db9bac4b6a39000964}{\index{Destination\-Collection@{Destination\-Collection}!add@{add}}
+\index{add@{add}!DestinationCollection@{Destination\-Collection}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}int Destination\-Collection\-::add (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{float}]{price}
+\end{DoxyParamCaption}
+)}}\label{classDestinationCollection_abe6e5181031cc5db9bac4b6a39000964}
+Adds a new destination to the collection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the destination. \\
+\hline
+{\em price} & Fare price to the destination.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new size of the collection counted from zero. 
+\end{DoxyReturn}
+\hypertarget{classDestinationCollection_a27de949dd04a84f108f246a579b22fdc}{\index{Destination\-Collection@{Destination\-Collection}!clear@{clear}}
+\index{clear@{clear}!DestinationCollection@{Destination\-Collection}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Destination\-Collection\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classDestinationCollection_a27de949dd04a84f108f246a579b22fdc}
+Removes all the destinations from the collection. \hypertarget{classDestinationCollection_af0552ec87e81f036994e8d9838bc36ea}{\index{Destination\-Collection@{Destination\-Collection}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!DestinationCollection@{Destination\-Collection}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Destination} Destination\-Collection\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classDestinationCollection_af0552ec87e81f036994e8d9838bc36ea}
+Overrides operator\mbox{[}\mbox{]}. Gives back the destination of the collection at the index of the given key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Index of the destination to return.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structDestination}{Destination} at the index of the given key. 
+\end{DoxyReturn}
+\hypertarget{classDestinationCollection_a764aaa3f333fc5d0bc6101e35e2bfbaa}{\index{Destination\-Collection@{Destination\-Collection}!remove@{remove}}
+\index{remove@{remove}!DestinationCollection@{Destination\-Collection}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void Destination\-Collection\-::remove (
+\begin{DoxyParamCaption}
+\item[{int}]{key}
+\end{DoxyParamCaption}
+)}}\label{classDestinationCollection_a764aaa3f333fc5d0bc6101e35e2bfbaa}
+\hypertarget{classDestinationCollection_a35325e80b3ba8d6e935c7474463c9434}{\index{Destination\-Collection@{Destination\-Collection}!size@{size}}
+\index{size@{size}!DestinationCollection@{Destination\-Collection}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int Destination\-Collection\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDestinationCollection_a35325e80b3ba8d6e935c7474463c9434}
+Returns the size of the collection with the count start of 1.
+
+\begin{DoxyReturn}{Returns}
+size of the collection. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{destination__collection_8h}{destination\-\_\-collection.\-h}\item 
+\hyperlink{destination__collection_8cpp}{destination\-\_\-collection.\-cpp}\end{DoxyCompactItemize}

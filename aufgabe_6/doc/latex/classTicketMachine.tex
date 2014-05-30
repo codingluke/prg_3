@@ -1,0 +1,90 @@
+\hypertarget{classTicketMachine}{\section{Ticket\-Machine Class Reference}
+\label{classTicketMachine}\index{Ticket\-Machine@{Ticket\-Machine}}
+}
+
+
+{\ttfamily \#include $<$ticket\-\_\-machine.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTicketMachine_a0998a05992b29ec22d4063f9d93a096a}{Ticket\-Machine} (string a\-\_\-name, string a\-\_\-currency, vector$<$ double $>$ accepted\-\_\-coins, \hyperlink{classDestinationCollection}{Destination\-Collection} a\-\_\-dest\-\_\-collection)
+\item 
+void \hyperlink{classTicketMachine_a8d68bde6ee1a9a5f08182df963c1b0a9}{run} ()
+\item 
+bool \hyperlink{classTicketMachine_acaef19321ea4f8f647c86f514608b99a}{is\-\_\-running} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classTicketMachine}{Ticket\-Machine} is a simulation of a \hyperlink{classTicketMachine}{Ticket\-Machine}. It lets Users chose of a list of destinations and prompts them to pay a certain price. They have to enter the price out of a selection of certain coin (values). The \hyperlink{classTicketMachine}{Ticket\-Machine} tells them after every insert how much they already have paied and how much they have to pay more until the price is reached. When the price is reached, they are getting prompted to take out the ticket from the ticket slot. When they paied more than the price of the ticket, their refound will be calculated out of the accepted coins and gets printed to the console. With the coin 0.\-00 they can abort the paiment. When they chose the destination -\/1 the \hyperlink{classTicketMachine}{Ticket\-Machine} will shut down. This action is not printed to the console, because its a hidde action just for engineers.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTicketMachine_a0998a05992b29ec22d4063f9d93a096a}{\index{Ticket\-Machine@{Ticket\-Machine}!Ticket\-Machine@{Ticket\-Machine}}
+\index{Ticket\-Machine@{Ticket\-Machine}!TicketMachine@{Ticket\-Machine}}
+\subsubsection[{Ticket\-Machine}]{\setlength{\rightskip}{0pt plus 5cm}Ticket\-Machine\-::\-Ticket\-Machine (
+\begin{DoxyParamCaption}
+\item[{string}]{a\-\_\-name, }
+\item[{string}]{a\-\_\-currency, }
+\item[{vector$<$ double $>$}]{accepted\-\_\-coins, }
+\item[{{\bf Destination\-Collection}}]{a\-\_\-dest\-\_\-collection}
+\end{DoxyParamCaption}
+)}}\label{classTicketMachine_a0998a05992b29ec22d4063f9d93a096a}
+Inizializes an \hyperlink{classTicketMachine}{Ticket\-Machine} instance with a given name, a given currency and a list of accepted coins.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-name} & Name of the \hyperlink{classTicketMachine}{Ticket\-Machine} for the welcome text. \\
+\hline
+{\em a\-\_\-currency} & Currency of the price. \\
+\hline
+{\em accepted\-\_\-coins} & List of accepted coins to pai the price. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTicketMachine_acaef19321ea4f8f647c86f514608b99a}{\index{Ticket\-Machine@{Ticket\-Machine}!is\-\_\-running@{is\-\_\-running}}
+\index{is\-\_\-running@{is\-\_\-running}!TicketMachine@{Ticket\-Machine}}
+\subsubsection[{is\-\_\-running}]{\setlength{\rightskip}{0pt plus 5cm}bool Ticket\-Machine\-::is\-\_\-running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classTicketMachine_acaef19321ea4f8f647c86f514608b99a}
+Returns the state of the \hyperlink{classTicketMachine}{Ticket\-Machine}, if it is running or not. Just importent when programming with multiple threads.
+
+\begin{DoxyReturn}{Returns}
+true when the ticket machine is running. false when the ticket machine is not running. 
+\end{DoxyReturn}
+\hypertarget{classTicketMachine_a8d68bde6ee1a9a5f08182df963c1b0a9}{\index{Ticket\-Machine@{Ticket\-Machine}!run@{run}}
+\index{run@{run}!TicketMachine@{Ticket\-Machine}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void Ticket\-Machine\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTicketMachine_a8d68bde6ee1a9a5f08182df963c1b0a9}
+Starts the ticket machine. Handels the user interaction logic. 
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTicketMachine_a8d68bde6ee1a9a5f08182df963c1b0a9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ticket__machine_8h}{ticket\-\_\-machine.\-h}\item 
+\hyperlink{ticket__machine_8cpp}{ticket\-\_\-machine.\-cpp}\end{DoxyCompactItemize}

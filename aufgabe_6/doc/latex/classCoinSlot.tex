@@ -1,0 +1,144 @@
+\hypertarget{classCoinSlot}{\section{Coin\-Slot Class Reference}
+\label{classCoinSlot}\index{Coin\-Slot@{Coin\-Slot}}
+}
+
+
+{\ttfamily \#include $<$coin\-\_\-slot.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCoinSlot_a7ee2abc60da5a7af641eff10c5c4c2bf}{Coin\-Slot} ()
+\item 
+\hyperlink{classCoinSlot_a6f28eee0c3720fd4a6b25ca07dbdf4e2}{Coin\-Slot} (string a\-\_\-currency)
+\item 
+\hyperlink{classCoinSlot_a593bd91f1ec58c7d0de0502af3ff2331}{Coin\-Slot} (string a\-\_\-currency, vector$<$ double $>$ accepted\-\_\-coins\-\_\-list)
+\item 
+void \hyperlink{classCoinSlot_aeb67f3b2b68ed5c22c1d6f192f315104}{insert} (double a\-\_\-coin)  throw (const invalid\-\_\-argument)
+\item 
+void \hyperlink{classCoinSlot_a8ed8cda62086c21f647d215f47d31b3b}{add\-\_\-accepted} (double a\-\_\-coin)
+\item 
+double \hyperlink{classCoinSlot_aa349eea94746d3438335c7ef5337bf7c}{get\-\_\-value} () const 
+\item 
+string \hyperlink{classCoinSlot_af37381120a0315178139de6ce447741d}{str} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCoinSlot}{Coin\-Slot} represents a coin slot of a ticket machine. You can define certain accepted coins. When inserting a coin (double), it validates for acceptance. The class also overrides the global operators $>$$>$ \char`\"{}get from\char`\"{} and $<$$<$ \char`\"{}put to\char`\"{} for easy console input handling.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCoinSlot_a7ee2abc60da5a7af641eff10c5c4c2bf}{\index{Coin\-Slot@{Coin\-Slot}!Coin\-Slot@{Coin\-Slot}}
+\index{Coin\-Slot@{Coin\-Slot}!CoinSlot@{Coin\-Slot}}
+\subsubsection[{Coin\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}Coin\-Slot\-::\-Coin\-Slot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCoinSlot_a7ee2abc60da5a7af641eff10c5c4c2bf}
+Empty constructor, initializes a \hyperlink{classCoinSlot}{Coin\-Slot} with the currency \char`\"{}\-Euro\char`\"{} and accepts no coins. \hypertarget{classCoinSlot_a6f28eee0c3720fd4a6b25ca07dbdf4e2}{\index{Coin\-Slot@{Coin\-Slot}!Coin\-Slot@{Coin\-Slot}}
+\index{Coin\-Slot@{Coin\-Slot}!CoinSlot@{Coin\-Slot}}
+\subsubsection[{Coin\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}Coin\-Slot\-::\-Coin\-Slot (
+\begin{DoxyParamCaption}
+\item[{string}]{a\-\_\-currency}
+\end{DoxyParamCaption}
+)}}\label{classCoinSlot_a6f28eee0c3720fd4a6b25ca07dbdf4e2}
+Constructor, initializes a \hyperlink{classCoinSlot}{Coin\-Slot} with a given currency. It accepts no coins.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-currency} & currency of the coins. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCoinSlot_a593bd91f1ec58c7d0de0502af3ff2331}{\index{Coin\-Slot@{Coin\-Slot}!Coin\-Slot@{Coin\-Slot}}
+\index{Coin\-Slot@{Coin\-Slot}!CoinSlot@{Coin\-Slot}}
+\subsubsection[{Coin\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}Coin\-Slot\-::\-Coin\-Slot (
+\begin{DoxyParamCaption}
+\item[{string}]{a\-\_\-currency, }
+\item[{vector$<$ double $>$}]{accepted\-\_\-coins\-\_\-list}
+\end{DoxyParamCaption}
+)}}\label{classCoinSlot_a593bd91f1ec58c7d0de0502af3ff2331}
+Constructor, inizializes a \hyperlink{classCoinSlot}{Coin\-Slot} with a given currency and a list of accepted coins.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-currency} & Currency of the coins. \\
+\hline
+{\em accepted\-\_\-coins\-\_\-list} & List of accepted coins. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCoinSlot_a8ed8cda62086c21f647d215f47d31b3b}{\index{Coin\-Slot@{Coin\-Slot}!add\-\_\-accepted@{add\-\_\-accepted}}
+\index{add\-\_\-accepted@{add\-\_\-accepted}!CoinSlot@{Coin\-Slot}}
+\subsubsection[{add\-\_\-accepted}]{\setlength{\rightskip}{0pt plus 5cm}void Coin\-Slot\-::add\-\_\-accepted (
+\begin{DoxyParamCaption}
+\item[{double}]{a\-\_\-coin}
+\end{DoxyParamCaption}
+)}}\label{classCoinSlot_a8ed8cda62086c21f647d215f47d31b3b}
+Adds a coin to the list of accepted coins.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-coin} & Coin which should be accepted by the \hyperlink{classCoinSlot}{Coin\-Slot}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCoinSlot_aa349eea94746d3438335c7ef5337bf7c}{\index{Coin\-Slot@{Coin\-Slot}!get\-\_\-value@{get\-\_\-value}}
+\index{get\-\_\-value@{get\-\_\-value}!CoinSlot@{Coin\-Slot}}
+\subsubsection[{get\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}double Coin\-Slot\-::get\-\_\-value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCoinSlot_aa349eea94746d3438335c7ef5337bf7c}
+Returns the value of the inserted coin.
+
+\begin{DoxyReturn}{Returns}
+value of the inserted coin. 
+\end{DoxyReturn}
+\hypertarget{classCoinSlot_aeb67f3b2b68ed5c22c1d6f192f315104}{\index{Coin\-Slot@{Coin\-Slot}!insert@{insert}}
+\index{insert@{insert}!CoinSlot@{Coin\-Slot}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void Coin\-Slot\-::insert (
+\begin{DoxyParamCaption}
+\item[{double}]{a\-\_\-coin}
+\end{DoxyParamCaption}
+) throw  const invalid\-\_\-argument) }}\label{classCoinSlot_aeb67f3b2b68ed5c22c1d6f192f315104}
+Insert a coin into the coin slot. Checks if the coin is accepted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-coin} & Coin to insert into the coin slot.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::invalid\-\_\-argument} & when coin is not accepted. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classCoinSlot_af37381120a0315178139de6ce447741d}{\index{Coin\-Slot@{Coin\-Slot}!str@{str}}
+\index{str@{str}!CoinSlot@{Coin\-Slot}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string Coin\-Slot\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCoinSlot_af37381120a0315178139de6ce447741d}
+Represents the \hyperlink{classCoinSlot}{Coin\-Slot} as a string. It shows a list of the accepted coins.
+
+Moegliche Zahlungseinehten\-: 50.\-00 Euro 20.\-00 Euro ...
+
+\begin{DoxyReturn}{Returns}
+String with the list of the accepted coins. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{coin__slot_8h}{coin\-\_\-slot.\-h}\item 
+\hyperlink{coin__slot_8cpp}{coin\-\_\-slot.\-cpp}\end{DoxyCompactItemize}

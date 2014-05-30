@@ -1,0 +1,123 @@
+\hypertarget{classPriceComputer}{\section{Price\-Computer Class Reference}
+\label{classPriceComputer}\index{Price\-Computer@{Price\-Computer}}
+}
+
+
+{\ttfamily \#include $<$price\-\_\-computer.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPriceComputer_ad20398c1f27e2ee28bf698ee968417ef}{Price\-Computer} (double a\-\_\-price, string a\-\_\-currency)  throw (const invalid\-\_\-argument)
+\item 
+double \hyperlink{classPriceComputer_a5432eb25a9dc564e26d28f8c992edc54}{add} (double a\-\_\-coin)  throw (const invalid\-\_\-argument)
+\item 
+int \hyperlink{classPriceComputer_acd1ed2559f6c99b66877dc176a7f067b}{state} () const 
+\item 
+double \hyperlink{classPriceComputer_aaafb5acfbdb3419e873d30ff7c544a9e}{remainder} () const 
+\item 
+string \hyperlink{classPriceComputer_ac6a85d7316a174de19a4eccdffd91ae3}{str} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classPriceComputer}{Price\-Computer} is a state machine for counting monetary units up to a certain value.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPriceComputer_ad20398c1f27e2ee28bf698ee968417ef}{\index{Price\-Computer@{Price\-Computer}!Price\-Computer@{Price\-Computer}}
+\index{Price\-Computer@{Price\-Computer}!PriceComputer@{Price\-Computer}}
+\subsubsection[{Price\-Computer}]{\setlength{\rightskip}{0pt plus 5cm}Price\-Computer\-::\-Price\-Computer (
+\begin{DoxyParamCaption}
+\item[{double}]{a\-\_\-price, }
+\item[{string}]{a\-\_\-currency}
+\end{DoxyParamCaption}
+) throw  const invalid\-\_\-argument) }}\label{classPriceComputer_ad20398c1f27e2ee28bf698ee968417ef}
+Constructor to initialize a \hyperlink{classPriceComputer}{Price\-Computer} with a given prive and a given currency.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-price} & Price to count to. \\
+\hline
+{\em a\-\_\-currency} & Currency of the price. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPriceComputer_a5432eb25a9dc564e26d28f8c992edc54}{\index{Price\-Computer@{Price\-Computer}!add@{add}}
+\index{add@{add}!PriceComputer@{Price\-Computer}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}double Price\-Computer\-::add (
+\begin{DoxyParamCaption}
+\item[{double}]{a\-\_\-coin}
+\end{DoxyParamCaption}
+) throw  const invalid\-\_\-argument) }}\label{classPriceComputer_a5432eb25a9dc564e26d28f8c992edc54}
+Adds a coin \char`\"{}value\char`\"{} to the \hyperlink{classPriceComputer}{Price\-Computer}. Gets summed by previous added coins.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-coin} & Coin \char`\"{}value\char`\"{} to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum of all added coins until now. 
+\end{DoxyReturn}
+\hypertarget{classPriceComputer_aaafb5acfbdb3419e873d30ff7c544a9e}{\index{Price\-Computer@{Price\-Computer}!remainder@{remainder}}
+\index{remainder@{remainder}!PriceComputer@{Price\-Computer}}
+\subsubsection[{remainder}]{\setlength{\rightskip}{0pt plus 5cm}double Price\-Computer\-::remainder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPriceComputer_aaafb5acfbdb3419e873d30ff7c544a9e}
+Returns the remainder from the sum of all added coins to the price. Can be negative, when the sum of all coins is higher then the price.
+
+\begin{DoxyReturn}{Returns}
+remainder from the sum of all added coins to the price. 
+\end{DoxyReturn}
+\hypertarget{classPriceComputer_acd1ed2559f6c99b66877dc176a7f067b}{\index{Price\-Computer@{Price\-Computer}!state@{state}}
+\index{state@{state}!PriceComputer@{Price\-Computer}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}int Price\-Computer\-::state (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPriceComputer_acd1ed2559f6c99b66877dc176a7f067b}
+Returns the state of the \hyperlink{classPriceComputer}{Price\-Computer}. There are four different states represented as integers (-\/1, 0, 1 and 2).
+
+\begin{DoxyReturn}{Returns}
+state as Integer -\/1 The sum of all added coins is less than the price. 0 Abordet, as soon as a 0.\-00 value coin gets added. 1 The sum of all added coins is exactly the price. 2 The sum of all added coins is more than the price. 
+\end{DoxyReturn}
+\hypertarget{classPriceComputer_ac6a85d7316a174de19a4eccdffd91ae3}{\index{Price\-Computer@{Price\-Computer}!str@{str}}
+\index{str@{str}!PriceComputer@{Price\-Computer}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string Price\-Computer\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classPriceComputer_ac6a85d7316a174de19a4eccdffd91ae3}
+Representation of a \hyperlink{classPriceComputer}{Price\-Computer} object as a string. Has a differen output for every state.
+
+when state is -\/1\-: Noch zu bezahlen\-: remainder currency when state is 0\-: Rückgabe\-: sum of all entered coins Zalungseinheiten\-: 1 $\ast$ 50.\-00 Euro 2 $\ast$ 5.\-00 Euro ... When state is 1\-: Nothing When state is 2\-: Zu viel bezahlt! 3.\-30 Euro
+
+\begin{DoxyReturn}{Returns}
+Stringrepresentation according the different states. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classPriceComputer_ac6a85d7316a174de19a4eccdffd91ae3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{price__computer_8h}{price\-\_\-computer.\-h}\item 
+\hyperlink{price__computer_8cpp}{price\-\_\-computer.\-cpp}\end{DoxyCompactItemize}

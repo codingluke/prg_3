@@ -10,6 +10,15 @@ typedef Fraction (Fraction::*fptr)(const Fraction&) const;
 typedef Fraction (Fraction::*fptr2)(const int&) const;
 typedef Fraction (*fptr3)(const int&, const Fraction&);
 
+/**
+ * Calculator is able to calculate Fractions and numbers
+ * together and prints out the results to the console.
+ * It is a wrapper around operators, with the calculator
+ * it is possible to choose the operation by a string.
+ *
+ * @author  Lukas Hodel
+ * @version 1.0
+ */
 class Calculator
 {
   private:

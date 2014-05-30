@@ -33,6 +33,7 @@ class PriceComputer
   private:
     double sum_coin_stack() const;
     string str_grouped() const;
+    void sort_coins();
 };
 
 ostream& operator<<(ostream& output, const PriceComputer& pc);

@@ -1,0 +1,9 @@
+<map id="TicketMachine::run" name="TicketMachine::run">
+<area shape="rect" id="node2" href="$console__input_8cpp.html#ad0ccfbb50d0e333ef8acfeab2b7d8071" title="read_int" alt="" coords="241,5,309,32"/>
+<area shape="rect" id="node5" href="$classPriceComputer.html#acd1ed2559f6c99b66877dc176a7f067b" title="PriceComputer::state" alt="" coords="201,56,348,83"/>
+<area shape="rect" id="node6" href="$classPriceComputer.html#a5432eb25a9dc564e26d28f8c992edc54" title="PriceComputer::add" alt="" coords="205,107,344,133"/>
+<area shape="rect" id="node7" href="$console__input_8cpp.html#a6bac3909a28fff2736a171022343380b" title="read_yes_no" alt="" coords="227,157,323,184"/>
+<area shape="rect" id="node8" href="$classPriceComputer.html#aaafb5acfbdb3419e873d30ff7c544a9e" title="PriceComputer::remainder" alt="" coords="187,208,362,235"/>
+<area shape="rect" id="node3" href="$console__input_8cpp.html#a710a686867142de265860584f4147592" title="read_long" alt="" coords="411,5,490,32"/>
+<area shape="rect" id="node4" href="$console__input_8cpp.html#a8a9df77c5c4adba7ebadb77f3b3dc8ee" title="read_double" alt="" coords="539,5,631,32"/>
+</map>

@@ -39,6 +39,7 @@ double PriceComputer::add(double a_coin) throw(const invalid_argument)
   else if (a_coin == 0)
     abordet = true;
   coin_stack.push_back(a_coin);
+  sort_coins();
   return sum_coin_stack();
 }
 
@@ -155,6 +156,31 @@ double PriceComputer::sum_coin_stack() const
     sum += coin_stack[i];
   return sum;
 }
+
+/**
+ * Sorts the inserted coins with the entry sort algorithm ascendent.
+ */
+void PriceComputer::sort_coins()
+{
+  int index_max = 0;
+  double tmp;
+  for (int i = coin_stack.size() - 1; i > 0; i--)
+  {
+    index_max = 0;
+    for (int j = 0; j <= i; j++)
+    {
+      if (coin_stack[j] < coin_stack[index_max])
+        index_max = j;
+    }
+    if (coin_stack[index_max] < coin_stack[i])
+    {
+      tmp = coin_stack[i];
+      coin_stack[i] = coin_stack[index_max];
+      coin_stack[index_max] = tmp;
+    }
+  }
+}
+
 
 /**
  * Overrides the global operator<< "put to". Represents a PriceComputer

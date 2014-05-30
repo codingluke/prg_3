@@ -1,11 +1,3 @@
-/**
- * Implementation of a Fraction. Gives the possibility to represent
- * Fractions and calculate with them. As the defaut mathematical operators
- * are overwridden, the class can be used the same way as standard c++ classes.
- *
- * @author  Lukas Hodel
- */
-
 #include <sstream>
 #include <iostream>
 #include <ctime>
@@ -13,7 +5,6 @@
 #include <stdexcept>
 #include "console_input.h"
 #include "fraction.h"
-
 
 /**
  * Initializes a Fraction 0/1 which represents 0.
@@ -25,9 +16,9 @@ Fraction::Fraction()
 }
 
 /**
- * Initializes a fraction out of a given integer.
+ * Initializes a Fraction out of a given integer.
  *
- * @param number numerator of the fraction.
+ * @param number numerator of the Fraction.
  */
 Fraction::Fraction(int number)
 {
@@ -37,11 +28,11 @@ Fraction::Fraction(int number)
 }
 
 /**
- * Initializes a fraction with a given numerator and denominator.
+ * Initializes a Fraction with a given numerator and denominator.
  * numerator / denominator.
  *
  * @param a_numerator   numerator of the fraction.
- * @param a_denominator denominator of the fraction.
+ * @param a_denominator denominator of the Fraction.
  *
  * @throws invalid_argument when denominator is 0.
  */
@@ -55,13 +46,13 @@ Fraction::Fraction(int a_numerator, int a_denominator) throw(const std::invalid_
 }
 
 /**
- * Initializes a random fraction between the fractions
+ * Initializes a random Fraction between the Fractions
  * low_numerator/low_denumerator and high_numerator/high_denominator.
  *
- * @param low_numerator     numerator of the lower bound fraction.
- * @param low_denominator   denominator of the lower bound fraction.
- * @param high_numerator    numerator of the higher bound fraction.
- * @param high_denominator  denominator of the higher boud fraction.
+ * @param low_numerator     numerator of the lower bound Fraction.
+ * @param low_denominator   denominator of the lower bound Fraction.
+ * @param high_numerator    numerator of the higher bound Fraction.
+ * @param high_denominator  denominator of the higher boud Fraction.
  * @param random            a random number for example the result of rand().
  *
  * @throws invalid_argument when low_denominator or high_denominator is 0.
@@ -89,9 +80,9 @@ Fraction::Fraction(int low_numerator, int low_denominator,
 }
 
 /**
- * Returns the fraction as a string.
+ * Returns the Fraction as a string.
  *
- * @return fraction as a string "nominator/denominator"
+ * @return Fraction as a string "nominator/denominator"
  */
 std::string Fraction::str() const
 {
@@ -104,11 +95,11 @@ std::string Fraction::str() const
 }
 
 /**
- * Returns the fraction as a nomed string.
+ * Returns the Fraction as a nomed string.
  * 0/1            => 0
  * 1/1, 3/3, ...  => 1
  *
- * @return fraction as a normed string.
+ * @return Fraction as a normed string.
  */
 std::string Fraction::str_normed() const
 {
@@ -123,12 +114,12 @@ std::string Fraction::str_normed() const
 }
 
 /**
- * Compares the fraction with an other fraction.
+ * Compares the Fraction with an other Fraction.
  *
  * @param other Other Fraction to compare with the Fraction.
  *
  * @return  0   Fraction have the same value.
- *          1   Fraction is bigger then other fraction.
+ *          1   Fraction is bigger then other Fraction.
  *          -1  Fraction is smaller than other facton.
  */
 int Fraction::compare(const Fraction& other) const

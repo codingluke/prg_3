@@ -1,12 +1,3 @@
-/**
- * Calculator is able to calculate Fractions and numbers
- * together and prints out the results to the console.
- * It is a wrapper around operators, with the calculator
- * it is possible to choose the operation by a string.
- *
- * @author  Lukas Hodel
- */
-
 #include <iostream>
 #include <string>
 #include <stdexcept>
@@ -22,11 +13,11 @@ Calculator::Calculator()
 }
 
 /**
- * Calculates a given operation with two fractions. Prints out
+ * Calculates a given operation with two Fractions. Prints out
  * the result to the console.
  *
- * @param left  left fraction of the operation.
- * @param right right fraction of the operation.
+ * @param left  left Fraction of the operation.
+ * @param right right Fraction of the operation.
  * @param op    operator of hte operation.
  *
  * @throws invalid_argument when the operator op don't exists.
@@ -42,11 +33,11 @@ void Calculator::calculate(Fraction left, Fraction right, std::string op) const 
 }
 
 /**
- * Calculates a given operation with a integer and a fraction. Prints out
+ * Calculates a given operation with a integer and a Fraction. Prints out
  * the result to the console.
  *
  * @param left  left integer of the operation.
- * @param right right fraction of the operation.
+ * @param right right Fraction of the operation.
  * @param op    operator of the operation.
  *
  * @throws invalid_argument exception when the operator op doesn't exists.
@@ -62,10 +53,10 @@ void Calculator::calculate(int left, Fraction right, std::string op) const throw
 }
 
 /**
- * Calculates a given operation with a fraction and an integer. Prints out
+ * Calculates a given operation with a Fraction and an integer. Prints out
  * the result to the console.
  *
- * @param left  left fraction of the operation.
+ * @param left  left Fraction of the operation.
  * @param right right integer of the operation.
  * @param op    operator of the operation.
  *
@@ -85,7 +76,7 @@ void Calculator::calculate(Fraction left, int right, std::string op) const throw
  * Compares two Fractions and prints out the result to the console.
  *
  * @param f1 First fraction to compare.
- * @param f2 Secont fraction to compare.
+ * @param f2 Secont Fraction to compare.
  */
 void Calculator::compare(Fraction fraction1, Fraction fraction2) const
 {

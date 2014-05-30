@@ -33,7 +33,7 @@ cpp_dateien = [
   'console_input.cpp',
   'calculator.cpp',
   'fraction.cpp',
-  'main.cpp',
+  'fraction_main.cpp',
 ]
 
 programm_name = 'bruch'

@@ -1,0 +1,90 @@
+\hypertarget{coin__slot_8cpp}{\section{coin\-\_\-slot.\-cpp File Reference}
+\label{coin__slot_8cpp}\index{coin\-\_\-slot.\-cpp@{coin\-\_\-slot.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include \char`\"{}coin\-\_\-slot.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}console\-\_\-input.\-h\char`\"{}}\\*
+Include dependency graph for coin\-\_\-slot.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{coin__slot_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \hyperlink{coin__slot_8cpp_a379e736965d39d908632dca531886f91}{operator$>$$>$} (istream \&input, \hyperlink{classCoinSlot}{Coin\-Slot} \&coin\-\_\-slot)
+\item 
+ostream \& \hyperlink{coin__slot_8cpp_aec2334964c7d0b94c15aaf9024c7c7d9}{operator$<$$<$} (ostream \&output, const \hyperlink{classCoinSlot}{Coin\-Slot} \&coin\-\_\-slot)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{coin__slot_8cpp_aec2334964c7d0b94c15aaf9024c7c7d9}{\index{coin\-\_\-slot.\-cpp@{coin\-\_\-slot.\-cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!coin_slot.cpp@{coin\-\_\-slot.\-cpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{output, }
+\item[{const {\bf Coin\-Slot} \&}]{coin\-\_\-slot}
+\end{DoxyParamCaption}
+)}}\label{coin__slot_8cpp_aec2334964c7d0b94c15aaf9024c7c7d9}
+Overrides the operator$<$$<$ \char`\"{}put to\char`\"{}. Handels standard string representation of a coin\-\_\-slot when \char`\"{}put to\char`\"{} an output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & io output stream. \\
+\hline
+{\em coin\-\_\-slot} & \hyperlink{classCoinSlot}{Coin\-Slot} to print to the output stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{coin__slot_8cpp_aec2334964c7d0b94c15aaf9024c7c7d9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{coin__slot_8cpp_a379e736965d39d908632dca531886f91}{\index{coin\-\_\-slot.\-cpp@{coin\-\_\-slot.\-cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!coin_slot.cpp@{coin\-\_\-slot.\-cpp}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{input, }
+\item[{{\bf Coin\-Slot} \&}]{coin\-\_\-slot}
+\end{DoxyParamCaption}
+)}}\label{coin__slot_8cpp_a379e736965d39d908632dca531886f91}
+Overrides the operator$>$$>$ \char`\"{}get from\char`\"{}. Handels the console input of a coin.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & I\-O Input stream. \\
+\hline
+{\em coin\-\_\-slot} & \hyperlink{classCoinSlot}{Coin\-Slot} instance to insert a coin from the console.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+inputstream 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{coin__slot_8cpp_a379e736965d39d908632dca531886f91_cgraph}
+\end{center}
+\end{figure}
+
+
