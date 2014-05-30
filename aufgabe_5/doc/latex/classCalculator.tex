@@ -1,0 +1,172 @@
+\hypertarget{classCalculator}{\section{Calculator Class Reference}
+\label{classCalculator}\index{Calculator@{Calculator}}
+}
+
+
+{\ttfamily \#include $<$calculator.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCalculator_adf568b2e0dacc9adf5b7d740622beb92}{Calculator} ()
+\item 
+void \hyperlink{classCalculator_ad7c285bf5752406a7cb31e2d215785cc}{calculate} (\hyperlink{classFraction}{Fraction} left, \hyperlink{classFraction}{Fraction} right, std\-::string op) const   throw (const std\-::invalid\-\_\-argument)
+\item 
+void \hyperlink{classCalculator_aa1206e4ba90ec9b16996a7719a0b7a6b}{calculate} (int left, \hyperlink{classFraction}{Fraction} right, std\-::string op) const   throw (const std\-::invalid\-\_\-argument)
+\item 
+void \hyperlink{classCalculator_aab2a415730a7a9f0373bf4031fe48acc}{calculate} (\hyperlink{classFraction}{Fraction} left, int right, std\-::string op) const   throw (const std\-::invalid\-\_\-argument)
+\item 
+void \hyperlink{classCalculator_ab63c1adcd80233adf0c75b2fedbc9358}{compare} (\hyperlink{classFraction}{Fraction} f1, \hyperlink{classFraction}{Fraction} f2) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classCalculator}{Calculator} is able to calculate Fractions and numbers together and prints out the results to the console. It is a wrapper around operators, with the calculator it is possible to choose the operation by a string.
+
+\begin{DoxyAuthor}{Author}
+Lukas Hodel 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCalculator_adf568b2e0dacc9adf5b7d740622beb92}{\index{Calculator@{Calculator}!Calculator@{Calculator}}
+\index{Calculator@{Calculator}!Calculator@{Calculator}}
+\subsubsection[{Calculator}]{\setlength{\rightskip}{0pt plus 5cm}Calculator\-::\-Calculator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCalculator_adf568b2e0dacc9adf5b7d740622beb92}
+Initializes \hyperlink{classCalculator}{Calculator} with the default operators. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCalculator_ad7c285bf5752406a7cb31e2d215785cc}{\index{Calculator@{Calculator}!calculate@{calculate}}
+\index{calculate@{calculate}!Calculator@{Calculator}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}void Calculator\-::calculate (
+\begin{DoxyParamCaption}
+\item[{{\bf Fraction}}]{left, }
+\item[{{\bf Fraction}}]{right, }
+\item[{std\-::string}]{op}
+\end{DoxyParamCaption}
+) const throw  const std\-::invalid\-\_\-argument) }}\label{classCalculator_ad7c285bf5752406a7cb31e2d215785cc}
+Calculates a given operation with two fractions. Prints out the result to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & left fraction of the operation. \\
+\hline
+{\em right} & right fraction of the operation. \\
+\hline
+{\em op} & operator of hte operation.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\-\_\-argument} & when the operator op don't exists. \\
+\hline
+\end{DoxyExceptions}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classCalculator_ad7c285bf5752406a7cb31e2d215785cc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCalculator_aa1206e4ba90ec9b16996a7719a0b7a6b}{\index{Calculator@{Calculator}!calculate@{calculate}}
+\index{calculate@{calculate}!Calculator@{Calculator}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}void Calculator\-::calculate (
+\begin{DoxyParamCaption}
+\item[{int}]{left, }
+\item[{{\bf Fraction}}]{right, }
+\item[{std\-::string}]{op}
+\end{DoxyParamCaption}
+) const throw  const std\-::invalid\-\_\-argument) }}\label{classCalculator_aa1206e4ba90ec9b16996a7719a0b7a6b}
+Calculates a given operation with a integer and a fraction. Prints out the result to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & left integer of the operation. \\
+\hline
+{\em right} & right fraction of the operation. \\
+\hline
+{\em op} & operator of the operation.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\-\_\-argument} & exception when the operator op doesn't exists. \\
+\hline
+\end{DoxyExceptions}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classCalculator_aa1206e4ba90ec9b16996a7719a0b7a6b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCalculator_aab2a415730a7a9f0373bf4031fe48acc}{\index{Calculator@{Calculator}!calculate@{calculate}}
+\index{calculate@{calculate}!Calculator@{Calculator}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}void Calculator\-::calculate (
+\begin{DoxyParamCaption}
+\item[{{\bf Fraction}}]{left, }
+\item[{int}]{right, }
+\item[{std\-::string}]{op}
+\end{DoxyParamCaption}
+) const throw  const std\-::invalid\-\_\-argument) }}\label{classCalculator_aab2a415730a7a9f0373bf4031fe48acc}
+Calculates a given operation with a fraction and an integer. Prints out the result to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & left fraction of the operation. \\
+\hline
+{\em right} & right integer of the operation. \\
+\hline
+{\em op} & operator of the operation.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\-\_\-argument} & when the operator doesn't exists. \\
+\hline
+\end{DoxyExceptions}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classCalculator_aab2a415730a7a9f0373bf4031fe48acc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCalculator_ab63c1adcd80233adf0c75b2fedbc9358}{\index{Calculator@{Calculator}!compare@{compare}}
+\index{compare@{compare}!Calculator@{Calculator}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}void Calculator\-::compare (
+\begin{DoxyParamCaption}
+\item[{{\bf Fraction}}]{fraction1, }
+\item[{{\bf Fraction}}]{fraction2}
+\end{DoxyParamCaption}
+) const}}\label{classCalculator_ab63c1adcd80233adf0c75b2fedbc9358}
+Compares two Fractions and prints out the result to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f1} & First fraction to compare. \\
+\hline
+{\em f2} & Secont fraction to compare. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{calculator_8h}{calculator.\-h}\item 
+\hyperlink{calculator_8cpp}{calculator.\-cpp}\end{DoxyCompactItemize}

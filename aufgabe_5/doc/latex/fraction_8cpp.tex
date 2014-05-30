@@ -1,0 +1,179 @@
+\hypertarget{fraction_8cpp}{\section{fraction.\-cpp File Reference}
+\label{fraction_8cpp}\index{fraction.\-cpp@{fraction.\-cpp}}
+}
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include \char`\"{}console\-\_\-input.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fraction.\-h\char`\"{}}\\*
+Include dependency graph for fraction.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fraction_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFraction}{Fraction} \hyperlink{fraction_8cpp_a01030474607789a59c23832eaa96afcd}{operator+} (const int \&left, const \hyperlink{classFraction}{Fraction} \&right)
+\item 
+\hyperlink{classFraction}{Fraction} \hyperlink{fraction_8cpp_aeef49237f5f33865b83ed6a335225392}{operator-\/} (const int \&left, const \hyperlink{classFraction}{Fraction} \&right)
+\item 
+\hyperlink{classFraction}{Fraction} \hyperlink{fraction_8cpp_a9ebcb6c3e3ca935833b8a5b69ca9e9a2}{operator$\ast$} (const int \&left, const \hyperlink{classFraction}{Fraction} \&right)
+\item 
+\hyperlink{classFraction}{Fraction} \hyperlink{fraction_8cpp_acd5918eb57ec3a95dcfb402f486e4ff3}{operator/} (const int \&left, const \hyperlink{classFraction}{Fraction} \&right)
+\item 
+istream \& \hyperlink{fraction_8cpp_aa459309e7314753308bc9d1cde5bbb9e}{operator$>$$>$} (istream \&input, \hyperlink{classFraction}{Fraction} \&frc)
+\item 
+std\-::ostream \& \hyperlink{fraction_8cpp_a6bbb30df04fbf0667ea707be92ee40ae}{operator$<$$<$} (std\-::ostream \&output, const \hyperlink{classFraction}{Fraction} \&frc)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{fraction_8cpp_a9ebcb6c3e3ca935833b8a5b69ca9e9a2}{\index{fraction.\-cpp@{fraction.\-cpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!fraction.cpp@{fraction.\-cpp}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{left, }
+\item[{const {\bf Fraction} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{fraction_8cpp_a9ebcb6c3e3ca935833b8a5b69ca9e9a2}
+Overloads the global operator$\ast$. Defines how to multiply an Integer and a \hyperlink{classFraction}{Fraction} and returns the multiplication as a new \hyperlink{classFraction}{Fraction}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Integer as multiplicator \\
+\hline
+{\em right} & \hyperlink{classFraction}{Fraction} as multiplicator\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classFraction}{Fraction} with the multiplication of the integer and \hyperlink{classFraction}{Fraction}. 
+\end{DoxyReturn}
+\hypertarget{fraction_8cpp_a01030474607789a59c23832eaa96afcd}{\index{fraction.\-cpp@{fraction.\-cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!fraction.cpp@{fraction.\-cpp}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator+ (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{left, }
+\item[{const {\bf Fraction} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{fraction_8cpp_a01030474607789a59c23832eaa96afcd}
+Overloads global operatr+. Defines how to add a \hyperlink{classFraction}{Fraction} to an integer and returns the sum as a new \hyperlink{classFraction}{Fraction}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Integer to which the \hyperlink{classFraction}{Fraction} gets added. \\
+\hline
+{\em right} & \hyperlink{classFraction}{Fraction} which gets added.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classFraction}{Fraction} with the sum of the integer and \hyperlink{classFraction}{Fraction}. 
+\end{DoxyReturn}
+\hypertarget{fraction_8cpp_aeef49237f5f33865b83ed6a335225392}{\index{fraction.\-cpp@{fraction.\-cpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!fraction.cpp@{fraction.\-cpp}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{left, }
+\item[{const {\bf Fraction} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{fraction_8cpp_aeef49237f5f33865b83ed6a335225392}
+Overloads the global operator-\/. Defines how to subtract a \hyperlink{classFraction}{Fraction} from an integer and returns the difference as a new \hyperlink{classFraction}{Fraction}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Integer from which the \hyperlink{classFraction}{Fraction} gets subtracted. \\
+\hline
+{\em right} & \hyperlink{classFraction}{Fraction} to subtract from the Integer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classFraction}{Fraction} with the sum of the integer and \hyperlink{classFraction}{Fraction}. 
+\end{DoxyReturn}
+\hypertarget{fraction_8cpp_acd5918eb57ec3a95dcfb402f486e4ff3}{\index{fraction.\-cpp@{fraction.\-cpp}!operator/@{operator/}}
+\index{operator/@{operator/}!fraction.cpp@{fraction.\-cpp}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator/ (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{left, }
+\item[{const {\bf Fraction} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{fraction_8cpp_acd5918eb57ec3a95dcfb402f486e4ff3}
+Overloads the global operator/. Defines how to divide an Integer by a \hyperlink{classFraction}{Fraction} and returns the division as a new \hyperlink{classFraction}{Fraction}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Integer as numerator. \\
+\hline
+{\em right} & \hyperlink{classFraction}{Fraction} as denumerator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \hyperlink{classFraction}{Fraction} with the division of the integer by the \hyperlink{classFraction}{Fraction}. 
+\end{DoxyReturn}
+\hypertarget{fraction_8cpp_a6bbb30df04fbf0667ea707be92ee40ae}{\index{fraction.\-cpp@{fraction.\-cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!fraction.cpp@{fraction.\-cpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{output, }
+\item[{const {\bf Fraction} \&}]{frc}
+\end{DoxyParamCaption}
+)}}\label{fraction_8cpp_a6bbb30df04fbf0667ea707be92ee40ae}
+Overloads the global operator$<$$<$ \char`\"{}put to\char`\"{}. Defines how a \hyperlink{classFraction}{Fraction} gets printed out to the outputstream.
+
+Format\-: numerator/denominator 1/1, 0/3, 89/2, -\/9/7
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Outputstream. \\
+\hline
+{\em frc} & \hyperlink{classFraction}{Fraction} to print to the outputstream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the given outputstream output. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{fraction_8cpp_a6bbb30df04fbf0667ea707be92ee40ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fraction_8cpp_aa459309e7314753308bc9d1cde5bbb9e}{\index{fraction.\-cpp@{fraction.\-cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!fraction.cpp@{fraction.\-cpp}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{input, }
+\item[{{\bf Fraction} \&}]{frc}
+\end{DoxyParamCaption}
+)}}\label{fraction_8cpp_aa459309e7314753308bc9d1cde5bbb9e}
+Overloads the global operator$>$$>$ \char`\"{}get from\char`\"{}. Defines the entry of a fraction from the user by the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Input Stream. \\
+\hline
+{\em frc} & \hyperlink{classFraction}{Fraction} to save the userinput into.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the given inputstream entry. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fraction_8cpp_aa459309e7314753308bc9d1cde5bbb9e_cgraph}
+\end{center}
+\end{figure}
+
+
