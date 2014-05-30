@@ -4,15 +4,16 @@ NAME
 
 SYNOPSIS
 
-    Rechnen mit Bruechen
+    Rechnen mit Bruechen und Zahlen
        ./bruch a b op c d
        ./bruch a op c d
        ./bruch a b op c
 
-    Zwei Brueche Vergleichen
+    Die Brueche a/b und c/d Vergleichen
        ./bruch a b -v c d
 
-    Zufaellige Brueche generieren und sortieren
+    Generiere n zufällige Brueche zwischen den Buechen a/b und c/d 
+    und sortiert diese absteigend (-) oder aufsteigend (+)
        ./bruch n [ a b c d ] +
        ./bruch n [ a b c d ] -
 

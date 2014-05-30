@@ -511,8 +511,8 @@ istream& operator>>(istream& input, Fraction& frc)
  * Format:  numerator/denominator
  *          1/1, 0/3, 89/2, -9/7
  *
- * @param entry Outputstream.
- * @param frc   Fraction to print to the outputstream.
+ * @param output Outputstream.
+ * @param frc    Fraction to print to the outputstream.
  *
  * @return the given outputstream output.
  */

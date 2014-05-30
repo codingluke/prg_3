@@ -33,6 +33,7 @@ class RefoundComputer
   private:
     void init_default_coins();
     void calculate();
+    void sort_coins();
     string str_grouped() const;
 };
 

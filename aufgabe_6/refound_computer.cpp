@@ -27,6 +27,7 @@ RefoundComputer::RefoundComputer(const string& a_currency,
   refound = 0;
   currency = a_currency;
   accepted_coins = accepted_coins_list;
+  sort_coins();
 }
 
 /**
@@ -112,6 +113,31 @@ void RefoundComputer::calculate()
       refound_tmp -= accepted_coins[i];
     }
 }
+
+/**
+ * Sorts the accepted coins with the entry sort algorithm ascendent.
+ */
+void RefoundComputer::sort_coins()
+{
+  int index_max = 0;
+  double tmp = 0;
+  for (int i = accepted_coins.size() - 1; i > 0; i--)
+  {
+    index_max = 0;
+    for (int j = 0; j <= i; j++)
+    {
+      if (accepted_coins[j] < accepted_coins[index_max])
+        index_max = j;
+    }
+    if (accepted_coins[index_max] < accepted_coins[i])
+    {
+      tmp = accepted_coins[i];
+      accepted_coins[i] = accepted_coins[index_max];
+      accepted_coins[index_max] = tmp;
+    }
+  }
+}
+
 
 /**
  * Overrides the global operatro<< "put to", for the default string

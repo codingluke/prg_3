@@ -22,6 +22,7 @@ int main()
   coins.push_back(0.5);
   coins.push_back(0.1);
   coins.push_back(0.0);
+  
   // DestinationCollection with the available
   // destinations
   DestinationCollection destinations("Euro");

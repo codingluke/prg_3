@@ -65,7 +65,7 @@ Fraction::Fraction(int low_numerator, int low_denominator,
     throw std::invalid_argument("Nenner darf nicht 0 sein!");
   Fraction lower(low_numerator, low_denominator);
   Fraction higher(high_numerator, high_denominator);
-  denominator = lcm(lower.denominator, higher.denominator) * 128;
+  denominator = lcm(lower.denominator, higher.denominator) * 200;
   int low = lower.extend(denominator).numerator;
   int high = higher.extend(denominator).numerator;
   int range = 0;

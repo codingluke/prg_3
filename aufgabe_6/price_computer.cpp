@@ -163,7 +163,7 @@ double PriceComputer::sum_coin_stack() const
 void PriceComputer::sort_coins()
 {
   int index_max = 0;
-  double tmp;
+  double tmp = 0;
   for (int i = coin_stack.size() - 1; i > 0; i--)
   {
     index_max = 0;

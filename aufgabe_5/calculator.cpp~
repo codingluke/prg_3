@@ -16,9 +16,9 @@ Calculator::Calculator()
  * Calculates a given operation with two Fractions. Prints out
  * the result to the console.
  *
- * @param left  left Fraction of the operation.
- * @param right right Fraction of the operation.
- * @param op    operator of hte operation.
+ * @param left  Left Fraction of the operation.
+ * @param right Right Fraction of the operation.
+ * @param op    Operator of hte operation.
  *
  * @throws std::invalid_argument when the operator op don't exists.
  */
@@ -36,13 +36,14 @@ void Calculator::calculate(Fraction left, Fraction right, std::string op) const 
  * Calculates a given operation with a integer and a Fraction. Prints out
  * the result to the console.
  *
- * @param left  left integer of the operation.
- * @param right right Fraction of the operation.
- * @param op    operator of the operation.
+ * @param left  Left integer of the operation.
+ * @param right Right Fraction of the operation.
+ * @param op    Operator of the operation.
  *
  * @throws std::invalid_argument exception when the operator op doesn't exists.
  */
-void Calculator::calculate(int left, Fraction right, std::string op) const throw(const std::invalid_argument)
+void Calculator::calculate(int left, Fraction right, std::string op) const 
+  throw(const std::invalid_argument)
 {
   int index = get_op_index(op);
   if (index == -1)
@@ -56,13 +57,14 @@ void Calculator::calculate(int left, Fraction right, std::string op) const throw
  * Calculates a given operation with a Fraction and an integer. Prints out
  * the result to the console.
  *
- * @param left  left Fraction of the operation.
- * @param right right integer of the operation.
- * @param op    operator of the operation.
+ * @param left  Left Fraction of the operation.
+ * @param right Right integer of the operation.
+ * @param op    Operator of the operation.
  *
  * @throws invalid_argument when the operator doesn't exists.
  */
-void Calculator::calculate(Fraction left, int right, std::string op) const throw(const std::invalid_argument)
+void Calculator::calculate(Fraction left, int right, std::string op) const 
+  throw(const std::invalid_argument)
 {
   int index = get_op_index(op);
   if (index == -1)
@@ -75,7 +77,7 @@ void Calculator::calculate(Fraction left, int right, std::string op) const throw
 /**
  * Compares two Fractions and prints out the result to the console.
  *
- * @param left First fraction to compare.
+ * @param left 	First Fraction to compare.
  * @param right Secont Fraction to compare.
  */
 void Calculator::compare(Fraction left, Fraction right) const
