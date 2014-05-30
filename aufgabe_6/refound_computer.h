@@ -24,7 +24,8 @@ class RefoundComputer
 
   public:
     RefoundComputer();
-    RefoundComputer(string currency, vector<double> accepted_coins_list);
+    RefoundComputer(const string& currency,
+                    const vector<double>& accepted_coins_list);
 
     void set_refound(double a_refound);
     string str() const;

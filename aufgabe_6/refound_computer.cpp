@@ -21,7 +21,8 @@ RefoundComputer::RefoundComputer()
  * @param a_currency          the currency for string representation.
  * @param accepted_coins_list list of accepted values to represent the refound.
  */
-RefoundComputer::RefoundComputer(string a_currency, vector<double> accepted_coins_list)
+RefoundComputer::RefoundComputer(const string& a_currency,
+                                 const vector<double>& accepted_coins_list)
 {
   refound = 0;
   currency = a_currency;

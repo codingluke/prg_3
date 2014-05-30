@@ -22,7 +22,7 @@ class PriceComputer
     string currency;
 
   public:
-    PriceComputer(double a_price, string a_currency)
+    PriceComputer(double a_price, const string& a_currency)
       throw(const invalid_argument);
 
     double add(double a_coin) throw(const invalid_argument);

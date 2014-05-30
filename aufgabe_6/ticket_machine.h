@@ -37,9 +37,9 @@ class TicketMachine
     bool running;
 
   public:
-    TicketMachine(string a_name, string a_currency,
-                  vector<double> accepted_coins,
-                  DestinationCollection a_dest_collection);
+    TicketMachine(const string& a_name, const string& a_currency,
+                  const vector<double>& accepted_coins,
+                  const DestinationCollection& a_dest_collection);
 
     void run();
     bool is_running() const;

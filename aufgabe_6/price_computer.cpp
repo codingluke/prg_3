@@ -14,7 +14,7 @@
  * @param a_price     Price to count to.
  * @param a_currency  Currency of the price.
  */
-PriceComputer::PriceComputer(double a_price, string a_currency)
+PriceComputer::PriceComputer(double a_price, const string& a_currency)
   throw(const invalid_argument)
 {
   if (a_price < 0)

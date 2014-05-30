@@ -17,9 +17,9 @@ using namespace std;
  * @param a_currency      Currency of the price.
  * @param accepted_coins  List of accepted coins to pai the price.
  */
-TicketMachine::TicketMachine(string a_name, string a_currency,
-                             vector<double> accepted_coins,
-                             DestinationCollection a_dest_collection)
+TicketMachine::TicketMachine(const string& a_name, const string& a_currency,
+                             const vector<double>& accepted_coins,
+                             const DestinationCollection& a_dest_collection)
 {
   currency = a_currency;
   name = a_name;

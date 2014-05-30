@@ -17,7 +17,7 @@ DestinationCollection::DestinationCollection()
  * Constructor without parameters initializes a empty
  * collection with a given currency.
  */
-DestinationCollection::DestinationCollection(string a_currency)
+DestinationCollection::DestinationCollection(const string& a_currency)
 {
   currency = a_currency;
 }
