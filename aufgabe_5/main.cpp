@@ -5,6 +5,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <vector>
+#include <stdexcept>
 #include "fraction.h"
 #include "main.h"
 #include "calculator.h"
@@ -77,11 +78,11 @@ void handle_five(char *argv[])
       calc.calculate(f, atoi(argv[1]), argv[3]);
     }
     else
-      std::cout << "shit";
+      show_manual();
   }
-  catch(const char* msg)
+  catch(const std::invalid_argument& ex)
   {
-    std::cout << msg << std::endl;
+    std::cout << ex.what() << std::endl;
   }
 }
 
@@ -115,13 +116,13 @@ void handle_six(char *argv[])
       else
         calc.calculate(f1, f2, op);
     }
-    catch(const char* msg)
+    catch(const std::invalid_argument& ex)
     {
-      std::cout << msg << std::endl;
+      std::cout << ex.what() << std::endl;
     }
   }
   else
-    std::cout << "SHIT!";
+    show_manual();
 }
 
 /**
@@ -152,9 +153,9 @@ void handle_nine(char *argv[])
                    atoi(argv[4]), atoi(argv[5]),
                    atoi(argv[6]), asc);
     }
-    catch(const char* msg)
+    catch(const std::invalid_argument& ex)
     {
-      std::cout << msg << std::endl;
+      std::cout << ex.what() << std::endl;
     }
   }
   else
@@ -205,9 +206,9 @@ void random_handler(int n, int a, int b, int c, int d, bool asc)
     for (int i = 0; i < n; i++)
       std::cout << fractions[i] << std::endl;
   }
-  catch(const char* msg)
+  catch(const std::invalid_argument& ex)
   {
-    throw msg;
+    throw std::invalid_argument(ex.what());
   }
 }
 
@@ -225,20 +226,20 @@ void random_handler(int n, int a, int b, int c, int d, bool asc)
  */
 std::vector<Fraction> random_fractions(int n, int low_numerator,
                                        int low_denominator, int high_numerator,
-                                       int high_denominator)
+                                       int high_denominator) throw(const std::invalid_argument)
 {
   srand((unsigned)time(0));
   std::vector<Fraction> fractions (n);
-  try
-  {
-    for (int i = 0; i < n; i++)
-      fractions[i] = Fraction(low_numerator, low_denominator,
-                              high_numerator, high_denominator, rand());
-  }
-  catch(const char* msg)
-  {
-    throw msg;
-  }
+  //try
+  //{
+  for (int i = 0; i < n; i++)
+    fractions[i] = Fraction(low_numerator, low_denominator,
+                            high_numerator, high_denominator, rand());
+  //}
+  //catch(const std::invalid_argument& ex)
+  //{
+    //throw std::invalid_argument(ex.what());
+  //}
   return fractions;
 }
 

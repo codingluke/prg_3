@@ -3,10 +3,13 @@
  * together and prints out the results to the console.
  * It is a wrapper around operators, with the calculator
  * it is possible to choose the operation by a string.
+ *
+ * @author  Lukas Hodel
  */
 
 #include <iostream>
 #include <string>
+#include <stdexcept>
 #include "fraction.h"
 #include "calculator.h"
 
@@ -26,13 +29,13 @@ Calculator::Calculator()
  * @param right right fraction of the operation.
  * @param op    operator of hte operation.
  *
- * @throws Exception when the operator don't exists.
+ * @throws invalid_argument when the operator op don't exists.
  */
-void Calculator::calculate(Fraction left, Fraction right, std::string op) const throw (const char*)
+void Calculator::calculate(Fraction left, Fraction right, std::string op) const throw(const std::invalid_argument)
 {
   int index = get_op_index(op);
   if (index == -1)
-    throw "Opertor nicht vorhanden!";
+    throw std::invalid_argument("Opertor nicht vorhanden!");
   Fraction result = (left.*operators_frc_frc[index])(right);
   std::cout << left << " " << op << " " << right
             << " = " << result.str_normed();
@@ -46,13 +49,13 @@ void Calculator::calculate(Fraction left, Fraction right, std::string op) const 
  * @param right right fraction of the operation.
  * @param op    operator of the operation.
  *
- * @throws Exception when the operator don't exists.
+ * @throws invalid_argument exception when the operator op doesn't exists.
  */
-void Calculator::calculate(int left, Fraction right, std::string op) const throw (const char*)
+void Calculator::calculate(int left, Fraction right, std::string op) const throw(const std::invalid_argument)
 {
   int index = get_op_index(op);
   if (index == -1)
-    throw "Opertor nicht vorhanden!";
+    throw std::invalid_argument("Opertor nicht vorhanden!");
   Fraction result = operators_num_frc[index](left, right);
   std::cout << left << " " << op << " " << right << " = "
             << result.str_normed();
@@ -66,13 +69,13 @@ void Calculator::calculate(int left, Fraction right, std::string op) const throw
  * @param right right integer of the operation.
  * @param op    operator of the operation.
  *
- * @throws Exception when the operator don't exists.
+ * @throws invalid_argument when the operator doesn't exists.
  */
-void Calculator::calculate(Fraction left, int right, std::string op) const throw (const char*)
+void Calculator::calculate(Fraction left, int right, std::string op) const throw(const std::invalid_argument)
 {
   int index = get_op_index(op);
   if (index == -1)
-    throw "Opertor nicht vorhanden!";
+    throw std::invalid_argument("Opertor nicht vorhanden!");
   Fraction result = (left.*operators_frc_num[index])(right);
   std::cout << left << " " << op << " " << right << " = "
             << result.str_normed();

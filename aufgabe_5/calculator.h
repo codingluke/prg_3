@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <stdexcept>
 #include "fraction.h"
 
 typedef Fraction (Fraction::*fptr)(const Fraction&) const;
@@ -21,11 +22,11 @@ class Calculator
     Calculator();
 
     void calculate(Fraction left, Fraction right,
-                   std::string op) const throw (const char*);
+                   std::string op) const throw(const std::invalid_argument);
     void calculate(int left, Fraction right,
-                   std::string op) const throw (const char*);
+                   std::string op) const throw(const std::invalid_argument);
     void calculate(Fraction left, int right,
-                   std::string op) const throw (const char*);
+                   std::string op) const throw(const std::invalid_argument);
     void compare(Fraction f1, Fraction f2) const;
 
   private:

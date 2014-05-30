@@ -1,34 +1,41 @@
 NAME
 
-       bruch - Berechnet, vergleich und generiert Brüche.
+       bruch - Berechnet, vergleich und generiert Brueche.
 
 SYNOPSIS
 
-       bruch a b op c d 
-       bruch a op c d 
-       bruch a b op c 
-       bruch a b -v c d 
-       bruch n [ a b c d ] +
-       bruch n [ a b c d ] -
+    Rechnen mit Bruechen
+       ./bruch a b op c d
+       ./bruch a op c d
+       ./bruch a b op c
 
+    Zwei Brueche Vergleichen
+       ./bruch a b -v c d
 
-DESCRIPTION
-
+    Zufaellige Brueche generieren und sortieren
+       ./bruch n [ a b c d ] +
+       ./bruch n [ a b c d ] -
 
 OPTIONS
 
     a, c
-        Integer, Zähler
+        Integer, Zaehler
+
     b, d
         Integer, Nenner, duerfen nicht 0 sein.
+
     op
         +,-,*,/
-    n         
+
+    n
         Anzahl als Integer zwischen 1 und 10000
-    +           
+
+    +
         aufsteigend sortiert
-    -         
+
+    -
         absteigend sortiert
-    []          
+
+    []
         keine wirkliche bedeutung.
 

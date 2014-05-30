@@ -2,13 +2,15 @@
  * Implementation of a Fraction. Gives the possibility to represent
  * Fractions and calculate with them. As the defaut mathematical operators
  * are overwridden, the class can be used the same way as standard c++ classes.
+ *
+ * @author  Lukas Hodel
  */
 
 #include <sstream>
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include <exception>
+#include <stdexcept>
 #include "console_input.h"
 #include "fraction.h"
 
@@ -41,12 +43,12 @@ Fraction::Fraction(int number)
  * @param a_numerator   numerator of the fraction.
  * @param a_denominator denominator of the fraction.
  *
- * @throws an Exception when denominator is 0.
+ * @throws invalid_argument when denominator is 0.
  */
-Fraction::Fraction(int a_numerator, int a_denominator) throw (const char*)
+Fraction::Fraction(int a_numerator, int a_denominator) throw(const std::invalid_argument)
 {
   if (a_denominator == 0)
-    throw "Nenner darf nicht 0 sein!";
+    throw std::invalid_argument("Nenner darf nicht 0 sein!");
   numerator = a_numerator;
   denominator = a_denominator;
   normalize();
@@ -62,14 +64,14 @@ Fraction::Fraction(int a_numerator, int a_denominator) throw (const char*)
  * @param high_denominator  denominator of the higher boud fraction.
  * @param random            a random number for example the result of rand().
  *
- * @throws an Exception when low_denominator or high_denominator is 0.
+ * @throws invalid_argument when low_denominator or high_denominator is 0.
  */
 Fraction::Fraction(int low_numerator, int low_denominator,
                    int high_numerator, int high_denominator,
-                   long random) throw (const char *)
+                   long random) throw(const std::invalid_argument)
 {
   if (low_denominator == 0 || high_denominator == 0)
-    throw "Nenner darf nicht 0 sein!";
+    throw std::invalid_argument("Nenner darf nicht 0 sein!");
   Fraction lower(low_numerator, low_denominator);
   Fraction higher(high_numerator, high_denominator);
   denominator = lcm(lower.denominator, higher.denominator) * 128;
@@ -260,12 +262,12 @@ Fraction Fraction::operator/(const Fraction& other) const
  * @return a new Fraction with the quotion from the division
  *         of the Fraction with the number (right).
  *
- * @throws exception when divisor number is 0.
+ * @throws invalid_argument when divisor number is 0.
  */
-Fraction Fraction::operator/(const int& number) const throw (const char*)
+Fraction Fraction::operator/(const int& number) const throw(const std::invalid_argument)
 {
   if (number == 0)
-    throw "Division durch 0 ist nicht erlaubt!";
+    throw std::invalid_argument("Division durch 0 ist nicht erlaubt!");
   Fraction tmp(number, number);
   return *this / tmp;
 }
@@ -414,12 +416,12 @@ void Fraction::normalize()
  *
  * @return a new Fraction extended to the given denominator.
  *
- * @throws Exceotion when a_denominator is 0.
+ * @throws invalid_argument when a_denominator is 0.
  */
-Fraction Fraction::extend(int a_denominator) const throw (const char*)
+Fraction Fraction::extend(int a_denominator) const throw(const std::invalid_argument)
 {
   if (a_denominator == 0)
-    throw "Nenner darf nicht 0 sein!";
+    throw std::invalid_argument("Nenner darf nicht 0 sein!");
   int new_numerator = (a_denominator / denominator) * numerator;
   return Fraction(new_numerator, a_denominator);
 }
@@ -503,9 +505,9 @@ istream& operator>>(istream& input, Fraction& frc)
       frc = Fraction(numerator, denominator);
       entry_ok = true;
     }
-    catch(const char* msg)
+    catch(const std::invalid_argument& ex)
     {
-      cout << msg << endl;
+      cout << ex.what() << endl;
     }
   } while (!entry_ok);
   return input;

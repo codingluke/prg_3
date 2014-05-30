@@ -16,7 +16,7 @@ void handle_nine(char *argv[]);
 void sort(std::vector<Fraction> &array, int length, bool asc);
 std::vector<Fraction> random_fractions(int amounth, int low_numerator,
                                        int low_denominator, int high_numerator,
-                                       int high_denominator);
+                                       int high_denominator) throw(const std::invalid_argument);
 void random_handler(int n, int a, int b, int c, int d, bool asc);
 bool isi(char text[]);
 void show_manual();
