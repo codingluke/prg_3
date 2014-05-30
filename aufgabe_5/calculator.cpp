@@ -29,7 +29,7 @@ void Calculator::calculate(Fraction left, Fraction right, std::string op) const 
     throw std::invalid_argument("Opertor nicht vorhanden!");
   Fraction result = (left.*operators_frc_frc[index])(right);
   std::cout << left << " " << op << " " << right
-            << " = " << result.str_normed();
+            << " = " << result.str_normed() << std::endl;
 }
 
 /**
@@ -49,7 +49,7 @@ void Calculator::calculate(int left, Fraction right, std::string op) const throw
     throw std::invalid_argument("Opertor nicht vorhanden!");
   Fraction result = operators_num_frc[index](left, right);
   std::cout << left << " " << op << " " << right << " = "
-            << result.str_normed();
+            << result.str_normed() << std::endl;
 }
 
 /**
@@ -69,7 +69,7 @@ void Calculator::calculate(Fraction left, int right, std::string op) const throw
     throw std::invalid_argument("Opertor nicht vorhanden!");
   Fraction result = (left.*operators_frc_num[index])(right);
   std::cout << left << " " << op << " " << right << " = "
-            << result.str_normed();
+            << result.str_normed() << std::endl;
 }
 
 /**
