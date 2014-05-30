@@ -56,6 +56,9 @@ Implementation of a \hyperlink{classFraction}{Fraction}. Gives the possibility t
 \begin{DoxyAuthor}{Author}
 Lukas Hodel 
 \end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -73,11 +76,11 @@ Initializes a \hyperlink{classFraction}{Fraction} 0/1 which represents 0. \hyper
 \item[{int}]{number}
 \end{DoxyParamCaption}
 )}}\label{classFraction_a6e610a7144e0532f65c6ee45ef55727b}
-Initializes a fraction out of a given integer.
+Initializes a \hyperlink{classFraction}{Fraction} out of a given integer.
 
 
 \begin{DoxyParams}{Parameters}
-{\em number} & numerator of the fraction. \\
+{\em number} & numerator of the \hyperlink{classFraction}{Fraction}. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classFraction_a22f64669ffc85d2a58b9d27ae7d6a325}{\index{Fraction@{Fraction}!Fraction@{Fraction}}
@@ -87,19 +90,19 @@ Initializes a fraction out of a given integer.
 \item[{int}]{a\-\_\-numerator, }
 \item[{int}]{a\-\_\-denominator}
 \end{DoxyParamCaption}
-) throw  const std\-::invalid\-\_\-argument) }}\label{classFraction_a22f64669ffc85d2a58b9d27ae7d6a325}
-Initializes a fraction with a given numerator and denominator. numerator / denominator.
+)  throw (const std\-::invalid\-\_\-argument)}}\label{classFraction_a22f64669ffc85d2a58b9d27ae7d6a325}
+Initializes a \hyperlink{classFraction}{Fraction} with a given numerator and denominator. numerator / denominator.
 
 
 \begin{DoxyParams}{Parameters}
 {\em a\-\_\-numerator} & numerator of the fraction. \\
 \hline
-{\em a\-\_\-denominator} & denominator of the fraction.\\
+{\em a\-\_\-denominator} & denominator of the \hyperlink{classFraction}{Fraction}.\\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\-\_\-argument} & when denominator is 0. \\
+{\em std\-::invalid\-\_\-argument} & when denominator is 0. \\
 \hline
 \end{DoxyExceptions}
 \hypertarget{classFraction_ab00b79044cca6774873bdaae713442b9}{\index{Fraction@{Fraction}!Fraction@{Fraction}}
@@ -112,25 +115,25 @@ Initializes a fraction with a given numerator and denominator. numerator / denom
 \item[{int}]{high\-\_\-denominator, }
 \item[{long}]{random}
 \end{DoxyParamCaption}
-) throw  const std\-::invalid\-\_\-argument) }}\label{classFraction_ab00b79044cca6774873bdaae713442b9}
-Initializes a random fraction between the fractions low\-\_\-numerator/low\-\_\-denumerator and high\-\_\-numerator/high\-\_\-denominator.
+)  throw (const std\-::invalid\-\_\-argument)}}\label{classFraction_ab00b79044cca6774873bdaae713442b9}
+Initializes a random \hyperlink{classFraction}{Fraction} between the Fractions low\-\_\-numerator/low\-\_\-denumerator and high\-\_\-numerator/high\-\_\-denominator.
 
 
 \begin{DoxyParams}{Parameters}
-{\em low\-\_\-numerator} & numerator of the lower bound fraction. \\
+{\em low\-\_\-numerator} & numerator of the lower bound \hyperlink{classFraction}{Fraction}. \\
 \hline
-{\em low\-\_\-denominator} & denominator of the lower bound fraction. \\
+{\em low\-\_\-denominator} & denominator of the lower bound \hyperlink{classFraction}{Fraction}. \\
 \hline
-{\em high\-\_\-numerator} & numerator of the higher bound fraction. \\
+{\em high\-\_\-numerator} & numerator of the higher bound \hyperlink{classFraction}{Fraction}. \\
 \hline
-{\em high\-\_\-denominator} & denominator of the higher boud fraction. \\
+{\em high\-\_\-denominator} & denominator of the higher boud \hyperlink{classFraction}{Fraction}. \\
 \hline
 {\em random} & a random number for example the result of rand().\\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\-\_\-argument} & when low\-\_\-denominator or high\-\_\-denominator is 0. \\
+{\em std\-::invalid\-\_\-argument} & when low\-\_\-denominator or high\-\_\-denominator is 0. \\
 \hline
 \end{DoxyExceptions}
 
@@ -143,7 +146,7 @@ Initializes a random fraction between the fractions low\-\_\-numerator/low\-\_\-
 \item[{const {\bf Fraction} \&}]{other}
 \end{DoxyParamCaption}
 ) const}}\label{classFraction_a80ad92f94192095396d0722028f050ca}
-Compares the fraction with an other fraction.
+Compares the \hyperlink{classFraction}{Fraction} with an other \hyperlink{classFraction}{Fraction}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -151,7 +154,7 @@ Compares the fraction with an other fraction.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-0 \hyperlink{classFraction}{Fraction} have the same value. 1 \hyperlink{classFraction}{Fraction} is bigger then other fraction. -\/1 \hyperlink{classFraction}{Fraction} is smaller than other facton. 
+0 \hyperlink{classFraction}{Fraction} have the same value. 1 \hyperlink{classFraction}{Fraction} is bigger then other \hyperlink{classFraction}{Fraction}. -\/1 \hyperlink{classFraction}{Fraction} is smaller than other facton. 
 \end{DoxyReturn}
 \hypertarget{classFraction_ab742d856770b1ec746aedf6382ee35df}{\index{Fraction@{Fraction}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!Fraction@{Fraction}}
@@ -289,7 +292,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{DoxyParamCaption}
 \item[{const int \&}]{number}
 \end{DoxyParamCaption}
-) const throw  const std\-::invalid\-\_\-argument) }}\label{classFraction_a81c6eb908f902b21dedcbdf50341d4f4}
+) const  throw (const std\-::invalid\-\_\-argument)}}\label{classFraction_a81c6eb908f902b21dedcbdf50341d4f4}
 Overloading of the operator/. Defines the division of a \hyperlink{classFraction}{Fraction} and a number.
 
 
@@ -302,7 +305,7 @@ a new \hyperlink{classFraction}{Fraction} with the quotion from the division of 
 \end{DoxyReturn}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\-\_\-argument} & when divisor number is 0. \\
+{\em std\-::invalid\-\_\-argument} & when divisor number is 0. \\
 \hline
 \end{DoxyExceptions}
 \hypertarget{classFraction_ac846064d1566945f66bd7bd0bc6708cf}{\index{Fraction@{Fraction}!operator$<$@{operator$<$}}
@@ -361,7 +364,7 @@ Defines the equalness of two Fractions.
 
 
 \begin{DoxyParams}{Parameters}
-{\em other} & The Other \hyperlink{classFraction}{Fraction} to compare equalness.\\
+{\em other} & The other \hyperlink{classFraction}{Fraction} to compare equalness.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -419,10 +422,10 @@ true when the \hyperlink{classFraction}{Fraction} is bigger or equal than the ot
 {}
 \end{DoxyParamCaption}
 ) const}}\label{classFraction_acce62ee78d404b21f2f1d479cd829d3d}
-Returns the fraction as a string.
+Returns the \hyperlink{classFraction}{Fraction} as a string.
 
 \begin{DoxyReturn}{Returns}
-fraction as a string \char`\"{}nominator/denominator\char`\"{} 
+\hyperlink{classFraction}{Fraction} as a string \char`\"{}nominator/denominator\char`\"{} 
 \end{DoxyReturn}
 \hypertarget{classFraction_a7381f62ce532529cb447f4edf8f6dbd4}{\index{Fraction@{Fraction}!str\-\_\-normed@{str\-\_\-normed}}
 \index{str\-\_\-normed@{str\-\_\-normed}!Fraction@{Fraction}}
@@ -431,10 +434,10 @@ fraction as a string \char`\"{}nominator/denominator\char`\"{}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{classFraction_a7381f62ce532529cb447f4edf8f6dbd4}
-Returns the fraction as a nomed string. 0/1 =$>$ 0 1/1, 3/3, ... =$>$ 1
+Returns the \hyperlink{classFraction}{Fraction} as a nomed string. 0/1 =$>$ 0 1/1, 3/3, ... =$>$ 1
 
 \begin{DoxyReturn}{Returns}
-fraction as a normed string. 
+\hyperlink{classFraction}{Fraction} as a normed string. 
 \end{DoxyReturn}
 
 

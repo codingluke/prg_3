@@ -88,7 +88,7 @@ double PriceComputer::remainder() const
  *    Rückgabe: sum of all entered coins
  *    Zalungseinheiten: 1 * 50.00 Euro 2 * 5.00 Euro ...
  * When state is 1:
- *    Nothing
+ *    Nothing ...
  * When state is 2:
  *    Zu viel bezahlt! 3.30 Euro
  *

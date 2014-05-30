@@ -40,7 +40,7 @@ void Calculator::calculate(Fraction left, Fraction right, std::string op) const 
  * @param right right Fraction of the operation.
  * @param op    operator of the operation.
  *
- * @throws invalid_argument exception when the operator op doesn't exists.
+ * @throws std::invalid_argument exception when the operator op doesn't exists.
  */
 void Calculator::calculate(int left, Fraction right, std::string op) const throw(const std::invalid_argument)
 {
@@ -75,17 +75,17 @@ void Calculator::calculate(Fraction left, int right, std::string op) const throw
 /**
  * Compares two Fractions and prints out the result to the console.
  *
- * @param f1 First fraction to compare.
- * @param f2 Secont Fraction to compare.
+ * @param left First fraction to compare.
+ * @param right Secont Fraction to compare.
  */
-void Calculator::compare(Fraction fraction1, Fraction fraction2) const
+void Calculator::compare(Fraction left, Fraction right) const
 {
   std::string op = "<";
-  if (fraction1 == fraction2)
+  if (left == right)
     op = "=";
-  else if (fraction1 > fraction2)
+  else if (left > right)
     op = ">";
-  std::cout << fraction1 << " " << op << " " << fraction2 << std::endl;
+  std::cout << left << " " << op << " " << right << std::endl;
 }
 
 

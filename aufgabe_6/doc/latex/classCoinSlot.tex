@@ -10,9 +10,9 @@
 \item 
 \hyperlink{classCoinSlot_a7ee2abc60da5a7af641eff10c5c4c2bf}{Coin\-Slot} ()
 \item 
-\hyperlink{classCoinSlot_a6f28eee0c3720fd4a6b25ca07dbdf4e2}{Coin\-Slot} (string a\-\_\-currency)
+\hyperlink{classCoinSlot_a0b2fe39a7b9e9d13df98735a85af986c}{Coin\-Slot} (const string \&a\-\_\-currency)
 \item 
-\hyperlink{classCoinSlot_a593bd91f1ec58c7d0de0502af3ff2331}{Coin\-Slot} (string a\-\_\-currency, vector$<$ double $>$ accepted\-\_\-coins\-\_\-list)
+\hyperlink{classCoinSlot_ae3fcb033d930eb7827649e2740275aca}{Coin\-Slot} (const string \&a\-\_\-currency, const vector$<$ double $>$ \&accepted\-\_\-coins\-\_\-list)
 \item 
 void \hyperlink{classCoinSlot_aeb67f3b2b68ed5c22c1d6f192f315104}{insert} (double a\-\_\-coin)  throw (const invalid\-\_\-argument)
 \item 
@@ -43,13 +43,13 @@ Lukas Hodel
 {}
 \end{DoxyParamCaption}
 )}}\label{classCoinSlot_a7ee2abc60da5a7af641eff10c5c4c2bf}
-Empty constructor, initializes a \hyperlink{classCoinSlot}{Coin\-Slot} with the currency \char`\"{}\-Euro\char`\"{} and accepts no coins. \hypertarget{classCoinSlot_a6f28eee0c3720fd4a6b25ca07dbdf4e2}{\index{Coin\-Slot@{Coin\-Slot}!Coin\-Slot@{Coin\-Slot}}
+Empty constructor, initializes a \hyperlink{classCoinSlot}{Coin\-Slot} with the currency \char`\"{}\-Euro\char`\"{} and accepts no coins. \hypertarget{classCoinSlot_a0b2fe39a7b9e9d13df98735a85af986c}{\index{Coin\-Slot@{Coin\-Slot}!Coin\-Slot@{Coin\-Slot}}
 \index{Coin\-Slot@{Coin\-Slot}!CoinSlot@{Coin\-Slot}}
 \subsubsection[{Coin\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}Coin\-Slot\-::\-Coin\-Slot (
 \begin{DoxyParamCaption}
-\item[{string}]{a\-\_\-currency}
+\item[{const string \&}]{a\-\_\-currency}
 \end{DoxyParamCaption}
-)}}\label{classCoinSlot_a6f28eee0c3720fd4a6b25ca07dbdf4e2}
+)}}\label{classCoinSlot_a0b2fe39a7b9e9d13df98735a85af986c}
 Constructor, initializes a \hyperlink{classCoinSlot}{Coin\-Slot} with a given currency. It accepts no coins.
 
 
@@ -57,14 +57,14 @@ Constructor, initializes a \hyperlink{classCoinSlot}{Coin\-Slot} with a given cu
 {\em a\-\_\-currency} & currency of the coins. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classCoinSlot_a593bd91f1ec58c7d0de0502af3ff2331}{\index{Coin\-Slot@{Coin\-Slot}!Coin\-Slot@{Coin\-Slot}}
+\hypertarget{classCoinSlot_ae3fcb033d930eb7827649e2740275aca}{\index{Coin\-Slot@{Coin\-Slot}!Coin\-Slot@{Coin\-Slot}}
 \index{Coin\-Slot@{Coin\-Slot}!CoinSlot@{Coin\-Slot}}
 \subsubsection[{Coin\-Slot}]{\setlength{\rightskip}{0pt plus 5cm}Coin\-Slot\-::\-Coin\-Slot (
 \begin{DoxyParamCaption}
-\item[{string}]{a\-\_\-currency, }
-\item[{vector$<$ double $>$}]{accepted\-\_\-coins\-\_\-list}
+\item[{const string \&}]{a\-\_\-currency, }
+\item[{const vector$<$ double $>$ \&}]{accepted\-\_\-coins\-\_\-list}
 \end{DoxyParamCaption}
-)}}\label{classCoinSlot_a593bd91f1ec58c7d0de0502af3ff2331}
+)}}\label{classCoinSlot_ae3fcb033d930eb7827649e2740275aca}
 Constructor, inizializes a \hyperlink{classCoinSlot}{Coin\-Slot} with a given currency and a list of accepted coins.
 
 
@@ -109,7 +109,7 @@ value of the inserted coin.
 \begin{DoxyParamCaption}
 \item[{double}]{a\-\_\-coin}
 \end{DoxyParamCaption}
-) throw  const invalid\-\_\-argument) }}\label{classCoinSlot_aeb67f3b2b68ed5c22c1d6f192f315104}
+)  throw (const invalid\-\_\-argument)}}\label{classCoinSlot_aeb67f3b2b68ed5c22c1d6f192f315104}
 Insert a coin into the coin slot. Checks if the coin is accepted.
 
 

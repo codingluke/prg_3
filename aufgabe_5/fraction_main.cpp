@@ -220,7 +220,7 @@ void random_handler(int n, int a, int b, int c, int d, bool asc)
  * @param low_numerator     Numerator of the low bound fraction.
  * @param low_denominator   Denominator of the low bound fraction.
  * @param high_numerator    Numerator of the high bound fraction.
- * @param high_deominator   Denominator of the high bound fraction.
+ * @param high_denominator  Denominator of the high bound fraction.
  *
  * @return vector with the fractions.
  */
@@ -269,10 +269,7 @@ void sort(std::vector<Fraction> &fractions, int length, bool asc)
 }
 
 /**
- * Reads a file according a given filename and prints the content
- * to the console.
- *
- * @param filename Name of the file to print to the console.
+ * Reads the file "manual.txt" and prints it`s content to the console.
  */
 void show_manual()
 {

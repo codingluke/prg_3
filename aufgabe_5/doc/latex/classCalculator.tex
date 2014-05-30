@@ -26,6 +26,9 @@ void \hyperlink{classCalculator_ab63c1adcd80233adf0c75b2fedbc9358}{compare} (\hy
 \begin{DoxyAuthor}{Author}
 Lukas Hodel 
 \end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -47,21 +50,21 @@ Initializes \hyperlink{classCalculator}{Calculator} with the default operators.
 \item[{{\bf Fraction}}]{right, }
 \item[{std\-::string}]{op}
 \end{DoxyParamCaption}
-) const throw  const std\-::invalid\-\_\-argument) }}\label{classCalculator_ad7c285bf5752406a7cb31e2d215785cc}
-Calculates a given operation with two fractions. Prints out the result to the console.
+) const  throw (const std\-::invalid\-\_\-argument)}}\label{classCalculator_ad7c285bf5752406a7cb31e2d215785cc}
+Calculates a given operation with two Fractions. Prints out the result to the console.
 
 
 \begin{DoxyParams}{Parameters}
-{\em left} & left fraction of the operation. \\
+{\em left} & left \hyperlink{classFraction}{Fraction} of the operation. \\
 \hline
-{\em right} & right fraction of the operation. \\
+{\em right} & right \hyperlink{classFraction}{Fraction} of the operation. \\
 \hline
 {\em op} & operator of hte operation.\\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\-\_\-argument} & when the operator op don't exists. \\
+{\em std\-::invalid\-\_\-argument} & when the operator op don't exists. \\
 \hline
 \end{DoxyExceptions}
 
@@ -83,21 +86,21 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{{\bf Fraction}}]{right, }
 \item[{std\-::string}]{op}
 \end{DoxyParamCaption}
-) const throw  const std\-::invalid\-\_\-argument) }}\label{classCalculator_aa1206e4ba90ec9b16996a7719a0b7a6b}
-Calculates a given operation with a integer and a fraction. Prints out the result to the console.
+) const  throw (const std\-::invalid\-\_\-argument)}}\label{classCalculator_aa1206e4ba90ec9b16996a7719a0b7a6b}
+Calculates a given operation with a integer and a \hyperlink{classFraction}{Fraction}. Prints out the result to the console.
 
 
 \begin{DoxyParams}{Parameters}
 {\em left} & left integer of the operation. \\
 \hline
-{\em right} & right fraction of the operation. \\
+{\em right} & right \hyperlink{classFraction}{Fraction} of the operation. \\
 \hline
 {\em op} & operator of the operation.\\
 \hline
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em invalid\-\_\-argument} & exception when the operator op doesn't exists. \\
+{\em std\-::invalid\-\_\-argument} & exception when the operator op doesn't exists. \\
 \hline
 \end{DoxyExceptions}
 
@@ -119,12 +122,12 @@ Here is the call graph for this function\-:\nopagebreak
 \item[{int}]{right, }
 \item[{std\-::string}]{op}
 \end{DoxyParamCaption}
-) const throw  const std\-::invalid\-\_\-argument) }}\label{classCalculator_aab2a415730a7a9f0373bf4031fe48acc}
-Calculates a given operation with a fraction and an integer. Prints out the result to the console.
+) const  throw (const std\-::invalid\-\_\-argument)}}\label{classCalculator_aab2a415730a7a9f0373bf4031fe48acc}
+Calculates a given operation with a \hyperlink{classFraction}{Fraction} and an integer. Prints out the result to the console.
 
 
 \begin{DoxyParams}{Parameters}
-{\em left} & left fraction of the operation. \\
+{\em left} & left \hyperlink{classFraction}{Fraction} of the operation. \\
 \hline
 {\em right} & right integer of the operation. \\
 \hline
@@ -151,17 +154,17 @@ Here is the call graph for this function\-:\nopagebreak
 \index{compare@{compare}!Calculator@{Calculator}}
 \subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}void Calculator\-::compare (
 \begin{DoxyParamCaption}
-\item[{{\bf Fraction}}]{fraction1, }
-\item[{{\bf Fraction}}]{fraction2}
+\item[{{\bf Fraction}}]{left, }
+\item[{{\bf Fraction}}]{right}
 \end{DoxyParamCaption}
 ) const}}\label{classCalculator_ab63c1adcd80233adf0c75b2fedbc9358}
 Compares two Fractions and prints out the result to the console.
 
 
 \begin{DoxyParams}{Parameters}
-{\em f1} & First fraction to compare. \\
+{\em left} & First fraction to compare. \\
 \hline
-{\em f2} & Secont fraction to compare. \\
+{\em right} & Secont \hyperlink{classFraction}{Fraction} to compare. \\
 \hline
 \end{DoxyParams}
 

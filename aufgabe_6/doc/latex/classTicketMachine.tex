@@ -8,7 +8,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classTicketMachine_a0998a05992b29ec22d4063f9d93a096a}{Ticket\-Machine} (string a\-\_\-name, string a\-\_\-currency, vector$<$ double $>$ accepted\-\_\-coins, \hyperlink{classDestinationCollection}{Destination\-Collection} a\-\_\-dest\-\_\-collection)
+\hyperlink{classTicketMachine_ad69449ce9b776af44f68482916351186}{Ticket\-Machine} (const string \&a\-\_\-name, const string \&a\-\_\-currency, const vector$<$ double $>$ \&accepted\-\_\-coins, const \hyperlink{classDestinationCollection}{Destination\-Collection} \&a\-\_\-dest\-\_\-collection)
 \item 
 void \hyperlink{classTicketMachine_a8d68bde6ee1a9a5f08182df963c1b0a9}{run} ()
 \item 
@@ -28,16 +28,16 @@ Lukas Hodel
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classTicketMachine_a0998a05992b29ec22d4063f9d93a096a}{\index{Ticket\-Machine@{Ticket\-Machine}!Ticket\-Machine@{Ticket\-Machine}}
+\hypertarget{classTicketMachine_ad69449ce9b776af44f68482916351186}{\index{Ticket\-Machine@{Ticket\-Machine}!Ticket\-Machine@{Ticket\-Machine}}
 \index{Ticket\-Machine@{Ticket\-Machine}!TicketMachine@{Ticket\-Machine}}
 \subsubsection[{Ticket\-Machine}]{\setlength{\rightskip}{0pt plus 5cm}Ticket\-Machine\-::\-Ticket\-Machine (
 \begin{DoxyParamCaption}
-\item[{string}]{a\-\_\-name, }
-\item[{string}]{a\-\_\-currency, }
-\item[{vector$<$ double $>$}]{accepted\-\_\-coins, }
-\item[{{\bf Destination\-Collection}}]{a\-\_\-dest\-\_\-collection}
+\item[{const string \&}]{a\-\_\-name, }
+\item[{const string \&}]{a\-\_\-currency, }
+\item[{const vector$<$ double $>$ \&}]{accepted\-\_\-coins, }
+\item[{const {\bf Destination\-Collection} \&}]{a\-\_\-dest\-\_\-collection}
 \end{DoxyParamCaption}
-)}}\label{classTicketMachine_a0998a05992b29ec22d4063f9d93a096a}
+)}}\label{classTicketMachine_ad69449ce9b776af44f68482916351186}
 Inizializes an \hyperlink{classTicketMachine}{Ticket\-Machine} instance with a given name, a given currency and a list of accepted coins.
 
 
@@ -47,6 +47,8 @@ Inizializes an \hyperlink{classTicketMachine}{Ticket\-Machine} instance with a g
 {\em a\-\_\-currency} & Currency of the price. \\
 \hline
 {\em accepted\-\_\-coins} & List of accepted coins to pai the price. \\
+\hline
+{\em a\-\_\-dest\-\_\-collection} & Desinations to sell tickes to. \\
 \hline
 \end{DoxyParams}
 

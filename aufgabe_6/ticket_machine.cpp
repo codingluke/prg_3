@@ -13,9 +13,10 @@ using namespace std;
  * Inizializes an TicketMachine instance with a given name, a given
  * currency and a list of accepted coins.
  *
- * @param a_name          Name of the TicketMachine for the welcome text.
- * @param a_currency      Currency of the price.
- * @param accepted_coins  List of accepted coins to pai the price.
+ * @param a_name          	Name of the TicketMachine for the welcome text.
+ * @param a_currency      	Currency of the price.
+ * @param accepted_coins  	List of accepted coins to pai the price.
+ * @param a_dest_collection	Desinations to sell tickes to.
  */
 TicketMachine::TicketMachine(const string& a_name, const string& a_currency,
                              const vector<double>& accepted_coins,

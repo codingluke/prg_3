@@ -477,10 +477,10 @@ Fraction operator/(const int& left, const Fraction& right)
  * Overloads the global operator>> "get from". Defines the entry of a fraction
  * from the user by the console.
  *
- * @param entry Input Stream.
+ * @param input Input Stream.
  * @param frc   Fraction to save the userinput into.
  *
- * @return the given inputstream entry.
+ * @return the given inputstream input.
  */
 istream& operator>>(istream& input, Fraction& frc)
 {
@@ -511,8 +511,8 @@ istream& operator>>(istream& input, Fraction& frc)
  * Format:  numerator/denominator
  *          1/1, 0/3, 89/2, -9/7
  *
- * @param entry Outputstream.
- * @param frc   Fraction to print to the outputstream.
+ * @param output Outputstream.
+ * @param frc    Fraction to print to the outputstream.
  *
  * @return the given outputstream output.
  */
