@@ -1,0 +1,34 @@
+NAME
+
+       bruch - Berechnet, vergleich und generiert Brüche.
+
+SYNOPSIS
+
+       bruch a b op c d 
+       bruch a op c d 
+       bruch a b op c 
+       bruch a b -v c d 
+       bruch n [ a b c d ] +
+       bruch n [ a b c d ] -
+
+
+DESCRIPTION
+
+
+OPTIONS
+
+    a, c
+        Integer, Zähler
+    b, d
+        Integer, Nenner, duerfen nicht 0 sein.
+    op
+        +,-,*,/
+    n         
+        Anzahl als Integer zwischen 1 und 10000
+    +           
+        aufsteigend sortiert
+    -         
+        absteigend sortiert
+    []          
+        keine wirkliche bedeutung.
+
