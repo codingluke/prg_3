@@ -48,6 +48,11 @@ LotteryWin& LotteryWin::operator=(const LotteryWin& a_lottery_win)
   return *this;
 }
 
+int LotteryWin::operator[](const int& key)
+{
+  return static_cast<int>(numbers[key]);
+}
+
 void LotteryWin::seed_rand()
 {
   if(!seeded)
@@ -62,4 +67,19 @@ void LotteryWin::generate_win()
   numbers = new char[6];
   for (int i = 0; i < 6; i++)
     numbers[i] = (1 + char(49 * (rand() / (RAND_MAX + 1.0))));
+}
+
+/**
+ * Overrides the operator<< "put to". Handels standard string representation
+ * of a LotteryWin when "put to" an output stream.
+ *
+ * @param output          io output stream.
+ * @param a_lottery_win   LotteryWin to put to the output stream.
+ *
+ * @return
+ */
+ostream& operator<<(ostream& output, const LotteryWin& a_lottery_win)
+{
+  cout << a_lottery_win.str();
+  return output;
 }

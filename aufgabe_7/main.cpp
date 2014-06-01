@@ -1,4 +1,4 @@
-#include "lottery_win.h"
+#include "lottery.h"
 #include <iostream>
 #include <iomanip>
 
@@ -10,12 +10,12 @@
  */
 int main()
 {
-  LotteryWin hallo;
-  cout << hallo.str();
-  LotteryWin kukuk;
-  cout << kukuk.str();
-  kukuk = hallo;
-  cout << kukuk.str();
-  cout << hallo.str();
+  Lottery totto(10000000);
+  //cout << totto.get_years_to_play() << endl;
+  //cout << totto.get_rest_months_to_play();
+  //cout << totto.get_number_of_winnings();
 
+  LotteryWin win;
+  cout << win;
+  cout << win[3];
 }

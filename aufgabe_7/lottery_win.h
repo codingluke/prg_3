@@ -20,11 +20,13 @@ class LotteryWin
     string str() const;
 
     LotteryWin& operator=(const LotteryWin& a_lottery_win);
+    int operator[](const int& key);
 
   private:
     void seed_rand();
     void generate_win();
 };
 
-#endif
+ostream& operator<<(ostream& output, const LotteryWin& a_lottery_win);
 
+#endif
