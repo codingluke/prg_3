@@ -30,6 +30,7 @@ std = Environment(
 # Teil 3: Programm bauen
 
 cpp_dateien = [
+  'console_input.cpp',
   'lottery_win.cpp',
   'lottery.cpp',
   'main.cpp',
