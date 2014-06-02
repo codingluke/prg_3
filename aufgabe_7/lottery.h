@@ -24,16 +24,16 @@ class Lottery
 
     int get_number_of_winnings() const;
     string str_years_to_play() const;
-    string str_frequency_scale();
-    string str_minimum();
-    string str_maximum();
-    string str_length();
-    string str_count_length_in_win();
-    string str_count_odd();
-    string str_count_even();
-    string str_count_prim();
-    string str_count_not_prim();
-    string str_count_street_types();
+    string str_frequency_scale() const;
+    string str_minimum() const;
+    string str_maximum() const;
+    string str_length() const;
+    string str_count_length_in_win() const;
+    string str_count_odd() const;
+    string str_count_even() const;
+    string str_count_prim() const;
+    string str_count_not_prim() const;
+    string str_count_street_types() const;
     string tip() const;
     string autotip() const;
 

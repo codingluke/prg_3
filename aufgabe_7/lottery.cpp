@@ -1,9 +1,9 @@
-#include "lottery_win.h"
-#include "lottery.h"
 #include <iostream>
 #include <sstream>
 #include <iomanip>
 #include <string>
+#include "lottery.h"
+#include "lottery_win.h"
 
 using namespace std;
 
@@ -45,7 +45,7 @@ string Lottery::str_years_to_play() const
   return modifier.str();
 }
 
-string Lottery::str_frequency_scale()
+string Lottery::str_frequency_scale() const
 {
   ostringstream modifier(ios::out);
   modifier << "Haeufigkeitsvereilung" << endl << endl;
@@ -70,7 +70,7 @@ string Lottery::str_frequency_scale()
   return modifier.str();
 }
 
-string Lottery::str_minimum()
+string Lottery::str_minimum() const
 {
   ostringstream modifier(ios::out);
   modifier << "Minimum verteilung" << endl << endl;
@@ -78,7 +78,7 @@ string Lottery::str_minimum()
   return modifier.str();
 }
 
-string Lottery::str_maximum()
+string Lottery::str_maximum() const
 {
   ostringstream modifier(ios::out);
   modifier << "Maximum verteilung" << endl << endl;
@@ -86,7 +86,7 @@ string Lottery::str_maximum()
   return modifier.str();
 }
 
-string Lottery::str_length()
+string Lottery::str_length() const
 {
   ostringstream modifier(ios::out);
   modifier << "Laenge verteilung" << endl << endl;
@@ -94,37 +94,37 @@ string Lottery::str_length()
   return modifier.str();
 }
 
-string Lottery::str_count_length_in_win()
+string Lottery::str_count_length_in_win() const
 {
   string txt = "Anz. welche die Laenge als Zahl beinhalten:";
   return statistic_number(txt, &LotteryWin::has_length_in_win);
 }
 
-string Lottery::str_count_odd()
+string Lottery::str_count_odd() const
 {
   string txt = "Anzahl ungerade Ziehungen:";
   return statistic_number(txt, &LotteryWin::is_odd);
 }
 
-string Lottery::str_count_even()
+string Lottery::str_count_even() const
 {
   string txt = "Anzahl gerade Ziehungen:";
   return statistic_number(txt, &LotteryWin::is_even);
 }
 
-string Lottery::str_count_prim()
+string Lottery::str_count_prim() const
 {
   string txt = "Anzahl Primziehungen:";
   return statistic_number(txt, &LotteryWin::is_prim);
 }
 
-string Lottery::str_count_not_prim()
+string Lottery::str_count_not_prim() const
 {
   string txt = "Anzahl Noichtprimziehungen:";
   return statistic_number(txt, &LotteryWin::is_not_prim);
 }
 
-string Lottery::str_count_street_types()
+string Lottery::str_count_street_types() const
 {
   ostringstream modifier(ios::out);
   modifier << "K-ling verteilung:" << endl << endl;
@@ -212,7 +212,7 @@ string Lottery::statistic_table(StatFunction fnc, int from, int to) const
     statistics[(winnings[i].*fnc)() - 1]++;
   for (int i = from; i < to; i++)
     modifier << (i + 1) << ": " << setw(10) << left << statistics[i]
-             << percentage_of_all(statistics[i]) << "%" << endl;
+             << percentage_of_all(statistics[i]) << " %" << endl;
   delete [] statistics;
   return modifier.str();
 }
@@ -234,7 +234,6 @@ string Lottery::statistic_number(const string& text, StatBoolFnc fnc) const
            << "Absolut: " << count << endl
            << "Prozentual: " << percentage_of_all(count) << " %" << endl;
   return modifier.str();
-
 }
 
 int Lottery::get_max_index(unsigned int *statistics) const
@@ -267,6 +266,7 @@ int Lottery::rest_months_to_play() const
   int rest_weeks = number_of_winnings - (years * 52);
   return rest_weeks / 4.3;
 }
+
 double Lottery::percentage_of_all(int number) const
 {
   return (number / static_cast<double>(number_of_winnings)) * 100;
