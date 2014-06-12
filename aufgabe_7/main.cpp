@@ -1,20 +1,57 @@
 #include <iostream>
+#include <cstdlib>
 #include <iomanip>
+#include <sstream>
 #include "lottery.h"
 #include "console_input.h"
 
+using namespace std;
+
+bool isi(char text[]);
+void start(int number_of_winnings);
 void print_actions();
 
 /**
- * Entrypoint to the program "Fahrkartenautomat".
- * Creates and starts an Instance of TicketMachine with
- * Euro as currency and a list of accepted coins for
- * the paiment.
+ * Entrypoint to the program "Lottery". Lottery is a Program to simulate
+ * and analyze lotto winnings. There are following possibilities to choose
+ * from.
+ *
+ * frequency scale, arrangement of the minima, arrangement of the maxima,
+ * arrangement of the lengths, number of winning which has their lengths
+ * also as number, number of odd winnings, number of even winnings,
+ * number of prim winnings, number of non prim winnings, arrangement of
+ * k-street winnings, tip a LotteryWin, automated tipping and generate a
+ * neu number of winnings.
+ *
+ * The program has to be started with one extra parameter including the
+ * number of winnings to generate.
+ *
+ * ./Lottery 5000000
+ *
+ * @param argc        Length of the arguments array.
+ * @param *argv[]     Arguments array form the program execution.
  */
-int main()
+int main(int argc, char *argv[])
 {
-  Lottery the_lottery(1000);
-  cout << "1000 Ziehungen geladen";
+  if (argc == 2 && isi(argv[1]))
+    start(atoi(argv[1]));
+  else
+    cout << "Benutzung des Programms: ./Lottery n" << endl
+         << "wobei n die Anzahl Ziehungen als Nummer angegeben wird."
+         << endl;
+}
+
+/**
+ * Starts the Lottery with a given number of LotteryWins to generate.
+ * It then prints out the menu to the console and handles the chosen
+ * action by the user.
+ *
+ * @param number_of_winnings  Number of LotteryWin to generate.
+ */
+void start(int number_of_winnings)
+{
+  Lottery the_lottery(number_of_winnings);
+  cout << number_of_winnings << " Ziehungen geladen";
   int action = 0;
   do
   {
@@ -48,15 +85,17 @@ int main()
       cout << endl << the_lottery.autotip();
     else if (action == 14)
     {
-      int n = read_int("Anzahl der Ziehungen: ", 1, 60000000);
+      int n = read_int("Anzahl der Ziehungen: ", 1, 30000000);
       cout << endl << "Lade " << n << " Ziehungen" << endl;
       the_lottery = Lottery(n);
       cout << n << " Ziehungen geladen!" << endl;
     }
   } while(action != 15);
-  cout << "byebye!";
 }
 
+/**
+ * Prints the menu with the possible actions to the console.
+ */
 void print_actions()
 {
   cout << endl << "Bitte waehlen:" << endl
@@ -75,4 +114,20 @@ void print_actions()
        << "(13) Automatisch Tippen" << endl
        << "(14) Neue Ziehungen" << endl
        << "(15) Beenden" << endl;
+}
+
+/**
+ * Checks whether an array of chars represents an integer or not.
+ * Solfs atoi problem that returns a 0 for a char which is not a number.
+ *
+ * @param text[] Array of chars.
+ *
+ * @return true when text[] represents a number.
+ *         false when text[] doesn't represent a number.
+ */
+bool isi(char text[])
+{
+  int i;
+  std::istringstream in(text);
+  return in >> i && in.eof();
 }
