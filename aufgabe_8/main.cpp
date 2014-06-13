@@ -35,5 +35,7 @@ int main(int argc, char *argv[])
 
 void print_manual()
 {
-  cout << "./Maumau -m oder ./Maumau -a" << endl;
+  cout << "Benutzung des Programms: ./Maumau option" << endl
+       << "wobei option" << endl << "  -m :   Spiele Spieler 1 manuell"
+       << endl << "  -a :   Spiele alle Spieler automatisch";
 }
