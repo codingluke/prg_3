@@ -1,0 +1,217 @@
+\hypertarget{classCard}{\section{Card Class Reference}
+\label{classCard}\index{Card@{Card}}
+}
+
+
+{\ttfamily \#include $<$card.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbe}{Color} \{ \hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbeaf8a0a3f4e2e406d1df2275defaa9de2b}{K\-A\-R\-O}, 
+\hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbea2437c9ee7dbe7e7e50d5d919a295972c}{H\-E\-R\-Z}, 
+\hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbea3c1e2c69a454b3ac55011635d11f7f77}{P\-I\-K}, 
+\hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbea303dd54df700a28c3d6cb0d4b23c823b}{K\-R\-E\-U\-Z}
+ \}
+\item 
+enum \hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967a}{Sign} \{ \\*
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa112ed048f791791a42c8270cb39e5f0f}{S\-I\-E\-B\-E\-N}, 
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa364731cb6392176ec8c0a9679feab4d5}{A\-C\-H\-T}, 
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aaa81ac5c9d60c9b48abf2fbb5210c339c}{N\-E\-U\-N}, 
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa6cc1662328cf905596f7cb10d9d6f943}{Z\-E\-H\-N}, 
+\\*
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa0722e405319981927d2bb1eeebf64c6e}{B\-U\-B\-E}, 
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa7852b25a3a97990b02323a7d9c518bbc}{D\-A\-M\-E}, 
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aaed11c35517e5a27af93b9f2558850228}{K\-O\-E\-N\-I\-G}, 
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa8f11a7ae268e891bef5ac1d78f098496}{A\-S\-S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCard_a783f5854cbe8c183ee3d4414c01472c0}{Card} ()
+\item 
+\hyperlink{classCard_a4befb954ff24941abf7a8182bab5c466}{Card} (\hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbe}{Card\-::\-Color} a\-\_\-color, \hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967a}{Card\-::\-Sign} a\-\_\-sign)
+\item 
+int \hyperlink{classCard_ad0b543693ca8efb081991d8ff158e03c}{get\-\_\-eyes} () const 
+\item 
+\hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbe}{Card\-::\-Color} \hyperlink{classCard_a28665bfdef737b483fea9958f90cc98f}{get\-\_\-color} () const 
+\item 
+\hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967a}{Card\-::\-Sign} \hyperlink{classCard_af6ec0393e46445480f0541cfcbb91c14}{get\-\_\-sign} () const 
+\item 
+string \hyperlink{classCard_aae1aa8c8e70157ff73195b3f4a7f091a}{get\-\_\-color\-\_\-str} () const 
+\item 
+string \hyperlink{classCard_aed191d28b9167b1116d6cdc71a404766}{get\-\_\-sign\-\_\-str} () const 
+\item 
+string \hyperlink{classCard_a858e6285c3610a404aa306b4e8f14d46}{str} () const 
+\item 
+vector$<$ string $>$ \hyperlink{classCard_aa59a4d61458741156aceaf0e0f1a48db}{get\-\_\-colors} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a Playing \hyperlink{classCard}{Card}. Has enums for the colors and signs. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classCard_ad5805e73a4727fb7d3c76f3085b05fbe}{\index{Card@{Card}!Color@{Color}}
+\index{Color@{Color}!Card@{Card}}
+\subsubsection[{Color}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Card\-::\-Color}}}\label{classCard_ad5805e73a4727fb7d3c76f3085b05fbe}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{K\-A\-R\-O@{K\-A\-R\-O}!Card@{Card}}\index{Card@{Card}!K\-A\-R\-O@{K\-A\-R\-O}}\item[{\em 
+\hypertarget{classCard_ad5805e73a4727fb7d3c76f3085b05fbeaf8a0a3f4e2e406d1df2275defaa9de2b}{K\-A\-R\-O}\label{classCard_ad5805e73a4727fb7d3c76f3085b05fbeaf8a0a3f4e2e406d1df2275defaa9de2b}
+}]\index{H\-E\-R\-Z@{H\-E\-R\-Z}!Card@{Card}}\index{Card@{Card}!H\-E\-R\-Z@{H\-E\-R\-Z}}\item[{\em 
+\hypertarget{classCard_ad5805e73a4727fb7d3c76f3085b05fbea2437c9ee7dbe7e7e50d5d919a295972c}{H\-E\-R\-Z}\label{classCard_ad5805e73a4727fb7d3c76f3085b05fbea2437c9ee7dbe7e7e50d5d919a295972c}
+}]\index{P\-I\-K@{P\-I\-K}!Card@{Card}}\index{Card@{Card}!P\-I\-K@{P\-I\-K}}\item[{\em 
+\hypertarget{classCard_ad5805e73a4727fb7d3c76f3085b05fbea3c1e2c69a454b3ac55011635d11f7f77}{P\-I\-K}\label{classCard_ad5805e73a4727fb7d3c76f3085b05fbea3c1e2c69a454b3ac55011635d11f7f77}
+}]\index{K\-R\-E\-U\-Z@{K\-R\-E\-U\-Z}!Card@{Card}}\index{Card@{Card}!K\-R\-E\-U\-Z@{K\-R\-E\-U\-Z}}\item[{\em 
+\hypertarget{classCard_ad5805e73a4727fb7d3c76f3085b05fbea303dd54df700a28c3d6cb0d4b23c823b}{K\-R\-E\-U\-Z}\label{classCard_ad5805e73a4727fb7d3c76f3085b05fbea303dd54df700a28c3d6cb0d4b23c823b}
+}]\end{description}
+\end{Desc}
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967a}{\index{Card@{Card}!Sign@{Sign}}
+\index{Sign@{Sign}!Card@{Card}}
+\subsubsection[{Sign}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Card\-::\-Sign}}}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967a}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-I\-E\-B\-E\-N@{S\-I\-E\-B\-E\-N}!Card@{Card}}\index{Card@{Card}!S\-I\-E\-B\-E\-N@{S\-I\-E\-B\-E\-N}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa112ed048f791791a42c8270cb39e5f0f}{S\-I\-E\-B\-E\-N}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa112ed048f791791a42c8270cb39e5f0f}
+}]\index{A\-C\-H\-T@{A\-C\-H\-T}!Card@{Card}}\index{Card@{Card}!A\-C\-H\-T@{A\-C\-H\-T}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa364731cb6392176ec8c0a9679feab4d5}{A\-C\-H\-T}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa364731cb6392176ec8c0a9679feab4d5}
+}]\index{N\-E\-U\-N@{N\-E\-U\-N}!Card@{Card}}\index{Card@{Card}!N\-E\-U\-N@{N\-E\-U\-N}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aaa81ac5c9d60c9b48abf2fbb5210c339c}{N\-E\-U\-N}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aaa81ac5c9d60c9b48abf2fbb5210c339c}
+}]\index{Z\-E\-H\-N@{Z\-E\-H\-N}!Card@{Card}}\index{Card@{Card}!Z\-E\-H\-N@{Z\-E\-H\-N}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa6cc1662328cf905596f7cb10d9d6f943}{Z\-E\-H\-N}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa6cc1662328cf905596f7cb10d9d6f943}
+}]\index{B\-U\-B\-E@{B\-U\-B\-E}!Card@{Card}}\index{Card@{Card}!B\-U\-B\-E@{B\-U\-B\-E}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa0722e405319981927d2bb1eeebf64c6e}{B\-U\-B\-E}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa0722e405319981927d2bb1eeebf64c6e}
+}]\index{D\-A\-M\-E@{D\-A\-M\-E}!Card@{Card}}\index{Card@{Card}!D\-A\-M\-E@{D\-A\-M\-E}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa7852b25a3a97990b02323a7d9c518bbc}{D\-A\-M\-E}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa7852b25a3a97990b02323a7d9c518bbc}
+}]\index{K\-O\-E\-N\-I\-G@{K\-O\-E\-N\-I\-G}!Card@{Card}}\index{Card@{Card}!K\-O\-E\-N\-I\-G@{K\-O\-E\-N\-I\-G}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aaed11c35517e5a27af93b9f2558850228}{K\-O\-E\-N\-I\-G}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aaed11c35517e5a27af93b9f2558850228}
+}]\index{A\-S\-S@{A\-S\-S}!Card@{Card}}\index{Card@{Card}!A\-S\-S@{A\-S\-S}}\item[{\em 
+\hypertarget{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa8f11a7ae268e891bef5ac1d78f098496}{A\-S\-S}\label{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967aa8f11a7ae268e891bef5ac1d78f098496}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCard_a783f5854cbe8c183ee3d4414c01472c0}{\index{Card@{Card}!Card@{Card}}
+\index{Card@{Card}!Card@{Card}}
+\subsubsection[{Card}]{\setlength{\rightskip}{0pt plus 5cm}Card\-::\-Card (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCard_a783f5854cbe8c183ee3d4414c01472c0}
+Default constructor. Instantiates the card \char`\"{}\-Herz 7\char`\"{}. \hypertarget{classCard_a4befb954ff24941abf7a8182bab5c466}{\index{Card@{Card}!Card@{Card}}
+\index{Card@{Card}!Card@{Card}}
+\subsubsection[{Card}]{\setlength{\rightskip}{0pt plus 5cm}Card\-::\-Card (
+\begin{DoxyParamCaption}
+\item[{{\bf Card\-::\-Color}}]{a\-\_\-color, }
+\item[{{\bf Card\-::\-Sign}}]{a\-\_\-sign}
+\end{DoxyParamCaption}
+)}}\label{classCard_a4befb954ff24941abf7a8182bab5c466}
+Instantiates a card out of a given \hyperlink{classCard_ad5805e73a4727fb7d3c76f3085b05fbe}{Card\-::\-Color} and \hyperlink{classCard_a1e4976f4ceae49d4ed0bdd15ee9d967a}{Card\-::\-Sign}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-color} & The color of the card. \\
+\hline
+{\em a\-\_\-sign} & The sign of the card. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCard_a28665bfdef737b483fea9958f90cc98f}{\index{Card@{Card}!get\-\_\-color@{get\-\_\-color}}
+\index{get\-\_\-color@{get\-\_\-color}!Card@{Card}}
+\subsubsection[{get\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Card\-::\-Color} Card\-::get\-\_\-color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCard_a28665bfdef737b483fea9958f90cc98f}
+Returns the color of the card.
+
+\begin{DoxyReturn}{Returns}
+color of the card. 
+\end{DoxyReturn}
+\hypertarget{classCard_aae1aa8c8e70157ff73195b3f4a7f091a}{\index{Card@{Card}!get\-\_\-color\-\_\-str@{get\-\_\-color\-\_\-str}}
+\index{get\-\_\-color\-\_\-str@{get\-\_\-color\-\_\-str}!Card@{Card}}
+\subsubsection[{get\-\_\-color\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}string Card\-::get\-\_\-color\-\_\-str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCard_aae1aa8c8e70157ff73195b3f4a7f091a}
+Returns the color of a card as string.
+
+\begin{DoxyReturn}{Returns}
+string representation of the color of the card. 
+\end{DoxyReturn}
+\hypertarget{classCard_aa59a4d61458741156aceaf0e0f1a48db}{\index{Card@{Card}!get\-\_\-colors@{get\-\_\-colors}}
+\index{get\-\_\-colors@{get\-\_\-colors}!Card@{Card}}
+\subsubsection[{get\-\_\-colors}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ Card\-::get\-\_\-colors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCard_aa59a4d61458741156aceaf0e0f1a48db}
+Returns all the possible colors of cards. Maybe this can be solved more elegant.
+
+\begin{DoxyReturn}{Returns}
+all possible colors in their string representation. 
+\end{DoxyReturn}
+\hypertarget{classCard_ad0b543693ca8efb081991d8ff158e03c}{\index{Card@{Card}!get\-\_\-eyes@{get\-\_\-eyes}}
+\index{get\-\_\-eyes@{get\-\_\-eyes}!Card@{Card}}
+\subsubsection[{get\-\_\-eyes}]{\setlength{\rightskip}{0pt plus 5cm}int Card\-::get\-\_\-eyes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCard_ad0b543693ca8efb081991d8ff158e03c}
+Returns the \char`\"{}eyes\char`\"{} or value of the card. The eyes depends on the sign.
+
+\begin{DoxyReturn}{Returns}
+eyes of the card. 
+\end{DoxyReturn}
+\hypertarget{classCard_af6ec0393e46445480f0541cfcbb91c14}{\index{Card@{Card}!get\-\_\-sign@{get\-\_\-sign}}
+\index{get\-\_\-sign@{get\-\_\-sign}!Card@{Card}}
+\subsubsection[{get\-\_\-sign}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Card\-::\-Sign} Card\-::get\-\_\-sign (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCard_af6ec0393e46445480f0541cfcbb91c14}
+Returns the sign of the card.
+
+\begin{DoxyReturn}{Returns}
+sign of the card. 
+\end{DoxyReturn}
+\hypertarget{classCard_aed191d28b9167b1116d6cdc71a404766}{\index{Card@{Card}!get\-\_\-sign\-\_\-str@{get\-\_\-sign\-\_\-str}}
+\index{get\-\_\-sign\-\_\-str@{get\-\_\-sign\-\_\-str}!Card@{Card}}
+\subsubsection[{get\-\_\-sign\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}string Card\-::get\-\_\-sign\-\_\-str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCard_aed191d28b9167b1116d6cdc71a404766}
+Returns the sign in its string representation.
+
+\begin{DoxyReturn}{Returns}
+Sign as a string. 
+\end{DoxyReturn}
+\hypertarget{classCard_a858e6285c3610a404aa306b4e8f14d46}{\index{Card@{Card}!str@{str}}
+\index{str@{str}!Card@{Card}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string Card\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCard_a858e6285c3610a404aa306b4e8f14d46}
+Returns the Stringrepresentation of the card. \par
+ Karo 9\par
+ Herz Bube
+
+\begin{DoxyReturn}{Returns}
+string representation of the card. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{card_8h}{card.\-h}\item 
+\hyperlink{card_8cpp}{card.\-cpp}\end{DoxyCompactItemize}

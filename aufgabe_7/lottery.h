@@ -9,6 +9,10 @@ using namespace std;
 typedef int (LotteryWin::*StatFunction)() const;
 typedef bool (LotteryWin::*StatBoolFnc)() const;
 
+/**
+ * Class Lottery. Can generate LotteryWins and has many statistic functions
+ * to analyze the winnings.
+ */
 class Lottery
 {
   private:

@@ -8,12 +8,20 @@
 
 using namespace std;
 
+/**
+ * Defines a card Player. Can hold many cards and play them form any index.
+ * Every Player has a unique id which gets generated automatically.
+ */
 class Player
 {
   private:
+    /** cards in the hand of the player */
     vector<Card> cards;
+    /** unique number of the player */
     int number;
+    /** Name of the player, at the moment not in use */
     string name;
+    /** number of all players */
     static int player_count;
 
   public:

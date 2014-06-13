@@ -8,6 +8,11 @@
 
 using namespace std;
 
+/**
+ * Defines a CardSet. Can hold and shuffle many Cards.
+ * It is possible to generate a full set of 32 Cards for a
+ * Cardgame like Maumau or Skatt.
+ */
 class CardSet
 {
   private:

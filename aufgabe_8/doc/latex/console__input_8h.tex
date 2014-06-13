@@ -1,0 +1,398 @@
+\hypertarget{console__input_8h}{\section{console\-\_\-input.\-h File Reference}
+\label{console__input_8h}\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+Include dependency graph for console\-\_\-input.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{console__input_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{console__input_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{console__input_8h_a8a9df77c5c4adba7ebadb77f3b3dc8ee}{read\-\_\-double} (double min, double max)
+\item 
+double \hyperlink{console__input_8h_a46878a8594ba71f54911c572031d4614}{read\-\_\-double} (string text)
+\item 
+double \hyperlink{console__input_8h_aca43573be8fe10d4bfede3fc5bd0bd63}{read\-\_\-double} (string text, double min, double max)
+\item 
+double \hyperlink{console__input_8h_a65f2421973540c10e5ae7d10177c566a}{read\-\_\-double} ()
+\item 
+void \hyperlink{console__input_8h_afc6e4adf69aec96a5eae4249fbbc7201}{read\-\_\-enter} ()
+\item 
+long \hyperlink{console__input_8h_a03ebbd2a45117ee03be4e9002210ab36}{read\-\_\-long} (string text, long min, long max)
+\item 
+long \hyperlink{console__input_8h_a710a686867142de265860584f4147592}{read\-\_\-long} (long min, long max)
+\item 
+long \hyperlink{console__input_8h_a9128c63513d87af5259597d8c9930476}{read\-\_\-long} (string text)
+\item 
+long \hyperlink{console__input_8h_a347c616893b725a74f60ea1f7ee325d2}{read\-\_\-long} ()
+\item 
+int \hyperlink{console__input_8h_a4f8c1bb51d432116d3eda43db3340c8c}{read\-\_\-int} (string text, int min, int max)
+\item 
+int \hyperlink{console__input_8h_ad0ccfbb50d0e333ef8acfeab2b7d8071}{read\-\_\-int} (int min, int max)
+\item 
+int \hyperlink{console__input_8h_aaaf3786f6b4803f3120609011de4b0db}{read\-\_\-int} (string text)
+\item 
+int \hyperlink{console__input_8h_af310540093ee953c3018bc13bbde3da5}{read\-\_\-int} ()
+\item 
+bool \hyperlink{console__input_8h_a6bac3909a28fff2736a171022343380b}{read\-\_\-yes\-\_\-no} (string text)
+\item 
+string \hyperlink{console__input_8h_a44ccadd65be527f89bdcf6d27a3b1147}{read\-\_\-text} (string text)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{console__input_8h_a8a9df77c5c4adba7ebadb77f3b3dc8ee}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-double@{read\-\_\-double}}
+\index{read\-\_\-double@{read\-\_\-double}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}double read\-\_\-double (
+\begin{DoxyParamCaption}
+\item[{double}]{min, }
+\item[{double}]{max}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a8a9df77c5c4adba7ebadb77f3b3dc8ee}
+Reads a double value in between a given interval from the console. When the entered value is not valid to the interval, the user gets prompted to reenter a valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & lower bound of the interval. \\
+\hline
+{\em max} & top bound of the interval\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a double value in between min and max. 
+\end{DoxyReturn}
+\hypertarget{console__input_8h_a46878a8594ba71f54911c572031d4614}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-double@{read\-\_\-double}}
+\index{read\-\_\-double@{read\-\_\-double}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}double read\-\_\-double (
+\begin{DoxyParamCaption}
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a46878a8594ba71f54911c572031d4614}
+Prints a text to the console and reads a double value from the console in between the whole range of double.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text to print to the console.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a valid double value. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{console__input_8h_a46878a8594ba71f54911c572031d4614_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_aca43573be8fe10d4bfede3fc5bd0bd63}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-double@{read\-\_\-double}}
+\index{read\-\_\-double@{read\-\_\-double}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}double read\-\_\-double (
+\begin{DoxyParamCaption}
+\item[{string}]{text, }
+\item[{double}]{min, }
+\item[{double}]{max}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_aca43573be8fe10d4bfede3fc5bd0bd63}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{console__input_8h_aca43573be8fe10d4bfede3fc5bd0bd63_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_a65f2421973540c10e5ae7d10177c566a}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-double@{read\-\_\-double}}
+\index{read\-\_\-double@{read\-\_\-double}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}double read\-\_\-double (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a65f2421973540c10e5ae7d10177c566a}
+Reads a double value from the console in between the whole range of double.
+
+\begin{DoxyReturn}{Returns}
+a valid double value. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{console__input_8h_a65f2421973540c10e5ae7d10177c566a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_afc6e4adf69aec96a5eae4249fbbc7201}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-enter@{read\-\_\-enter}}
+\index{read\-\_\-enter@{read\-\_\-enter}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-enter}]{\setlength{\rightskip}{0pt plus 5cm}void read\-\_\-enter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_afc6e4adf69aec96a5eae4249fbbc7201}
+\hypertarget{console__input_8h_a4f8c1bb51d432116d3eda43db3340c8c}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-int@{read\-\_\-int}}
+\index{read\-\_\-int@{read\-\_\-int}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{string}]{text, }
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a4f8c1bb51d432116d3eda43db3340c8c}
+Prints a text to the console and reads a integer value in between a given interval from the console. When the value is not in between the interval, the user gets prompted to reeinter a valid value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text to print to the console. \\
+\hline
+{\em min} & lower bound of the interval. \\
+\hline
+{\em max} & top bound of the interval.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a integer value in between min and max. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console__input_8h_a4f8c1bb51d432116d3eda43db3340c8c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_ad0ccfbb50d0e333ef8acfeab2b7d8071}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-int@{read\-\_\-int}}
+\index{read\-\_\-int@{read\-\_\-int}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_ad0ccfbb50d0e333ef8acfeab2b7d8071}
+Reads a integer value in between a given interval from the console. When the entered value is not valid to the interval, the user gets prompted to reenter a valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & lower bound of the interval. \\
+\hline
+{\em max} & top bound of the interval\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a int value in between min and max. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{console__input_8h_ad0ccfbb50d0e333ef8acfeab2b7d8071_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_aaaf3786f6b4803f3120609011de4b0db}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-int@{read\-\_\-int}}
+\index{read\-\_\-int@{read\-\_\-int}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_aaaf3786f6b4803f3120609011de4b0db}
+Prints a text to the console and reads a integer value from the console in between the whole range of integer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text to print to the console.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a valid integer value. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{console__input_8h_aaaf3786f6b4803f3120609011de4b0db_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_af310540093ee953c3018bc13bbde3da5}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-int@{read\-\_\-int}}
+\index{read\-\_\-int@{read\-\_\-int}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-int (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_af310540093ee953c3018bc13bbde3da5}
+Reads an integer value from the terminal in between the whole range of long.
+
+\begin{DoxyReturn}{Returns}
+a valid integer value. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{console__input_8h_af310540093ee953c3018bc13bbde3da5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_a03ebbd2a45117ee03be4e9002210ab36}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-long@{read\-\_\-long}}
+\index{read\-\_\-long@{read\-\_\-long}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}long read\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{string}]{text, }
+\item[{long}]{min, }
+\item[{long}]{max}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a03ebbd2a45117ee03be4e9002210ab36}
+Prints a text to the console and reads a long value in between a given interval from the console. When the value is not in between the interval, the user gets prompted to reeinter a valid value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text to print to the console. \\
+\hline
+{\em min} & lower bound of the interval. \\
+\hline
+{\em max} & top bound of the interval.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a long value in between min and max. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{console__input_8h_a03ebbd2a45117ee03be4e9002210ab36_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_a710a686867142de265860584f4147592}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-long@{read\-\_\-long}}
+\index{read\-\_\-long@{read\-\_\-long}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}long read\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{long}]{min, }
+\item[{long}]{max}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a710a686867142de265860584f4147592}
+Reads a long value in between a given interval from the console. When the entered value is not valid to the interval, the user gets prompted to reenter a valid.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & lower bound of the interval. \\
+\hline
+{\em max} & top bound of the interval\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a long value in between min and max. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{console__input_8h_a710a686867142de265860584f4147592_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_a9128c63513d87af5259597d8c9930476}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-long@{read\-\_\-long}}
+\index{read\-\_\-long@{read\-\_\-long}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}long read\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a9128c63513d87af5259597d8c9930476}
+Prints a text to the console and reads a long value from the console in between the whole range of long.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text to print to the console.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a valid long value. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{console__input_8h_a9128c63513d87af5259597d8c9930476_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_a347c616893b725a74f60ea1f7ee325d2}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-long@{read\-\_\-long}}
+\index{read\-\_\-long@{read\-\_\-long}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}long read\-\_\-long (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a347c616893b725a74f60ea1f7ee325d2}
+Reads a long value from the terminal in between the whole range of long.
+
+\begin{DoxyReturn}{Returns}
+a valid long value. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{console__input_8h_a347c616893b725a74f60ea1f7ee325d2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{console__input_8h_a44ccadd65be527f89bdcf6d27a3b1147}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-text@{read\-\_\-text}}
+\index{read\-\_\-text@{read\-\_\-text}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}string read\-\_\-text (
+\begin{DoxyParamCaption}
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a44ccadd65be527f89bdcf6d27a3b1147}
+\hypertarget{console__input_8h_a6bac3909a28fff2736a171022343380b}{\index{console\-\_\-input.\-h@{console\-\_\-input.\-h}!read\-\_\-yes\-\_\-no@{read\-\_\-yes\-\_\-no}}
+\index{read\-\_\-yes\-\_\-no@{read\-\_\-yes\-\_\-no}!console_input.h@{console\-\_\-input.\-h}}
+\subsubsection[{read\-\_\-yes\-\_\-no}]{\setlength{\rightskip}{0pt plus 5cm}bool read\-\_\-yes\-\_\-no (
+\begin{DoxyParamCaption}
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)}}\label{console__input_8h_a6bac3909a28fff2736a171022343380b}

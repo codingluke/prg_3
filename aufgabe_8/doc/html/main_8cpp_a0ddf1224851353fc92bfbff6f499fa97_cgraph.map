@@ -1,0 +1,6 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$classMaumau.html#a9e083295f31bffe438a59b9fd852284e" title="Maumau::start" alt="" coords="104,5,211,35"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#ad45e149aada26b44cb0274a5eb865edb" title="print_manual" alt="" coords="109,59,205,88"/>
+<area shape="rect" id="node5" href="$classCardSet.html#a92f9ade94cb375071dc1d70bad30cfb8" title="CardSet::pop" alt="" coords="259,5,357,35"/>
+<area shape="rect" id="node7" href="$classCardSet.html#ac1afa16d3795f3d120074b8e30276b77" title="CardSet::is_empty" alt="" coords="405,5,536,35"/>
+</map>

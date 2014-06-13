@@ -1,0 +1,146 @@
+\hypertarget{classCardSet}{\section{Card\-Set Class Reference}
+\label{classCardSet}\index{Card\-Set@{Card\-Set}}
+}
+
+
+{\ttfamily \#include $<$card\-\_\-set.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCardSet_a82dc37ef37b0d105c127867e54e2525b}{Card\-Set} ()
+\item 
+\hyperlink{classCardSet_af10c8b44b0656576ffb3d30fbbf3e71e}{Card\-Set} (vector$<$ \hyperlink{classCard}{Card} $>$ the\-\_\-cards)
+\item 
+\hyperlink{classCard}{Card} \hyperlink{classCardSet_a92f9ade94cb375071dc1d70bad30cfb8}{pop} ()  throw (const length\-\_\-error)
+\item 
+int \hyperlink{classCardSet_affac0be4909c208a8aaf1fdbd395e880}{push} (\hyperlink{classCard}{Card} a\-\_\-card)
+\item 
+unsigned int \hyperlink{classCardSet_a59679da36decf7ed8d7a03a9737d3f58}{size} () const 
+\item 
+bool \hyperlink{classCardSet_ac1afa16d3795f3d120074b8e30276b77}{is\-\_\-empty} () const 
+\item 
+\hyperlink{classCard}{Card} \hyperlink{classCardSet_ae80f4625bb6f1d53dacdab2de02c4925}{operator\mbox{[}$\,$\mbox{]}} (int key) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines a \hyperlink{classCardSet}{Card\-Set}. Can hold and shuffle many Cards. It is possible to generate a full set of 32 Cards for a Cardgame like \hyperlink{classMaumau}{Maumau} or Skatt. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCardSet_a82dc37ef37b0d105c127867e54e2525b}{\index{Card\-Set@{Card\-Set}!Card\-Set@{Card\-Set}}
+\index{Card\-Set@{Card\-Set}!CardSet@{Card\-Set}}
+\subsubsection[{Card\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Card\-Set\-::\-Card\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCardSet_a82dc37ef37b0d105c127867e54e2525b}
+Default constructor. Initializes a set of 32 Cards and shuffels them. \hypertarget{classCardSet_af10c8b44b0656576ffb3d30fbbf3e71e}{\index{Card\-Set@{Card\-Set}!Card\-Set@{Card\-Set}}
+\index{Card\-Set@{Card\-Set}!CardSet@{Card\-Set}}
+\subsubsection[{Card\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Card\-Set\-::\-Card\-Set (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Card} $>$}]{the\-\_\-cards}
+\end{DoxyParamCaption}
+)}}\label{classCardSet_af10c8b44b0656576ffb3d30fbbf3e71e}
+Initializes a card set with given cards and shuffels them.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-cards} & The cards for the set. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCardSet_ac1afa16d3795f3d120074b8e30276b77}{\index{Card\-Set@{Card\-Set}!is\-\_\-empty@{is\-\_\-empty}}
+\index{is\-\_\-empty@{is\-\_\-empty}!CardSet@{Card\-Set}}
+\subsubsection[{is\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Card\-Set\-::is\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCardSet_ac1afa16d3795f3d120074b8e30276b77}
+Checks if the card set is empty.
+
+\begin{DoxyReturn}{Returns}
+true when the card set is empty. false when the card set is not empty. 
+\end{DoxyReturn}
+\hypertarget{classCardSet_ae80f4625bb6f1d53dacdab2de02c4925}{\index{Card\-Set@{Card\-Set}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!CardSet@{Card\-Set}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Card} Card\-Set\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classCardSet_ae80f4625bb6f1d53dacdab2de02c4925}
+Overwrides the acces operator\mbox{[}\mbox{]}. Defines how to access a card of a given key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key (index) of the card.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classCard}{Card} on the place of a given key. 
+\end{DoxyReturn}
+\hypertarget{classCardSet_a92f9ade94cb375071dc1d70bad30cfb8}{\index{Card\-Set@{Card\-Set}!pop@{pop}}
+\index{pop@{pop}!CardSet@{Card\-Set}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Card} Card\-Set\-::pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw (const length\-\_\-error)}}\label{classCardSet_a92f9ade94cb375071dc1d70bad30cfb8}
+Takes out the last card from the stack.
+
+\begin{DoxyReturn}{Returns}
+the last card in the stack.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\-::length\-\_\-error} & when empty. \\
+\hline
+\end{DoxyExceptions}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classCardSet_a92f9ade94cb375071dc1d70bad30cfb8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classCardSet_affac0be4909c208a8aaf1fdbd395e880}{\index{Card\-Set@{Card\-Set}!push@{push}}
+\index{push@{push}!CardSet@{Card\-Set}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}int Card\-Set\-::push (
+\begin{DoxyParamCaption}
+\item[{{\bf Card}}]{a\-\_\-card}
+\end{DoxyParamCaption}
+)}}\label{classCardSet_affac0be4909c208a8aaf1fdbd395e880}
+Adds a card at the end of the set and returns the new size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-card} & \hyperlink{classCard}{Card} to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new size of the set. 
+\end{DoxyReturn}
+\hypertarget{classCardSet_a59679da36decf7ed8d7a03a9737d3f58}{\index{Card\-Set@{Card\-Set}!size@{size}}
+\index{size@{size}!CardSet@{Card\-Set}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Card\-Set\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCardSet_a59679da36decf7ed8d7a03a9737d3f58}
+Gives back the numbers of cards in set.
+
+\begin{DoxyReturn}{Returns}
+number of cards in the set. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{card__set_8h}{card\-\_\-set.\-h}\item 
+\hyperlink{card__set_8cpp}{card\-\_\-set.\-cpp}\end{DoxyCompactItemize}

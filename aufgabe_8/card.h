@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/**
+ * Defines a Playing Card. Has enums for the colors and signs.
+ */
 class Card
 {
   public:

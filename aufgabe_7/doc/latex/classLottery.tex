@@ -1,0 +1,474 @@
+\hypertarget{classLottery}{\section{Lottery Class Reference}
+\label{classLottery}\index{Lottery@{Lottery}}
+}
+
+
+{\ttfamily \#include $<$lottery.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLottery_a7a1b304a8eecad27f18358abfd851dd6}{Lottery} ()
+\item 
+\hyperlink{classLottery_a4bbe3cbf365a3c936c68cab2ffd211ee}{Lottery} (int a\-\_\-\-\_\-number\-\_\-of\-\_\-winnings)
+\item 
+\hyperlink{classLottery_a409b621f1da31d88876226d9fee1a878}{Lottery} (const \hyperlink{classLottery}{Lottery} \&original)
+\item 
+\hyperlink{classLottery_a5aebd2c0d75d8ad6bf342cd5a21822b2}{$\sim$\-Lottery} ()
+\item 
+int \hyperlink{classLottery_a6d8cd54e0482cc5119f03eb361a98336}{get\-\_\-number\-\_\-of\-\_\-winnings} () const 
+\item 
+string \hyperlink{classLottery_a44f8cd624d10996bb1f60ae3e64ff21f}{str\-\_\-years\-\_\-to\-\_\-play} () const 
+\item 
+string \hyperlink{classLottery_a0412645bc428380c9c9b84047831832f}{str\-\_\-frequency\-\_\-scale} () const 
+\item 
+string \hyperlink{classLottery_ad1369e9aafb962a5a9259cb1d19be545}{str\-\_\-minimum} () const 
+\item 
+string \hyperlink{classLottery_a2363da692f1231f51feef8a6e4fab41a}{str\-\_\-maximum} () const 
+\item 
+string \hyperlink{classLottery_a192ccaf79c269caa2643732879fef9dc}{str\-\_\-length} () const 
+\item 
+string \hyperlink{classLottery_ab7e82542619dd409f41ea65b7cbaeaeb}{str\-\_\-count\-\_\-length\-\_\-in\-\_\-win} () const 
+\item 
+string \hyperlink{classLottery_ad5611e62b126a995bb20143ba813ff95}{str\-\_\-count\-\_\-odd} () const 
+\item 
+string \hyperlink{classLottery_a31904c6badc3a84993a33f601d150017}{str\-\_\-count\-\_\-even} () const 
+\item 
+string \hyperlink{classLottery_a2b29d8648f9aa7167afae7d126ee1157}{str\-\_\-count\-\_\-prim} () const 
+\item 
+string \hyperlink{classLottery_a9903e1a614d7ba4f86ca41d98b4d77f3}{str\-\_\-count\-\_\-not\-\_\-prim} () const 
+\item 
+string \hyperlink{classLottery_a565a193097b625710b7c1e84245377ad}{str\-\_\-count\-\_\-street\-\_\-types} () const 
+\item 
+string \hyperlink{classLottery_a815fb374020eb12f75fae691df2b4cb4}{tip} () const 
+\item 
+string \hyperlink{classLottery_a59dc7bd3cbfbbd127a46fbf110347c55}{autotip} () const 
+\item 
+\hyperlink{classLottery}{Lottery} \& \hyperlink{classLottery_ad9ef69f7b860eba79075c26e79e1cfdb}{operator=} (const \hyperlink{classLottery}{Lottery} \&a\-\_\-lottery)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class \hyperlink{classLottery}{Lottery}. Can generate Lottery\-Wins and has many statistic functions to analyze the winnings. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLottery_a7a1b304a8eecad27f18358abfd851dd6}{\index{Lottery@{Lottery}!Lottery@{Lottery}}
+\index{Lottery@{Lottery}!Lottery@{Lottery}}
+\subsubsection[{Lottery}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-::\-Lottery (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLottery_a7a1b304a8eecad27f18358abfd851dd6}
+Defaultconstructor. Initializes one \hyperlink{classLotteryWin}{Lottery\-Win}. \hypertarget{classLottery_a4bbe3cbf365a3c936c68cab2ffd211ee}{\index{Lottery@{Lottery}!Lottery@{Lottery}}
+\index{Lottery@{Lottery}!Lottery@{Lottery}}
+\subsubsection[{Lottery}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-::\-Lottery (
+\begin{DoxyParamCaption}
+\item[{int}]{a\-\_\-number\-\_\-of\-\_\-winnings}
+\end{DoxyParamCaption}
+)}}\label{classLottery_a4bbe3cbf365a3c936c68cab2ffd211ee}
+Initializes a given number of winnings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-number\-\_\-of\-\_\-winnings} & Number how many winning to produce. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLottery_a409b621f1da31d88876226d9fee1a878}{\index{Lottery@{Lottery}!Lottery@{Lottery}}
+\index{Lottery@{Lottery}!Lottery@{Lottery}}
+\subsubsection[{Lottery}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-::\-Lottery (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lottery} \&}]{original}
+\end{DoxyParamCaption}
+)}}\label{classLottery_a409b621f1da31d88876226d9fee1a878}
+Copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The \hyperlink{classLottery}{Lottery} to copy. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLottery_a5aebd2c0d75d8ad6bf342cd5a21822b2}{\index{Lottery@{Lottery}!$\sim$\-Lottery@{$\sim$\-Lottery}}
+\index{$\sim$\-Lottery@{$\sim$\-Lottery}!Lottery@{Lottery}}
+\subsubsection[{$\sim$\-Lottery}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-::$\sim$\-Lottery (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLottery_a5aebd2c0d75d8ad6bf342cd5a21822b2}
+Destructor. Cleans up heap. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classLottery_a59dc7bd3cbfbbd127a46fbf110347c55}{\index{Lottery@{Lottery}!autotip@{autotip}}
+\index{autotip@{autotip}!Lottery@{Lottery}}
+\subsubsection[{autotip}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::autotip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a59dc7bd3cbfbbd127a46fbf110347c55}
+It will generate a random tip and compairs this hit with all the winnings. It will then show how many times the tip would have won with hits between 0 and 6. It also shows the percentage of all winnings.
+
+\begin{DoxyReturn}{Returns}
+string with the statistic of hits by the random tip. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classLottery_a59dc7bd3cbfbbd127a46fbf110347c55_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_a6d8cd54e0482cc5119f03eb361a98336}{\index{Lottery@{Lottery}!get\-\_\-number\-\_\-of\-\_\-winnings@{get\-\_\-number\-\_\-of\-\_\-winnings}}
+\index{get\-\_\-number\-\_\-of\-\_\-winnings@{get\-\_\-number\-\_\-of\-\_\-winnings}!Lottery@{Lottery}}
+\subsubsection[{get\-\_\-number\-\_\-of\-\_\-winnings}]{\setlength{\rightskip}{0pt plus 5cm}int Lottery\-::get\-\_\-number\-\_\-of\-\_\-winnings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a6d8cd54e0482cc5119f03eb361a98336}
+Returns the number of initialized winnings.
+
+\begin{DoxyReturn}{Returns}
+number of initialized winnings. 
+\end{DoxyReturn}
+\hypertarget{classLottery_ad9ef69f7b860eba79075c26e79e1cfdb}{\index{Lottery@{Lottery}!operator=@{operator=}}
+\index{operator=@{operator=}!Lottery@{Lottery}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lottery} \& Lottery\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lottery} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classLottery_ad9ef69f7b860eba79075c26e79e1cfdb}
+Overloading of the assignment operator=. Defines how to deep copy a \hyperlink{classLottery}{Lottery} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \hyperlink{classLottery}{Lottery} instance to copy into the object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the adress of itself. 
+\end{DoxyReturn}
+\hypertarget{classLottery_a31904c6badc3a84993a33f601d150017}{\index{Lottery@{Lottery}!str\-\_\-count\-\_\-even@{str\-\_\-count\-\_\-even}}
+\index{str\-\_\-count\-\_\-even@{str\-\_\-count\-\_\-even}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-count\-\_\-even}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-count\-\_\-even (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a31904c6badc3a84993a33f601d150017}
+Returns the number of even winnings absolut and in percent. A \hyperlink{classLotteryWin}{Lottery\-Win} is even when all the numbers are even.
+
+Anzahl gerade Ziehungen Absolut\-: $<$anzahl$>$\par
+ Prozentual\-: $<$prozent$>$\par
+
+
+\begin{DoxyReturn}{Returns}
+Number of even winnings. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classLottery_a31904c6badc3a84993a33f601d150017_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_ab7e82542619dd409f41ea65b7cbaeaeb}{\index{Lottery@{Lottery}!str\-\_\-count\-\_\-length\-\_\-in\-\_\-win@{str\-\_\-count\-\_\-length\-\_\-in\-\_\-win}}
+\index{str\-\_\-count\-\_\-length\-\_\-in\-\_\-win@{str\-\_\-count\-\_\-length\-\_\-in\-\_\-win}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-count\-\_\-length\-\_\-in\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-count\-\_\-length\-\_\-in\-\_\-win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_ab7e82542619dd409f41ea65b7cbaeaeb}
+Returns how many times the length of a \hyperlink{classLotteryWin}{Lottery\-Win} is also a number of the lottery win, absolut and in percent.
+
+Anzahl Ziehungen, die ihre Laenge enthalten Absolut\-: 879\par
+ Prozentual\-: 87.\-9 \%\par
+
+
+\begin{DoxyReturn}{Returns}
+Number of winnings which has their lengts also as number. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classLottery_ab7e82542619dd409f41ea65b7cbaeaeb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_a9903e1a614d7ba4f86ca41d98b4d77f3}{\index{Lottery@{Lottery}!str\-\_\-count\-\_\-not\-\_\-prim@{str\-\_\-count\-\_\-not\-\_\-prim}}
+\index{str\-\_\-count\-\_\-not\-\_\-prim@{str\-\_\-count\-\_\-not\-\_\-prim}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-count\-\_\-not\-\_\-prim}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-count\-\_\-not\-\_\-prim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a9903e1a614d7ba4f86ca41d98b4d77f3}
+Returns the number of not-\/prim-\/winnings absolut and in percent. A \hyperlink{classLotteryWin}{Lottery\-Win} is a not-\/prim-\/win, when non of the numbers is a primnumber.
+
+Anzahl Nichtprimziehungen Absolut\-: $<$anzahl$>$\par
+ Prozentual\-: $<$prozent$>$\par
+
+
+\begin{DoxyReturn}{Returns}
+Number of not-\/prim-\/winnings. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classLottery_a9903e1a614d7ba4f86ca41d98b4d77f3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_ad5611e62b126a995bb20143ba813ff95}{\index{Lottery@{Lottery}!str\-\_\-count\-\_\-odd@{str\-\_\-count\-\_\-odd}}
+\index{str\-\_\-count\-\_\-odd@{str\-\_\-count\-\_\-odd}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-count\-\_\-odd}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-count\-\_\-odd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_ad5611e62b126a995bb20143ba813ff95}
+Returns the number of odd winnings absolut and in percent. A \hyperlink{classLotteryWin}{Lottery\-Win} is odd when all the numbers are odd.
+
+Anzahl ungerade Ziehungen Absolut\-: $<$anzahl$>$\par
+ Prozentual\-: $<$prozent$>$\par
+
+
+\begin{DoxyReturn}{Returns}
+Number of odd winnings. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classLottery_ad5611e62b126a995bb20143ba813ff95_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_a2b29d8648f9aa7167afae7d126ee1157}{\index{Lottery@{Lottery}!str\-\_\-count\-\_\-prim@{str\-\_\-count\-\_\-prim}}
+\index{str\-\_\-count\-\_\-prim@{str\-\_\-count\-\_\-prim}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-count\-\_\-prim}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-count\-\_\-prim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a2b29d8648f9aa7167afae7d126ee1157}
+Returns the number of prim winnings absolut and in percent. A \hyperlink{classLotteryWin}{Lottery\-Win} is a prim win, when all the numbers are primnumbers.
+
+Anzahl Primziehungen Absolut\-: $<$anzahl$>$\par
+ Prozentual\-: $<$prozent$>$\par
+
+
+\begin{DoxyReturn}{Returns}
+Number of prim winnings. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classLottery_a2b29d8648f9aa7167afae7d126ee1157_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_a565a193097b625710b7c1e84245377ad}{\index{Lottery@{Lottery}!str\-\_\-count\-\_\-street\-\_\-types@{str\-\_\-count\-\_\-street\-\_\-types}}
+\index{str\-\_\-count\-\_\-street\-\_\-types@{str\-\_\-count\-\_\-street\-\_\-types}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-count\-\_\-street\-\_\-types}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-count\-\_\-street\-\_\-types (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a565a193097b625710b7c1e84245377ad}
+Returns the number of k-\/street-\/winnings absolut and in percent. The k is definded with the numbers which !!!
+
+K-\/ling verteilung\-:\par
+ 1\-: 928 92.\-8 \%\par
+ 2\-: 71 7.\-1 \%\par
+ 3\-: 1 0.\-1 \%\par
+ 4\-: 0 0 \%\par
+ 5\-: 0 0 \%\par
+ 6\-: 0 0 \%\par
+
+
+\begin{DoxyReturn}{Returns}
+Number of not-\/prim-\/winnings. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classLottery_a565a193097b625710b7c1e84245377ad_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_a0412645bc428380c9c9b84047831832f}{\index{Lottery@{Lottery}!str\-\_\-frequency\-\_\-scale@{str\-\_\-frequency\-\_\-scale}}
+\index{str\-\_\-frequency\-\_\-scale@{str\-\_\-frequency\-\_\-scale}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-frequency\-\_\-scale}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-frequency\-\_\-scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a0412645bc428380c9c9b84047831832f}
+Returns a table with the information about the frequency scale of all the numbers included in all the initialized winnings. It also shows the most and least common number and the difference of their counts.
+
+Haufigkeitsverteilung Maximum ( $<$anzahl$>$ ) \-: max\-\_\-nummer \par
+ Minimum ( $<$anzahl$>$ ) \-: min\-\_\-nummer \par
+ \par
+ 1 \-: 23532 \par
+ 2 \-: 3453 \par
+ . \par
+ . \par
+ 49\-: 45345 \par
+
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{classLottery_a192ccaf79c269caa2643732879fef9dc}{\index{Lottery@{Lottery}!str\-\_\-length@{str\-\_\-length}}
+\index{str\-\_\-length@{str\-\_\-length}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a192ccaf79c269caa2643732879fef9dc}
+Returns a table with the fequency of the lengths of the winnings. The lengts of a \hyperlink{classLotteryWin}{Lottery\-Win} is the difference between the maximum number and the minimum number of a \hyperlink{classLotteryWin}{Lottery\-Win}. \par
+ Laenge verteilung\par
+ 5\-: 0 0 \%\par
+ ..\par
+ 21\-: 10 1 \% \par
+ ..\par
+ 39\-: 57 5.\-7 \%\par
+ 48\-: 13 1.\-3 \%\par
+ .\par
+
+
+\begin{DoxyReturn}{Returns}
+a table with the frequency of the winnings lengths. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{classLottery_a192ccaf79c269caa2643732879fef9dc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_a2363da692f1231f51feef8a6e4fab41a}{\index{Lottery@{Lottery}!str\-\_\-maximum@{str\-\_\-maximum}}
+\index{str\-\_\-maximum@{str\-\_\-maximum}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-maximum}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-maximum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a2363da692f1231f51feef8a6e4fab41a}
+Returns a table with the fequency of the maximum numbers in the winnings. A maximum number is the biggest number in a \hyperlink{classLotteryWin}{Lottery\-Win}. \par
+ Maximum verteilung\par
+ 1\-: 0 0 \%\par
+ ..\par
+ ..\par
+ 48\-: 110 11 \%\par
+ 49\-: 120 12 \%\par
+
+
+\begin{DoxyReturn}{Returns}
+a table with the frequency of the maximum numbers. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classLottery_a2363da692f1231f51feef8a6e4fab41a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_ad1369e9aafb962a5a9259cb1d19be545}{\index{Lottery@{Lottery}!str\-\_\-minimum@{str\-\_\-minimum}}
+\index{str\-\_\-minimum@{str\-\_\-minimum}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-minimum}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-minimum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_ad1369e9aafb962a5a9259cb1d19be545}
+Returns a table with the fequency of the minimum numbers in the winnings. A minimum number is the smallest number in a \hyperlink{classLotteryWin}{Lottery\-Win}. \par
+ Minimum verteilung \par
+ 1\-: 122 12.\-2 \%\par
+ 2\-: 119 11.\-9 \%\par
+ 3\-: 90 9 \%\par
+ . \par
+ . \par
+ 49\-: 0 0 \% \par
+
+
+\begin{DoxyReturn}{Returns}
+table with th frequency of the minimum numbers. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classLottery_ad1369e9aafb962a5a9259cb1d19be545_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classLottery_a44f8cd624d10996bb1f60ae3e64ff21f}{\index{Lottery@{Lottery}!str\-\_\-years\-\_\-to\-\_\-play@{str\-\_\-years\-\_\-to\-\_\-play}}
+\index{str\-\_\-years\-\_\-to\-\_\-play@{str\-\_\-years\-\_\-to\-\_\-play}!Lottery@{Lottery}}
+\subsubsection[{str\-\_\-years\-\_\-to\-\_\-play}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::str\-\_\-years\-\_\-to\-\_\-play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a44f8cd624d10996bb1f60ae3e64ff21f}
+Returns a string with the Information about how many years and months it would last, to play all the numbers of winnings, when there would be one lottery win a week.
+
+\begin{DoxyReturn}{Returns}
+String which displays information. 
+\end{DoxyReturn}
+\hypertarget{classLottery_a815fb374020eb12f75fae691df2b4cb4}{\index{Lottery@{Lottery}!tip@{tip}}
+\index{tip@{tip}!Lottery@{Lottery}}
+\subsubsection[{tip}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-::tip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLottery_a815fb374020eb12f75fae691df2b4cb4}
+Promts the user to enter a tip. After this it compairs the tip with the existing winnings. It will then show how many times you would have won with the hits between 0 and 6. It also shows the percentage of all winnings.
+
+\begin{DoxyReturn}{Returns}
+string with the statistic of hits by the entered tip. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{classLottery_a815fb374020eb12f75fae691df2b4cb4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lottery_8h}{lottery.\-h}\item 
+\hyperlink{lottery_8cpp}{lottery.\-cpp}\end{DoxyCompactItemize}

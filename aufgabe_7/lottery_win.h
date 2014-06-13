@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/**
+ * Defines the anatomy of a LotteryWin. Can hold 6 unique numbers. Has methods
+ * to find out characteristics of the numbers.
+ */
 class LotteryWin
 {
   private:

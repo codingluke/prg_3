@@ -1,0 +1,112 @@
+\hypertarget{lottery__win_8cpp}{\section{lottery\-\_\-win.\-cpp File Reference}
+\label{lottery__win_8cpp}\index{lottery\-\_\-win.\-cpp@{lottery\-\_\-win.\-cpp}}
+}
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include \char`\"{}time.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}lottery\-\_\-win.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}console\-\_\-input.\-h\char`\"{}}\\*
+Include dependency graph for lottery\-\_\-win.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lottery__win_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{lottery__win_8cpp_a7c2e5de33e1cd10119028c101bd68090}{operator==} (const \hyperlink{classLotteryWin}{Lottery\-Win} \&left, const \hyperlink{classLotteryWin}{Lottery\-Win} \&right)
+\item 
+ostream \& \hyperlink{lottery__win_8cpp_a26b65bb469a01fc6f2bdec234e6419f1}{operator$<$$<$} (ostream \&output, const \hyperlink{classLotteryWin}{Lottery\-Win} \&a\-\_\-lottery\-\_\-win)
+\item 
+istream \& \hyperlink{lottery__win_8cpp_a00de437c2ac3813e33c9948712f6465b}{operator$>$$>$} (istream \&input, \hyperlink{classLotteryWin}{Lottery\-Win} \&a\-\_\-lottery\-\_\-win)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{lottery__win_8cpp_a26b65bb469a01fc6f2bdec234e6419f1}{\index{lottery\-\_\-win.\-cpp@{lottery\-\_\-win.\-cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lottery_win.cpp@{lottery\-\_\-win.\-cpp}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{output, }
+\item[{const {\bf Lottery\-Win} \&}]{a\-\_\-lottery\-\_\-win}
+\end{DoxyParamCaption}
+)}}\label{lottery__win_8cpp_a26b65bb469a01fc6f2bdec234e6419f1}
+Overrides the operator$<$$<$ \char`\"{}put to\char`\"{}. Handels standard string representation of a \hyperlink{classLotteryWin}{Lottery\-Win} when \char`\"{}put to\char`\"{} an output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & io output stream. \\
+\hline
+{\em a\-\_\-lottery\-\_\-win} & \hyperlink{classLotteryWin}{Lottery\-Win} to put to the output stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output stream. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{lottery__win_8cpp_a26b65bb469a01fc6f2bdec234e6419f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lottery__win_8cpp_a7c2e5de33e1cd10119028c101bd68090}{\index{lottery\-\_\-win.\-cpp@{lottery\-\_\-win.\-cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!lottery_win.cpp@{lottery\-\_\-win.\-cpp}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}int operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lottery\-Win} \&}]{left, }
+\item[{const {\bf Lottery\-Win} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{lottery__win_8cpp_a7c2e5de33e1cd10119028c101bd68090}
+Overwrides the compair operator==. Gives back the number of numbers which are equal in both \hyperlink{classLotteryWin}{Lottery\-Win} instances.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left \hyperlink{classLotteryWin}{Lottery\-Win} instance to compair. \\
+\hline
+{\em right} & Right \hyperlink{classLotteryWin}{Lottery\-Win} instance to compair.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 to 6, depends up on how many number are equal. 
+\end{DoxyReturn}
+\hypertarget{lottery__win_8cpp_a00de437c2ac3813e33c9948712f6465b}{\index{lottery\-\_\-win.\-cpp@{lottery\-\_\-win.\-cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!lottery_win.cpp@{lottery\-\_\-win.\-cpp}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{input, }
+\item[{{\bf Lottery\-Win} \&}]{a\-\_\-lottery\-\_\-win}
+\end{DoxyParamCaption}
+)}}\label{lottery__win_8cpp_a00de437c2ac3813e33c9948712f6465b}
+Overwrides the operator$>$$>$. Handles user interaction by the console to enter a valid \hyperlink{classLotteryWin}{Lottery\-Win} out of 6 unique Numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Input stream. \\
+\hline
+{\em a\-\_\-lottery\-\_\-win} & The \hyperlink{classLotteryWin}{Lottery\-Win} instance to fill with the user entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input stream. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lottery__win_8cpp_a00de437c2ac3813e33c9948712f6465b_cgraph}
+\end{center}
+\end{figure}
+
+

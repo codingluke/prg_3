@@ -1,0 +1,255 @@
+\hypertarget{classLotteryWin}{\section{Lottery\-Win Class Reference}
+\label{classLotteryWin}\index{Lottery\-Win@{Lottery\-Win}}
+}
+
+
+{\ttfamily \#include $<$lottery\-\_\-win.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLotteryWin_acd0373b3ecda6dfbeda32fa0b593a9ce}{Lottery\-Win} ()
+\item 
+\hyperlink{classLotteryWin_a3e576f6f34eaf1cd257fe76e53f23edf}{Lottery\-Win} (const char $\ast$the\-\_\-numbers)
+\item 
+\hyperlink{classLotteryWin_af143f36bb7b7872373dd362ec774035c}{Lottery\-Win} (const \hyperlink{classLotteryWin}{Lottery\-Win} \&original)
+\item 
+\hyperlink{classLotteryWin_a283e083e29ced047b39edff5b2bf4719}{$\sim$\-Lottery\-Win} ()
+\item 
+string \hyperlink{classLotteryWin_a6d956ace9b19c51e5b5f112ad27eab7a}{str} () const 
+\item 
+int \hyperlink{classLotteryWin_a9dd8d24f837e76a4ecf430acc247799d}{minimum} () const 
+\item 
+int \hyperlink{classLotteryWin_a5716ca8fd1aa0cf9f20c0536023f3ead}{maximum} () const 
+\item 
+int \hyperlink{classLotteryWin_ac3488f97862331d15bf75594b82dc9fb}{length} () const 
+\item 
+int \hyperlink{classLotteryWin_a6de7cce57ced6b68468002228b9a0e8a}{street\-\_\-type} () const 
+\item 
+bool \hyperlink{classLotteryWin_a773a9858aaaa20c9cef0da1089a487d4}{has\-\_\-length\-\_\-in\-\_\-win} () const 
+\item 
+bool \hyperlink{classLotteryWin_a36045fb8a81d3e303624435499579fd0}{is\-\_\-even} () const 
+\item 
+bool \hyperlink{classLotteryWin_af4c2febc7e907fd72d2dd141c80826d8}{is\-\_\-odd} () const 
+\item 
+bool \hyperlink{classLotteryWin_a1ffa69947bd44d523288550540f77a77}{is\-\_\-prim} () const 
+\item 
+bool \hyperlink{classLotteryWin_aafdd1a9f1509972b86a572a22e7af403}{is\-\_\-not\-\_\-prim} () const 
+\item 
+\hyperlink{classLotteryWin}{Lottery\-Win} \& \hyperlink{classLotteryWin_ad98aa2f5e53d784aeee0e4170b04d15e}{operator=} (const \hyperlink{classLotteryWin}{Lottery\-Win} \&a\-\_\-lottery\-\_\-win)
+\item 
+int \hyperlink{classLotteryWin_a28e723a0b916844b1a5a8898e5cf92e7}{operator\mbox{[}$\,$\mbox{]}} (const int \&key) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the anatomy of a \hyperlink{classLotteryWin}{Lottery\-Win}. Can hold 6 unique numbers. Has methods to find out characteristics of the numbers. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLotteryWin_acd0373b3ecda6dfbeda32fa0b593a9ce}{\index{Lottery\-Win@{Lottery\-Win}!Lottery\-Win@{Lottery\-Win}}
+\index{Lottery\-Win@{Lottery\-Win}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{Lottery\-Win}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-Win\-::\-Lottery\-Win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLotteryWin_acd0373b3ecda6dfbeda32fa0b593a9ce}
+Default constructor. Initializes a \hyperlink{classLotteryWin}{Lottery\-Win} with random numbers. \hypertarget{classLotteryWin_a3e576f6f34eaf1cd257fe76e53f23edf}{\index{Lottery\-Win@{Lottery\-Win}!Lottery\-Win@{Lottery\-Win}}
+\index{Lottery\-Win@{Lottery\-Win}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{Lottery\-Win}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-Win\-::\-Lottery\-Win (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{the\-\_\-numbers}
+\end{DoxyParamCaption}
+)}}\label{classLotteryWin_a3e576f6f34eaf1cd257fe76e53f23edf}
+Constructor to initialize a \hyperlink{classLotteryWin}{Lottery\-Win} with given numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-numbers} & The numbers for the \hyperlink{classLotteryWin}{Lottery\-Win}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLotteryWin_af143f36bb7b7872373dd362ec774035c}{\index{Lottery\-Win@{Lottery\-Win}!Lottery\-Win@{Lottery\-Win}}
+\index{Lottery\-Win@{Lottery\-Win}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{Lottery\-Win}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-Win\-::\-Lottery\-Win (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lottery\-Win} \&}]{original}
+\end{DoxyParamCaption}
+)}}\label{classLotteryWin_af143f36bb7b7872373dd362ec774035c}
+Copy-\/constructor. Defines how to deep copy \hyperlink{classLotteryWin}{Lottery\-Win}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & Instance of \hyperlink{classLotteryWin}{Lottery\-Win} to copy. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classLotteryWin_a283e083e29ced047b39edff5b2bf4719}{\index{Lottery\-Win@{Lottery\-Win}!$\sim$\-Lottery\-Win@{$\sim$\-Lottery\-Win}}
+\index{$\sim$\-Lottery\-Win@{$\sim$\-Lottery\-Win}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{$\sim$\-Lottery\-Win}]{\setlength{\rightskip}{0pt plus 5cm}Lottery\-Win\-::$\sim$\-Lottery\-Win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLotteryWin_a283e083e29ced047b39edff5b2bf4719}
+Destructor of the \hyperlink{classLotteryWin}{Lottery\-Win}. Deletes all references in the heap. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classLotteryWin_a773a9858aaaa20c9cef0da1089a487d4}{\index{Lottery\-Win@{Lottery\-Win}!has\-\_\-length\-\_\-in\-\_\-win@{has\-\_\-length\-\_\-in\-\_\-win}}
+\index{has\-\_\-length\-\_\-in\-\_\-win@{has\-\_\-length\-\_\-in\-\_\-win}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{has\-\_\-length\-\_\-in\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}bool Lottery\-Win\-::has\-\_\-length\-\_\-in\-\_\-win (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a773a9858aaaa20c9cef0da1089a487d4}
+Gives back whether the length of the \hyperlink{classLotteryWin}{Lottery\-Win} is also one of its numbers or not.
+
+\begin{DoxyReturn}{Returns}
+true when the length is also a number. false when the length is not a included number. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_a36045fb8a81d3e303624435499579fd0}{\index{Lottery\-Win@{Lottery\-Win}!is\-\_\-even@{is\-\_\-even}}
+\index{is\-\_\-even@{is\-\_\-even}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{is\-\_\-even}]{\setlength{\rightskip}{0pt plus 5cm}bool Lottery\-Win\-::is\-\_\-even (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a36045fb8a81d3e303624435499579fd0}
+Gives back if the \hyperlink{classLotteryWin}{Lottery\-Win} is even. A \hyperlink{classLotteryWin}{Lottery\-Win} is even when all included numbers are even.
+
+\begin{DoxyReturn}{Returns}
+true when all numbers are even. false when min one number is not even. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_aafdd1a9f1509972b86a572a22e7af403}{\index{Lottery\-Win@{Lottery\-Win}!is\-\_\-not\-\_\-prim@{is\-\_\-not\-\_\-prim}}
+\index{is\-\_\-not\-\_\-prim@{is\-\_\-not\-\_\-prim}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{is\-\_\-not\-\_\-prim}]{\setlength{\rightskip}{0pt plus 5cm}bool Lottery\-Win\-::is\-\_\-not\-\_\-prim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_aafdd1a9f1509972b86a572a22e7af403}
+Gives back if the \hyperlink{classLotteryWin}{Lottery\-Win} is not prim. A \hyperlink{classLotteryWin}{Lottery\-Win} isn not prim when non of the included numbers are primnumbers.
+
+\begin{DoxyReturn}{Returns}
+true when non of the numbers are prim numbers. false when min one number is a prim numbers. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_af4c2febc7e907fd72d2dd141c80826d8}{\index{Lottery\-Win@{Lottery\-Win}!is\-\_\-odd@{is\-\_\-odd}}
+\index{is\-\_\-odd@{is\-\_\-odd}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{is\-\_\-odd}]{\setlength{\rightskip}{0pt plus 5cm}bool Lottery\-Win\-::is\-\_\-odd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_af4c2febc7e907fd72d2dd141c80826d8}
+Gives back if the \hyperlink{classLotteryWin}{Lottery\-Win} is odd. A \hyperlink{classLotteryWin}{Lottery\-Win} is odd when all included numbers are odd.
+
+\begin{DoxyReturn}{Returns}
+true when all numbers are odd. false when min one number is not odd. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_a1ffa69947bd44d523288550540f77a77}{\index{Lottery\-Win@{Lottery\-Win}!is\-\_\-prim@{is\-\_\-prim}}
+\index{is\-\_\-prim@{is\-\_\-prim}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{is\-\_\-prim}]{\setlength{\rightskip}{0pt plus 5cm}bool Lottery\-Win\-::is\-\_\-prim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a1ffa69947bd44d523288550540f77a77}
+Gives back if the \hyperlink{classLotteryWin}{Lottery\-Win} is prim. A \hyperlink{classLotteryWin}{Lottery\-Win} is prim when all included numbers are primnumbers.
+
+\begin{DoxyReturn}{Returns}
+true when all numbers are prim numbers. false when min one number is not prim numbers. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_ac3488f97862331d15bf75594b82dc9fb}{\index{Lottery\-Win@{Lottery\-Win}!length@{length}}
+\index{length@{length}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}int Lottery\-Win\-::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_ac3488f97862331d15bf75594b82dc9fb}
+Gives back the length of the \hyperlink{classLotteryWin}{Lottery\-Win}. The length is the difference between the biggest and the smallest number.
+
+\begin{DoxyReturn}{Returns}
+length of the \hyperlink{classLotteryWin}{Lottery\-Win}. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_a5716ca8fd1aa0cf9f20c0536023f3ead}{\index{Lottery\-Win@{Lottery\-Win}!maximum@{maximum}}
+\index{maximum@{maximum}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{maximum}]{\setlength{\rightskip}{0pt plus 5cm}int Lottery\-Win\-::maximum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a5716ca8fd1aa0cf9f20c0536023f3ead}
+Gives back the biggest number in the \hyperlink{classLotteryWin}{Lottery\-Win}.
+
+\begin{DoxyReturn}{Returns}
+the biggest number. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_a9dd8d24f837e76a4ecf430acc247799d}{\index{Lottery\-Win@{Lottery\-Win}!minimum@{minimum}}
+\index{minimum@{minimum}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{minimum}]{\setlength{\rightskip}{0pt plus 5cm}int Lottery\-Win\-::minimum (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a9dd8d24f837e76a4ecf430acc247799d}
+Gives back the smallest number of the \hyperlink{classLotteryWin}{Lottery\-Win}.
+
+\begin{DoxyReturn}{Returns}
+smallest number. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_ad98aa2f5e53d784aeee0e4170b04d15e}{\index{Lottery\-Win@{Lottery\-Win}!operator=@{operator=}}
+\index{operator=@{operator=}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Lottery\-Win} \& Lottery\-Win\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Lottery\-Win} \&}]{a\-\_\-lottery\-\_\-win}
+\end{DoxyParamCaption}
+)}}\label{classLotteryWin_ad98aa2f5e53d784aeee0e4170b04d15e}
+Overwrites the assignment operator=. Defines the deep copy of a \hyperlink{classLotteryWin}{Lottery\-Win} instance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-lottery\-\_\-win} & The \hyperlink{classLotteryWin}{Lottery\-Win} instance to overtake.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the adress of itself. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_a28e723a0b916844b1a5a8898e5cf92e7}{\index{Lottery\-Win@{Lottery\-Win}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}int Lottery\-Win\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a28e723a0b916844b1a5a8898e5cf92e7}
+Overwrites the operator\mbox{[}\mbox{]}. Defines the acces to a certain number by the key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of the number to access.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number under the given key. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_a6d956ace9b19c51e5b5f112ad27eab7a}{\index{Lottery\-Win@{Lottery\-Win}!str@{str}}
+\index{str@{str}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string Lottery\-Win\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a6d956ace9b19c51e5b5f112ad27eab7a}
+Defines how a lottery win gets pared to a string.
+
+1 2 3 4 5 6
+
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classLotteryWin}{Lottery\-Win} as a string. 
+\end{DoxyReturn}
+\hypertarget{classLotteryWin_a6de7cce57ced6b68468002228b9a0e8a}{\index{Lottery\-Win@{Lottery\-Win}!street\-\_\-type@{street\-\_\-type}}
+\index{street\-\_\-type@{street\-\_\-type}!LotteryWin@{Lottery\-Win}}
+\subsubsection[{street\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}int Lottery\-Win\-::street\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classLotteryWin_a6de7cce57ced6b68468002228b9a0e8a}
+Gibes back the number of \char`\"{}street\char`\"{} the \hyperlink{classLotteryWin}{Lottery\-Win} is. A street is defined up on the neighbour numbers which have a difference of 1. e.\-g. 1 2 3 4 5 6 is a 6 Street, because all 6 numbers have difference of one in between. 1 4 5 6 23 43 would be a 3 street (4 5 6).
+
+\begin{DoxyReturn}{Returns}
+the street type defined by the number of numbers which have a difference of one between the neighbours. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lottery__win_8h}{lottery\-\_\-win.\-h}\item 
+\hyperlink{lottery__win_8cpp}{lottery\-\_\-win.\-cpp}\end{DoxyCompactItemize}

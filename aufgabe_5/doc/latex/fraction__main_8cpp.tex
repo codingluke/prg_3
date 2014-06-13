@@ -1,0 +1,273 @@
+\hypertarget{fraction__main_8cpp}{\section{fraction\-\_\-main.\-cpp File Reference}
+\label{fraction__main_8cpp}\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include \char`\"{}fraction\-\_\-main.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}fraction.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}calculator.\-h\char`\"{}}\\*
+Include dependency graph for fraction\-\_\-main.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fraction__main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{fraction__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{fraction__main_8cpp_a88a5a1f559a0f664dbb99b66f6c86c59}{handle\-\_\-five} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{fraction__main_8cpp_afbc888f515c7c31845c525098c70a949}{handle\-\_\-six} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{fraction__main_8cpp_a6d598685a1aa70dc69dc3d66f694415d}{handle\-\_\-nine} (char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+bool \hyperlink{fraction__main_8cpp_a1920cd03342937f72cb6c49041a6953d}{isi} (char text\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{fraction__main_8cpp_a45ba46a5ae34b55a833eced785f695ea}{random\-\_\-handler} (int n, int a, int b, int c, int d, bool asc)
+\item 
+std\-::vector$<$ \hyperlink{classFraction}{Fraction} $>$ \hyperlink{fraction__main_8cpp_a75b94fb0a8fdbf6d97e5cf1f55997549}{random\-\_\-fractions} (int n, int low\-\_\-numerator, int low\-\_\-denominator, int high\-\_\-numerator, int high\-\_\-denominator)  throw (const std\-::invalid\-\_\-argument)
+\item 
+void \hyperlink{fraction__main_8cpp_a5703c295722633fe65e49e83e620c6b5}{sort} (std\-::vector$<$ \hyperlink{classFraction}{Fraction} $>$ \&fractions, int length, bool asc)
+\item 
+void \hyperlink{fraction__main_8cpp_a7c827c26e5661b0c05da029a209d0cb8}{show\-\_\-manual} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{fraction__main_8cpp_a88a5a1f559a0f664dbb99b66f6c86c59}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!handle\-\_\-five@{handle\-\_\-five}}
+\index{handle\-\_\-five@{handle\-\_\-five}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{handle\-\_\-five}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-five (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_a88a5a1f559a0f664dbb99b66f6c86c59}
+Handles program when executed with five arguments. Validates input format.
+
+Possible actions are\-: bruch a op c d a op c/d = e/f =$>$ bruch 1 -\/ 1 2 1 -\/ 1/2 = 1/2 bruch a b op c a/b op c = e/f =$>$ bruch 1 2 -\/ 1 1/2 -\/ 1 = -\/1/2
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array form the program execution. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fraction__main_8cpp_a88a5a1f559a0f664dbb99b66f6c86c59_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fraction__main_8cpp_a6d598685a1aa70dc69dc3d66f694415d}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!handle\-\_\-nine@{handle\-\_\-nine}}
+\index{handle\-\_\-nine@{handle\-\_\-nine}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{handle\-\_\-nine}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-nine (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_a6d598685a1aa70dc69dc3d66f694415d}
+Handles program when executed with nine arguments. Validates input format.
+
+Possible actions are\-: bruch n \mbox{[} a b c d \mbox{]} + n numbers between a/b and c/d ascendent sorted. bruch n \mbox{[} a b c d \mbox{]} -\/ n numbers between a/b and c/d descendent sorted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array form the program execution. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fraction__main_8cpp_a6d598685a1aa70dc69dc3d66f694415d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fraction__main_8cpp_afbc888f515c7c31845c525098c70a949}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!handle\-\_\-six@{handle\-\_\-six}}
+\index{handle\-\_\-six@{handle\-\_\-six}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{handle\-\_\-six}]{\setlength{\rightskip}{0pt plus 5cm}void handle\-\_\-six (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_afbc888f515c7c31845c525098c70a949}
+Handles program when executed with six arguments. Validates input format.
+
+Possible actions are\-: bruch a b op c d a/b op c/d = e/f =$>$ bruch 1 2 -\/ 1 3 1/2 -\/ 1/3 = 1/6 bruch a b -\/v c d a/b \mbox{[}$<$$|$$>$$|$=\mbox{]} c/d =$>$ 1 2 -\/v 1 3 1/2 $>$ 1/3
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array form the program execution. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fraction__main_8cpp_afbc888f515c7c31845c525098c70a949_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fraction__main_8cpp_a1920cd03342937f72cb6c49041a6953d}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!isi@{isi}}
+\index{isi@{isi}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{isi}]{\setlength{\rightskip}{0pt plus 5cm}bool isi (
+\begin{DoxyParamCaption}
+\item[{char}]{text\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_a1920cd03342937f72cb6c49041a6953d}
+Checks whether an array of chars represents an integer or not. Solfs atoi problem that returns a 0 for a char which is not a number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\mbox{[}$\,$\mbox{]}} & Array of chars.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when text\mbox{[}\mbox{]} represents a number. false when text\mbox{[}\mbox{]} doesn't represent a number. 
+\end{DoxyReturn}
+\hypertarget{fraction__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!main@{main}}
+\index{main@{main}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+Entrypoint to the program \char`\"{}\-Bruch\char`\"{}. Bruch lets you calculate and compare Fractions directly in the console. There is also the possibility to generate random \hyperlink{classFraction}{Fraction} in a certain range. It prompts the user while inserting wrong Fractions where the denominator is zero.
+
+Possible calculation execution forms (op = +,-\/,$\ast$,/)\-: bruch a b op c d a/b op c/d = e/f =$>$ bruch 1 2 -\/ 1 3 1/2 -\/ 1/3 = 1/6 bruch a op c d a op c/d = e/f =$>$ bruch 1 -\/ 1 2 1 -\/ 1/2 = 1/2 bruch a b op c a/b op c = e/f =$>$ bruch 1 2 -\/ 1 1/2 -\/ 1 = -\/1/2
+
+Possible compare executions\-: bruch a b -\/v c d a/b \mbox{[}$<$$|$$>$$|$=\mbox{]} c/d =$>$ 1 2 -\/v 1 3 1/2 $>$ 1/3
+
+Possible random number generator bruch n \mbox{[} a b c d \mbox{]} + n numbers between a/b and c/d ascendent sorted. bruch n \mbox{[} a b c d \mbox{]} -\/ n numbers between a/b and c/d descendent sorted.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Length of the arguments array. \\
+\hline
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array form the program execution. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fraction__main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fraction__main_8cpp_a75b94fb0a8fdbf6d97e5cf1f55997549}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!random\-\_\-fractions@{random\-\_\-fractions}}
+\index{random\-\_\-fractions@{random\-\_\-fractions}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{random\-\_\-fractions}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Fraction}$>$ random\-\_\-fractions (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{low\-\_\-numerator, }
+\item[{int}]{low\-\_\-denominator, }
+\item[{int}]{high\-\_\-numerator, }
+\item[{int}]{high\-\_\-denominator}
+\end{DoxyParamCaption}
+)  throw (const std\-::invalid\-\_\-argument)}}\label{fraction__main_8cpp_a75b94fb0a8fdbf6d97e5cf1f55997549}
+Generates n random Fractions with value in between the Fractions a/b and c/d and gives them back as vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number of random fractions. \\
+\hline
+{\em low\-\_\-numerator} & Numerator of the low bound fraction. \\
+\hline
+{\em low\-\_\-denominator} & Denominator of the low bound fraction. \\
+\hline
+{\em high\-\_\-numerator} & Numerator of the high bound fraction. \\
+\hline
+{\em high\-\_\-denominator} & Denominator of the high bound fraction.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector with the fractions. 
+\end{DoxyReturn}
+\hypertarget{fraction__main_8cpp_a45ba46a5ae34b55a833eced785f695ea}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!random\-\_\-handler@{random\-\_\-handler}}
+\index{random\-\_\-handler@{random\-\_\-handler}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{random\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}void random\-\_\-handler (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{int}]{a, }
+\item[{int}]{b, }
+\item[{int}]{c, }
+\item[{int}]{d, }
+\item[{bool}]{asc}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_a45ba46a5ae34b55a833eced785f695ea}
+Generates n random Fractions in between the Fractions a/b and c/d, sorts them eigther ascendent or descendent according the parameter asc and prints the sorted and unsorted result to the console.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number of random fractions. \\
+\hline
+{\em a} & Numerator of the low bound fraction. \\
+\hline
+{\em b} & Denominator of the low bound fraction. \\
+\hline
+{\em c} & Numerator of the high bound fraction. \\
+\hline
+{\em d} & Denominator of the high bound fraction. \\
+\hline
+{\em asc} & Deriction to sort, true =$>$ asc, false =$>$ desc. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{fraction__main_8cpp_a45ba46a5ae34b55a833eced785f695ea_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{fraction__main_8cpp_a7c827c26e5661b0c05da029a209d0cb8}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!show\-\_\-manual@{show\-\_\-manual}}
+\index{show\-\_\-manual@{show\-\_\-manual}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{show\-\_\-manual}]{\setlength{\rightskip}{0pt plus 5cm}void show\-\_\-manual (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_a7c827c26e5661b0c05da029a209d0cb8}
+Reads the file \char`\"{}manual.\-txt\char`\"{} and prints it`s content to the console. \hypertarget{fraction__main_8cpp_a5703c295722633fe65e49e83e620c6b5}{\index{fraction\-\_\-main.\-cpp@{fraction\-\_\-main.\-cpp}!sort@{sort}}
+\index{sort@{sort}!fraction_main.cpp@{fraction\-\_\-main.\-cpp}}
+\subsubsection[{sort}]{\setlength{\rightskip}{0pt plus 5cm}void sort (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Fraction} $>$ \&}]{fractions, }
+\item[{int}]{length, }
+\item[{bool}]{asc}
+\end{DoxyParamCaption}
+)}}\label{fraction__main_8cpp_a5703c295722633fe65e49e83e620c6b5}
+Sorts an vector of fractions with the entry sort algorithm in according to the param asc ascendent or descendent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fractions} & Vector with the fraction to sort. \\
+\hline
+{\em length} & Length of the vector. \\
+\hline
+{\em asc} & Direction to sort. true =$>$ asc, false =$>$ desc. \\
+\hline
+\end{DoxyParams}

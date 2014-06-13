@@ -1,0 +1,5 @@
+<map id="calc_days_between_dates" name="calc_days_between_dates">
+<area shape="rect" id="node3" href="$gregorian__calender_8cpp.html#a41d52c6b7790f79277145b6b1a67ee06" title="calc_days_since_the\l_beginning" alt="" coords="229,5,373,51"/>
+<area shape="rect" id="node5" href="$gregorian__calender_8cpp.html#ab345f7b66a3e361e0a77d7b7cbf235b9" title="is_leap_year" alt="" coords="615,13,708,43"/>
+<area shape="rect" id="node7" href="$gregorian__calender_8cpp.html#ac931749f66720bdcba4d662b52d7de2b" title="calc_days_of_month" alt="" coords="423,39,564,68"/>
+</map>

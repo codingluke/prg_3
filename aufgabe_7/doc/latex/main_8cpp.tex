@@ -1,0 +1,113 @@
+\hypertarget{main_8cpp}{\section{main.\-cpp File Reference}
+\label{main_8cpp}\index{main.\-cpp@{main.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include \char`\"{}lottery.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}console\-\_\-input.\-h\char`\"{}}\\*
+Include dependency graph for main.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{main_8cpp_a1920cd03342937f72cb6c49041a6953d}{isi} (char text\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{main_8cpp_a69a5912b63305d6443ca60bda226c5e9}{start} (int number\-\_\-of\-\_\-winnings)
+\item 
+void \hyperlink{main_8cpp_ad115f1168104746bd6f125391fbd0a99}{print\-\_\-actions} ()
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8cpp_a1920cd03342937f72cb6c49041a6953d}{\index{main.\-cpp@{main.\-cpp}!isi@{isi}}
+\index{isi@{isi}!main.cpp@{main.\-cpp}}
+\subsubsection[{isi}]{\setlength{\rightskip}{0pt plus 5cm}bool isi (
+\begin{DoxyParamCaption}
+\item[{char}]{text\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a1920cd03342937f72cb6c49041a6953d}
+Checks whether an array of chars represents an integer or not. Solfs atoi problem that returns a 0 for a char which is not a number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text\mbox{[}$\,$\mbox{]}} & Array of chars.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when text\mbox{[}\mbox{]} represents a number. false when text\mbox{[}\mbox{]} doesn't represent a number. 
+\end{DoxyReturn}
+\hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{main.\-cpp@{main.\-cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+Entrypoint to the program \char`\"{}\-Lottery\char`\"{}. \hyperlink{classLottery}{Lottery} is a Program to simulate and analyze lotto winnings. There are following possibilities to choose from.
+
+frequency scale, arrangement of the minima, arrangement of the maxima, arrangement of the lengths, number of winning which has their lengths also as number, number of odd winnings, number of even winnings, number of prim winnings, number of non prim winnings, arrangement of k-\/street winnings, tip a \hyperlink{classLotteryWin}{Lottery\-Win}, automated tipping and generate a neu number of winnings.
+
+The program has to be started with one extra parameter including the number of winnings to generate.
+
+./\-Lottery 5000000
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Length of the arguments array. \\
+\hline
+{\em $\ast$argv\mbox{[}$\,$\mbox{]}} & Arguments array form the program execution. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{main_8cpp_ad115f1168104746bd6f125391fbd0a99}{\index{main.\-cpp@{main.\-cpp}!print\-\_\-actions@{print\-\_\-actions}}
+\index{print\-\_\-actions@{print\-\_\-actions}!main.cpp@{main.\-cpp}}
+\subsubsection[{print\-\_\-actions}]{\setlength{\rightskip}{0pt plus 5cm}void print\-\_\-actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ad115f1168104746bd6f125391fbd0a99}
+Prints the menu with the possible actions to the console. \hypertarget{main_8cpp_a69a5912b63305d6443ca60bda226c5e9}{\index{main.\-cpp@{main.\-cpp}!start@{start}}
+\index{start@{start}!main.cpp@{main.\-cpp}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void start (
+\begin{DoxyParamCaption}
+\item[{int}]{number\-\_\-of\-\_\-winnings}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a69a5912b63305d6443ca60bda226c5e9}
+Starts the \hyperlink{classLottery}{Lottery} with a given number of Lottery\-Wins to generate. It then prints out the menu to the console and handles the chosen action by the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\-\_\-of\-\_\-winnings} & Number of \hyperlink{classLotteryWin}{Lottery\-Win} to generate. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a69a5912b63305d6443ca60bda226c5e9_cgraph}
+\end{center}
+\end{figure}
+
+
