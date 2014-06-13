@@ -20,14 +20,13 @@ class CardSet
     Card pop();
     int push(Card a_card);
     unsigned int size() const;
-    string show_cards() const;
     bool is_empty() const;
 
     Card operator[](int key) const;
 
   private:
     void init_32_set();
-    void mix(int n);
+    void shuffle(int n);
     void seed_rand();
 };
 

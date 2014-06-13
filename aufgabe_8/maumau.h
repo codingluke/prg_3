@@ -12,10 +12,11 @@ class Maumau
     vector<Player> players;
     vector<Card> played_cards;
     int played_rounds;
+    int seven_played;
     bool ace_played;
     bool skip_round;
-    int seven_played;
-    string whished_sign;
+    bool whish_played;
+    Card::Color whished_color;
     static bool seeded;
 
   public:
@@ -43,8 +44,8 @@ class Maumau
     void round_for(Player& actor, bool manually);
     void play_card(Player& actor);
     void auto_play_card(Player& actor);
-    void ace_rule(Player& actor);
-    void seven_rule(Player& actor);
+    void skip_rule(Player& actor);
+    void collect_rule(Player& actor);
     void whish_rule(Player& actor);
     void auto_whish_rule();
     void clear_rules();

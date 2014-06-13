@@ -30,7 +30,7 @@ class Player
     string get_name() const;
     int get_cards_count() const;
     int get_cards_sum() const;
-    int has_card(string a_sign) const;
+    int has_card(Card::Sign a_sign) const;
     int get_number() const;
 
     Card operator[](int key) const;

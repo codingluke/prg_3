@@ -11,18 +11,27 @@
 
 bool Maumau::seeded = false;
 
+/**
+ * Default constructor. Initializes four players and gives out five
+ * cards to all players.
+ */
 Maumau::Maumau()
 {
-  seed_rand();
-  init_players(4);
-  give_cards(5);
-  clear_rules();
-  skip_round = false;
-  played_rounds = 0;
+  Maumau(4);
 }
 
+/**
+ * Constructor to initialize Maumau with a given number of players and
+ * gives out five carts to all the players.
+ * cards to all players.
+ *
+ * @param number_of_players   The number of players to play the game.
+ */
 Maumau::Maumau(int number_of_players)
 {
+  // TODO : EXCEPTION!!!
+  if (number_of_players > 6)
+    cout << "TOO MANY PLAYERS!";
   seed_rand();
   init_players(number_of_players);
   give_cards(5);
@@ -49,12 +58,19 @@ void Maumau::start(bool manually)
   print_loosers_eyes();
 }
 
+/**
+ * Handles the logic to play a round by a Player. It counts the rounds,
+ * checks the special rules, prints the situation.
+ *
+ * @param actor     Player for the round.
+ * @param manually  Boolen to play manually or automatic.
+ */
 void Maumau::round_for(Player& actor, bool manually)
 {
   skip_round = false;
   played_rounds++;
-  ace_rule(actor);
-  seven_rule(actor);
+  skip_rule(actor);
+  collect_rule(actor);
   print_situation(manually);
   if (!skip_round)
   {
@@ -74,6 +90,10 @@ void Maumau::round_for(Player& actor, bool manually)
   }
 }
 
+/**
+ * Prints to the console the sum of the "eyes" for every
+ * player which doesn't win the game.
+ */
 void Maumau::print_loosers_eyes() const
 {
   int winner_id = winner();
@@ -82,13 +102,20 @@ void Maumau::print_loosers_eyes() const
       cout << players[i] << ": " << players[i].get_cards_sum() << endl;
 }
 
-void Maumau::ace_rule(Player& actor)
+/**
+ * Definition of the skip rule. When the last played card is a ace, the
+ * player has to skip a round or also play an ace, so the future next
+ * player has to skip, and so on.
+ *
+ * @param actor   Player to check if he has to skip.
+ */
+void Maumau::skip_rule(Player& actor)
 {
   Card last_played = played_cards.back();
-  if ((last_played.get_sign() == "Ass") && !ace_played)
+  if ((last_played.get_sign() == Card::ASS) && !ace_played)
   {
     skip_round = true;
-    int card_index = actor.has_card("Ass");
+    int card_index = actor.has_card(Card::ASS);
     if (card_index > -1)
     {
       played_cards.push_back(actor.play(card_index + 1));
@@ -104,18 +131,26 @@ void Maumau::ace_rule(Player& actor)
   }
 }
 
-void Maumau::seven_rule(Player& actor)
+/**
+ * Definition of the collect rule. When the last played card is a seven,
+ * the player has to collect two cards from the collection or also play
+ * a 7. When he also plays a 7 the next player has to collect 4 cards and
+ * so on.
+ *
+ * @param actor   Player to check if he has to collect cards.
+ */
+void Maumau::collect_rule(Player& actor)
 {
   Card last_played = played_cards.back();
-  if (last_played.get_sign() == "7" && seven_played > 0)
+  if (last_played.get_sign() == Card::SIEBEN && seven_played > 0)
   {
-    int card_index = actor.has_card("7");
+    int card_index = actor.has_card(Card::SIEBEN);
     if (card_index > -1)
     {
       played_cards.push_back(actor.play(card_index + 1));
       seven_played++;
       skip_round = true;
-      cout << endl << "REGEL: Sieben erhöht auf " << seven_played
+      cout << endl << "REGEL: Aufnehmen erhöht auf " << (seven_played * 2)
            << " von " << actor << endl;
     }
     else
@@ -125,46 +160,65 @@ void Maumau::seven_rule(Player& actor)
         actor.add(cards.pop());
         swap_when_cards_empty();
       }
+      cout << endl << "REGEL: Es wurden " << seven_played * 2
+           << "Karten von " << actor << " aufgenommen." << endl;
       seven_played = 0;
-      cout << endl << "REGEL: Sieben wurde abgesessen von "
-           << actor << endl;
     }
   }
 }
 
+/**
+ * Definition of the whish rule. When a player played a "Bube" he can
+ * which the color to play next.
+ *
+ * @param actor   Player to check if he can chose a color.
+ */
 void Maumau::whish_rule(Player& actor)
 {
   Card last_played = played_cards.back();
-  if (last_played.get_sign() == "Bube" && whished_sign == "")
+  if (last_played.get_sign() == Card::BUBE && !whish_played)
   {
-    string signs[] = { "Karo", "Herz", "Pik", "Kreuz" };
     cout << endl << actor << " darf eine Farbe waehlen"
          << endl << "Moegliche Farben sind: " << endl;
     for (int i = 0; i < 4; i++)
-      cout << i + 1 << " " << signs[i] << endl;
+      cout << i + 1 << " " << last_played.get_colors()[i] << endl;
     int index = read_int("Bitte Farbe waehlen: ", 1, 4);
-    whished_sign = signs[index - 1];
+    whished_color = static_cast<Card::Color>(index - 1);
+    whish_played = true;
   }
 }
 
+/**
+ * Automatically whiches a color. Used for autoplay.
+ */
 void Maumau::auto_whish_rule()
 {
   Card last_played = played_cards.back();
-  if (last_played.get_sign() == "Bube" && whished_sign == "")
+  if (last_played.get_sign() == Card::BUBE && !whish_played)
   {
-    string signs[] = { "Karo", "Herz", "Pik", "Kreuz" };
-    whished_sign = signs[get_random_number(0, 4)];
-    cout << "Gewuenschte Farbe: " << whished_sign;
+    whished_color = Card::Color(get_random_number(0, 4));
+    whish_played = true;
+    cout << "Gewuenschte Farbe: " << last_played.get_colors()[whished_color];
   }
 }
 
+/**
+ * Clears the rules for a new round.
+ */
 void Maumau::clear_rules()
 {
   ace_played = false;
   seven_played = 1;
-  whished_sign = "";
+  whish_played = false;
 }
 
+/**
+ * Iterates over the actual players cards an checks which can be played.
+ * When no card can be played, it collects a card from the cards collection.
+ * After a card was played, it clears also the rules.
+ *
+ * @param actor   Actual player to play.
+ */
 void Maumau::auto_play_card(Player& actor)
 {
   Card played;
@@ -195,6 +249,13 @@ void Maumau::auto_play_card(Player& actor)
   } while (!entry_ok);
 }
 
+/**
+ * Handles the logic to play a card manually. It checks if the played card
+ * is valid. When no played card is valid the player can collect a card
+ * from the cards collection by enter 0.
+ *
+ * @param actor   Actual player to play.
+ */
 void Maumau::play_card(Player& actor)
 {
   bool entry_ok = false;
@@ -227,21 +288,39 @@ void Maumau::play_card(Player& actor)
   } while(!entry_ok);
 }
 
+/**
+ * Checks if a card can be played at the moment. When a color is whished
+ * the card has to be in this color but no "Bube".
+ * When no color is whished the card has to be from the same color or
+ * the same sign.
+ *
+ * @param a_card  Card to be checked.
+ *
+ * @return true when the card can be played.
+ *         false when the card can not be played.
+ */
 bool Maumau::validate_card(const Card& a_card) const
 {
   Card reverence = played_cards.back();
-  bool same_type = a_card.get_type() == reverence.get_type();
-  bool same_id = a_card.get_id() == reverence.get_id();
-  bool no_boy = a_card.get_sign() != "Bube";
-  bool whished_type = a_card.get_type() == whished_sign;
+  bool same_type = a_card.get_color() == reverence.get_color();
+  bool same_id = a_card.get_sign() == reverence.get_sign();
+  bool no_boy = a_card.get_sign() != Card::BUBE;
+  bool whished_type = a_card.get_color() == whished_color;
   bool result = false;
-  if (whished_sign != "")
+  if (whish_played)
     result = whished_type && no_boy;
   else
     result = (same_type || same_id);
   return result;
 }
 
+/**
+ * Checks if the cards collection is empty. When this is the case
+ * the last played card is saved, then the last played card are
+ * assigned to the cards collection, the cards collection gets mixes, and
+ * the last played card gets assinged back to the last played cards
+ * collection.
+ */
 void Maumau::swap_when_cards_empty()
 {
   if (cards.is_empty())
@@ -254,6 +333,11 @@ void Maumau::swap_when_cards_empty()
   }
 }
 
+/**
+ * Prints out the actual situation of the game.
+ *
+ * @param manually  Boolend whether to show full stacks or not.
+ */
 void Maumau::print_situation(bool manually) const
 {
   cout << endl << endl << "Spielsituation "
@@ -271,6 +355,9 @@ void Maumau::print_situation(bool manually) const
   cout << endl;
 }
 
+/**
+ * Prints out the cards all the players horizontally to the console.
+ */
 void Maumau::print_player_cards() const
 {
   for (unsigned int i = 0; i < players.size(); i++)
@@ -289,6 +376,10 @@ void Maumau::print_player_cards() const
   }
 }
 
+/**
+ * Prints out the already played cards and the cards from
+ * the cards collection horizonally.
+ */
 void Maumau::print_other_cards_full() const
 {
   unsigned int size = 0;
@@ -310,6 +401,11 @@ void Maumau::print_other_cards_full() const
   }
 }
 
+/**
+ * Prints out the last played card and the last card from
+ * the cards collection. Then it shows just the number of additional
+ * cards on the two collections.
+ */
 void Maumau::print_other_cards() const
 {
   ostringstream modifier1(ios::out);
@@ -324,6 +420,11 @@ void Maumau::print_other_cards() const
        << left << setw(20) << modifier2.str();
 }
 
+/**
+ * Gives back the highest number of cards one player has.
+ *
+ * @return highest number of cards in the hands of one player.
+ */
 int Maumau::get_highest_cards_count() const
 {
   int max = 0;
@@ -333,12 +434,22 @@ int Maumau::get_highest_cards_count() const
   return max;
 }
 
+/**
+ * Initiates a given number of players.
+ *
+ * @param number_of_players  Number of players to initialize.
+ */
 void Maumau::init_players(int number_of_players)
 {
   for (int i = 0; i < number_of_players; i++)
     players.push_back(Player());
 }
 
+/**
+ * Gives to every player a given number of cards from the cards collection.
+ *
+ * @param number_of_cards   Number of cards to share.
+ */
 void Maumau::give_cards(int number_of_cards)
 {
   for (int i = 0; i < number_of_cards; i++)
@@ -346,6 +457,12 @@ void Maumau::give_cards(int number_of_cards)
       players[j].add(cards.pop());
 }
 
+/**
+ * Gives back the index of the winning player. When the index is -1 there
+ * is no winner.
+ *
+ * @return index of the winning player or -1
+ */
 int Maumau::winner() const
 {
   int winner = -1;
@@ -355,6 +472,9 @@ int Maumau::winner() const
   return winner;
 }
 
+/**
+ * Seeds the srand for random number generation just one time.
+ */
 void Maumau::seed_rand()
 {
   if(!seeded)
@@ -364,6 +484,14 @@ void Maumau::seed_rand()
   }
 }
 
+/**
+ * Gives back a random number in between a given range.
+ *
+ * @param begin   Start number of the range.
+ * @param end     End number of the range.
+ *
+ * @return a random number between begin and end.
+ */
 int Maumau::get_random_number(int begin, int end) const
 {
   return begin + int(end * (rand() / (RAND_MAX + 1.0)));
