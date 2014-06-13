@@ -32,10 +32,15 @@ int Card::get_id() const
   return id;
 }
 
-string Card::get_color() const
+Card::Color Card::get_color() const
 {
-  return (type == "Karo" || type == "Herz") ? "rot" : "schwarz";
+  return color;
 }
+
+//Card::Sign Card::get_sign() const
+//{
+  //return sign;
+//}
 
 string Card::get_sign() const
 {

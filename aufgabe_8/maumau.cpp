@@ -211,6 +211,7 @@ void Maumau::play_card(Player& actor)
     else
     {
       Card played = actor.play(card_number);
+      cout << "Gespielt: " << played << endl;
       if (validate_card(played))
       {
         entry_ok = true;
@@ -220,7 +221,7 @@ void Maumau::play_card(Player& actor)
       else
       {
         cout << "Ungueltige Karte!" << endl;
-        actor.add(played);
+        actor.add(card_number - 1, played);
       }
     }
   } while(!entry_ok);
@@ -256,11 +257,12 @@ void Maumau::swap_when_cards_empty()
 void Maumau::print_situation(bool manually) const
 {
   cout << endl << endl << "Spielsituation "
-       << played_rounds << endl << endl;
+       << played_rounds << endl << setw(players.size() * 15 - 1)
+       << setfill('-') << "-" << setfill(' ') << endl << endl;
   print_player_cards();
   cout << endl;
   for (unsigned int i = 0; i < players.size(); i++)
-    cout << right << setw(20) << setfill('-') << "  " << setfill(' ');
+    cout << right << setw(15) << setfill('-') << "  " << setfill(' ');
   cout << endl;
   if (manually)
     print_other_cards();
@@ -272,16 +274,16 @@ void Maumau::print_situation(bool manually) const
 void Maumau::print_player_cards() const
 {
   for (unsigned int i = 0; i < players.size(); i++)
-    cout << left << setw(20) << players[i].get_name() + ":";
+    cout << left << setw(15) << players[i].get_name() + ":";
   cout << endl << endl;
   for (int i = 0; i < get_highest_cards_count(); i++)
   {
     for (unsigned int j = 0; j < players.size(); j++)
     {
       if (players[j].get_cards_count() > i)
-        cout << left << setw(20) << players[j][i];
+        cout << left << setw(15) << players[j][i];
       else
-        cout << setw(20) << " ";
+        cout << setw(15) << " ";
     }
     cout << endl;
   }

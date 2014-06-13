@@ -11,24 +11,22 @@ int Player::player_count = 0;
 Player::Player()
 {
   init();
-  name = "Hans Ueli Meier";
 }
 
-Player::Player(string a_name)
+void Player::add(int index, const Card& a_card)
 {
-  init();
-  name = a_name;
+  cards.insert(cards.begin() + index, a_card);
 }
 
 void Player::add(const Card& a_card)
 {
-  cards.push_back(a_card);
+  add(0, a_card);
 }
 
 Card Player::play(int index)
 {
   Card card_to_play = cards[index - 1];
-  cards.erase(cards.begin());
+  cards.erase(cards.begin() + (index - 1));
   return card_to_play;
 }
 
@@ -47,15 +45,6 @@ int Player::get_cards_sum() const
   for (unsigned int i = 0; i < cards.size(); i++)
     sum += cards[i].get_eyes();
   return sum;
-}
-
-string Player::show_cards() const
-{
-  ostringstream modifier(ios::out);
-  modifier << "Karten des Player" << number << ":" << endl;
-  for (unsigned int i = 0; i < cards.size(); i++)
-    modifier << "(" << i + 1 << ") " << cards[i] << endl;
-  return modifier.str();
 }
 
 string Player::get_name() const
@@ -91,32 +80,3 @@ ostream& operator<<(ostream& output, const Player& a_player)
   output << a_player.get_name();
   return output;
 }
-
-//istream& operator>>(istream& input, Player& a_player)
-//{
-  //string name = read_text("Bitte Name angeben: ");
-  //a_player = a_player(name);
-  //do
-  //{
-    //try
-    //{
-      //cout << "Bitte Ziffer " << i + 1 << " eingeben: ";
-      //number = read_int(1, 49);
-      //for (int j = 0; j < i; j++)
-        //if (number == static_cast<int>(numbers[j]))
-          //throw "Ziffer Bereits vorhanden!";
-      //numbers[i] = static_cast<char>(number);
-      //entry_ok = true;
-    //}
-    //catch(const char* msg)
-    //{
-      //cout << msg << endl;
-    //}
-  //} while(!entry_ok);
-    //entry_ok = false;
-  //}
-  //a_lottery_win = LotteryWin(numbers);
-  //return input;
-
-  //return input;
-//}

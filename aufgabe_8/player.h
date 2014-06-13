@@ -22,6 +22,7 @@ class Player
     Player(vector<Card> the_cards);
     Player(string name, vector<Card> the_cards);
 
+    void add(int index, const Card& a_card);
     void add(const Card& a_card);
     Card play(int index);
     Card play();

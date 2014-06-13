@@ -7,17 +7,28 @@ using namespace std;
 
 class Card
 {
+  public:
+    enum Color { KARO, HERZ, PIK, KREUZ };
+    enum Sign {
+      SIEBEN = 0, ACHT = 0, NEUN = 0, ZEHN = 10,
+      BUBE = 2, DAME = 3, KOENIG = 4, ASS = 11
+    };
+
   private:
     string type;
     int id;
+    Card::Color color;
+    Card::Sign sign;
 
   public:
     Card();
     Card(string a_type, int a_id);
+    Card(Card::Color a_color, Card::Sign a_sign);
 
     int get_id() const;
     int get_eyes() const;
-    string get_color() const;
+    Card::Color get_color() const;
+    //Card::Sign get_sign() const;
     string get_type() const;
     string get_sign() const;
     string str() const;
