@@ -1,9 +1,10 @@
-#include "card_set.h"
-#include "time.h"
 #include <cstdlib>
 #include <sstream>
 #include <iostream>
 #include <iomanip>
+#include <stdexcept>
+#include "card_set.h"
+#include "time.h"
 
 bool CardSet::seeded = false;
 
@@ -33,9 +34,13 @@ CardSet::CardSet(vector<Card> the_cards)
  * Takes out the last card from the stack.
  *
  * @return the last card in the stack.
+
+ * @throws std::length_error when empty.
  */
-Card CardSet::pop()
+Card CardSet::pop() throw (const length_error)
 {
+  if (is_empty())
+    throw length_error("Card set is empty!");
   Card last = cards.back();
   cards.pop_back();
   return last;

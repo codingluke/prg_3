@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <stdexcept>
 #include "card.h"
 #include "time.h"
 
@@ -22,9 +23,13 @@ Player::Player()
  *
  * @param index     Index where to add the card.
  * @param a_card    The card to add.
+
+ * @throws std::out_of_range when index is out of range
  */
-void Player::add(int index, const Card& a_card)
+void Player::add(int index, const Card& a_card) throw(const out_of_range)
 {
+  if (index < 0 || index > static_cast<int>(cards.size()))
+    throw out_of_range("index nicht vorhanden!");
   cards.insert(cards.begin() + index, a_card);
 }
 
@@ -46,9 +51,13 @@ void Player::add(const Card& a_card)
  * @param index  Index of the card to play.
  *
  * @return the card in the place of a given index.
+ *
+ * @throws std::out_of_range when index is out of range
  */
-Card Player::play(int index)
+Card Player::play(int index) throw(const out_of_range)
 {
+  if (index < 1 || index > static_cast<int>(cards.size() + 1))
+    throw out_of_range("index nicht vorhanden!");
   Card card_to_play = cards[index - 1];
   cards.erase(cards.begin() + (index - 1));
   return card_to_play;

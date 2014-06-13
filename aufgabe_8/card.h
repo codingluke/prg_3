@@ -21,7 +21,6 @@ class Card
 
   public:
     Card();
-    Card(string a_type, int a_id);
     Card(Card::Color a_color, Card::Sign a_sign);
 
     int get_eyes() const;

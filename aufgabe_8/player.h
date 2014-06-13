@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <stdexcept>
 #include "card.h"
 
 using namespace std;
@@ -11,7 +12,6 @@ class Player
 {
   private:
     vector<Card> cards;
-
     int number;
     string name;
     static int player_count;
@@ -22,9 +22,9 @@ class Player
     Player(vector<Card> the_cards);
     Player(string name, vector<Card> the_cards);
 
-    void add(int index, const Card& a_card);
+    void add(int index, const Card& a_card) throw(const out_of_range);
     void add(const Card& a_card);
-    Card play(int index);
+    Card play(int index) throw(const out_of_range);
     Card play();
     string show_cards() const;
     string get_name() const;

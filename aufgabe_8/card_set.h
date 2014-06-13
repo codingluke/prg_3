@@ -2,8 +2,9 @@
 #define CARD_SET_H
 
 #include <vector>
-#include "card.h"
 #include <string>
+#include <stdexcept>
+#include "card.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ class CardSet
     CardSet();
     CardSet(vector<Card> the_cards);
 
-    Card pop();
+    Card pop() throw(const length_error);
     int push(Card a_card);
     unsigned int size() const;
     bool is_empty() const;
