@@ -37,5 +37,5 @@ void print_manual()
 {
   cout << "Benutzung des Programms: ./Maumau option" << endl
        << "wobei option" << endl << "  -m :   Spiele Spieler 1 manuell"
-       << endl << "  -a :   Spiele alle Spieler automatisch";
+       << endl << "  -a :   Spiele alle Spieler automatisch" << endl;
 }
