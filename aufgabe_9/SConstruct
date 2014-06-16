@@ -31,11 +31,11 @@ std = Environment(
 
 cpp_dateien = [
   'console_input.cpp',
-  'lottery_win.cpp',
-  'lottery.cpp',
+  'magic_square_set.cpp',
+  'magic_square.cpp',
   'main.cpp',
 ]
 
-programm_name = 'Lottery'
+programm_name = 'Magic'
 
 std.Program(programm_name, cpp_dateien) # Programm bauen

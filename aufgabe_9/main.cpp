@@ -1,7 +1,7 @@
-#include "ticket_machine.h"
-#include "destination_collection.h"
-
-using namespace std;
+#include "magic_square.h"
+#include "magic_square_set.h"
+#include <iostream>
+#include <iomanip>
 
 /**
  * Entrypoint to the program "Fahrkartenautomat".
@@ -11,29 +11,29 @@ using namespace std;
  */
 int main()
 {
-  vector<double> coins;
-  coins.push_back(0.1);
-  coins.push_back(10);
-  coins.push_back(20);
-  coins.push_back(5);
-  coins.push_back(50);
-  coins.push_back(2);
-  coins.push_back(1);
-  coins.push_back(0.5);
-  coins.push_back(0.0);
-  DestinationCollection destinations("Euro");
-  destinations.add("Kitzbuel", 11.20);
-  destinations.add("Nenzlingen", 23.00);
-  destinations.add("Ostermundingen", 2.30);
-  destinations.add("Hinterduggingen", 9.20);
-  destinations.add("Schweinsfurt", 8.90);
-  destinations.add("Entenhausen", 60.00);
-  destinations.add("Matterhorn", 51.50);
-  destinations.add("Schwaebische alm", 1.00);
-  destinations.add("Teufeldberg", 6.60);
-  destinations.add("Niderbuepp", 14.10);
-  destinations.add("Burgdorf", 3.70);
-  TicketMachine ticket_machine("Luki's Menschentransporte e.V.",
-                               "Euro", coins, destinations);
-  ticket_machine.run();
+  int counter = 0;
+  int ordinal_number = 7;
+  int num_rows_to_switch = ordinal_number / 2;
+  MagicSquareSet myset;
+  myset.add(MagicSquare(ordinal_number));
+  do
+  {
+    for (int i = 1; i <= num_rows_to_switch; i++)
+    {
+      myset.add(myset[counter].switch_rows(i));
+      myset.add(myset[counter].switch_columns(i));
+    }
+    myset.add(myset[counter].switch_diagonal_top_left());
+    myset.add(myset[counter].switch_diagonal_top_right());
+    myset.add(myset[counter].switch_diagonal_top_right());
+    myset.add(myset[counter].rotate_90());
+    myset.add(myset[counter].rotate_90().rotate_90());
+    myset.add(myset[counter].rotate_90().rotate_90().rotate_90());
+    counter++;
+  } while(myset.size() > counter);
+
+  for (int i = 0; i < myset.size(); i++)
+    cout << myset[i].str() << endl << endl;
+
+  cout << "Size: " << myset.size() << endl;
 }
