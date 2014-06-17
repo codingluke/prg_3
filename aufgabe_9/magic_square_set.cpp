@@ -3,38 +3,42 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <vector>
 
 MagicSquareSet::MagicSquareSet()
 {
   length = 0;
-  squares = new MagicSquare[0];
+  //squares = new MagicSquare[0];
 }
 
-MagicSquareSet::MagicSquareSet(const MagicSquareSet& original)
-{
-  length = original.length;
-  squares = new MagicSquare[length];
-  for (int i = 0; i < length; i++)
-    squares[i] = original.squares[i];
-}
+//MagicSquareSet::MagicSquareSet(const MagicSquareSet& original)
+//{
+  //length = original.length;
+  //squares = new MagicSquare[length];
+  //for (int i = 0; i < length; i++)
+    //squares[i] = original.squares[i];
+//}
 
-MagicSquareSet::~MagicSquareSet()
-{
-  delete [] squares;
-}
+//MagicSquareSet::~MagicSquareSet()
+//{
+  //delete [] squares;
+//}
 
 int MagicSquareSet::add(const MagicSquare& a_magic_square)
 {
   if (is_unique(a_magic_square))
   {
-    MagicSquare *tmp = new MagicSquare[length];
-    for (int i = 0; i < length; i++)
-      tmp[i] = squares[i];
-    delete [] squares;
-    squares = new MagicSquare[length + 1];
-    for (int i = 0; i < length; i++)
-      squares[i] = tmp[i];
-    squares[length++] = a_magic_square;
+    length++;
+    squares.push_back(a_magic_square);
+    //squares.resize(length);
+    //MagicSquare *tmp = new MagicSquare[length];
+    //for (int i = 0; i < length; i++)
+      //tmp[i] = squares[i];
+    //delete [] squares;
+    //squares = new MagicSquare[length + 1];
+    //for (int i = 0; i < length; i++)
+      //squares[i] = tmp[i];
+    //squares[length++] = a_magic_square;
   }
   return length;
 }
@@ -54,17 +58,17 @@ string MagicSquareSet::str() const
   return modifier.str();
 }
 
-MagicSquareSet& MagicSquareSet::operator=(const MagicSquareSet& other)
-{
-  if (this != &other)
-  {
-    delete [] squares;
-    length = other.length;
-    for (int i = 0; i < length; i++)
-      squares[i] = other.squares[i];
-  }
-  return *this;
-}
+//MagicSquareSet& MagicSquareSet::operator=(const MagicSquareSet& other)
+//{
+  //if (this != &other)
+  //{
+    //delete [] squares;
+    //length = other.length;
+    //for (int i = 0; i < length; i++)
+      //squares[i] = other.squares[i];
+  //}
+  //return *this;
+//}
 
 MagicSquare MagicSquareSet::operator[](int key)
 {
