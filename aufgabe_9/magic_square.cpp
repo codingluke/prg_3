@@ -109,6 +109,11 @@ MagicSquare MagicSquare::rotate_90()
   return *this;
 }
 
+int MagicSquare::magic_number() const
+{
+  return 0.5 * (ordinal_number * ordinal_number + 1) * ordinal_number;
+}
+
 string MagicSquare::str() const
 {
   ostringstream modifier(ios::out);
@@ -123,6 +128,7 @@ string MagicSquare::str() const
 
 MagicSquare& MagicSquare::operator=(const MagicSquare& other)
 {
+  if (this != &other)
   {
     clear_square();
     ordinal_number = other.ordinal_number;

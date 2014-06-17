@@ -24,6 +24,7 @@ class MagicSquare
     MagicSquare switch_diagonal_top_left();
     MagicSquare switch_diagonal_top_right();
     MagicSquare rotate_90();
+    int magic_number() const;
     string str() const;
 
     MagicSquare& operator=(const MagicSquare& other);
