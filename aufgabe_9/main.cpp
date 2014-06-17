@@ -56,8 +56,4 @@ void run(int ordinal_number) throw(const invalid_argument)
     counter++;
   } while(myset.size() > counter);
   cout << myset.str();
-  //for (int i = 0; i < myset.size(); i++)
-    //cout << myset[i].str() << endl << endl;
-  //cout << "Size: " << myset.size() << endl;
-  //cout << "Magic number: " << myset[0].magic_number() << endl;
 }
