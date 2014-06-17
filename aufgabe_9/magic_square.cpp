@@ -122,9 +122,8 @@ bool MagicSquare::operator==(const MagicSquare& other) const
   {
     equal = true;
     for (int row = 0; equal && row < ordinal_number; row++)
-      for (int col = 0; col < ordinal_number; col++)
-        if (square[row][col] != other.square[row][col])
-          equal = false;
+      for (int col = 0; equal && col < ordinal_number; col++)
+        equal = square[row][col] == other.square[row][col];;
   }
   return equal;
 }
