@@ -23,9 +23,7 @@ MagicSquareSet::MagicSquareSet()
 int MagicSquareSet::add(const MagicSquare& a_magic_square)
 {
   if (is_unique(a_magic_square))
-  {
     squares.push_back(a_magic_square);
-  }
   return squares.size();
 }
 
