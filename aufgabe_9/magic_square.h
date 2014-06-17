@@ -6,6 +6,11 @@
 
 using namespace std;
 
+/**
+ * Difinition of a MagicSquare. Has all the algorithms to generate
+ * a MagicSquare out of a ordinal number and also to mutate the basic
+ * MagicSquare to other valid MagicSquares.
+ */
 class MagicSquare
 {
   private:
@@ -14,7 +19,7 @@ class MagicSquare
 
   public:
     MagicSquare();
-    MagicSquare(int a_ordinal_number);
+    MagicSquare(int a_ordinal_number) throw(const invalid_argument);
     MagicSquare(const MagicSquare& original); // copy-constructor
 
     ~MagicSquare();
@@ -24,7 +29,8 @@ class MagicSquare
     MagicSquare switch_diagonal_top_left();
     MagicSquare switch_diagonal_top_right();
     MagicSquare rotate_90();
-    int magic_number() const;
+    int get_magic_number() const;
+    int get_ordinal_number() const;
     string str() const;
 
     MagicSquare& operator=(const MagicSquare& other);
@@ -37,8 +43,8 @@ class MagicSquare
     void clear_square();
     void calculate();
     bool is_top_right(int& row, int& column) const;
-    bool is_in_first_row(int& row, int& column) const;
-    bool is_in_right_column(int& row, int& column) const;
+    bool is_in_first_row(int& row) const;
+    bool is_in_right_column(int& column) const;
     bool is_empty(int column, int row) const;
 };
 
