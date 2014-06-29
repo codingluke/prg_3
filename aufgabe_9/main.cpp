@@ -56,19 +56,20 @@ void run(int ordinal_number)
     int counter = 0;
     int num_rows_to_switch = ordinal_number / 2;
     MagicSquareSet myset;
-    myset.add(MagicSquare(ordinal_number));
+    myset.add(new MagicSquare(ordinal_number));
     do
     {
+      MagicSquare square = myset[counter];
       for (int i = 1; i <= num_rows_to_switch; i++)
       {
-        myset.add(myset[counter].switch_rows(i));
-        myset.add(myset[counter].switch_columns(i));
+        myset.add(new MagicSquare(square.switch_rows(i)));
+        myset.add(new MagicSquare(square.switch_columns(i)));
       }
-      myset.add(myset[counter].switch_diagonal_top_left());
-      myset.add(myset[counter].switch_diagonal_top_right());
-      myset.add(myset[counter].rotate_90());
-      myset.add(myset[counter].rotate_90().rotate_90());
-      myset.add(myset[counter].rotate_90().rotate_90().rotate_90());
+      myset.add(new MagicSquare(square.switch_diagonal_top_left()));
+      myset.add(new MagicSquare(square.switch_diagonal_top_right()));
+      myset.add(new MagicSquare(square.rotate_90()));
+      myset.add(new MagicSquare(square.rotate_90().rotate_90()));
+      myset.add(new MagicSquare(square.rotate_90().rotate_90().rotate_90()));
       counter++;
     } while(myset.size() > counter);
     string output = myset.str();

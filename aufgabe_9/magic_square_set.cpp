@@ -12,6 +12,17 @@ MagicSquareSet::MagicSquareSet()
 {
 }
 
+MagicSquareSet::MagicSquareSet(const MagicSquareSet& original)
+{
+  squares = original.squares;
+}
+
+MagicSquareSet::~MagicSquareSet()
+{
+  for (int i = 0; i < size(); i++)
+    delete [] squares[i];
+}
+
 /**
  * Adds a MagicSquare to the set when it's not already in the set.
  * When its already in the set, it just ignores it.
@@ -20,7 +31,7 @@ MagicSquareSet::MagicSquareSet()
  *
  * @return the new size of the set.
  */
-int MagicSquareSet::add(const MagicSquare& a_magic_square)
+int MagicSquareSet::add(MagicSquare *a_magic_square)
 {
   if (is_unique(a_magic_square))
     squares.push_back(a_magic_square);
@@ -62,11 +73,23 @@ string MagicSquareSet::str() const
 {
   ostringstream modifier(ios::out);
   for (int i = 0; i < size(); i++)
-    modifier << squares[i].str() << endl << endl;
-  modifier << "Ordnung: " << squares[0].get_ordinal_number() << endl
+    modifier << squares[i]->str() << endl << endl;
+  modifier << "Ordnung: " << squares[0]->get_ordinal_number() << endl
            << "Anzahl: " << size() << endl
-           << "Magic number: " << squares[0].get_magic_number() << endl;
+           << "Magic number: " << squares[0]->get_magic_number() << endl;
   return modifier.str();
+}
+
+MagicSquareSet& MagicSquareSet::operator=(const MagicSquareSet& other)
+{
+  if (this != &other)
+  {
+    for (int i = 0; i < size(); i++)
+      delete [] squares[i];
+    for (int j = 0; j < other.size(); j++)
+      squares.push_back(new MagicSquare(other[j]));
+  }
+  return *this;
 }
 
 /**
@@ -76,9 +99,9 @@ string MagicSquareSet::str() const
  *
  * @return the MagicSquare at the position of key.
  */
-MagicSquare MagicSquareSet::operator[](int key)
+MagicSquare MagicSquareSet::operator[](int key) const
 {
-  MagicSquare m = squares[key];
+  MagicSquare m = *squares[key];
   return m;
 }
 
@@ -90,10 +113,10 @@ MagicSquare MagicSquareSet::operator[](int key)
  * @return true when the MagicSquare doesn't already exists.
  *         false when the MagicSquare already exits.
  */
-bool MagicSquareSet::is_unique(const MagicSquare& a_magic_square) const
+bool MagicSquareSet::is_unique(const MagicSquare* a_magic_square) const
 {
   bool unique = true;
   for (vector<int>::size_type i = 0; unique && i < squares.size(); i++)
-    unique = squares[i] != a_magic_square;
+    unique = *squares[i] != *a_magic_square;
   return unique;
 }

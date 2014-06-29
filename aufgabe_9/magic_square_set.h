@@ -7,19 +7,23 @@
 class MagicSquareSet
 {
   private:
-    vector<MagicSquare> squares;
+    vector<MagicSquare*> squares;
 
   public:
     MagicSquareSet();
+    MagicSquareSet(const MagicSquareSet& original); // copy constructor
 
-    int add(const MagicSquare& a_magic_square);
+    ~MagicSquareSet();
+
+    int add(MagicSquare* a_magic_square);
     int size() const;
     string str() const;
 
-    MagicSquare operator[](int key);
+    MagicSquareSet& operator=(const MagicSquareSet& other);
+    MagicSquare operator[](int key) const;
 
   private:
-    bool is_unique(const MagicSquare& a_magic_square) const;
+    bool is_unique(const MagicSquare* a_magic_square) const;
 };
 
 #endif
