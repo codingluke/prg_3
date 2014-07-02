@@ -30,6 +30,7 @@ std = Environment(
 # Teil 3: Programm bauen
 
 cpp_dateien = [
+  'square.cpp',
   'sudoku.cpp',
   'console_input.cpp',
   'file_controller.cpp',
