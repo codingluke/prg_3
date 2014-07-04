@@ -10,6 +10,11 @@
 
 using namespace std;
 
+void generate_sudoku(int ordinal);
+void solve_sudoku_from_file(string filename);
+string just_numbers(string text);
+bool isi(string text);
+
 /**
  * Entrypoint to the program "Sudoku".
  *
@@ -22,77 +27,82 @@ int main(int argc, char *argv[])
   {
     string option = argv[1];
     if (option == "-g")
+      generate_sudoku(atoi(argv[2]));
+    else if (option == "-s")
     {
-      cout << "Ich erzeuge ein Sudoku. Bitte warten ..." << endl << endl;
-      Sudoku s(atoi(argv[2]));
-      cout << "Sudoku der Ordnung " << atoi(argv[2]) << ":" << endl << endl;
-      cout << s.str() << endl;
-      cout << "Loesung:" << endl << endl;
-      cout << s.str_solved();
+      string filename = argv[2];
+      solve_sudoku_from_file(filename);
+    }
+    else
+      cout << "Beschreibung" << endl;
+  }
+  else
+    cout << "Beschreibung" << endl;
+}
+
+void generate_sudoku(int ordinal)
+{
+  cout << "Ich erzeuge ein Sudoku. Bitte warten ..." << endl << endl;
+  try
+  {
+    Sudoku sudoku(ordinal);
+    sudoku.solve();
+    cout << "Sudoku der Ordnung " << ordinal << ":" << endl << endl
+         << sudoku.str() << endl
+         << "Loesung:" << endl << endl << sudoku.str_solved();
+  }
+  catch (const invalid_argument ex)
+  {
+    cout << ex.what();
+  }
+}
+
+void solve_sudoku_from_file(string filename)
+{
+  cout << "Loese Sudoku" << endl;
+  string file = read_file(filename);
+  if (file.length() > 0)
+  {
+    try
+    {
+      string numbers = just_numbers(file);
+      Square sudoku_square(9, numbers);
+      Sudoku sudoku(sudoku_square);
+      sudoku.solve();
+      cout << "Sudoku:" << endl << sudoku.str() << endl
+           << "Sudoku solved:" << endl << sudoku.str_solved();
+    }
+    catch (const invalid_argument ex)
+    {
+      cout << ex.what();
     }
   }
-    //else if (option == "-s")
-    //{
-      //cout << "Loese Sudoku" << endl;
-      //string file = read_file("sudoku.txt");
-      //string numbers = "";
-      //for(unsigned int i = 0; i < file.length(); i++)
-      //{
-        //string number = file.substr(i, 1);
-        //if (number != " ")
-          //numbers += number;
-      //}
-      //int grid[9][9] = {
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0},
-        //{0,0,0,0,0,0,0,0,0}
-      //};
-      //int row = -1;
-      //int col = 0;
-      //if (numbers.length() == 81)
-        //for(unsigned int i = 0; i < numbers.length(); i++)
-        //{
-          //col = i % 9;
-          //if (col == 0)
-            //row ++;
-          //stringstream ss(numbers.substr(i, 1));
-          //ss >> grid[row][col];
-        //}
-      //for (int i = 0; i < 9; i++)
-      //{
-        //for (int j = 0; j < 9; j++)
-          //cout << grid[i][j];
-        //cout << endl;
-      //}
+}
 
-      ////int grid[9][9] = {
-        ////{9,0,3,0,5,0,6,0,0},
-        ////{0,8,0,1,0,0,0,0,0},
-        ////{0,0,2,0,0,0,0,8,0},
-        ////{0,1,0,0,0,9,0,2,4},
-        ////{0,0,0,0,0,0,9,0,0},
-        ////{0,4,0,3,0,0,0,0,7},
-        ////{0,0,0,0,0,0,4,5,9},
-        ////{0,0,0,7,0,0,0,1,0},
-        ////{0,6,0,0,8,0,0,0,0}
-      ////};
-      //Sudoku s(grid);
-      //cout << "Sudoku:" << endl;
-      //cout << s.str() << endl;
-      ////s.solve();
-      ////cout << "Sudoku solved:" << endl;
-      ////cout << s.str_solved();
-    //}
-    //else
-    //{
-      //cout << "Beschreibung" << endl;
+string just_numbers(string text)
+{
+  string result = "";
+  for(unsigned int i = 0; i < text.length(); i++)
+  {
+    string single_char = text.substr(i, 1);
+    if (isi(single_char))
+      result += single_char;
+  }
+  return result;
+}
 
-    //}
-  //}
+/**
+ * Checks whether an array of chars represents an integer or not.
+ * Solfs atoi problem that returns a 0 for a char which is not a number.
+ *
+ * @param text[] Array of chars.
+ *
+ * @return true when text[] represents a number.
+ *         false when text[] doesn't represent a number.
+ */
+bool isi(string text)
+{
+  int i;
+  std::istringstream in(text);
+  return in >> i && in.eof();
 }

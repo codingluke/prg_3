@@ -5,43 +5,66 @@
 #include <string>
 #include "time.h"
 #include <cstdlib>
+#include <stdexcept>
 
 using namespace std;
 
+/**
+ * Static parameter to flag if random seed is already set.
+ */
 bool Sudoku::rand_seeded = false;
 
+/**
+ * Default constructor. Initializes a unique sudoku with 26 presetted numbers.
+ */
 Sudoku::Sudoku() : unsolved(9), solved(9)
 {
   seed_rand();
+  generate_unique(26);
 }
 
-Sudoku::Sudoku(int ordinal) : unsolved(9), solved(9)
+/**
+ * Initializes a unique Sudoku with a given ordinal number.
+ *
+ * @param ordinal   Number of presetted numbers in the Sudoku.
+ *
+ * @throw const invalid_argument when ordinal number is not between 24 and 34.
+ */
+Sudoku::Sudoku(int ordinal) throw(const invalid_argument)
+  : unsolved(9), solved(9)
 {
+  if (ordinal <= 24 || ordinal >= 34)
+    throw invalid_argument("Ungueltige Ordnung! Nur Ordnungen zwischen 24 - 34 erlaupt!");
   seed_rand();
-  //init_grid();
   generate_unique(ordinal);
 }
 
-//Sudoku::Sudoku(int a_grid[9][9])
-//{
-  //seed_rand();
-  //init_grid(a_grid);
-  //prepare_solved_grid();
-//}
-
-Sudoku::Sudoku(const Sudoku& original)
+/**
+ * Initializes a Sudoku out of a given Square.
+ *
+ * @param the_unsolved  The Square of the Sudoku.
+ *
+ * @throw const invalid_argument when square can not be devided by 3.
+ */
+Sudoku::Sudoku(const Square& the_unsolved) throw(const invalid_argument)
+  : unsolved(the_unsolved), solved(the_unsolved)
 {
-  seed_rand();
-  solved = original.solved;
-  unsolved = original.unsolved;
-  //init_grid(original.grid);
+  if (the_unsolved.get_ordinal() % 3 != 0)
+  {
+    unsolved = Square(9);
+    solved = unsolved;
+    throw invalid_argument("Ungueltige Quadratgroesse!");
+  }
 }
 
-Sudoku::~Sudoku()
-{
-  //clear_grid();
-}
-
+/**
+ * Solves the sudoku. Gives back true when the sudoku is solved and is
+ * unique. Gives back false when the Sudoku can not be solved or is not
+ * unique.
+ *
+ * @return true when the Sudoku is unique and can be solved.
+ *         false when the Sudoku is not unique or can not be solved.
+ */
 bool Sudoku::solve()
 {
   bool valid = true;
@@ -52,9 +75,7 @@ bool Sudoku::solve()
   int ordinal = unsolved.get_ordinal();
   Square tmp_solved(ordinal);
   for (int row = 0; valid && row < ordinal; row++)
-  {
     for (int col = 0; valid && col < ordinal; col++)
-    {
       if (is_empty(row, col))
       {
         if (!auto_set_field(row, col, first_col))
@@ -68,7 +89,7 @@ bool Sudoku::solve()
         }
         else
         {
-          if (row == 8 && col == last_col)
+          if (row == (ordinal - 1) && col == last_col)
           {
             round++;
             if (round < 2)
@@ -78,8 +99,6 @@ bool Sudoku::solve()
           }
         }
       }
-    }
-  }
   if (round == 1)
     valid = true;
   else if (round == 2)
@@ -88,6 +107,14 @@ bool Sudoku::solve()
   return valid;
 }
 
+/**
+ * Gives out the previous empty column of a given field.
+ *
+ * @param row  The row of the field.
+ * @param col  The column of the field.
+ *
+ * @return previous column.
+ */
 int Sudoku::prev_empty_col(int row, int col) const
 {
   do
@@ -103,48 +130,94 @@ int Sudoku::prev_empty_col(int row, int col) const
   return col;
 }
 
-bool Sudoku::set_field(int x, int y, int number)
+/**
+ * Checks whether a number is valid and sets the number to a given field.
+ *
+ * @param row     Row of the field.
+ * @param col     Column of the field.
+ * @param number  Number to set.
+ *
+ * @return true when number is valid and added.
+ *         false when number is not valid.
+ */
+bool Sudoku::set_field(int row, int col, int number)
 {
-  return set_field(x, y, number, unsolved);
+  return set_field(row, col, number, unsolved);
 }
 
-bool Sudoku::set_field(int x, int y, int number, Square& square)
+/**
+ * Check whether a number is valid an adds the number to a given field
+ * in a given Square.
+ *
+ * @param row     Row of the field.
+ * @param col     Column of the field.
+ * @param number  Number to set.
+ * @param square  Square to add the number.
+ *
+ * @return true when number is valid and added.
+ *         false when number is not valid.
+ */
+bool Sudoku::set_field(int row, int col, int number, Square& square)
 {
   bool valid = true;
-  int tmp = square[x][y];
-  square[x][y] = number;
-  if (!validate_square_by_field(x, y, square) ||
-      !validate_col(y, square) || !validate_row(x, square))
+  int tmp = square[row][col];
+  square[row][col] = number;
+  if (!validate_square_by_field(row, col, square) ||
+      !validate_col(col, square) || !validate_row(row, square))
   {
-    square[x][y] = tmp;
+    square[row][col] = tmp;
     valid = false;
   }
   return valid;
 }
 
+/**
+ * Returns the first empty column of the Sudoku.
+ *
+ * @return first empty column of the Sudoku.
+ */
 int Sudoku::first_empty_col() const
 {
   int empty = -1;
-  for (int col = 0; empty == -1 && col < 9; col++)
+  for (int col = 0; empty == -1 && col < unsolved.get_ordinal(); col++)
     if (is_empty(0, col))
       empty = col;
   return empty;
 }
 
+/**
+ * Returns the last empty column of the Sudoku.
+ *
+ * @return  last empty column of the Sudoku.
+ */
 int Sudoku::last_empty_col() const
 {
   int empty = -1;
-    for (int col = 8; empty == -1 && col > -1; col--)
-      if (is_empty(8, col))
+    for (int col = unsolved.get_ordinal() - 1; empty == -1 && col > -1; col--)
+      if (is_empty(unsolved.get_ordinal() - 1, col))
         empty = col;
   return empty;
 }
 
+/**
+ * Setts automatically the next valid Number for a given field.
+ * When there is no next valid number, it setts a zero in the field.
+ * When it is the first column, it setts a -1 to show. That the Sudoku
+ * can not be solved.
+ *
+ * @param row       Row of the field.
+ * @param col       Column of the field.
+ * @param first_col First column of the field.
+ *
+ * @return true when it was possible to set a next number.
+ *         false when it was not possible to set a next number.
+ */
 bool Sudoku::auto_set_field(int row, int col, int first_col)
 {
   bool valid = false;
-  if (solved[row][col] < 9)
-    for (int i = solved[row][col] + 1; !valid && i < 10; i++)
+  int ordinal = solved.get_ordinal();
+  if (solved[row][col] < ordinal)
+    for (int i = solved[row][col] + 1; !valid && i < ordinal + 1; i++)
       valid = set_field(row, col, i, solved);
   if (!valid && row == 0 && col == first_col)
     solved[row][col] = -1;
@@ -153,6 +226,11 @@ bool Sudoku::auto_set_field(int row, int col, int first_col)
   return valid;
 }
 
+/**
+ * Returns a string representation of the unsolved Sudoku.
+ *
+ * @return string representation of the unsolved Sudoku.
+ */
 string Sudoku::str() const
 {
   ostringstream modifier(ios::out);
@@ -171,6 +249,11 @@ string Sudoku::str() const
   return modifier.str();
 }
 
+/**
+ * Returns a string representation of the solved Sudoku.
+ *
+ * @return string representation of the solved Sudoku.
+ */
 string Sudoku::str_solved() const
 {
   ostringstream modifier(ios::out);
@@ -189,18 +272,11 @@ string Sudoku::str_solved() const
   return modifier.str();
 }
 
-Sudoku& Sudoku::operator=(const Sudoku& other)
-{
-  if (this != &other)
-  {
-    solved = other.solved;
-    unsolved = other.unsolved;
-    //clear_grid();
-    //init_grid(other.grid);
-  }
-  return *this;
-}
-
+/**
+ * Generates a random unique Sudoku of a given ordinal number.
+ *
+ * @param ordinal  Ordinal number of the generated Sudoku.
+ */
 void Sudoku::generate_unique(int ordinal)
 {
   do
@@ -209,8 +285,15 @@ void Sudoku::generate_unique(int ordinal)
     generate(ordinal);
     solved = unsolved;
   } while(!solve());
+  solved = unsolved;
 }
 
+/**
+ * Generates a random Sudoku of a given ordinal number. The generated
+ * Sudoku has not to be unique nor solvable.
+ *
+ * @param oridnal  Ordinal number of the generated Sudoku.
+ */
 void Sudoku::generate(int oridnal)
 {
   int number = 0;
@@ -227,11 +310,28 @@ void Sudoku::generate(int oridnal)
   }
 }
 
+/**
+ * Checks if a given field is empty (in the unsolved sudoku) or not.
+ *
+ * @param row  Row of the field.
+ * @param col  Column of the field.
+ *
+ * @return true when the field is empty.
+ *         false when the field is not empty.
+ */
 bool Sudoku::is_empty(int row, int col) const
 {
   return unsolved[row][col] == 0;
 }
 
+/**
+ * Validates if a given column from a Square fullfills the sudoku column rule.
+ *
+ * @param col     Column to check.
+ * @param square  Square in which to check.
+ *
+ * @return true when the column fullfills the rule.
+ */
 bool Sudoku::validate_col(int col, Square& square)
 {
   bool valid = true;
@@ -249,6 +349,14 @@ bool Sudoku::validate_col(int col, Square& square)
   return valid;
 }
 
+/**
+ * Validates if a given row of a Square fullfills the sudoku row rule.
+ *
+ * @param row     Row to check.
+ * @param square  Square in which to check.
+ *
+ * @return true when the row fullfills the rule.
+ */
 bool Sudoku::validate_row(int row, Square& square)
 {
   bool valid = true;
@@ -266,6 +374,16 @@ bool Sudoku::validate_row(int row, Square& square)
   return valid;
 }
 
+/**
+ * Validates if a subsquare fullfills the sudoku subsquare rule.
+ * The subsuqre gets identified by a given field of the Sudoku.
+ *
+ * @param row     Row of a field inside the subsquare.
+ * @param col     Column of a field inside the subsquare.
+ * @param square  The sudoku square to check in.
+ *
+ * @return true when the subsquare fullfills the rule.
+ */
 bool Sudoku::validate_square_by_field(int x, int y, Square& square)
 {
   bool valid = true;
