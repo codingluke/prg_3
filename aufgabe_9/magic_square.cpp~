@@ -67,6 +67,39 @@ string MagicSquare::str() const
   return modifier.str();
 }
 
+/**
+ * Overloads the operator?=. Checks if a MagicSquare is equal an other.
+ *
+ * @param other  Other MagicSquare to compare.
+ *
+ * @return true when they are equal.
+ *         false when they are not equal.
+ */
+bool MagicSquare::operator==(const MagicSquare& other) const
+{
+  bool equal = false;
+  if (ordinal == other.ordinal)
+  {
+    equal = true;
+    for (int row = 0; equal && row < ordinal; row++)
+      for (int col = 0; equal && col < ordinal; col++)
+        equal = data[row][col] == other.data[row][col];;
+  }
+  return equal;
+}
+
+/**
+ * Overloads the operator!=. Checks if a MagicSquare is not equal an other.
+ *
+ * @param other  Other MagicSquare to compare.
+ *
+ * @return true when they are not equal.
+ *         false when they are equal.
+ */
+bool MagicSquare::operator!=(const MagicSquare& other) const
+{
+  return !(other == *this);
+}
 
 
 /**

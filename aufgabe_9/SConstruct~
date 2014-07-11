@@ -30,7 +30,6 @@ std = Environment(
 # Teil 3: Programm bauen
 
 cpp_dateien = [
-  'square.cpp',
   'console_input.cpp',
   'file_controller.cpp',
   'magic_square_set.cpp',
