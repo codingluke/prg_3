@@ -115,6 +115,14 @@ MagicSquare& MagicSquare::operator=(const MagicSquare& other)
   return *this;
 }
 
+/**
+ * Overloads the operator?=. Checks if a MagicSquare is equal an other.
+ *
+ * @param other  Other MagicSquare to compare.
+ *
+ * @return true when they are equal.
+ *         false when they are not equal.
+ */
 bool MagicSquare::operator==(const MagicSquare& other) const
 {
   bool equal = false;
@@ -128,6 +136,14 @@ bool MagicSquare::operator==(const MagicSquare& other) const
   return equal;
 }
 
+/**
+ * Overloads the operator!=. Checks if a MagicSquare is not equal an other.
+ *
+ * @param other  Other MagicSquare to compare.
+ *
+ * @return true when they are not equal.
+ *         false when they are equal.
+ */
 bool MagicSquare::operator!=(const MagicSquare& other) const
 {
   return !(other == *this);

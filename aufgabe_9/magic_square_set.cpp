@@ -12,11 +12,19 @@ MagicSquareSet::MagicSquareSet()
 {
 }
 
+/**
+ * Copy-constructor for a MagicSquareSet. Implements the deep copy.
+ *
+ * @param original  The MagicSquareSet to copy from.
+ */
 MagicSquareSet::MagicSquareSet(const MagicSquareSet& original)
 {
   squares = original.squares;
 }
 
+/**
+ * Deconstructor for the MagicSquareSet.
+ */
 MagicSquareSet::~MagicSquareSet()
 {
   for (int i = 0; i < size(); i++)
@@ -80,6 +88,14 @@ string MagicSquareSet::str() const
   return modifier.str();
 }
 
+/**
+ * Overloads the assignment operator=. Defines how to assign a MagicSquareSet
+ * to an other.
+ *
+ * @param other  The MagicSquareSet to assign.
+ *
+ * @return The actual MagicSquareSet.
+ */
 MagicSquareSet& MagicSquareSet::operator=(const MagicSquareSet& other)
 {
   if (this != &other)
