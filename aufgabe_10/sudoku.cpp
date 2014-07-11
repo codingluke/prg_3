@@ -21,6 +21,7 @@ Sudoku::Sudoku() : unsolved(9), solved(9)
 {
   seed_rand();
   generate_unique(26);
+  status = -1;
 }
 
 /**
@@ -37,6 +38,7 @@ Sudoku::Sudoku(int ordinal) throw(const invalid_argument)
     throw invalid_argument("Ungueltige Ordnung! Nur Ordnungen zwischen 24 - 34 erlaupt!");
   seed_rand();
   generate_unique(ordinal);
+  status = -1;
 }
 
 /**
@@ -55,6 +57,7 @@ Sudoku::Sudoku(const Square& the_unsolved) throw(const invalid_argument)
     solved = unsolved;
     throw invalid_argument("Ungueltige Quadratgroesse!");
   }
+  status = -1;
 }
 
 /**
@@ -67,6 +70,7 @@ Sudoku::Sudoku(const Square& the_unsolved) throw(const invalid_argument)
  */
 bool Sudoku::solve()
 {
+  status = -1;
   bool valid = true;
   int round = 0;
   int tmp_col = 0;
@@ -265,18 +269,26 @@ int Sudoku::get_status() const
 string Sudoku::str_solved() const
 {
   ostringstream modifier(ios::out);
-  for (int i = 0; i < 9; i++)
-  {
-    for (int j = 0; j < 9; j++)
+  if (status == -1)
+    modifier << "Sudoku noch nicht gelöst!" << endl;
+  if (status == 0)
+    modifier << "Sudoku nicht loesbar!" << endl;
+  if (status == 1)
+    for (int i = 0; i < 9; i++)
     {
-      modifier << setw(3) << solved[i][j];
-      if ((j + 1) % 3 == 0)
-        modifier << " ";
-    }
-    modifier << endl;
-    if ((i + 1) % 3 == 0)
+      for (int j = 0; j < 9; j++)
+      {
+        modifier << setw(3) << solved[i][j];
+        if ((j + 1) % 3 == 0)
+          modifier << " ";
+      }
       modifier << endl;
-  }
+      if ((i + 1) % 3 == 0)
+        modifier << endl;
+    }
+  else if (status == 2)
+    modifier << "Sudoku mehrfach loesbar!" << endl;
+
   return modifier.str();
 }
 
