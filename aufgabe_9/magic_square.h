@@ -22,7 +22,7 @@ class MagicSquare
     MagicSquare(int a_ordinal_number) throw(const invalid_argument);
     MagicSquare(const MagicSquare& original); // copy-constructor
 
-    ~MagicSquare();
+    virtual ~MagicSquare();
 
     MagicSquare switch_rows(int index) throw(const out_of_range);
     MagicSquare switch_columns(int index) throw(const out_of_range);

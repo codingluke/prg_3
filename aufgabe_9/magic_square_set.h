@@ -13,7 +13,7 @@ class MagicSquareSet
     MagicSquareSet();
     MagicSquareSet(const MagicSquareSet& original); // copy constructor
 
-    ~MagicSquareSet();
+    virtual ~MagicSquareSet();
 
     int add(MagicSquare* a_magic_square);
     int size() const;

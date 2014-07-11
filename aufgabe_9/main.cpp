@@ -11,6 +11,7 @@
 using namespace std;
 
 void run(int ordinal_number);
+void print_description();
 
 /**
  * Entrypoint to the program "MagicSquare".
@@ -35,7 +36,18 @@ int main(int argc, char *argv[])
   if (argc == 2)
     run(atoi(argv[1]));
   else
-    cout << "Beschreibung" << endl;
+    print_description();
+}
+
+/**
+ * Prints out the description to use the program to the console.
+ */
+void print_description()
+{
+  cout << "Das Program kann wie folgt gestartet werden." << endl << endl
+       << "  ./Magic n" << endl << endl
+       << "wobei:" << endl
+       << "  n\t\tOrdnung des Magic Squares (nur Ungerade Zahlen)" << endl;
 }
 
 /**

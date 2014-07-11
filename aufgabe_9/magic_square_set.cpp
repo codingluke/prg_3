@@ -27,8 +27,6 @@ MagicSquareSet::MagicSquareSet(const MagicSquareSet& original)
  */
 MagicSquareSet::~MagicSquareSet()
 {
-  for (int i = 0; i < size(); i++)
-    delete [] squares[i];
 }
 
 /**

@@ -23,7 +23,7 @@ class Square
     Square(int the_ordinal, int **the_data);
     Square(int the_ordinal, string the_data) throw(const invalid_argument);
 
-    ~Square();
+    virtual ~Square();
 
     int get_ordinal() const;
 
