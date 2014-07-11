@@ -99,10 +99,13 @@ bool Sudoku::solve()
           }
         }
       }
+  status = round;
   if (round == 1)
     valid = true;
   else if (round == 2)
     valid = solved == tmp_solved;
+    if (valid)
+      status = 1;
   solved = tmp_solved;
   return valid;
 }
@@ -247,6 +250,11 @@ string Sudoku::str() const
       modifier << endl;
   }
   return modifier.str();
+}
+
+int Sudoku::get_status() const
+{
+  return status;
 }
 
 /**

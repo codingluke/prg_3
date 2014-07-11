@@ -68,9 +68,13 @@ void solve_sudoku_from_file(string filename)
       string numbers = just_numbers(file);
       Square sudoku_square(9, numbers);
       Sudoku sudoku(sudoku_square);
-      sudoku.solve();
-      cout << "Sudoku:" << endl << sudoku.str() << endl
-           << "Sudoku solved:" << endl << sudoku.str_solved();
+      if (sudoku.solve())
+        cout << "Sudoku:" << endl << sudoku.str() << endl
+             << "Sudoku solved:" << endl << sudoku.str_solved();
+      else if (sudoku.get_status() == 0)
+        cout << "Sudoku nicht lösbar" << endl;
+      else if (sudoku.get_status() == 2)
+        cout << "Sudoku mehrfach lösbar" << endl;
     }
     catch (const invalid_argument ex)
     {

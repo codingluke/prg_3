@@ -13,6 +13,7 @@ class Sudoku
     Square unsolved;
     Square solved;
     static bool rand_seeded;
+    int status;
 
   public:
     Sudoku();
@@ -23,6 +24,7 @@ class Sudoku
     bool solve();
     string str() const;
     string str_solved() const;
+    int get_status() const;
 
   private:
     void generate_unique(int ordinal);
