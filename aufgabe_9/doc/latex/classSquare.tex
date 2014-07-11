@@ -1,0 +1,336 @@
+\hypertarget{classSquare}{\section{Square Class Reference}
+\label{classSquare}\index{Square@{Square}}
+}
+
+
+{\ttfamily \#include $<$square.\-h$>$}
+
+
+
+Inheritance diagram for Square\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classSquare__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSquare_a3dc7ff9aefc2725172b5d3153973d243}{Square} ()
+\item 
+\hyperlink{classSquare_a687fd93a7b5b6f4e310dda4765f2e4b9}{Square} (int the\-\_\-ordinal)
+\item 
+\hyperlink{classSquare_a5b24c398bbcd2fa54d750e821b682be4}{Square} (const \hyperlink{classSquare}{Square} \&original)
+\item 
+\hyperlink{classSquare_ab2ce549e03ee04a325fde6fa69b0bd56}{Square} (int the\-\_\-ordinal, int $\ast$$\ast$the\-\_\-data)
+\item 
+\hyperlink{classSquare_a6aaedd8907eb79371c1a964c22a91df1}{Square} (int the\-\_\-ordinal, string the\-\_\-data)  throw (const invalid\-\_\-argument)
+\item 
+virtual \hyperlink{classSquare_a90af7ce1060cff7b717ceddb333846b8}{$\sim$\-Square} ()
+\item 
+int \hyperlink{classSquare_aa88af87efb77891af13d7e51875c8a4d}{get\-\_\-ordinal} () const 
+\item 
+\hyperlink{classSquare}{Square} \& \hyperlink{classSquare_aefd7f1993a8a7dc2da19773aa615d4e5}{operator=} (const \hyperlink{classSquare}{Square} \&other)
+\item 
+int $\ast$ \hyperlink{classSquare_a7dfc1c4829599e231ad72d1f2b6d0e83}{operator\mbox{[}$\,$\mbox{]}} (const int \&key) const 
+\item 
+bool \hyperlink{classSquare_a68344a4bfb9a5bc8b6382f302049ec6f}{operator==} (const \hyperlink{classSquare}{Square} \&other) const 
+\item 
+bool \hyperlink{classSquare_a62325c38089124501ce08ddf2fb7a4eb}{operator!=} (const \hyperlink{classSquare}{Square} \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSquare_af7e972a99bbd1229c1a2ed9c9973b1a3}{init} ()
+\item 
+void \hyperlink{classSquare_ad8a97711bb0377c85707f926c715149a}{init} (int $\ast$$\ast$the\-\_\-data)
+\item 
+void \hyperlink{classSquare_a613cdeed3d18a22bd212431d0c1d3b3d}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSquare_abfaf02c2958d841dc7def09197d26d93}{ordinal}
+\item 
+int $\ast$$\ast$ \hyperlink{classSquare_a3b5a8a3e9ae6e0570dd54ab360bacef0}{data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of the Class \hyperlink{classSquare}{Square}. A \hyperlink{classSquare}{Square} is a array where the columns and the rows have the same size. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSquare_a3dc7ff9aefc2725172b5d3153973d243}{\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\subsubsection[{Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\-::\-Square (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classSquare_a3dc7ff9aefc2725172b5d3153973d243}
+Initializes a \hyperlink{classSquare}{Square} with the ordinal number 9. 
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classSquare_a3dc7ff9aefc2725172b5d3153973d243_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSquare_a687fd93a7b5b6f4e310dda4765f2e4b9}{\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\subsubsection[{Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\-::\-Square (
+\begin{DoxyParamCaption}
+\item[{int}]{the\-\_\-ordinal}
+\end{DoxyParamCaption}
+)}}\label{classSquare_a687fd93a7b5b6f4e310dda4765f2e4b9}
+Initializes a \hyperlink{classSquare}{Square} with a given ordinal number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-ordinal} & Ordinal number of the square. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classSquare_a687fd93a7b5b6f4e310dda4765f2e4b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSquare_a5b24c398bbcd2fa54d750e821b682be4}{\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\subsubsection[{Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\-::\-Square (
+\begin{DoxyParamCaption}
+\item[{const {\bf Square} \&}]{original}
+\end{DoxyParamCaption}
+)}}\label{classSquare_a5b24c398bbcd2fa54d750e821b682be4}
+copy-\/constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The \hyperlink{classSquare}{Square} to copy. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classSquare_a5b24c398bbcd2fa54d750e821b682be4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSquare_ab2ce549e03ee04a325fde6fa69b0bd56}{\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\subsubsection[{Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\-::\-Square (
+\begin{DoxyParamCaption}
+\item[{int}]{the\-\_\-ordinal, }
+\item[{int $\ast$$\ast$}]{the\-\_\-data}
+\end{DoxyParamCaption}
+)}}\label{classSquare_ab2ce549e03ee04a325fde6fa69b0bd56}
+Initializes a \hyperlink{classSquare}{Square} with a given ordinal number and a given dataset.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-ordinal} & Ordinal number of the \hyperlink{classSquare}{Square}. \\
+\hline
+{\em the\-\_\-data} & Data for the \hyperlink{classSquare}{Square}. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{classSquare_ab2ce549e03ee04a325fde6fa69b0bd56_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSquare_a6aaedd8907eb79371c1a964c22a91df1}{\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\subsubsection[{Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\-::\-Square (
+\begin{DoxyParamCaption}
+\item[{int}]{the\-\_\-ordinal, }
+\item[{string}]{the\-\_\-data}
+\end{DoxyParamCaption}
+)  throw (const invalid\-\_\-argument)}}\label{classSquare_a6aaedd8907eb79371c1a964c22a91df1}
+Initializes a \hyperlink{classSquare}{Square} with a given ordinal number and a given dataset as string out of numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-ordinal} & Ordinal number of the \hyperlink{classSquare}{Square}. \\
+\hline
+{\em the\-\_\-data} & Data for the \hyperlink{classSquare}{Square}.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em const} & invalid\-\_\-argument when the ordinal and data are not consistent. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classSquare_a90af7ce1060cff7b717ceddb333846b8}{\index{Square@{Square}!$\sim$\-Square@{$\sim$\-Square}}
+\index{$\sim$\-Square@{$\sim$\-Square}!Square@{Square}}
+\subsubsection[{$\sim$\-Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\-::$\sim$\-Square (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classSquare_a90af7ce1060cff7b717ceddb333846b8}
+Deconstructor. Clears the heap. 
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{classSquare_a90af7ce1060cff7b717ceddb333846b8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSquare_a613cdeed3d18a22bd212431d0c1d3b3d}{\index{Square@{Square}!clear@{clear}}
+\index{clear@{clear}!Square@{Square}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Square\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSquare_a613cdeed3d18a22bd212431d0c1d3b3d}
+Cleans the square and its sub arrays form memory. \hypertarget{classSquare_aa88af87efb77891af13d7e51875c8a4d}{\index{Square@{Square}!get\-\_\-ordinal@{get\-\_\-ordinal}}
+\index{get\-\_\-ordinal@{get\-\_\-ordinal}!Square@{Square}}
+\subsubsection[{get\-\_\-ordinal}]{\setlength{\rightskip}{0pt plus 5cm}int Square\-::get\-\_\-ordinal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classSquare_aa88af87efb77891af13d7e51875c8a4d}
+Returns the ordinal of the \hyperlink{classSquare}{Square}.
+
+\begin{DoxyReturn}{Returns}
+ordinal of the square. 
+\end{DoxyReturn}
+\hypertarget{classSquare_af7e972a99bbd1229c1a2ed9c9973b1a3}{\index{Square@{Square}!init@{init}}
+\index{init@{init}!Square@{Square}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Square\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSquare_af7e972a99bbd1229c1a2ed9c9973b1a3}
+Initializes an empty square. (filled with 0) \hypertarget{classSquare_ad8a97711bb0377c85707f926c715149a}{\index{Square@{Square}!init@{init}}
+\index{init@{init}!Square@{Square}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Square\-::init (
+\begin{DoxyParamCaption}
+\item[{int $\ast$$\ast$}]{the\-\_\-data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSquare_ad8a97711bb0377c85707f926c715149a}
+Initializes the square with a given 2d array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-data} & the data to fill the \hyperlink{classSquare}{Square}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classSquare_a62325c38089124501ce08ddf2fb7a4eb}{\index{Square@{Square}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Square@{Square}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Square\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Square} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classSquare_a62325c38089124501ce08ddf2fb7a4eb}
+Overloads the operator!=. Checks if a \hyperlink{classMagicSquare}{Magic\-Square} is not equal an other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Other \hyperlink{classMagicSquare}{Magic\-Square} to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when they are not equal. false when they are equal. 
+\end{DoxyReturn}
+\hypertarget{classSquare_aefd7f1993a8a7dc2da19773aa615d4e5}{\index{Square@{Square}!operator=@{operator=}}
+\index{operator=@{operator=}!Square@{Square}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Square} \& Square\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Square} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classSquare_aefd7f1993a8a7dc2da19773aa615d4e5}
+Overloads assignment operator=. Defines how to copy a \hyperlink{classSquare}{Square} to an other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The square to copy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to itself. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classSquare_aefd7f1993a8a7dc2da19773aa615d4e5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classSquare_a68344a4bfb9a5bc8b6382f302049ec6f}{\index{Square@{Square}!operator==@{operator==}}
+\index{operator==@{operator==}!Square@{Square}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Square\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Square} \&}]{other}
+\end{DoxyParamCaption}
+) const}}\label{classSquare_a68344a4bfb9a5bc8b6382f302049ec6f}
+Overloads the operator?=. Checks if a \hyperlink{classMagicSquare}{Magic\-Square} is equal an other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Other \hyperlink{classMagicSquare}{Magic\-Square} to compare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true when they are equal. false when they are not equal. 
+\end{DoxyReturn}
+\hypertarget{classSquare_a7dfc1c4829599e231ad72d1f2b6d0e83}{\index{Square@{Square}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Square@{Square}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ Square\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classSquare_a7dfc1c4829599e231ad72d1f2b6d0e83}
+Overloads access operator\mbox{[}\mbox{]}. Defines how to access single entries of the \hyperlink{classSquare}{Square}. As it gives back a pointer it is possible to access also the columns like this. square\mbox{[}0\mbox{]}\mbox{[}0\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key to the row to access.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a certain row of the square. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classSquare_a3b5a8a3e9ae6e0570dd54ab360bacef0}{\index{Square@{Square}!data@{data}}
+\index{data@{data}!Square@{Square}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$$\ast$ Square\-::data\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSquare_a3b5a8a3e9ae6e0570dd54ab360bacef0}
+the data as a pointer to pointer array \hypertarget{classSquare_abfaf02c2958d841dc7def09197d26d93}{\index{Square@{Square}!ordinal@{ordinal}}
+\index{ordinal@{ordinal}!Square@{Square}}
+\subsubsection[{ordinal}]{\setlength{\rightskip}{0pt plus 5cm}int Square\-::ordinal\hspace{0.3cm}{\ttfamily [protected]}}}\label{classSquare_abfaf02c2958d841dc7def09197d26d93}
+Ordinal number of the square 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{square_8h}{square.\-h}\item 
+\hyperlink{square_8cpp}{square.\-cpp}\end{DoxyCompactItemize}

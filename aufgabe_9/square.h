@@ -13,7 +13,9 @@ using namespace std;
 class Square
 {
   protected:
+    /** Ordinal number of the square */
     int ordinal;
+    /** the data as a pointer to pointer array */
     int **data;
 
   public:

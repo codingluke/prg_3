@@ -1,0 +1,177 @@
+\hypertarget{classMagicSquareSet}{\section{Magic\-Square\-Set Class Reference}
+\label{classMagicSquareSet}\index{Magic\-Square\-Set@{Magic\-Square\-Set}}
+}
+
+
+{\ttfamily \#include $<$magic\-\_\-square\-\_\-set.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMagicSquareSet_a70591cbccd41666cce19f2d720904162}{Magic\-Square\-Set} ()
+\item 
+\hyperlink{classMagicSquareSet_a6b537e36c455af04096353045a3b2d92}{Magic\-Square\-Set} (const \hyperlink{classMagicSquareSet}{Magic\-Square\-Set} \&original)
+\item 
+virtual \hyperlink{classMagicSquareSet_adfe49757d5627696c83c3fbf903b7665}{$\sim$\-Magic\-Square\-Set} ()
+\item 
+int \hyperlink{classMagicSquareSet_af6d417c4a64ad109b86a20cc7499e378}{add} (\hyperlink{classMagicSquare}{Magic\-Square} $\ast$a\-\_\-magic\-\_\-square)
+\item 
+int \hyperlink{classMagicSquareSet_a7e44d044af79459d650e19fa564c00b5}{size} () const 
+\item 
+string \hyperlink{classMagicSquareSet_a313f7b06fb202ab327639fedaeda8b03}{str} () const 
+\item 
+\hyperlink{classMagicSquareSet}{Magic\-Square\-Set} \& \hyperlink{classMagicSquareSet_a219ab922ac0c556c11134a2cbeb2f761}{operator=} (const \hyperlink{classMagicSquareSet}{Magic\-Square\-Set} \&other)
+\item 
+\hyperlink{classMagicSquare}{Magic\-Square} \hyperlink{classMagicSquareSet_a2ae62f09ce34696ee5bbdb9930b92c85}{operator\mbox{[}$\,$\mbox{]}} (int key) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMagicSquareSet_a70591cbccd41666cce19f2d720904162}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!Magic\-Square\-Set@{Magic\-Square\-Set}}
+\index{Magic\-Square\-Set@{Magic\-Square\-Set}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{Magic\-Square\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Magic\-Square\-Set\-::\-Magic\-Square\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquareSet_a70591cbccd41666cce19f2d720904162}
+Default constructor. Initializes a empty vectors of squares. \hypertarget{classMagicSquareSet_a6b537e36c455af04096353045a3b2d92}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!Magic\-Square\-Set@{Magic\-Square\-Set}}
+\index{Magic\-Square\-Set@{Magic\-Square\-Set}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{Magic\-Square\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Magic\-Square\-Set\-::\-Magic\-Square\-Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Magic\-Square\-Set} \&}]{original}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquareSet_a6b537e36c455af04096353045a3b2d92}
+Copy-\/constructor for a \hyperlink{classMagicSquareSet}{Magic\-Square\-Set}. Implements the deep copy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em original} & The \hyperlink{classMagicSquareSet}{Magic\-Square\-Set} to copy from. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMagicSquareSet_adfe49757d5627696c83c3fbf903b7665}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!$\sim$\-Magic\-Square\-Set@{$\sim$\-Magic\-Square\-Set}}
+\index{$\sim$\-Magic\-Square\-Set@{$\sim$\-Magic\-Square\-Set}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{$\sim$\-Magic\-Square\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Magic\-Square\-Set\-::$\sim$\-Magic\-Square\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classMagicSquareSet_adfe49757d5627696c83c3fbf903b7665}
+Deconstructor for the \hyperlink{classMagicSquareSet}{Magic\-Square\-Set}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classMagicSquareSet_af6d417c4a64ad109b86a20cc7499e378}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!add@{add}}
+\index{add@{add}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}int Magic\-Square\-Set\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Magic\-Square} $\ast$}]{a\-\_\-magic\-\_\-square}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquareSet_af6d417c4a64ad109b86a20cc7499e378}
+Adds a \hyperlink{classMagicSquare}{Magic\-Square} to the set when it's not already in the set. When its already in the set, it just ignores it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-magic\-\_\-square} & The \hyperlink{classMagicSquare}{Magic\-Square} to add to the set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new size of the set. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquareSet_a219ab922ac0c556c11134a2cbeb2f761}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!operator=@{operator=}}
+\index{operator=@{operator=}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Magic\-Square\-Set} \& Magic\-Square\-Set\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Magic\-Square\-Set} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquareSet_a219ab922ac0c556c11134a2cbeb2f761}
+Overloads the assignment operator=. Defines how to assign a \hyperlink{classMagicSquareSet}{Magic\-Square\-Set} to an other.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \hyperlink{classMagicSquareSet}{Magic\-Square\-Set} to assign.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual \hyperlink{classMagicSquareSet}{Magic\-Square\-Set}. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMagicSquareSet_a219ab922ac0c556c11134a2cbeb2f761_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classMagicSquareSet_a2ae62f09ce34696ee5bbdb9930b92c85}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Magic\-Square} Magic\-Square\-Set\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{key}
+\end{DoxyParamCaption}
+) const}}\label{classMagicSquareSet_a2ae62f09ce34696ee5bbdb9930b92c85}
+Returns a \hyperlink{classMagicSquare}{Magic\-Square}, saved at the position of a key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & Key of the \hyperlink{classMagicSquare}{Magic\-Square} to access.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \hyperlink{classMagicSquare}{Magic\-Square} at the position of key. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquareSet_a7e44d044af79459d650e19fa564c00b5}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!size@{size}}
+\index{size@{size}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int Magic\-Square\-Set\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMagicSquareSet_a7e44d044af79459d650e19fa564c00b5}
+Returns the size of the set.
+
+\begin{DoxyReturn}{Returns}
+size of the set. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquareSet_a313f7b06fb202ab327639fedaeda8b03}{\index{Magic\-Square\-Set@{Magic\-Square\-Set}!str@{str}}
+\index{str@{str}!MagicSquareSet@{Magic\-Square\-Set}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string Magic\-Square\-Set\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMagicSquareSet_a313f7b06fb202ab327639fedaeda8b03}
+Generates and returns the string representation of a set. \par
+\par
+ 11 2 25 18 9\par
+ 23 14 7 5 16\par
+ 4 20 13 6 22\par
+ 10 21 19 12 3\par
+ 17 8 1 24 15\par
+ \par
+ 11 2 25 18 9\par
+ 23 14 7 5 16\par
+ 4 20 13 6 22\par
+ 10 21 19 12 3\par
+ 17 8 1 24 15\par
+ \par
+ Ordnung\-: 5 Anzahl\-: 2 Magic number\-: 65
+
+\begin{DoxyReturn}{Returns}
+the string representation of a set. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classMagicSquareSet_a313f7b06fb202ab327639fedaeda8b03_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{magic__square__set_8h}{magic\-\_\-square\-\_\-set.\-h}\item 
+\hyperlink{magic__square__set_8cpp}{magic\-\_\-square\-\_\-set.\-cpp}\end{DoxyCompactItemize}

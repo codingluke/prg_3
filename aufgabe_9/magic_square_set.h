@@ -7,6 +7,7 @@
 class MagicSquareSet
 {
   private:
+    /** list of the MagicSquares */
     vector<MagicSquare*> squares;
 
   public:

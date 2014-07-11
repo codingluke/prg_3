@@ -1,0 +1,13 @@
+<map id="run" name="run">
+<area shape="rect" id="node3" href="$classMagicSquareSet.html#af6d417c4a64ad109b86a20cc7499e378" title="MagicSquareSet::add" alt="" coords="109,5,256,35"/>
+<area shape="rect" id="node5" href="$classMagicSquare.html#a1e8210cf322013adacfb074b0a05cdb7" title="MagicSquare::switch_rows" alt="" coords="93,59,272,88"/>
+<area shape="rect" id="node7" href="$classMagicSquare.html#a6850cf9ba88d20b8a28b9972f020a67a" title="MagicSquare::switch\l_columns" alt="" coords="111,111,255,158"/>
+<area shape="rect" id="node9" href="$classMagicSquare.html#a3a2c8af100b50506625a8a834a37beb8" title="MagicSquare::switch\l_diagonal_top_left" alt="" coords="111,181,255,227"/>
+<area shape="rect" id="node11" href="$classMagicSquare.html#addc82eb3e9deef9d557a1cb2680b5c1b" title="MagicSquare::switch\l_diagonal_top_right" alt="" coords="111,250,255,297"/>
+<area shape="rect" id="node13" href="$classMagicSquare.html#adbab741c88ad073b2125c5499f7fdca3" title="MagicSquare::rotate_90" alt="" coords="103,320,263,349"/>
+<area shape="rect" id="node15" href="$classMagicSquareSet.html#a7e44d044af79459d650e19fa564c00b5" title="MagicSquareSet::size" alt="" coords="321,397,471,427"/>
+<area shape="rect" id="node17" href="$classMagicSquareSet.html#a313f7b06fb202ab327639fedaeda8b03" title="MagicSquareSet::str" alt="" coords="112,424,253,453"/>
+<area shape="rect" id="node20" href="$file__controller_8cpp.html#a8600a74cc7b9657c803885b9f6844fe7" title="write_to_file" alt="" coords="137,477,228,507"/>
+<area shape="rect" id="node22" href="$file__controller_8cpp.html#acde73c899ec0618eeb8ae54b0a823f39" title="file_exists" alt="" coords="356,464,436,493"/>
+<area shape="rect" id="node24" href="$console__input_8cpp.html#a6bac3909a28fff2736a171022343380b" title="read_yes_no" alt="" coords="348,517,444,547"/>
+</map>

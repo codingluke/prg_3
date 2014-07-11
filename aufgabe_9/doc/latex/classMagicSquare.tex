@@ -1,0 +1,199 @@
+\hypertarget{classMagicSquare}{\section{Magic\-Square Class Reference}
+\label{classMagicSquare}\index{Magic\-Square@{Magic\-Square}}
+}
+
+
+{\ttfamily \#include $<$magic\-\_\-square.\-h$>$}
+
+
+
+Inheritance diagram for Magic\-Square\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classMagicSquare__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Magic\-Square\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classMagicSquare__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMagicSquare_ad0c3bd76077df9027cbc7001320546f4}{Magic\-Square} ()
+\item 
+\hyperlink{classMagicSquare_a44538ecf1867db5ee72f4efa03bae693}{Magic\-Square} (int a\-\_\-ordinal)  throw (const invalid\-\_\-argument)
+\item 
+\hyperlink{classMagicSquare}{Magic\-Square} \hyperlink{classMagicSquare_a1e8210cf322013adacfb074b0a05cdb7}{switch\-\_\-rows} (int index)  throw (const out\-\_\-of\-\_\-range)
+\item 
+\hyperlink{classMagicSquare}{Magic\-Square} \hyperlink{classMagicSquare_a6850cf9ba88d20b8a28b9972f020a67a}{switch\-\_\-columns} (int index)  throw (const out\-\_\-of\-\_\-range)
+\item 
+\hyperlink{classMagicSquare}{Magic\-Square} \hyperlink{classMagicSquare_a3a2c8af100b50506625a8a834a37beb8}{switch\-\_\-diagonal\-\_\-top\-\_\-left} ()
+\item 
+\hyperlink{classMagicSquare}{Magic\-Square} \hyperlink{classMagicSquare_addc82eb3e9deef9d557a1cb2680b5c1b}{switch\-\_\-diagonal\-\_\-top\-\_\-right} ()
+\item 
+\hyperlink{classMagicSquare}{Magic\-Square} \hyperlink{classMagicSquare_adbab741c88ad073b2125c5499f7fdca3}{rotate\-\_\-90} ()
+\item 
+int \hyperlink{classMagicSquare_aff24d6b2c5b224f428db87bf35fa81b7}{get\-\_\-magic\-\_\-number} () const 
+\item 
+string \hyperlink{classMagicSquare_aa88327706850d00fa8de80b85e7c68c9}{str} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Difinition of a \hyperlink{classMagicSquare}{Magic\-Square}. Has all the algorithms to generate a \hyperlink{classMagicSquare}{Magic\-Square} out of a ordinal number and also to mutate the basic \hyperlink{classMagicSquare}{Magic\-Square} to other valid Magic\-Squares. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMagicSquare_ad0c3bd76077df9027cbc7001320546f4}{\index{Magic\-Square@{Magic\-Square}!Magic\-Square@{Magic\-Square}}
+\index{Magic\-Square@{Magic\-Square}!MagicSquare@{Magic\-Square}}
+\subsubsection[{Magic\-Square}]{\setlength{\rightskip}{0pt plus 5cm}Magic\-Square\-::\-Magic\-Square (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquare_ad0c3bd76077df9027cbc7001320546f4}
+Default constructor. Initializises a \hyperlink{classMagicSquare}{Magic\-Square} with an ordinal number of 5. \hypertarget{classMagicSquare_a44538ecf1867db5ee72f4efa03bae693}{\index{Magic\-Square@{Magic\-Square}!Magic\-Square@{Magic\-Square}}
+\index{Magic\-Square@{Magic\-Square}!MagicSquare@{Magic\-Square}}
+\subsubsection[{Magic\-Square}]{\setlength{\rightskip}{0pt plus 5cm}Magic\-Square\-::\-Magic\-Square (
+\begin{DoxyParamCaption}
+\item[{int}]{a\-\_\-ordinal}
+\end{DoxyParamCaption}
+)  throw (const invalid\-\_\-argument)}}\label{classMagicSquare_a44538ecf1867db5ee72f4efa03bae693}
+Initializies a \hyperlink{classMagicSquare}{Magic\-Square} with a odd ordnial number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\-\_\-ordinal} & The ordinal number of the \hyperlink{classMagicSquare}{Magic\-Square}.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em const} & invalid\-\_\-argument when ordinal number is even. \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMagicSquare_aff24d6b2c5b224f428db87bf35fa81b7}{\index{Magic\-Square@{Magic\-Square}!get\-\_\-magic\-\_\-number@{get\-\_\-magic\-\_\-number}}
+\index{get\-\_\-magic\-\_\-number@{get\-\_\-magic\-\_\-number}!MagicSquare@{Magic\-Square}}
+\subsubsection[{get\-\_\-magic\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int Magic\-Square\-::get\-\_\-magic\-\_\-number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMagicSquare_aff24d6b2c5b224f428db87bf35fa81b7}
+Calculates and returns the magic number of the \hyperlink{classMagicSquare}{Magic\-Square}.
+
+\begin{DoxyReturn}{Returns}
+the magic number of the \hyperlink{classMagicSquare}{Magic\-Square}. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquare_adbab741c88ad073b2125c5499f7fdca3}{\index{Magic\-Square@{Magic\-Square}!rotate\-\_\-90@{rotate\-\_\-90}}
+\index{rotate\-\_\-90@{rotate\-\_\-90}!MagicSquare@{Magic\-Square}}
+\subsubsection[{rotate\-\_\-90}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Magic\-Square} Magic\-Square\-::rotate\-\_\-90 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquare_adbab741c88ad073b2125c5499f7fdca3}
+Rotates a \hyperlink{classMagicSquare}{Magic\-Square} 90 degrees in clockwise direction.
+
+\begin{DoxyReturn}{Returns}
+a new \hyperlink{classMagicSquare}{Magic\-Square} rotated 90 degrees clockwise. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquare_aa88327706850d00fa8de80b85e7c68c9}{\index{Magic\-Square@{Magic\-Square}!str@{str}}
+\index{str@{str}!MagicSquare@{Magic\-Square}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string Magic\-Square\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classMagicSquare_aa88327706850d00fa8de80b85e7c68c9}
+Generates and returns the string representation of a \hyperlink{classMagicSquare}{Magic\-Square}. \par
+\par
+ 11 2 25 18 9\par
+ 23 14 7 5 16\par
+ 4 20 13 6 22\par
+ 10 21 19 12 3\par
+ 17 8 1 24 15\par
+
+
+\begin{DoxyReturn}{Returns}
+string representation fo a Magic\-Scrqare. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquare_a6850cf9ba88d20b8a28b9972f020a67a}{\index{Magic\-Square@{Magic\-Square}!switch\-\_\-columns@{switch\-\_\-columns}}
+\index{switch\-\_\-columns@{switch\-\_\-columns}!MagicSquare@{Magic\-Square}}
+\subsubsection[{switch\-\_\-columns}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Magic\-Square} Magic\-Square\-::switch\-\_\-columns (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)  throw (const out\-\_\-of\-\_\-range)}}\label{classMagicSquare_a6850cf9ba88d20b8a28b9972f020a67a}
+Switches two columns which have the same distance from the center.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Distance form left/right border.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new \hyperlink{classMagicSquare}{Magic\-Square} with switched columns.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em const} & out\-\_\-of\-\_\-range when index is not valid. \\
+\hline
+\end{DoxyExceptions}
+\hypertarget{classMagicSquare_a3a2c8af100b50506625a8a834a37beb8}{\index{Magic\-Square@{Magic\-Square}!switch\-\_\-diagonal\-\_\-top\-\_\-left@{switch\-\_\-diagonal\-\_\-top\-\_\-left}}
+\index{switch\-\_\-diagonal\-\_\-top\-\_\-left@{switch\-\_\-diagonal\-\_\-top\-\_\-left}!MagicSquare@{Magic\-Square}}
+\subsubsection[{switch\-\_\-diagonal\-\_\-top\-\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Magic\-Square} Magic\-Square\-::switch\-\_\-diagonal\-\_\-top\-\_\-left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquare_a3a2c8af100b50506625a8a834a37beb8}
+Mirrors the \hyperlink{classMagicSquare}{Magic\-Square} at the diagonal line form top left to bottom right.
+
+\begin{DoxyReturn}{Returns}
+a new \hyperlink{classMagicSquare}{Magic\-Square} mirrored at the diagonal. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquare_addc82eb3e9deef9d557a1cb2680b5c1b}{\index{Magic\-Square@{Magic\-Square}!switch\-\_\-diagonal\-\_\-top\-\_\-right@{switch\-\_\-diagonal\-\_\-top\-\_\-right}}
+\index{switch\-\_\-diagonal\-\_\-top\-\_\-right@{switch\-\_\-diagonal\-\_\-top\-\_\-right}!MagicSquare@{Magic\-Square}}
+\subsubsection[{switch\-\_\-diagonal\-\_\-top\-\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Magic\-Square} Magic\-Square\-::switch\-\_\-diagonal\-\_\-top\-\_\-right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMagicSquare_addc82eb3e9deef9d557a1cb2680b5c1b}
+Mirrors the \hyperlink{classMagicSquare}{Magic\-Square} at the diagonal line form top right to bottom left.
+
+\begin{DoxyReturn}{Returns}
+a new \hyperlink{classMagicSquare}{Magic\-Square} mirrored at the diagonal. 
+\end{DoxyReturn}
+\hypertarget{classMagicSquare_a1e8210cf322013adacfb074b0a05cdb7}{\index{Magic\-Square@{Magic\-Square}!switch\-\_\-rows@{switch\-\_\-rows}}
+\index{switch\-\_\-rows@{switch\-\_\-rows}!MagicSquare@{Magic\-Square}}
+\subsubsection[{switch\-\_\-rows}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Magic\-Square} Magic\-Square\-::switch\-\_\-rows (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)  throw (const out\-\_\-of\-\_\-range)}}\label{classMagicSquare_a1e8210cf322013adacfb074b0a05cdb7}
+Switches two rows which have the same distance from the center.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Distance form top/bottom border.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new \hyperlink{classMagicSquare}{Magic\-Square} with switched rows.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em const} & out\-\_\-of\-\_\-range when index is not valid. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{magic__square_8h}{magic\-\_\-square.\-h}\item 
+\hyperlink{magic__square_8cpp}{magic\-\_\-square.\-cpp}\end{DoxyCompactItemize}

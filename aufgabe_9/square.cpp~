@@ -198,27 +198,3 @@ bool Square::operator!=(const Square& other) const
 {
   return !(other == *this);
 }
-
-/**
- * Overloads the global compair operator==. defines when two Squares
- * are equal.
- *
- * @param left    Left Square to compair.
- * @param right   Right Square to compair.
- *
- * @return true when they are equal.
- *         false when they are not equal.
- */
-/*bool operator==(const Square& left, const Square& right)
-{
-  bool equal = true;
-  if (left.get_ordinal() == right.get_ordinal())
-  {
-    for (int row = 0; equal && row < left.get_ordinal(); row++)
-      for (int col = 0; equal && col < left.get_ordinal(); col++)
-        equal = left[row][col] == right[row][col];
-  }
-  else
-    equal = false;
-  return equal;
-}*/
