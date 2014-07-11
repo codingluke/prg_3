@@ -425,6 +425,14 @@ bool Sudoku::validate_square_by_field(int x, int y, Square& square)
   return valid;
 }
 
+/**
+ * Deviding the Numbers 0 - 8 in three groups, it gaves back in which
+ * group a number is. For example the number 3 is in group 2.
+ *
+ * @param number Number to check the group.
+ *
+ * @return groupe in which the number is.
+ */
 int Sudoku::range_number(int number) const
 {
   int range = 0;

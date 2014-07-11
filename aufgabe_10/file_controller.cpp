@@ -96,6 +96,14 @@ void show_file(string filename)
     cout << line << endl;
 }
 
+/**
+ * Reads a file according a given filename and gives its content out
+ * as a string.
+ *
+ * @param filename  Name of the file to read.
+ *
+ * @return content of the file as a string.
+ */
 string read_file(string filename)
 {
   string line = "";

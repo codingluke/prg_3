@@ -6,6 +6,10 @@
 
 using namespace std;
 
+/**
+ * Definition of the Class Square. A Square is a array where the columns
+ * and the rows have the same size.
+ */
 class Square
 {
   private:
@@ -32,7 +36,5 @@ class Square
 };
 
 bool operator==(const Square& left, const Square& right);
-//ostream& operator<<(ostream& output, const Square& a_square);
-//istream& operator>>(istream& input, Square& a_square);
 
 #endif

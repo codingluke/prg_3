@@ -1,19 +1,28 @@
 #ifndef SUDOKU_H
 #define SUDOKU_H
 
+
 #include <string>
 #include <stdexcept>
 #include "square.h"
 
 using namespace std;
 
+/**
+ * Definition of the calss Sudoku. Implements the algorithm and rules to
+ * solve and/or generate a unique Sudoku.
+ */
 class Sudoku
 {
   private:
+    /**
+     * Status of the Sudoku. -1 not solved. 0 can not be solved.
+     * 1 solved and unique. 2 solved but not unique.
+     */
+    int status;
     Square unsolved;
     Square solved;
     static bool rand_seeded;
-    int status;
 
   public:
     Sudoku();
